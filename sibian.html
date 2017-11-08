@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			padding: 10em;
+		}
+		.button{
+			display: block;
+			width: 10em;
+			height: 5em;
+			background: #58b;
+			transform: skewX(45deg);
+			text-align: center;
+			font:bold 120%/5 黑体;
+			color: #fff;
+			text-decoration: none;
+		}
+		.button>div{
+			transform: skewX(-45deg)
+		}
+		img{
+			margin: .8em;
+			-webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+			clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+			transition: 1s;
+		}
+		img:hover{
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+	</style>
+</head>
+<body>
+	<a href="" class="button"><div>点击</div></a>
+	<img src="img/6 (2).jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极</title>
+	<style>
+	body{
+		background-color:#666;
+	}
+	.box{
+		background-color: #fff;
+	}
+	
+	.box .son{
+		width: 50px;
+		height: 60px;
+		background-color: yellowgreen;
+		float: left;
+		margin-left: 5px;
+	}
+	.box:after{
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		clear: both;
+	} 
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+	</div>
+</body>
+</html>

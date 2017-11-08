@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shanguang.html</title>
+	<style>
+		.box{
+			display: block;
+			width: 400px;
+			height: 400px;
+			position: relative;
+			margin: 0 auto;
+		}
+		.box img{
+			width: 100%;
+			height: 100%;
+		}
+		.light {
+			cursor: pointer;
+			position: absolute;
+			left: -400px;
+			top: 0;
+			width: 400px;
+			height: 400px;
+			background-image: linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.4),rgba(255,255,255,0));
+			transform: skewX(-25deg);
+		}
+		.box:hover .light {
+			left: 400px;
+			-webkit-transition: 0.5s;
+			-moz-transition: 0.5s;
+			-o-transition: 0.5s;
+			-ms-transition: 0.5s;
+			transition: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+	    <img src="img/adamcatlace.jpg" alt="">
+	    <i class="light"></i>
+	</div>
+
+</body>
+</html>

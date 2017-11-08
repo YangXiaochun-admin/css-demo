@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面折角效果</title>
+	<style>
+		.box1{
+			width: 15em;
+		    padding: 2em;
+		    margin: 0 1rem;
+		    color: white;
+		    font: 100%/1.6 Baskerville, Palatino, serif;
+		    border-radius: .5em;
+		    position: relative;
+		    background: #58a;
+		    background: linear-gradient(-155deg, rgba(0, 0, 0, 0) 1.5em, #5588aa 0%);
+		    border-radius: .5em;
+		}
+		.box1::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4)) 100% 0 no-repeat;
+		    width: 1.65507em;
+		    height: 3.5493em;
+		    transform: translateY(-1.89424em) rotate(-40deg);
+		    transform-origin: bottom right;
+		    border-bottom-left-radius: inherit;
+		    box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1">页面折角效果，页面折角效果页面折角效果，页面折角效果页面折角效果，页面折角效果页面折角效果，页面折角效果页面折角效果，页面折角效果页面折角效果，页面折角效果</div>
+</body>
+</html>

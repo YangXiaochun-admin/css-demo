@@ -1,0 +1,42 @@
+font: 100%/1 sans-serif;
+等价于： font-size:100%;   line-height:1;   font-family:sans-serif;
+
+
+background: linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg,red 0, red 12.5%, 
+            \transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 5em 5em;
+等价于：background-position:0 center;   background-size:5em 5em;
+
+css中各单位
+px:
+pt:
+dp:
+em:相对于当前元素字体的大小或者body的字体大小
+rem:相对于html的字体大小
+ch:数字0的宽度
+vw:(相对于浏览器窗口内部可是区域大小。)  1vw=1/10 浏览器内部宽度
+vh:1vh=1/10 浏览器内部宽度
+
+
+deg角度  (360deg)
+grad梯度 (400梯度； 100grad=90deg)
+rad弧度 (2PI   1/2PI=90deg)
+turn圈数 (一个圆一圈)
+
+文本断行：
+1>英语单词断行：
+	a>word-break:break-all    (强制换行会把单词打断，影响阅读，)
+	b>word-wrap:break-word(根据空格来判断后面的单词是否需要换行)
+	c>hyphens:auto;(在下一行继续写该单词；需要做兼容处理)
+2>中文断行：
+	white-space:
+
+
+<sup></sup>页脚	
+禁止的按钮：属性cursor:disabled;
+
+:before css3伪类
+::before  css3伪元素 
+之间区别：如果你的网站只需要兼容webkit、firefox、opera等浏览器，建议对于伪元素采用双冒号的写法，如果不得不兼容IE浏览器，还是用CSS2的单冒号写法比较安全
+
+通过box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);可以制作一个方便的遮罩

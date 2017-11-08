@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {	
+			font: 150%/1.6 sans-serif;
+			-moz-user-select:none;/*火狐*/
+
+			-webkit-user-select:none;/*webkit浏览器*/
+
+			-ms-user-select:none;/*IE10*/
+
+			user-select:none; 
+		}
+		input[type="checkbox"]{
+			position: absolute;
+			clip: rect(0,0,0,0);
+		}
+		input[type="checkbox"]+label{
+			display: inline-block;
+			padding: .35em .5em .2em;
+			background: #ccc;
+			background-image: linear-gradient(#ddd,#ccc);
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			border-radius: .3em;
+			box-shadow: 0 1px #fff inset;
+			text-align: center;
+			text-shadow: 0 2px 1px #fff;
+		}
+		input[type="checkbox"]:checked + label,
+		input[type="checkbox"]:active + label {
+			box-shadow: .04em .1em .2em rgba(0,0,0,.6) inset;
+			border-color: rgba(0,0,0,.3);
+			background: #bbb;
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox" id="male">
+	<label for="male">Awesome!</label>
+
+	<input type="checkbox" id="male1" checked>
+	<label for="male1">Awesome!</label>
+</body>
+</html>

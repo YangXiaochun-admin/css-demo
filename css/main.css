@@ -1,0 +1,16 @@
+
+.box1{
+	height: 500px;
+	background: #504338;
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+}
+.touming{
+	border: 10px solid hsla(0, 0%, 100%, 0.5);
+	background: #fff;
+	background-clip: padding-box;
+	padding: 10px;
+	color: #000;
+	margin: 20px auto;
+}
