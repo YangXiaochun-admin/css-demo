@@ -1,0 +1,495 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857143;
+    color: #333;
+    box-sizing: border-box;
+}
+img{
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+body{
+	padding-top: 50px;
+}
+.nav{
+	padding:10px 10px;
+	background-color: #f7f5fa;
+	margin-left: 150px;
+	border-radius: 10px;
+	float: left;
+    font-size: 14px;
+}
+main{
+	width: 75%;
+	height: auto;
+	overflow: hidden;
+    float: left;
+	padding-left: 30px;
+}
+.square{
+	padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+section{
+	margin: 0 auto;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.exam1,.exam2,.exam3,.exam4,.exam5,.exam6,.exam7{
+	width: 33%;
+    height: 216px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    float: left;
+    overflow: hidden;
+}
+.inner1,.inner2,.inner3,.inner4,.inner5,.inner6,.inner7{
+	width: 100%;
+	height: 100%;
+    position: relative;
+}
+
+/* 动效1 */
+.inner1 img{
+	height: 246px;
+	opacity: .7;
+	transform: translateY(-30px);
+	transition: all .35s linear;
+}
+.inner1 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	transition: all .35s linear;
+
+}
+.inner1 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all .35s linear;
+
+}
+.inner1:before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0, 1);
+	transform-origin: 0 0;
+}
+.inner1:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 30px;
+    right: 50px;
+    bottom: 30px;
+    left: 50px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: scale(1, 0);
+	transform-origin: 100% 0;
+}
+.inner1:before,.inner1:after{
+	opacity: 0;
+	transition: all .35s linear;
+	z-index: 999;
+}
+.exam1:hover .inner1:before,.exam1:hover .inner1:after{
+	opacity: 1;
+	transform: scale(1);
+}
+.exam1:hover .inner1 img{
+	opacity: 1;
+	transform: translateY(0px);
+}
+.exam1:hover .inner1 h1{
+	transform: translateY(30px);
+}
+.exam1:hover .inner1 h3{
+	opacity: 1;
+}
+
+/* 动效2 */
+.inner2:before{
+	content: "";
+	display: block;
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	top: 20px;
+	bottom: 20px;
+	border: 1px solid #fff;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin:center;
+	transition: all .5s linear;
+}
+.exam2:hover .inner2:before{
+	opacity: 1;
+	transform: scale(1);
+}
+.inner2 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	transition: all .35s linear;
+
+}
+.inner2 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all .35s linear;
+
+}
+.exam2:hover .inner2 h1{
+	transform: translateY(-30px);
+}
+.exam2:hover .inner2 h3{
+	opacity: 1;
+}
+.inner2 img{
+	opacity: .7;
+	transition: all .35s linear;
+}
+.exam2:hover img{
+	opacity: 1;
+}
+
+/* 动效3 */
+.exam3 img{
+	width: 120%;
+	transform: translateX(-30px);
+	transition: all .5s linear;
+}
+.inner3:before{
+	content: "";
+	display: block;
+	position: absolute;
+	left: 20px;
+	right: 30px;
+	top: 20px;
+	bottom: 20px;
+	border: 1px solid #fff;
+	opacity: 0;
+	transform-origin:0 100%;
+	transition: all .5s linear;
+	z-index: 999;
+}
+.exam3:hover .inner3:before{
+	opacity: 1;
+	transform: translateX(10px);
+}
+.exam3:hover img{
+	transform: translateX(0px);
+}
+.inner3 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+}
+.inner3 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all .35s linear;
+}
+.exam3:hover .inner3 h3{
+	opacity: 1;
+}
+
+/* 动效4 */
+.inner4:before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0, 1);
+	transform-origin: 0 0;
+}
+.inner4:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: scale(1, 0);
+	transform-origin: 100% 0;
+}
+.inner4:before,.inner4:after{
+	opacity: 0;
+	transition: all .35s linear;
+	z-index: 999;
+}
+.exam4:hover .inner4:before,.exam4:hover .inner4:after{
+	opacity: 1;
+	transform: scale(1);
+}
+.inner4 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	transition: all .35s linear;
+
+}
+.inner4 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all .35s linear;
+
+}
+.exam4:hover .inner4 h1{
+	transform: translateY(30px);
+}
+.exam4:hover .inner4 h3{
+	top: 0;
+	opacity: 1;
+}
+.inner4 img{
+	opacity: .7;
+	transition: all .35s linear;
+}
+.exam4:hover img{
+	opacity: 1;
+}
+
+/* 动效5 */
+.inner5:before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0, 1);
+	transform-origin: center;
+}
+.inner5:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: scale(1, 0);
+	transform-origin: center;
+}
+.inner5:before,.inner5:after{
+	opacity: 0;
+	transition: all .35s linear;
+	z-index: 999;
+}
+.exam5:hover .inner5:before,.exam5:hover .inner5:after{
+	opacity: 1;
+	transform: scale(1);
+}
+.inner5 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	transition: all .35s linear;
+
+}
+.inner5 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 30px;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all .35s linear;
+
+}
+.exam5:hover .inner5 h1{
+	transform: translateY(30px);
+}
+.exam5:hover .inner5 h3{
+	top: 0;
+	opacity: 1;
+}
+.inner5 img{
+	opacity: .7;
+	transition: all .35s linear;
+}
+.exam5:hover img{
+	opacity: 1;
+}
+
+/* 动效6 */
+.inner6:before,.inner6:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 80%;
+	height: 1px;
+	background-color: #fff;
+	z-index: 999;
+	opacity: 0;
+	transition: all .5s linear;
+}
+.exam6:hover .inner6:before{
+	opacity: 1;
+	transform: rotate(45deg);
+}
+.exam6:hover .inner6:after{
+	opacity: 1;
+	transform: rotate(-45deg);
+}
+.inner6 h1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+
+}
+.inner6 h3{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	margin: auto;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+}
+
+/* 动效7 */
+.inner7 img{
+	width: calc(100% + 60px);
+	opacity: 1;
+	transform: translateX(-30px) scale(1.2);
+	transition: all .5s linear;
+}
+.exam7:hover .inner7 img{
+	opacity: 0.7;
+	transform: translateX(0px) scale(1);
+}
+.inner7 p{
+	width: 30%;
+	border-right: 1px solid #fff;
+	padding-right: 5px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	text-align: right;
+	color: #fff;
+	opacity: 0;
+}
+.exam7:hover .inner7 p{
+	opacity: 1;
+}
