@@ -123,6 +123,26 @@
 				border-width: 0.3em;
 			}
 		}
+		.loading-circle{
+			margin: 50px;
+			width:4px;height:4px;border-radius:2px;
+  			box-shadow:0 -12px 0 3px black ,/*上*/
+						0 12px 0 1px #333,/*下*/
+						-12px 0 0 1px #333,/*左*/
+						12px 0 0 1px #333,/*右*/
+						-9px -9px 0 1px #333,/*左上*/
+						9px -9px 0 2px #333,/*右上*/
+						-9px 9px 0 1px #333,/*左下*/
+						9px 9px 0 1px #333/*右下*/;
+				animation:loading 1.2s linear 0s infinite;
+				-webkit-animation:loading 1.2s linear 0s infinite;
+				-o-animation:loading 1.2s linear 0s infinite;
+				-moz-animation:loading 1.2s linear 0s infinite;
+		}
+		@keyframes loading{
+			from {transform:rotate(0deg);}
+			to {transform:rotate(360deg);} 
+		}
 	</style>
 </head>
 <body>
@@ -130,5 +150,6 @@
 	<div class="loading-wave"></div>
 	<div class="loader"></div>
 	<div class="loading"></div>
+	<div class="loading-circle"></div>
 </body>
 </html>

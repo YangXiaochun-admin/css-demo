@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .clock{
+        width: 400px;
+        height: 400px;
+        border: 5px solid #666;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .dian{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        background: red;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 999;
+    }
+ 
+/*  div{
+        width: 200px;
+        height: 200px;
+        border: 5px solid #000;
+        position: absolute;
+        left: 200px;
+        top: 200px; */
+        /* 形变的基准点 */
+        /* transform-origin: left top; */
+    /* } */
+    /* div:hover{ */
+        /* 定义2d转换，沿着x,y轴运动 */
+        /* transform: translate(10px,10px); */
+ 
+        /* 沿着x,y轴缩放 ，若有边框会连边框一起放大*/
+        /* transform: scale(2,2); */
+         
+        /* 沿着x,y轴旋转 */
+        /* transform: rotate(50deg); */
+         
+        /* 斜切 */
+        /* transform: skew(10deg,10deg); */
+         
+        /* 定义矩阵变形，基于X轴和Y轴坐标重新定位元素位置。 */
+        /* transform: matrix(a,b,c,d,e,f) a和d控制缩放，e和f控制平移 */
+        /* 旋转  matrix(cosθ,sinθ,-sinθ,cosθ,e,f)*/
+        /* 缩放 把a、b、c、d乘上系数就是缩放。 */
+        /* 翻转  a和c取相反数就是X轴翻转，b和d取相反数就是Y轴翻转 */
+ 
+        /* 平移 */
+        /* transform: matrix(1,0,0,1,50,50); */
+ 
+        /* 缩放 */
+        /* transform: matrix(2,0,0,1,0,0); */
+ 
+        /* 旋转 */
+        /* transform: matrix(0.866025404,0.5,-0.5,0.866025404,0,0); */
+ 
+        /* 斜切 */
+        /* transform: matrix(-2, 0, -2, 1, 0, 0); */
+    /* } */
+    </style>
+ 
+</head>
+<body>
+    <div class="clock">
+        <div class="dian"></div>
+    </div>
+</body>
+<script>
+        window.onload=function(){
+            var clock=document.querySelectorAll(".clock")[0];
+            createMark();
+            var time=new Date();
+            var hpointer=createPointer(6,60,"#000",time.getHours()*30+time.getMinutes()*6/12);
+            var mpointer=createPointer(4,100,"#666",time.getMinutes()*6);
+            var spointer=createPointer(2,140,"red",time.getSeconds()*6);
+ 
+            setInterval(function(){
+                createPointer();
+                var time=new Date();
+                hpointer.style.transform="translate("+(400-hpointer.w)/2+"px,"+(200-hpointer.h)+"px) rotate("+(time.getHours()*30+time.getMinutes()*6/12)+"deg)";
+                mpointer.style.transform="translate("+(400-mpointer.w)/2+"px,"+(200-mpointer.h)+"px) rotate("+time.getMinutes()*6+"deg)";
+                spointer.style.transform="translate("+(400-spointer.w)/2+"px,"+(200-spointer.h)+"px) rotate("+time.getSeconds()*6+"deg)";
+ 
+            },1000)
+            //创建刻度
+            function createMark(){
+                for(var i=0;i<60;i++){
+                    var w,h;
+                    if(i%5==0){
+                        w=4;
+                        h=10;
+                    }else{
+                        w=2;
+                        h=6;
+                    }
+                    var div=document.createElement("div");
+                    div.style.cssText="width:"+w+"px;height:"+h+"px;background:#000;position:absolute;left:0;top:0;";
+                    div.style.transform="translate("+(400-w)/2+"px,0) rotate("+i*6+"deg)";
+                    div.style.transformOrigin="center 200px";
+                    clock.appendChild(div);
+ 
+                }
+            }
+            function createPointer(w,h,c,a){
+                var div=document.createElement("div");
+                    div.style.cssText="width:"+w+"px;height:"+h+"px;background:"+c+";position:absolute;left:0;top:0;margin:0 auto";
+                    div.style.transform="translate("+(400-w)/2+"px,"+(200-h)+"px) rotate("+a+"deg)";
+                    div.style.transformOrigin="center bottom";
+                    div.w=w;
+                    div.h=h;
+                    clock.appendChild(div);
+                    return div;
+            }
+ 
+        }
+    </script>
+</html>
