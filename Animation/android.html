@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>android.html</title>
+	<style>
+		html {
+			background: rgb(100%, 64%, 40%);
+			transition: 1s cubic-bezier(0.84, 0.03, 0.2, 3);
+		}
+
+		html:hover {
+			background: #afdd22;
+		}
+		body{
+			padding: 200px;
+			font: 200%/3 '微软雅黑';
+		}
+		input{
+			display: block;
+			padding: 10px;
+			font-size: 100%;
+		}
+		.layout{
+			position: absolute;
+			max-width: 14em;
+			padding: .6em .8em;
+			border-radius: .3em;
+			margin: .3em 0 0 -.2em;
+			background: #fed;
+			border: 1px solid rgba(0,0,0,.3);
+			box-shadow: .05em .2em .6em rgba(0,0,0,.2);
+			font-size: 75%;
+		}
+
+		.layout:before {
+			content: "";
+			position: absolute;
+			top: -.4em;
+			left: 1em;
+			padding: .35em;
+			background: inherit;
+			border: inherit;
+			border-right: 0;
+			border-bottom: 0;
+			transform: rotate(45deg);
+		}
+		input:not(:focus) + .layout:not(:hover) {
+			transform: scale(0);
+			transition: all .25s;
+		}
+
+		.layout {
+			transition: all .5s cubic-bezier(.25,.1,.3,1.5);
+			transform-origin: 1.4em -.4em;
+		}
+
+	</style>
+</head>
+<body>
+	<label for="">
+	<!-- 该标签为input元素定义标记 -->
+		用户名称:
+		<input type="text" value="myname">
+		<span class="layout">
+			只能是字母、数字、下划线以及连接符'-'
+		</span>
+	</label>
+</body>
+</html>

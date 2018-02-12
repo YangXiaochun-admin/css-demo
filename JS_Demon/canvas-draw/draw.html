@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自制画板</title>
+	<link rel="stylesheet" href="css/draw.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+<div class="controls"></div>
+<select name="shape" id="shape">
+	<option value="line">直线</option>
+	<option value="rect">矩形</option>
+	<option value="circleCenter">中心圆</option>
+	<option value="circleIn">内切圆</option>
+	<option value="circleOut">外接圆</option>
+	<option value="polygon">多边形</option>
+	<option value="pen">铅笔</option>
+	<option value="eraser">橡皮擦</option>
+
+</select>
+<input type="color" id="color">
+<input type="number" id="width" value="2" step="2" min="2" max="20">
+<select name="style" id="style">
+	<option value="stroke">描边</option>
+	<option value="fill">填充</option>
+</select>
+<input type="number" name="
+polygon" id="polygon" min="3" max="100" value="3">
+<input type="button" name="reset" value="撤销" id="revocation">
+<input type="button" id="save" value="保存">
+<input type="button" id="clear" value="清空">
+<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+<script src="js/draw.js"></script>
+<script src="js/drawing.js"></script>
+</html>

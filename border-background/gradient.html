@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			background: -webkit-linear-gradient(red,orange,yellow,green,cyan,blue,purple);
+			/* 谷歌/safari */
+			background: -o-linear-gradient(red,orange,yellow,green,cyan,blue,purple);
+			/* opera浏览器 */
+			background: -moz-linear-gradient(red,orange,yellow,green,cyan,blue,purple);
+			/* 火狐浏览器 */
+			background:linear-gradient(red,orange,yellow),linear-gradient(blue 20px,rgba(102, 0, 0, 1.0));
+			/* 标准语法 */
+		}
+		.box:nth-child(2){
+			background:-webkit-linear-gradient(top left,red,orange,yellow,green,cyan,blue,purple);
+			background:linear-gradient(to bottom right,red,orange,yellow,green,cyan,blue,purple);
+		}
+		.box:nth-child(3){
+			background:linear-gradient(45deg ,red,orange,yellow,green,cyan,blue,purple);
+		}
+		.box:nth-child(4){
+			background:linear-gradient(45deg,red 20%,orange 30%,yellow 30%,yellow 40%,green 40%,green 60%,cyan,blue,purple);
+		}
+		.box:nth-child(5){
+			background:repeating-linear-gradient(45deg,red 10%,orange 20%,yellow 30%,green 40%,cyan 50%,blue 60%,purple 70%);
+		}
+		li{
+			width: 500px;
+			height: 300px;
+			background: radial-gradient(pink,yellowgreen,hsla(211, 86%, 57%, 0.81));
+		}
+		.shape{
+			background: radial-gradient(ellipse,pink,yellowgreen,hsla(211, 86%, 57%, 0.81));
+			/* ellipse: 椭圆;
+			circle: 正圆; */
+		}
+		.size{
+			 background: -webkit-radial-gradient(60% 55%, circle closest-side,blue,green,yellow,black); 
+			/* background: radial-gradient(circle closest-side at 30% 30%,pink,yellowgreen,hsla(211, 86%, 57%, 0.81)); */
+		}
+		.size1{
+			background: radial-gradient(circle closest-corner at 30% 30%,pink,yellowgreen,hsla(211, 86%, 57%, 0.81));
+		}
+		.size2{
+
+			background: radial-gradient(circle farthest-side at 30% 30%,pink,yellowgreen,hsla(211, 86%, 57%, 0.81));
+		}
+		.size3{
+			background: radial-gradient(circle farthest-corner at 30% 30%,pink,yellowgreen,hsla(211, 86%, 57%, 0.81));
+		}
+	</style>
+</head>
+<body>
+	<!-- 简单的渐变 -->
+	<div class="box"></div>
+
+	<!-- 方向渐变 -->
+	<div class="box"></div>
+
+	<!-- 角度渐变 -->
+	<div class="box"></div>
+
+	<!-- 色标 -->
+	<div class="box"></div>
+
+	<!-- 重复的渐变 -->
+	<div class="box"></div>
+
+	<li></li>
+	<li class="shape"></li>
+	<li class="size"></li>
+	<li class="size1"></li>
+	<li class="size2"></li>
+	<li class="size3"></li>
+
+
+
+</body>
+</html>

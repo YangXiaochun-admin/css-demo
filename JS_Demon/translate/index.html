@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原生JS同步翻译</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<main>
+		<section class="content content_left">
+			<div class="title">
+				要翻译为：
+				<span class="lang_now">英文</span>
+				<ul class="lang_list">
+					<li data-lang="en">英语</li>
+					<li data-lang="zh">中文</li>
+					<li data-lang="jp">日语</li>
+					<li data-lang="kor">韩语</li>
+					<li data-lang="fra">法语</li>
+					<li data-lang="ru">俄语</li>
+					<li data-lang="de">德语</li>
+				</ul>
+			</div>
+			<textarea class="text" placeholder="输入要翻译的句子/单词"></textarea>
+		</section>
+		<section class="content content_right">
+			<div class="title">翻译结果：</div>
+			<div class="result"></div>
+		</section>
+		<section class="bottom">
+			<button class="reset">清除</button>
+			<button class="trans">翻译</button>
+		</section>
+	</main>
+</body>
+</html>
+<script src="md5.js"></script>
+<script src="index.js"></script>

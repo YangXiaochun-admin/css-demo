@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百分比加载进度</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.index_personal_skill{
+			width: 251px;
+			height: 88px;
+			margin: 0 auto;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.index_personal_skill li{
+			width: 67px;
+			height: 100%;
+			float: left;
+		}
+		.index_personal_skill li:nth-child(2){
+			margin: 0 25px;
+		}
+		.index_banner_skills{
+			width: 67px;
+			height: 67px;
+		}
+		.index_personal_skill li span{
+			font-size: 12px;
+			line-height: 22px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="index_personal_skill">
+        <li>
+            <div class="index_banner_skills">
+                <canvas id='canvas' width="67" height="67">
+                    <p>You browser not support canvas</p>
+                </canvas>
+            </div>
+            <span>JAVA</span>
+        </li>
+        <li>
+            <div class="index_banner_skills">
+                <canvas id='canvas1' width="67" height="67">
+                    <p>You browser not support canvas</p>
+                </canvas>
+            </div>
+            <span>JAVA</span>
+        </li>
+        <li>
+            <div class="index_banner_skills">
+                <canvas id='canvas2' width="67" height="67">
+                    <p>You browser not support canvas</p>
+                </canvas>
+            </div>
+            <span>JAVA</span>
+        </li>
+    </ul>
+</body>
+</html>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+ 	var canvas1=document.querySelector("#canvas");
+ 	var canvas2=document.querySelector("#canvas1");
+ 	var canvas3=document.querySelector("#canvas2");
+
+ 	function progress(canvas,background,color,num){
+ 		var cobj=canvas.getContext("2d");
+	    cobj.lineWidth=8;
+	    cobj.strokeStyle=background;
+	    cobj.font="12px 宋体";
+	    cobj.textAlign="center";
+	    cobj.textBaseline="middle";
+	    cobj.fillStyle = color;
+	    var n=0;
+	    var fn;
+	    function power(){
+			n++;
+			if(n>=num){
+				cancelAnimationFrame(fn)
+			}else{
+				fn=requestAnimationFrame(power);
+			}
+			cobj.clearRect(0,0,67,67);
+			cobj.beginPath();
+			var angle=(n/100*360-90)*Math.PI/180;
+			cobj.arc(33.5,33.5,20,-Math.PI/2,angle);
+			cobj.stroke();
+			cobj.fillText(n+"%",33.5,33.5);
+	   }
+	   power();
+ 	}
+ 	var background1 = '#4682FE';
+ 	var color1 = '#4682FE';
+ 	var background2 = '#29CB6D';
+ 	var color2 = '#29CB6D';
+ 	var background3 = '#FFB033';
+ 	var color3 = '#FFB033';
+    progress(canvas1,background1,color1,80);
+    progress(canvas2,background2,color2,60);
+    progress(canvas3,background3,color3,56);
+})
+</script>

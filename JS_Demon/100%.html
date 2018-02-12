@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;padding: 0;
+			display: -webkit-flex;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width="500" height="500" background='#000'>
+		<p>You browser not support canvas</p>
+	</canvas>
+</body>
+<script>
+	window.onload = function(){
+		let canvas = document.querySelector('#canvas');
+		// 获取canvas绘图环境
+		let ctx = canvas.getContext("2d");
+
+		// 设置坐标中心点
+		let centerX = canvas.width / 2;
+		let centerY = canvas.height / 2;
+		console.log(canvas.width);
+		console.log(canvas.height);
+		console.log(centerY);
+		console.log(centerX);
+
+		//360deg分成100份
+		let rad = Math.PI * 2 / 100;
+
+		//设置一个加载速度
+		let speed = 0.1;
+
+		// save()和restore()保证样式属性只用于该段的canvas元素
+
+		function blueCircle(n){
+			ctx.save();
+			ctx.strokeStyle = "#49f";
+			ctx.lineWidth = 5;
+
+			ctx.beginPath();
+			ctx.arc(centerX,centerY,100,-Math.PI/2,-Math.PI/2+n*rad,false);
+			ctx.stroke();
+			ctx.closePath();
+			ctx.restore();
+		}
+
+		function whiteCircle(){
+			ctx.save();
+			ctx.strokeStyle = "#fff";
+			ctx.beginPath();
+			ctx.arc(centerX, centerY, 100, 0, Math.PI*2, false);
+			ctx.stroke();
+			ctx.closePath();
+			ctx.restore();
+		}
+
+		function text(n){
+			ctx.save();
+			ctx.strokeStyle = '#49f';
+			ctx.font = '40px Arial';
+			ctx.strokeText(n.toFixed(0)+'%', centerX-25, centerY+10);
+			ctx.stroke();
+			ctx.restore();
+		}
+
+		(function drawFrame(){
+			window.requestAnimationFrame(drawFrame,canvas);
+			// requestAnimationFrame类似于setTimeInterval
+			// 
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			whiteCircle();
+			text(speed);
+			blueCircle(speed);
+			
+			if(speed > 100){
+				speed = 0;
+			}else{
+				speed += 0.1;
+			}
+		}());
+
+	}
+</script>
+</html>

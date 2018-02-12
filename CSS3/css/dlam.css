@@ -1,0 +1,179 @@
+/*
+* @Author: Administrator
+* @Date:   2018-01-03 22:42:34
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-01-03 22:43:01
+*/
+html,body{
+    margin:0;padding:0;
+    width:100%;height:100%;
+}
+*{
+    box-sizing: border-box;
+}
+.dlam{
+    position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;
+}
+/*头*/
+.head{
+    position: absolute;left:0;right:0;top:0;bottom:0;margin:auto;
+    margin-top: 30px;
+    width:314px;height:304px;border:2px solid #333;
+    border-radius:140px;
+    background:linear-gradient(230deg,#fff 0%,#07beea 20%,#10a6ce 73%,#095E75 95%,#444);
+    box-shadow:-9px 10px 15px rgba(0,0,0,0.45);
+}
+/*腮帮*/
+.cheek{
+    position:relative;margin:0 auto;top: 87px;
+    width:268px;height:200px;border:2px solid #000;
+    border-radius: 150px 150px;
+    background:linear-gradient(230deg,#fff 0%,#fff 80%,#eee 85%,#999 92%,#444 95%,#000);
+}
+/*眼睛*/
+.eyes{
+    position:relative;margin:0 auto;top:-153px;
+    background:yellow;
+}
+.eye-left,.eye-right{
+    position:absolute;float:left;
+    width:76px;height:87px;
+    border:2px solid #000;border-radius: 35px 35px;
+    background:#fff;
+    z-index:20;
+}
+.eye-left{
+    margin-left: 82px;
+}
+.eye-right{
+    margin-left:156px;
+}
+.eye-ball{
+    position:absolute;
+    width:15px;height:15px;border-radius: 50%;
+    background:#000;
+}
+.eye-left-ball{
+    margin-left: 46px;
+    margin-top: 55px;
+    animation: ball1 2s linear 2s;
+}
+.eye-right-ball{
+    margin-left: 13px;
+    margin-top: 55px;
+    animation: ball2 2s linear 2s;
+}
+@keyframes ball1{
+    0%{
+        margin-left:46px;
+        margin-top:55px;
+    }
+    25%{
+        margin-left:46px;
+        margin-top:22px;
+    }
+    50%{
+        margin-left:46px;
+        margin-top:55px;
+    }
+    75%{
+        margin-left:52px;
+        margin-top:55px;
+    }
+    100%{
+        margin-left:46px;
+        margin-top:55px;
+    }
+}
+@keyframes ball2{
+    0%{
+        margin-left:13px;
+        margin-top:55px;
+    }
+    25%{
+        margin-left:13px;
+        margin-top:22px;
+    }
+    50%{
+        margin-left:13px;
+        margin-top:55px;
+    }
+    75%{
+        margin-left:19px;
+        margin-top:55px;
+    }
+    100%{
+        margin-left:13px;
+        margin-top:55px;
+    }
+}
+/*鼻子*/
+.nose{
+    position:relative;left:116px;top:31px;
+    width:36px;height:36px;border:2px solid #000;
+    border-radius:50%;z-index: 999;
+    background:radial-gradient(circle 10px at 22px 12px,#fff 0%,#E5A285 50%,#C93E00);
+}
+.nose-line{
+    width:3px;height:100px;background:#333;
+    position:relative;top:16px;left:132.5555555555555556px;
+    z-index:21;
+}
+/*嘴巴*/
+.mouth{
+    position: absolute;top:-349px;left:19px;z-index: 10;
+    width:230px;height:503px;border-bottom: 3px solid #333;border-radius: 120px;
+}
+.mouth-rewrite{
+    z-index:12;width:252px;height:90px;
+    position:absolute;top:29px;left:6px;background:#fff;
+    border-radius: 150px;
+}
+/*胡须*/
+.beard{
+    width:60px;height:2px;background:#333;
+    position:absolute;
+    z-index: 15;
+}
+.beard-right-top{
+    top:61px;left:187px;
+    transform:rotate(160deg);
+}
+.beard-right{
+    top:81px;left:187px;
+}
+.beard-right-bottom{
+    top:101px;left:187px;
+    transform:rotate(-160deg);
+}
+.beard-left-top{
+    top:61px;left:23px;
+    transform:rotate(200deg);
+}
+.beard-left{
+    top:81px;left:23px;
+}
+.beard-left-bottom{
+    top:101px;left:23px;
+    transform:rotate(160deg);
+}
+ 
+/*身体*/
+.body{
+    width:224px;height:169px;border:2px solid #333;
+    position:absolute;left:0;top:0;right:0;bottom:0px;margin:auto;
+    margin-top: 319px;
+    background:linear-gradient(230deg,#07beea 0%,#00b0e0 50%,#0096be 75%,#0073b3);
+    box-shadow:-9px 10px 15px rgba(0,0,0,0.45);
+}
+.belly{
+    width:174px;height:174px;border:2px solid #000;border-radius: 85px;
+    background:linear-gradient(230deg,#fff 0%,#fff 75%,#eee 83%,#999 90%,#444 95%,#000);
+}
+/*脖子*/
+.neck{
+    width:234px;height:24px;border:2px solid #000;
+    background:linear-gradient(180deg,#ca4100 0%,#ca4100 50%,#800400);
+    border-radius:10px;
+    position:absolute;left:0;top:0;right:0;bottom:0px;margin:auto;margin-top:305px;
+}

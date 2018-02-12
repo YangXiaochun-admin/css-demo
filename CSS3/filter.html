@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter</title>
+</head>
+<style>
+	.div1{
+		filter: blur(10px); 
+		/* 模糊滤镜 */
+
+		filter: brightness(0.4);
+		/* 亮度 */
+
+		filter: contrast(200%);
+		/* 对比度 */
+
+		filter: drop-shadow(5px 5px 15px blue);
+		/* 整体阴影效果 */
+
+		filter: grayscale(90deg);
+		filter: invert(75%);
+		filter: opacity(0.5);
+		/* 透明度 */
+
+		filter: saturate(30%);
+		filter: sepia(60%);
+	}
+	.box1{
+		width: 300px;
+		height: 200px;
+		background: url('../img/1.jpg') no-repeat;
+		background-size: 100% 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+	.box1:after{
+		content: "";
+		position: absolute;
+		top: 10%;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background: inherit;
+		filter: blur(10px) brightness(0.8);
+		z-index: -1;
+
+	}
+	.box2 {
+		width: 300px;
+		height: 200px;
+	    background: linear-gradient(90deg,  #ffc700 10%, #e91e1e 50%, #6f27b0 100%);
+	    background-size: 200% 100%;
+	    background-position: 0 0;
+	    animation: bgposition 3s linear alternate infinite;
+	}
+
+	@keyframes bgposition {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+</style>
+<body>
+	<div class="box1">
+	</div>
+	<div class="box2"></div>
+</body>
+</html>

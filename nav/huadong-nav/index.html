@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动菜单</title>
+	<style>
+		*{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 432px;
+			margin: 0 auto;
+			margin-top: 100px;
+			overflow: hidden;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #000;
+			position: relative;
+		}
+		li{
+			line-height: 40px;
+			padding: 0 20px;
+			text-align: center;
+			background-color: #b0b0b0;
+			color: #fff;
+			float: left;
+			cursor: pointer;
+			transition: all .5s linear;
+		}
+		.active{
+			width: 72px;
+			height: 3px;
+			background-color: blue;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		/*.active:hover{
+			animation: shake 1s linear;
+
+		}*/
+		@keyframes shake{
+			0%{
+				transform: translateX(0);
+			}
+			25%{
+				transform: translateX(-20px);
+			}
+			50%{
+				transform: translateX(0);
+			}
+			75%{
+				transform: translateX(20px);
+			}
+			100%{
+				transform: translateX(0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>首页</li>
+		<li>关于</li>
+		<li>新闻</li>
+		<li>历史</li>
+		<li>发展</li>
+		<li>联系</li>
+		<div class="active"></div>
+	</ul>
+</body>
+</html>
+<script src="../../jquery.min.js"></script>
+<script>
+	$(function(){
+		// 获取整体ul和li的宽度
+		let Lwidth = $("ul>li").width()+40;
+
+		// 设置初始left位置为0
+		let Aleft = 0;
+
+		// 获取导航的个数
+		let num = $("ul>li").length;
+
+		$("ul>li").each(function(index, el) {
+			$(el).on("mouseenter",function(){
+				// $(".active").css("left",index*Lwidth+"px");
+				$(".active").animate({left:index*Lwidth+"px"},"slow",function(){
+					$(".active").css("animation","shake 1s linear");
+					setTimeout(()=>{
+						$(".active").css("animation","null");
+					}, 1000);
+					
+				});
+				
+			})
+		});
+	})
+</script>

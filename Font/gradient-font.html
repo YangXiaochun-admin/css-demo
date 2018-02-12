@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变色文字</title>
+	<style>
+		.box{
+			font-weight: bold;
+		    font-size: 60px;
+	        font-family: helvetica;
+	        text-align:center;
+	        background-image: -webkit-linear-gradient(left, red , blue);     /* 背景色渐变 */
+	        -webkit-background-clip: text;         /* 规定背景的划分区域 */
+	        -webkit-text-fill-color: transparent;  /* 防止字体颜色覆盖 */	
+		}
+	</style>
+</head>
+<body>
+	<div class="box">渐变色字体</div>
+</body>
+</html>

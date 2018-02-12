@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background: url('../img/8 (2).jpg') 0 /cover;
+			font: 150%/1.6 Baskerville, Palatino, serif;
+		}
+		.box {
+			position: relative;
+			margin: 0 auto;
+			padding: 1em;
+			max-width: 23em;
+			background: hsla(0,0%,100%,.25) border-box;
+			overflow: hidden;
+			border-radius: .3em;
+			box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+			            0 .5em 1em rgba(0, 0, 0, 0.6);
+		}
+
+		.box:before {
+			content: '';
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			margin: -30px;
+			z-index: -1;
+			-webkit-filter: blur(20px);
+			filter: blur(20px);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		心的本色该是如此。成，如朗月照花，深潭微澜，不论顺逆，不论成败的超然，是扬鞭策马，登高临远的驿站；败，仍滴水穿石，汇流入海，有穷且益坚，不坠青云的傲岸，有“将相本无主，男儿当自强”的倔强。荣，江山依旧，风采犹然，恰沧海巫山，熟视岁月如流，浮华万千，不屑过眼烟云；辱，胯下韩信，雪底苍松，宛若羽化之仙，知退一步，海阔天空，不肯因噎废食。
+	</div>
+</body>
+</html>

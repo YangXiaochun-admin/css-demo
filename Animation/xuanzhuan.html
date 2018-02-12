@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.path {
+			width: 300px; height: 300px;
+			padding: 20px;
+			border-radius: 50%;
+			background: #fb3;
+		}
+		
+		.avatar {
+			width: 50px;
+			margin: 0 auto;
+			border-radius: 50%;
+			overflow: hidden;
+			animation: spin 3s infinite linear;
+			transform-origin: 50% 150px;
+		}
+
+		.avatar > img {
+			display: block;
+			width: inherit;
+			animation: inherit;
+			animation-direction: reverse;
+		}
+
+		@keyframes spin {
+			to { transform: rotate(1turn); }
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	<div class="path">
+		<div class="avatar">
+			<img src="../img/leaf.jpg" />
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯css实现导航效果</title>
+	<style>
+		*{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+		}
+		.nav1{
+			width: 998px;
+			height: 40px;
+			background-color: #202020;
+			margin: 0 auto;
+		}
+		.nav1>ul>li{
+			float: left;
+		}
+		.nav1>ul>li>a,.two>li>a,.three>li>a{
+			display: block;
+			width: 105px;
+			line-height: 40px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+		}
+		.two>li>a{
+			color: #e0e0e0;
+			background-color: #000;
+			float: left;
+		}
+		.three>li>a{
+			color: #ff6700;
+			background-color: rgba(0, 0, 0, .6);
+		}
+		.three{
+			float: left;
+		}
+		.two,.three{
+			display: none;
+		}
+		.nav1>ul>li:hover .two,.two>li:hover .three{
+			display: block;
+		}
+		.nav1 a,.two,.three{
+			transition: all .5s linear;
+		}
+		.nav1 a:hover{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav1">
+		<ul>
+			<li>
+				<a href="">一级栏目</a>
+				<ul class="two">
+					<li><a href="">二级栏目</a></li>
+					<li><a href="">二级栏目</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">一级栏目</a>
+			</li>
+			<li>
+				<a href="">一级栏目</a>
+				<ul class="two">
+					<li><a href="">二级栏目</a></li>
+					<li><a href="">二级栏目</a></li>
+					<li><a href="">二级栏目</a></li>
+					<li><a href="">二级栏目</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">一级栏目</a>
+				<ul class="two">
+					<li>
+						<a href="">二级栏目</a>
+						<ul class="three">
+							<li><a href="">三级栏目</a></li>
+							<li><a href="">三级栏目</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆环</title>
+    <style>
+    .screen{
+        width: 70%;
+        height: 150px;
+        position: fixed;
+        border: 1px solid red;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        perspective: 1500px;
+    }
+    .ball{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-style: preserve-3d;
+        transition: all ease;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+ 
+    }
+    /* .ball:hover{
+        transform: rotateY(360deg);
+    } */
+    </style>
+    <script>
+        window.onload=function(){
+            var ball=document.getElementsByClassName("ball")[0];
+            var radius=400;
+            for(var i=0;i<10;i++){
+                // x=r*sinθ*cosφ;
+                // y=r*sinθ*sinφ;
+                // z=r*cosθ;
+                var x=radius*Math.sin(Math.PI/2)*Math.cos(i*36*Math.PI/180);
+                var z=radius*Math.sin(Math.PI/2)*Math.sin(i*36*Math.PI/180);
+                var y=radius*Math.cos(Math.PI/2);
+ 
+                var angle=Math.atan2(x,z);
+ 
+                var div=document.createElement("div");
+                div.style.cssText="width:200px;height:100px;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;background:plum";
+                div.style.transform="translate3d("+x+"px,"+y+"px,"+z+"px) rotateY("+angle+"rad)";
+                ball.appendChild(div);
+            }
+ 
+            var cw=document.documentElement.clientWidth/2;
+            var ch=document.documentElement.clientHeight/2;
+            document.onmousedown=function(e){
+                var startx=e.clientX;
+                var starty=e.clientY;
+                document.onmousemove=function(e){
+                    var movex=e.clientX;
+                    var movey=e.clientY;
+ 
+                    var angle1=Math.sqrt(Math.pow((movex-startx),2)+Math.pow((movey-starty),2));
+ 
+                    var endx=movex-cw;
+                    var endy=movey-ch;
+ 
+                    var mo=Math.sqrt(endx*endx+endy*endy);
+ 
+                    var x=endx/mo;
+                    var y=endy/mo;
+ 
+                    ball.style.transform="rotate3d("+(-y)+","+x+",0,"+angle1+"deg)";
+                }
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="screen">
+        <div class="ball">
+        </div>
+    </div>
+</body>
+</html>
