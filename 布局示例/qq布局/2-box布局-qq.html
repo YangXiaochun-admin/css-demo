@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3盒布局技术</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			-webkit-tap-highligh-color: rgba(0, 0, 0, 0);
+		}
+		.container{
+			display: -webkit-box;
+			display: box;
+		}
+		.main_content{
+			-moz-box-flex: 1;
+			-webkit-box-flex: 1;
+			box-box-flex: 1;
+			-o-box-ordinal-group: 2;
+			-moz-box-ordinal-group: 2;
+			-webkit-box-ordinal-group: 2;
+			box-ordinal-group: 2;
+			background-color: orange;
+		}
+		.left_content{
+			width: 250px;
+			-o-box-ordinal-group: 1;
+			-moz-box-ordinal-group: 1;
+			-webkit-box-ordinal-group: 1;
+			box-ordinal-group: 1;
+			background-color: limegreen;
+		}
+		.right_content{
+			width: 250px;
+			-o-box-ordinal-group: 3;
+			-moz-box-ordinal-group: 3;
+			-webkit-box-ordinal-group: 3;
+			box-ordinal-group: 3;
+			background-color: limegreen;
+		}
+		/*box布局：
+			display:box;   将容器盒模型作为块级弹性伸缩盒显示
+			box-orient:vertical/horizontal/inline-axis/block-axis 	实现内部元素流动风向
+			box-direction:normal/reverse;		设置伸缩容器的流动顺序
+			box-pack:start/end/center/justify;    设置内容对齐方式
+			box-align:start/end/center/baseline/stretch;	用来设置伸缩容器的额外空间
+			box-flex:数值;   设置内容所占比例
+			box-ordinal-group:数值;  设置伸缩内容的显示位置*/
+	</style>
+</head>
+<body>
+	<!-- 要求：
+		允许宽度自适应，改变元素显示顺序，优先加载重要区域 -->
+	<div class="container">
+		<div class="main_content">主内容</div>
+		<div class="left_content">左侧内容</div>
+		<div class="right_content">右侧内容</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位解决前两者兼容</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			-webkit-tap-highligh-color: rgba(0, 0, 0, 0);
+			box-sizing: border-box;
+		}
+		.container{
+			width: 100%;
+			overflow: hidden;
+			background-color: lightyellow;
+		}
+		.main_contain{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			/*left: 250px;*/
+			/*right: 250px;*/
+			background-color: pink;
+			padding: 0 250px;
+			z-index: 99;
+		}
+		.left_contain{
+			width: 250px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 999
+		}
+		.right_contain{
+			width: 250px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 999
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main_contain">
+			这是优先显示的内容
+		</div>
+		<div class="left_contain">这是左侧内容</div>
+		<div class="right_contain">这是左侧内容</div>
+
+	</div>
+</body>
+</html>
