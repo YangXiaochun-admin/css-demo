@@ -3,9 +3,9 @@
 	ul = document.querySelector(".lang_list"),
 	lis = document.querySelectorAll(".lang_list li"),
 	text = document.querySelector(".text"),
-	result = document.querySelector(".result"),
 	reset = document.querySelector(".bottom .reset"),
 	trans = document.querySelector(".bottom .trans"),
+	result = document.querySelector(".result"),
 	key = true,
 	length = lis.length,
 	lang = "en",
@@ -29,7 +29,7 @@
 	}
 
 	// 跨域请求
-	function createScript(src) {
+	/*function createScript(src) {
 		var script = document.createElement('script');
 		script.id = "script1"
 		script.src = src;
@@ -37,21 +37,57 @@
 	}
 
 	function translate() {
-		let temp = text.value.replace(/[\r\n]/g, "");
-		console.log(temp);
-		var value = 'http://api.fanyi.baidu.com/api/trans/vip/translate?';
-		var date = Date.now();
-		var str = '20170605000052254'+temp+date+'63r1c42X7_buc4OrXm1g';
-		var md5 = MD5(str);
-		var data = 'q=' + temp + '&from=auto&to=' + lang + '&appid=20170605000052254' + '&salt=' + date + '&sign=' + md5 + "&callback=fn";
-		var src = value + data;
-		createScript(src);
+		let appid = '2015063000000001';
+		let key = '12345678';
+		let salt = (new Date).getTime();
+		let Str = text.value.split('\n');
+		for(let i in Str){
+			let query = Str[i];
+			let from = 'auto';
+			let to = lang;
+			let str = appid+query+salt+key;
+			let md5 = MD5(str);
+			
+			let  url = 'http://api.fanyi.baidu.com/api/trans/vip/translate?';
+			var data = 'q=' + query + '&from='+ from+'&to=' + to + '&appid='+ appid+ '&salt=' + salt + '&sign=' + md5 + "&callback=fn";
+			var src = url + data;
+			createScript(src);
+		}
+	}*/
+	function translate(){
+		var appid = '2015063000000001';
+		var key = '12345678';
+		var salt = (new Date).getTime();
+		var query=text.value;
+		var from = 'auto';
+		var to = lang;
+		var str1 = appid + query + salt +key;
+		var sign = MD5(str1);
+		$.ajax({
+			url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
+			type: 'get',
+			dataType: 'jsonp',
+			data: {
+				q: query,
+				appid: appid,
+				salt: salt,
+				from: from,
+				to: to,
+				sign: sign
+			},
+			success: function (data) {
+				for(let i in data.trans_result){
+					console.log(data.trans_result[i].dst);
+					result.innerHTML += data.trans_result[i].dst + "<br/>";
+				}
+			} 
+		});
 	}
-	// q：请求的参数   
-	// from en to zh 从哪个语言翻译成哪个语言
+	// q：请求的参数     temp
+	// from en to zh 从哪个语言翻译成哪个语言  from auto to lang  
 	// appid: 百度翻译测试账号
-	// salt:随机数
-	// sign：对拼接的字符串进行加密
+	// salt:随机数 date=Date.now();
+	// sign：对拼接的字符串进行加密  
 	// callback:接收返回值
 
 	function init() {
@@ -79,6 +115,7 @@
 		}
 
 		text.onkeydown = function() {
+			result.innerHTML = "";
 			clearTimeout(timer);
 			timer = setInterval(function() {
 				if (text.value == "") {
@@ -91,17 +128,13 @@
 				} else {
 					translate();
 				} 
-			}, 500);
+			}, 100);
 			clearTimeout(timer);
 		}
     }
 
   	init();
 })();
-
-function fn(str) {
-	var result = document.querySelector(".result");
-	console.dir(str);
-
-	result.innerHTML = str.trans_result[0].dst;
-}
+// function fn(str) {
+// 	result.innerHTML = str.trans_result[0].dst+"<br>";
+// }
