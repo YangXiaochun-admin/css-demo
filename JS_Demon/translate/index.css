@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 }
 main{
-	width: 1000px;
+	width: 800px;
 	height: 80vh;
 	margin: 5% auto;
 }
@@ -16,8 +16,7 @@ main{
 	height: 330px;
 	margin-top: 50px;
 	background-color: #fff;
-	
-	border: 1px solid #000;
+	border: 1px solid #dcdcdc;
 	border-radius: 15px 15px 0 0;
 }
 .content_left{
@@ -29,10 +28,9 @@ main{
 .title{
 	width: 100%;
 	height: 40px;
-	background-color: #333;
+	background-color: #e7e7e7;
 	line-height: 40px;
 	position: relative;
-	color: #fff;
 	border-radius: 15px 15px 0 0;
 	text-indent: 20px;
 }
@@ -42,12 +40,12 @@ main{
 	text-indent: 20px;
 	letter-spacing: 2px;
 	text-decoration: underline;
-	color: #58a;
+	color: #000;
 	cursor: pointer;
 }
 .lang_now:hover{
 	text-decoration: none;
-	color: #eee;
+	color: #4395FF;
 }
 .text{
 	width: 100%;
@@ -86,10 +84,9 @@ main{
 	padding: 20px;
 }
 .bottom{
-	float: left;
-	width: 100%;
+	width: 180px;
 	height: 40px;
-	margin-top: 60px;
+	margin:0 auto;
 }
 .bottom button{
 	float: right;
@@ -103,5 +100,12 @@ main{
 	outline: none;
 	cursor: pointer;
 	color: #eee;
-	background-color: #333;
+	background-color: #4395FF;
+}
+.bottom .reset{
+	margin-right: 0;
+	background-color: #fff;
+	color:#4395FF;
+	box-sizing: border-box;
+	border:1px solid #4395FF;
 }
