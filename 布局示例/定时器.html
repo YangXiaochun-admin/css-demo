@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<style>
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" onclick="test()">颜海镜</div>
+	<p class="tex"><span>60</span>s</p>
+
+</body>
+</html>
+<script>
+	function test(){
+		let min = 60;
+		var p = document.querySelector(".tex span");
+		let t = setInterval(function(){
+			if(p.innerText <= 0){
+				clearInterval(t);
+			}
+			p.innerText -= 1;
+		},1000);
+	}
+</script>

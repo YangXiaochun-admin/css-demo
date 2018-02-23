@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.box{
+			width: 100vw;
+			height: 500px;
+			border: 5px solid red;
+		}
+		.container{
+			width: 100px;
+			margin: 0 auto;
+		}
+		.son{
+			width: 200px;
+			height: 300px;
+			background-color: plum;
+			float: left;
+		}
+		.box2{
+			width: 400px;
+			height: 300px;
+			border: 5px solid red;
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+		}
+		.son2{
+			display: inline-block;
+			float: right;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			background-color: skyblue;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>实现浮动元素水平居中：</h1>
+	<p>在浮动元素外层包一个盒子，设置固定大小，margin:0 auto实现居中</p>
+	<div class="box">
+		<div class="container">
+			<div class="son"></div>
+		</div>
+	</div>
+
+	<h1>实现浮动元素垂直居中</h1>
+	<div class="box2">
+		<div class="son2">float</div>
+	</div>
+</body>
+</html>
