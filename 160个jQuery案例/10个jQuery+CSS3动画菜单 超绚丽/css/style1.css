@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+         url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+         url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.ca-menu{
+    padding: 0;
+    margin: 20px auto;
+    width: 500px;
+}
+.ca-menu li{
+    width: 500px;
+    height: 100px;
+    overflow: hidden;
+    display: block;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 4px;
+    border-left: 10px solid #000;
+    -webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+.ca-menu li:last-child{
+    margin-bottom: 0px;
+}
+.ca-menu li a{
+    text-align: left;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    position:relative;
+}
+.ca-icon{
+    font-family: 'WebSymbolsRegular', cursive;
+    font-size: 20px;
+    text-shadow: 0px 0px 1px #333;
+    line-height: 90px;
+    position: absolute;
+    width: 90px;
+    left: 20px;
+    text-align: center;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+.ca-content{
+    position: absolute;
+    left: 120px;
+    width: 370px;
+    height: 60px;
+    top: 20px;
+}
+.ca-main{
+    font-size: 30px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+.ca-sub{
+    font-size: 14px;
+    color: #666;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear; 
+}
+.ca-menu li:hover{
+    border-color: #fff004;
+    background: #000;
+}
+.ca-menu li:hover .ca-icon{
+    color: #fff004;
+    text-shadow: 0px 0px 1px #fff004;
+    font-size: 50px;
+}
+.ca-menu li:hover .ca-main{
+    color: #fff004;
+    font-size: 14px;
+}
+.ca-menu li:hover .ca-sub{
+    color: #fff;
+    font-size: 30px;
+}

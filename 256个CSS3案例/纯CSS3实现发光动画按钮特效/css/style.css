@@ -1,0 +1,268 @@
+body {
+  background: #333333 url(/images/classy_fabric.png);
+  margin: 0;
+}
+
+#c {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -355px;
+}
+
+.s {
+  position: relative;
+  border-radius: 50%;
+  background: #333333;
+  float: left;
+  margin-left: 20px;
+  box-shadow: inset -1px 1px 4px 2px #444, inset 1px -1px 4px 2px #222;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.s:nth-child(n):hover {
+  -webkit-animation: bs2 linear 1s 1s infinite, bs2-in 1s;
+  -moz-animation: bs2 linear 1s 1s infinite, bs2-in 1s;
+  animation: bs2 linear 1s 1s infinite, bs2-in 1s;
+}
+
+.s:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  -webkit-animation: bs linear 2s 0.5s infinite;
+  -moz-animation: bs linear 2s 0.5s infinite;
+  animation: bs linear 2s 0.5s infinite;
+}
+
+.s:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  -webkit-animation: bs linear 2s 0.7s infinite;
+  -moz-animation: bs linear 2s 0.7s infinite;
+  animation: bs linear 2s 0.7s infinite;
+}
+
+.s:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  -webkit-animation: bs linear 2s 0.9s infinite;
+  -moz-animation: bs linear 2s 0.9s infinite;
+  animation: bs linear 2s 0.9s infinite;
+}
+
+.s:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  -webkit-animation: bs linear 2s 1.1s infinite;
+  -moz-animation: bs linear 2s 1.1s infinite;
+  animation: bs linear 2s 1.1s infinite;
+}
+
+.s:nth-child(5) {
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  -webkit-animation: bs linear 2s 1.3s infinite;
+  -moz-animation: bs linear 2s 1.3s infinite;
+  animation: bs linear 2s 1.3s infinite;
+}
+
+.s:nth-child(6) {
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  -webkit-animation: bs linear 2s 1.5s infinite;
+  -moz-animation: bs linear 2s 1.5s infinite;
+  animation: bs linear 2s 1.5s infinite;
+}
+
+.s:nth-child(7) {
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  -webkit-animation: bs linear 2s 1.7s infinite;
+  -moz-animation: bs linear 2s 1.7s infinite;
+  animation: bs linear 2s 1.7s infinite;
+}
+
+.s:nth-child(8) {
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  -webkit-animation: bs linear 2s 1.9s infinite;
+  -moz-animation: bs linear 2s 1.9s infinite;
+  animation: bs linear 2s 1.9s infinite;
+}
+
+.s:nth-child(9) {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  -webkit-animation: bs linear 2s 2.1s infinite;
+  -moz-animation: bs linear 2s 2.1s infinite;
+  animation: bs linear 2s 2.1s infinite;
+}
+
+.s:nth-child(10) {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  -webkit-animation: bs linear 2s 2.3s infinite;
+  -moz-animation: bs linear 2s 2.3s infinite;
+  animation: bs linear 2s 2.3s infinite;
+}
+
+.s:nth-child(11) {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  -webkit-animation: bs linear 2s 2.5s infinite;
+  -moz-animation: bs linear 2s 2.5s infinite;
+  animation: bs linear 2s 2.5s infinite;
+}
+
+@-webkit-keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
+@-moz-keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
+@-o-keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
+@keyframes bs {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 20px 0 #1affff;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 0px 0 #b2ff1a;
+  }
+}
+@-webkit-keyframes bs2-in {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 10px 0 #bbff33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@-moz-keyframes bs2-in {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 10px 0 #bbff33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@-o-keyframes bs2-in {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 10px 0 #bbff33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@keyframes bs2-in {
+  0% {
+    box-shadow: inset -1px 1px 3px 2px #444444, inset 1px -1px 3px 2px #222222, 0 0 10px 0 #bbff33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@-webkit-keyframes bs2 {
+  0% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 10px 0 #ffbb33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@-moz-keyframes bs2 {
+  0% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 10px 0 #ffbb33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@-o-keyframes bs2 {
+  0% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 10px 0 #ffbb33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}
+@keyframes bs2 {
+  0% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+
+  50% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 10px 0 #ffbb33;
+  }
+
+  100% {
+    box-shadow: inset -1px 1px 5px 2px #444444, inset 1px -1px 5px 2px #222222, 0 0 0px 0 #ff3333;
+  }
+}

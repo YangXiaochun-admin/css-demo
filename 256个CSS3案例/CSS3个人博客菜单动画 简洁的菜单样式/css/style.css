@@ -1,0 +1,148 @@
+
+::selection{background-color: #6495ED; color: #CCC}
+
+body{
+  background-color: #999;
+  /*background-image: url('http://fc09.deviantart.net/fs70/f/2013/020/7/c/soft_vintage_background_by_infinityforge-d5s56c2.png');*/
+    
+    /*
+    http://www.hd2wallpapers.com/walls/soft_background_2-HD.jpg
+    http://www.vijugi.com/img/2013/09/soft-wolke-pure-backgrounds-wallpapers.jpg
+    http://hqwide.com/wallpapers/l/1280x1024/59/light_minimalistic_soft_shading_gradient_background_1280x1024_58884.jpg
+    http://www.dualimg.com/wp-content/wallpapers/20130114/inaww44ozqf94.jpg
+    http://fc09.deviantart.net/fs70/f/2013/020/7/c/soft_vintage_background_by_infinityforge-d5s56c2.png // orange
+    */
+  font: 14px Georgia, serif;
+}
+#wrapper{
+  width: 960px;
+  margin: 0 auto;
+} 
+header{
+  height: 150px;
+  background-color: rgba(255,255,255, 0.3);
+}
+header #heading{padding: 40px; font-family: arial; font-size: 12px;}
+header p{text-transform: lowercase; margin-left: 15px; margin-top: -5px;}
+
+h1 { font: 32px Helvetica, Arial, Sans-Serif; margin: 0 0 20px 0; color: #111;}
+h2 { font-family:  Arial; margin: 0 0 13px 0; width: 100%; color: #111;}
+p { margin-bottom: 20px; color: #111; }
+
+      a {text-decoration: none; }
+
+      /* Center site content */
+      #page-wrap {
+        margin: 0 auto;
+        width: 960px;
+      }
+      nav, section { display: block;}
+      nav {height: 40px; padding: 1px 0; background: #222222; /* Old browsers */
+background: -moz-linear-gradient(top,  #222222 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #222222 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #222222 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #222222 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #222222 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+      nav ul {list-style: none; margin:0; padding: 0;}
+
+      nav li {
+        float: left; 
+        height: 40px; width: 90px;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase; 
+        margin-right: 1px; /* keep 1px between elements */
+        position: relative;
+      }
+
+      nav a { 
+        height: 40px;
+        font-size: 12px;
+        font-family: Arial;
+        color: #ddd;
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        line-height: 40px; /* Vertically center text by making line height equal to height */
+
+        /* Transitions effects for all browsers */
+        -webkit-transition: all 200ms linear; /* Old webkit version including chrome, safari, etc. */
+        -moz-transition: all 200ms linear; /* Old Firefox version */
+        -ms-transition: all 200ms linear; /* IE 10+ - IE < 10 will just apply the top position without any transition affect */
+        -o-transition: all 200ms linear; /* Old opera support */
+        transition: all 200ms linear; /* Normal declatration */
+      }
+      nav a:hover, nav a.active {
+        top:-100%;
+      }
+
+      /* Insteed of badly duplicating text content in a span, use :after speudo class add a blue block after the element with all required attributes. see pseudo class :after and :before for more details */
+      nav a:after {
+        content: attr(data-caption); /* Use the data-caption attribute for the text content */
+        display: block;
+        position: absolute;
+        top: 100%;
+        width: 100%; height: 40px;
+        color: #FFF;
+        background: #3498db; /* Old browsers */
+background: -moz-linear-gradient(top,  #3498db 0%, #2980b9 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3498db), color-stop(100%,#2980b9)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3498db 0%,#2980b9 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3498db 0%,#2980b9 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3498db 0%,#2980b9 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #3498db 0%,#2980b9 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#2980b9',GradientType=0 ); /* IE6-9 */
+
+      }
+	
+	
+	
+	#main-content{
+  background-color: rgba(255,255,255, 0.3);
+  padding: 30px;
+  line-height: 23px;
+  font-family: Arial;
+  font-size: 17px;
+  color: #333;
+
+}
+
+.bold{font-weight: bold;}
+.clear{clear: both;}
+.left{clear: left;}
+.right{clear: right;}
+
+
+
+
+
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 350px) {
+  
+  body{
+    backround-image: none;
+  }
+  
+  #wrapper{width: 100%;}
+}
+@media only screen and (min-width : 351px) {
+  
+  body{
+    backround-image: none;
+  }
+  
+  #wrapper{width: 90%;}
+}
+@media only screen and (min-width : 700px) {
+  
+  body{
+    backround-image: none;
+  }
+  
+  #wrapper{width: 80%;}
+}

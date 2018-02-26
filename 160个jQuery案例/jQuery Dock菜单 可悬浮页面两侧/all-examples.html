@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+<title>jQuery Dock类型菜单DEMO演示</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="css/all-examples.css">
+        <noscript>
+        <style type="text/css">
+#dock {
+    top: 0;
+    left: 100px;
+}
+a.dock-item {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+.dock-item span { display: block; }
+.stack { top: 0; }
+.stack ul li { position: relative; }
+</style>
+        </noscript>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/fisheye-iutil.min.js"></script>
+        <script type="text/javascript" src="js/dock-example1.js"></script>
+        <script type="text/javascript" src="js/jquery.jqDock.min.js"></script>
+        <script type="text/javascript" src="js/stack-1.js"></script>
+        <script type="text/javascript" src="js/stack-2.js"></script>
+        <script type="text/javascript">
+		$(function(){
+			var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+			$('#jqDock').jqDock(jqDockOpts);
+		});
+	</script>
+</head><body>
+
+<!-- BEGIN DOCK 2 ============================================================ -->
+<div id="dockContainer">
+    <ul id="jqDock">
+        <li><a class="dockItem" href="index.html"><img src="images/dock/home-sm.png" alt="Home" title="Example&nbsp;1" /></a></li>
+        <li><a class="dockItem" href="example2.html"><img src="images/dock/email-sm.png" alt="Contact" title="Example&nbsp;2" /></a></li>
+        <li><a class="dockItem" href="example3.html"><img src="images/dock/portfolio-sm.png" alt="portfolio" title="Example&nbsp;3" /></a></li>
+        <li><a class="dockItem" href="all-examples.html"><img src="images/dock/music-sm.png" alt="music" title="All&nbsp;Examples" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/video-sm.png" alt="video" title="Video" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/history-sm.png" alt="history" title="History" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/calendar-sm.png" alt="calendar" title="Calendar" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/link-sm.png" alt="links" title="Links" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/rss-sm.png" alt="rss" title="RSS" /></a></li>
+        <li><a class="dockItem" href="#"><img src="images/dock/rss2-sm.png" alt="rss" title="RSS" /></a></li>
+    </ul>
+</div>
+<!-- end div #dockContainer --> 
+<!-- END DOCK 2 ============================================================ --> 
+
+<!-- BEGIN STACK "UP" ============================================================ -->
+<div class="stack"> <img src="images/stacks/stack.png" alt="stack"/>
+    <ul id="stack">
+        <li><a href=""><span>Aperture</span><img src="images/stacks/aperture.png" alt="Aperature" /></a></li>
+        <li><a href="#"><span>All&nbsp;Examples</span><img src="images/stacks/photoshop.png" alt="Photoshop" /></a></li>
+        <li><a href="example3.html"><span>Example&nbsp;3</span><img src="images/stacks/safari.png" alt="Safari" /></a></li>
+        <li><a href="example2.html"><span>Example&nbsp;2</span><img src="images/stacks/coda.png" alt="Coda" /></a></li>
+        <li><a href="index.html"><span>Example&nbsp;1</span><img src="images/stacks/finder.png" alt="Finder" /></a></li>
+    </ul>
+</div>
+<!-- end div .stack --> 
+<!-- END STACK "UP" ============================================================ --> 
+
+<!-- BEGIN STACK "DOWN" ============================================================ -->
+<div class="stack2"> <img src="images/stacks/stack-down.png" alt="stack"/>
+    <ul id="stack2">
+        <li><a href=""><span>Aperture</span><img src="images/stacks/aperture.png" alt="Aperature" /></a></li>
+        <li><a href="#"><span>All&nbsp;Examples</span><img src="images/stacks/photoshop.png" alt="Photoshop" /></a></li>
+        <li><a href="example3.html"><span>Example&nbsp;3</span><img src="images/stacks/safari.png" alt="Safari" /></a></li>
+        <li><a href="example2.html"><span>Example&nbsp;2</span><img src="images/stacks/coda.png" alt="Coda" /></a></li>
+        <li><a href="index.html"><span>Example&nbsp;1</span><img src="images/stacks/finder.png" alt="Finder" /></a></li>
+    </ul>
+</div>
+<!-- end div .stack --> 
+<!-- END STACK "DOWN" ============================================================ -->
+
+</body>
+</html>

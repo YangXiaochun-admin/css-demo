@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery内容层叠滚动切换特效插件DEMO演示</title>
+<link rel="stylesheet" type="text/css" href="css/funnyNewsTicker.css">
+<script src="js/jQuery.js"></script>
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,600,300&subset=latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<style>
+body {
+    background: url(img/bgnoise_lg.png);
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Roboto, Arial, Verdana;
+    font-size: 15px;
+    font-weight: 400;
+}
+.container {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.fnt-container-header h1 {
+    font-weight: 300;
+    font-size: 48px;
+    text-align: center;
+}
+.fnt-container-header h2 {
+    font-size: 30px;
+    text-align: center;
+}
+</style>
+<body>
+<div class="container">
+    <div style="width:50%; margin:0 auto; box-sizing:border-box;">
+        <div class="funnyNewsTicker fnt-radius fnt-shadow fnt-easing" id="funnyNewsTicker2">
+            <ul>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">1. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">2. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">3. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">4. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">5. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">6. Lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">7. Variations of passages of Lorem Ipsum available, but the majority have suffered</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">8. Test content lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">9. Lorem Ipsum is that it has a more-or-less normal distribution example content </div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">10. Lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div style="width:50%; margin:0 auto; box-sizing:border-box;">
+        <div class="funnyNewsTicker fnt-radius fnt-shadow fnt-easing" id="funnyNewsTicker3">
+            <ul>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">1. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">2. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">3. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration <a href="#">http://envato.com</a></div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">4. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">5. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">6. Lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">7. Variations of passages of Lorem Ipsum available, but the majority have suffered</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">8. Test content lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">9. Lorem Ipsum is that it has a more-or-less normal distribution example content </div>
+                </li>
+                <li>
+                    <div class="fnt-content" data-link="http://sc.chinaz.com">10. Lorem Ipsum is that it has a more-or-less normal distribution</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#funnyNewsTicker1").funnyNewsTicker({feed:"http://sc.chinaz.com/",width:"70%"});	
+		$("#funnyNewsTicker2").funnyNewsTicker({width:"80%",timer:1000,titlecolor:"#FFF",itembgcolor:"#1faf6d",infobgcolor:"#1a935c",buttonstyle:"white",bordercolor:"#1a935c"});	
+		$("#funnyNewsTicker3").funnyNewsTicker({width:"40%",itemheight:250,infobarvisible:false,pagenavi:false,timer:500,itembgcolor:"#af1f63",bordercolor:"#af1f63",titlecolor:"#FFF"});	
+	});	
+</script>
+</body>
+</html>

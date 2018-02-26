@@ -1,0 +1,243 @@
+/* 
+ | ------------------------------------------
+ |	GLOBALS
+ | ------------------------------------------
+ */
+
+ html{
+ 	height:100%;
+ }
+ body{
+ 	background:#2ECC71;
+ 	font-family:'Lato', sans-serif;
+ }
+ a{
+ 	color: teal;
+ 	text-decoration: none;
+ 	font-weight: bold;
+ }
+/* 
+ | ------------------------------------------
+ |	CONTACT FORM : HEADING
+ | ------------------------------------------
+ */
+
+ #contact{
+ 	position:relative;
+ 	width:90%;
+ 	padding:100px 3% 20px;
+ 	background:#fff;
+ 	color:#555;
+ 	margin:100px auto 50px;
+ 	/*border-radius*/
+ 	-webkit-border-radius:5px;
+ 	-moz-border-radius:5px;
+ 	border-radius:5px;
+ }
+ #contact:before, #contact:after{
+ 	z-index:-1;
+ 	position:absolute;
+ 	content:"";
+ 	bottom:10px;
+ 	left:10px;
+ 	width:50%;
+ 	top:90%;
+ 	max-width:300px;
+ 	background:#777;
+ 	/*box-shadow*/
+ 	-webkit-box-shadow:0 15px 10px #2e8a55;
+ 	-moz-box-shadow:0 15px 10px #2e8a55;
+ 	box-shadow:0 15px 10px #2e8a55;
+ 	/*transform*/
+ 	-webkit-transform:rotate(-3deg);
+ 	-moz-transform:rotate(-3deg);
+ 	-ms-transform:rotate(-3deg);
+ 	-o-transform:rotate(-3deg);
+ 	transform:rotate(-3deg);
+ }
+ #contact:after{
+ 	/*transform*/
+ 	-webkit-transform:rotate(3deg);
+ 	-moz-transform:rotate(3deg);
+ 	-ms-transform:rotate(3deg);
+ 	-o-transform:rotate(3deg);
+ 	transform:rotate(3deg);
+ 	right:10px;
+ 	left:auto;
+ }
+ #contact > #logo{
+ 	position:absolute;
+ 	width:160px;
+ 	height:160px;
+ 	left:50%;
+ 	top:0;
+ 	margin:-90px 0 0 -80px;
+ 	background:#fff;
+ 	border:3px solid #2ECC71;
+ 	/*border-radius*/
+ 	-webkit-border-radius:50%;
+ 	-moz-border-radius:50%;
+ 	border-radius:50%;
+ 	color: orange;
+ 	text-align:center;
+ 	font-size:4.25em;
+ 	line-height:2em;
+ }
+ @-webkit-keyframes bouncing{
+ 	0%, 50%, 100% {line-height: 2em;}
+ 	25% {line-height: 1.8em;}
+ 	75% {line-height: 2.2em;}
+ }
+  @keyframes bouncing{
+ 	0%, 50%, 100% {line-height: 2em;}
+ 	25% {line-height: 1.8em;}
+ 	75% {line-height: 2.2em;}
+ }
+ .bouncing{
+ 	/*animation*/
+ 	-webkit-animation:bouncing 5s linear infinite;
+ 	-moz-animation:bouncing 5s linear infinite;
+ 	-ms-animation:bouncing 5s linear infinite;
+ 	-o-animation:bouncing 5s linear infinite;
+ 	animation:bouncing 5s linear infinite;
+ }
+ #contact > #title{
+ 	position:absolute;
+ 	width:200px;
+ 	top:0;
+ 	left:50%;
+ 	margin-left:-100px;
+ 	background:#fff;
+ 	text-align:center;
+ 	padding:15px 5px 0;
+ 	font-family:'Lobster', cursive;
+ 	color:#555;
+ 	font-size:2.5em;
+ }
+ #contact > #pre,
+ #contact > #post{
+ 	font-size:0.9em;
+ 	padding:5px 0;
+ 	text-align:justify;
+ }
+ #contact > #post{
+ 	display:none;
+ }
+/* 
+ | ------------------------------------------
+ |	CONTACT FORM : FIELDS
+ | ------------------------------------------
+ */
+
+ #contact #wrapper{
+ 	padding:5px 0;
+ }
+ #contact input:not([type=submit]),
+ #contact textarea{
+ 	display: block;
+ 	padding:5px;
+ 	width:100%;
+ 	border:1px solid #ccc;
+ 	margin-bottom:20px;
+ 	box-sizing:border-box;
+ 	-moz-box-sizing:border-box;
+ }
+ #contact textarea{
+ 	height:120px;
+ 	resize:none;
+ }
+ #contact .has_icon{
+ 	padding-left:35px !important;
+ }
+ #contact label:before{
+ 	position:absolute;
+ 	width:30px;
+ 	height:29px;
+ 	text-align:center;
+ 	line-height:1.75em;
+ 	background:#f4f4f4;
+ 	color:#888;
+ 	margin:-50px 0 0 1px;
+ }
+ #contact input:focus + label:before{
+ 	color:orange !important;
+ }
+/* 
+ | ------------------------------------------
+ |	CONTACT FORM : SUBMIT
+ | ------------------------------------------
+ */
+
+ #contact #submit{
+ 	position:relative;
+ 	display:block;
+ 	width:250px;
+ 	height:45px;
+ 	margin:0 auto;
+ 	color:white;
+ 	text-shadow:0 1px 2px rgba(0, 0, 0, 0.25);
+ 	background:#27ae60;
+ 	border:none;
+ 	border-bottom:2px solid #219d55;
+ 	/*box-shadow*/
+ 	-webkit-box-shadow:inset 0 -2px #219d55;
+ 	-moz-box-shadow:inset 0 -2px #219d55;
+ 	box-shadow:inset 0 -2px #219d55;
+ }
+ #contact #submit i{
+ 	margin-right:5px;
+ }
+ #contact #submit:active{
+ 	top:1px;
+ 	outline:none;
+ 	/*box-shadow*/
+ 	-webkit-box-shadow:none;
+ 	-moz-box-shadow:none;
+ 	box-shadow:none;
+ }
+/* 
+ | ------------------------------------------
+ |	CONTACT FORM : SUBMITTED
+ | ------------------------------------------
+ */
+
+ #contact.submitted{
+ 	margin-top:300px;
+ 	padding-top:30px;
+ 	/*transition*/
+ 	-webkit-transition:all .5s ease-in;
+ 	-moz-transition:all .5s ease-in;
+ 	-o-transition:all .5s ease-in;
+ 	transition:all .5s ease-in;
+ }
+ #contact.submitted #logo{
+ 	margin-top:-180px;
+ 	line-height:1.8em;
+ 	font-size:5em;
+ 	color:#2dcc71;
+ 	/*transition*/
+ 	-webkit-transition:all .5s ease-in;
+ 	-moz-transition:all .5s ease-in;
+ 	-o-transition:all .5s ease-in;
+ 	transition:all .5s ease-in;
+ }
+ #contact.submitted #title,
+ #contact.submitted #pre,
+ #contact.submitted #wrapper{
+ 	display:none;
+ }
+ #contact.submitted #post{
+ 	display:block;
+ }
+/* 
+ | ------------------------------------------
+ |	RESPONSIVENESS
+ | ------------------------------------------
+ */
+
+ @media screen and (min-width: 660px){
+ 	#contact{
+ 		width:500px;
+ 		padding-left:20px;
+ 		padding-right:20px;
+ 	}

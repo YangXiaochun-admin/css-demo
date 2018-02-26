@@ -1,0 +1,251 @@
+.cr-container{
+	width: 600px;
+	height: 400px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 20px solid #fff;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+.cr-container label{
+	font-style: italic;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	color: #fff;
+	line-height: 32px;
+	font-size: 24px;
+	float:left;
+	position: relative;
+	margin-top:350px;
+	z-index: 1000;
+}
+.cr-container label:before{
+	content:'';
+	width: 34px;
+	height: 34px;
+	background: rgba(130,195,217,0.9);
+	position: absolute;
+	left: 50%;
+	margin-left: -17px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 4px rgba(255,255,255,0.3);
+	z-index:-1;
+}
+.cr-container label:after{
+	width: 1px;
+	height: 400px;
+	content: '';
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+	position: absolute;
+	bottom: -20px;
+	right: 0px;
+}
+.cr-container label.cr-label-img-4:after{
+	width: 0px;
+}
+.cr-container input.cr-selector-img-1:checked ~ label.cr-label-img-1,
+.cr-container input.cr-selector-img-2:checked ~ label.cr-label-img-2,
+.cr-container input.cr-selector-img-3:checked ~ label.cr-label-img-3,
+.cr-container input.cr-selector-img-4:checked ~ label.cr-label-img-4{
+	color: #68abc2;
+}
+.cr-container input.cr-selector-img-1:checked ~ label.cr-label-img-1:before,
+.cr-container input.cr-selector-img-2:checked ~ label.cr-label-img-2:before,
+.cr-container input.cr-selector-img-3:checked ~ label.cr-label-img-3:before,
+.cr-container input.cr-selector-img-4:checked ~ label.cr-label-img-4:before{
+	background: #fff;
+	box-shadow: 0px 0px 0px 4px rgba(104,171,194,0.6);
+}
+.cr-container input{
+	display: none;
+}
+.cr-bgimg{
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+.cr-bgimg{
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.cr-bgimg div{
+	width: 150px;
+	height: 100%;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+.cr-bgimg div span{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+	opacity: 0;
+	z-index: 2;
+	text-indent: -9000px;
+}
+.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(1){
+	background-image: url(../images/1.jpg);
+}
+.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(2){
+	background-image: url(../images/2.jpg);
+}
+.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(3){
+	background-image: url(../images/3.jpg);
+}
+.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(4){
+	background-image: url(../images/4.jpg);
+}
+.cr-bgimg div:nth-child(1) span{
+	background-position: 0px 0px;
+}
+.cr-bgimg div:nth-child(2) span{
+	background-position: -150px 0px;
+}
+.cr-bgimg div:nth-child(3) span{
+	background-position: -300px 0px;
+}
+.cr-bgimg div:nth-child(4) span{
+	background-position: -450px 0px;
+}
+.cr-container input:checked ~ .cr-bgimg div span{
+	-webkit-animation: scaleOut 0.6s ease-in-out;
+	-moz-animation: scaleOut 0.6s ease-in-out;
+	-o-animation: scaleOut 0.6s ease-in-out;
+	-ms-animation: scaleOut 0.6s ease-in-out;
+	animation: scaleOut 0.6s ease-in-out;
+}
+@-webkit-keyframes scaleOut{
+	0%{ -webkit-transform: scale(1); opacity: 1; }
+	100%{ -webkit-transform: scale(1.5); opacity: 0; }
+}
+@-moz-keyframes scaleOut{
+	0%{ -moz-transform: scale(1); opacity: 1; }
+	100%{ -moz-transform: scale(1.5); opacity: 0; }
+}
+@-o-keyframes scaleOut{
+	0%{ -o-transform: scale(1); opacity: 1; }
+	100%{ -o-transform: scale(1.5); opacity: 0; }
+}
+@-ms-keyframes scaleOut{
+	0%{ -ms-transform: scale(1); opacity: 1; }
+	100%{ -ms-transform: scale(1.5); opacity: 0; }
+}
+@keyframes scaleOut{
+	0%{ transform: scale(1); opacity: 1; }
+	100%{ transform: scale(1.5); opacity: 0; }
+}
+.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg div span:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg div span:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg div span:nth-child(3),
+.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg div span:nth-child(4)
+{
+	-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s linear 0.6s;
+	-moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s linear 0.6s;
+	-o-transition: -o-transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s linear 0.6s;
+	-ms-transition: -ms-transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s linear 0.6s;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s linear 0.6s;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+	-ms-animation: none;
+	animation: none;
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	z-index:10000;
+}
+.cr-titles h3{
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+.cr-titles h3 span{
+	z-index: 10000;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	text-align: center;
+	opacity: 0;
+	top: 50%;
+}
+.cr-titles h3 span:nth-child(1){
+	left: 0px;
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	font-size: 70px;
+	letter-spacing: 7px;
+	color: transparent;
+	text-shadow: 0px 0px 10px #fff;
+	-webkit-transition: text-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
+	-moz-transition: text-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
+	-o-transition: text-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
+	-ms-transition: text-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
+	transition: text-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+.cr-titles h3 span:nth-child(2){
+	margin-top: 84px;
+	letter-spacing: 0px;
+	background: rgba(104,171,194,0.9);
+	font-size: 14px;
+	padding: 10px 0px;
+	font-style: italic;
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	-webkit-transition: opacity 0.8s ease-in-out;
+	-moz-transition: opacity 0.8s ease-in-out;
+	-o-transition: opacity 0.8s ease-in-out;
+	-ms-transition: opacity 0.8s ease-in-out;
+	transition: opacity 0.8s ease-in-out;
+}
+.cr-container input:checked ~ .cr-titles h3 span{
+	opacity: 0;
+	text-shadow: 0px 0px 30px #fff;
+}
+.cr-container input.cr-selector-img-1:checked ~ .cr-titles h3:nth-child(1) span:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-titles h3:nth-child(2) span:nth-child(1),
+.cr-container input.cr-selector-img-3:checked ~ .cr-titles h3:nth-child(3) span:nth-child(1),
+.cr-container input.cr-selector-img-4:checked ~ .cr-titles h3:nth-child(4) span:nth-child(1){
+	opacity: 1;
+	text-shadow: 0px 0px 1px #fff;
+}
+.cr-container input.cr-selector-img-1:checked ~ .cr-titles h3:nth-child(1) span:nth-child(2),
+.cr-container input.cr-selector-img-2:checked ~ .cr-titles h3:nth-child(2) span:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-titles h3:nth-child(3) span:nth-child(2),
+.cr-container input.cr-selector-img-4:checked ~ .cr-titles h3:nth-child(4) span:nth-child(2){
+	opacity: 1;
+}
+/* Media Query: Let's show the inputs on mobile sized browsers because they probably don't support the label trick: */
+@media screen and (max-width: 768px) {
+	.cr-container input{
+		display: inline;
+		width: 24%;
+		margin-top: 350px;
+		z-index: 1000;
+		position: relative;
+	}
+	.cr-container label{
+		display: none;
+	}
+}

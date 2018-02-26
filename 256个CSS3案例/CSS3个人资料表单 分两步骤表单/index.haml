@@ -1,0 +1,36 @@
+%section.container
+  // Form
+  %form
+    // Header
+    %h3="Create my account!"
+    // Fieldset Alpha
+    %fieldset.alpha
+      %legend="<b>1.</b> Your Info"
+      %div.frow
+        %input{:class => "item",:type => "text",:placeholder => "Username"}
+      %div.frow
+        %input{:class => "item",:type => "email",:placeholder => "Email"}
+      %div.frow
+        %input{:class => "item",:type => "password",:placeholder => "Password"}
+      %div.frow
+        %a{:class => "next-step",:href => "#"}="Let's go!"
+        
+    // Fieldset Beta
+    %fieldset.beta
+      %legend="<b>2.</b>Your Social Profiles"
+      %div.frow
+        %input{:class => "item",:type => "url",:placeholder => "CodePen",:required => "required"}
+      %div.frow
+        %input{:class => "item",:type => "url",:placeholder => "Dribbble",:required => "required"}
+      %div.frow
+        %input{:class => "item",:type => "url",:placeholder => "Behance",:required => "required"}
+      %div.frow
+        %a{:class => "prev-step",:href => "#"}="Go back!"  
+      %div.frow
+        %input{:type => "submit",:class => "submit",:value => "I'm all done!"}
+        
+    // Fieldset Charlie
+    %fieldset.charlie
+      %legend="<b>3.</b>Your All Done"
+      %div.frow
+        %p Thanks

@@ -1,0 +1,127 @@
+
+
+body {
+	margin: 0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#277d8e), to(#45a478));
+	background-image: -webkit-linear-gradient(top, #277d8e, #45a478);
+	background-image:    -moz-linear-gradient(top, #277d8e, #45a478); 
+   background-image:     -ms-linear-gradient(top, #277d8e, #45a478); 
+   background-image:      -o-linear-gradient(top, #277d8e, #45a478); 
+   background-image:         linear-gradient(to bottom, #277d8e, #45a478);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#277d8e', endColorstr='#45a478',GradientType=0 );
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+	text-align: center;
+}
+	
+	#menu-wrapper {
+		position: relative;
+		display: block;
+		z-index: 2;
+		height: 60px;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#535557), to(#333532));
+		background-image: -webkit-linear-gradient(top, #535557, #333532);
+		background-image:    -moz-linear-gradient(top, #535557, #333532); 
+   	background-image:     -ms-linear-gradient(top, #535557, #333532); 
+   	background-image:      -o-linear-gradient(top, #535557, #333532); 
+   	background-image:         linear-gradient(to bottom, #535557, #333532);
+   	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#535557', endColorstr='#333532',GradientType=0 );
+		font-family: "Pontano Sans";
+		font-size: 15px;
+		color: #fff;
+		text-align: center;
+	}
+	
+		.menu {
+			display: block;
+			margin: 0 auto;
+			padding: 0;
+			width: 870px;
+			text-align: left;
+			list-style-type: none;
+		}
+		
+			.menu li {
+				display: inline-block;
+				padding: 16px 10px 25px 10px;
+				cursor: pointer;
+				-webkit-transition: 0.3s ease-in-out;
+				-moz-transition: 0.3s ease-in-out;
+				-ms-transition: 0.3s ease-in-out;
+				-o-transition: 0.3s ease-in-out;
+				transition: 0.3s ease-in-out;
+			}
+				
+			.menu li:hover, .selected {
+				background: #212525;
+			}
+		
+				.menu a, .menu a:visited {
+					color: #fff;
+					text-decoration: none;
+				}
+	
+	#submenu-wrapper {
+		position: absolute;
+		right: 0;
+		left: 0;
+		display: block;
+		z-index: 1;
+		width: 850px;
+		height: 130px;
+		margin: -12em auto 0;
+		padding: 10px 10px;
+		background: rgba(33,37,37,0.9);
+		font-family: "Pontano Sans";
+		font-size: 13px;
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		box-shadow: 0px 2px 7px rgba(0,0,0,0.5);
+		overflow: hidden;
+	}	
+	
+		.submenu {
+			display: block;
+			margin: 0 0 1.5em;
+			padding: 0;
+			list-style-type: none;
+		}
+		
+			.submenu li {
+				display: inline-block;
+				width: 210px;
+				vertical-align: top;
+				text-align: center;
+			}
+				
+				.submenu li img {
+					display: block;
+					margin: 0 auto 1em;
+					width: 200px;
+					border-radius: 5px;
+					border: 0;
+				}
+				
+				.submenu li a, .submenu li a:visited {
+					color: #fff;
+					text-decoration: none;
+				}
+
+	#title {
+		display: block;
+		margin-top: 4em;
+		font-family: "Poiret One";
+		font-size: 45px;
+		color: #fff;
+	}
+		
+		#title a, #title a:visited {
+			font-size: 20px;
+			text-decoration: none;
+			color: #fff;
+		}
+	

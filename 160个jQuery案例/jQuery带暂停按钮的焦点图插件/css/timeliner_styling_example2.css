@@ -1,0 +1,96 @@
+/*
+ * CSS for Timeliner 1.2
+ *
+ * This CSS is for styling the plugin.
+ * Use timeliner.css for functionality changes.
+ */
+
+/* The container */
+#example2{
+	margin-bottom:50px;
+	background:#010101;
+}
+/* Each slide */
+#example2 .slide{
+	background:#010101;
+	text-align:center;
+	font-size:200px;
+	font-weight:bold;
+	line-height:170%;
+}
+/* The timeline background */
+#example2 .timeline{
+	border:2px solid #222;
+	background:#222;
+}
+/* The timeline fill bar */
+#example2 .innertimeline{
+	background:#010101;
+}
+/* The time display */
+#example2 .timedisplay{
+	color:#bbb;
+	background:#222;
+	padding:2px 6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+/* Each node */
+#example2 .node{
+	background:#222;
+	width:20px;
+	height:20px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+/* The active node */
+#example2 .node_active{
+	background:#aaa;
+}
+/* Each node tooltip */
+#example2 .tooltip{
+	color:#aaa;
+}
+/* The time display inside a tooltip */
+#example2 .tooltiptime{
+	font-size:8pt;
+	font-weight:bold;
+}
+/* The pause/play button */
+#example2 .pause, #example2 .play{
+	width:80px;
+	height:80px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+}
+/* The pause button */
+#example2 .pause{
+	background:#fff url(../images/pause.gif) center no-repeat;
+}
+/* The play button */
+#example2 .play{
+	background:#fff url(../images/play.gif) center no-repeat;
+}
+/* The previous/next buttons */
+#example2 .previous, #example2 .next{
+	width:43px;
+	height:50px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+}
+/* The previous button */
+#example2 .previous{
+	background:#fff url(../images/previous.gif) center no-repeat;
+	margin-right:5px;
+}
+/* The next button */
+#example2 .next{
+	background:#fff url(../images/next.gif) center no-repeat;
+	margin-left:5px;
+}

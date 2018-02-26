@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+        url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+        url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.ca-menu{
+    padding:0;
+    margin:20px auto;
+    width: 1020px;
+}
+.ca-menu li{
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    float:left;
+    background: #f9f9f9; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+    background: linear-gradient(left, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-right: 4px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+.ca-menu li:last-child{
+    margin-right: 0px;
+}
+.ca-menu li a{
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #333;
+    position: relative;
+}
+.ca-icon{
+    font-family: 'WebSymbolsRegular', cursive;
+    font-size: 60px;
+    color: #ddd;
+    text-shadow: 1px 0px 1px rgba(255,255,255,0.8);
+    line-height: 150px;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.ca-content{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+}
+.ca-main{
+    font-size: 30px;
+    opacity: 0.8;
+    text-align: center;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.ca-sub{
+    text-align:center;
+    font-size: 14px;
+    color: #afa379;
+    text-shadow: 1px 1px 1px #fff;
+    line-height: 40px;
+    opacity: 0.8;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.ca-menu li:hover{
+    background:#fff;
+}
+.ca-menu li:hover .ca-icon{
+    color: #afa379;
+    font-size: 90px;
+    opacity: 0.1;
+    -webkit-animation: moveFromLeft 400ms ease;
+    -moz-animation: moveFromLeft 400ms ease;
+    -ms-animation: moveFromLeft 400ms ease;
+}
+.ca-menu li:hover .ca-main{
+    color: #afa379;
+    -webkit-animation: moveFromRight 300ms ease;
+    -moz-animation: moveFromRight 300ms ease;
+    -ms-animation: moveFromRight 300ms ease;
+}
+.ca-menu li:hover .ca-sub{
+    color: #000;
+    -webkit-animation: moveFromBottom 500ms ease;
+    -moz-animation: moveFromBottom 500ms ease;
+    -ms-animation: moveFromBottom 500ms ease;
+}
+@-webkit-keyframes moveFromLeft{
+    from {
+        -webkit-transform: translateX(-100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+}
+@-moz-keyframes moveFromLeft{
+    from {
+        -moz-transform: translateX(-100%);
+    }
+    to {
+        -moz-transform: translateX(0%);
+    }
+}
+@-ms-keyframes moveFromLeft{
+    from {
+        -ms-transform: translateX(-100%);
+    }
+    to {
+        -ms-transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes moveFromRight {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+}
+@-moz-keyframes moveFromRight {
+    from {
+        -moz-transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(0%);
+    }
+}
+@-ms-keyframes moveFromRight {
+    from {
+        -ms-transform: translateX(100%);
+    }
+    to {
+        -ms-transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform: translateY(100%);
+    }
+    to {
+        -webkit-transform: translateY(0%);
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(100%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(100%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}

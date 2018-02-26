@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery图片左右滑动焦点图插件DEMO演示</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- slide -->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide2.js"></script>
+</head>
+<body>
+<div class="friend">
+    <div class="mr_frbox"> <img class="mr_frBtnL prev" src="images/mfrl.gif" />
+        <div class="mr_frUl">
+            <ul id="mr_fu">
+                <li><a href="http://www.17sucai.com/"> <img src="images/i.jpg" /> </a>
+                    <div class="mr_zhe">
+                        <div class="mr_zhe_i">
+                            <h1> I</h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                        <div class="mr_zhe_hover">
+                            <h1> <img src="images/plus.gif"></h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="http://www.17sucai.com/"> <img src="images/i2.jpg" /> </a>
+                    <div class="mr_zhe">
+                        <div class="mr_zhe_i">
+                            <h1> E</h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                        <div class="mr_zhe_hover">
+                            <h1> <img src="images/plus.gif"></h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="http://www.17sucai.com/"> <img src="images/i3.jpg" /> </a>
+                    <div class="mr_zhe">
+                        <div class="mr_zhe_i">
+                            <h1> S</h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                        <div class="mr_zhe_hover">
+                            <h1> <img src="images/plus.gif"></h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="http://www.17sucai.com/"> <img src="images/i4.jpg" /> </a>
+                    <div class="mr_zhe">
+                        <div class="mr_zhe_i">
+                            <h1> A</h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                        <div class="mr_zhe_hover">
+                            <h1> <img src="images/plus.gif"></h1>
+                            <div class="mr_zhe_p">
+                                <h3> <span>家居软装设计概念</span>Introduction soft home design</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <img class="mr_frBtnR next" src="images/mfrr.gif" /> </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+	
+	/* 图片滚动效果 */
+	$(".mr_frbox").slide({
+		titCell: "",
+		mainCell: ".mr_frUl ul",
+		autoPage: true,
+		effect: "leftLoop",
+		autoPlay: true,
+		vis: 4
+	});
+	
+	/* 鼠标悬停图片效果 */
+	$(".mr_zhe_hover").css("top", $('.mr_zhe').eq(0).height());
+	$("li").mouseout(function (e) {
+		if ((e.pageX < $(this).offset().left || e.pageX > ($(this).offset().left + $(this).width())) || (e.pageY < $(this).offset().top || e.pageY > ($(this).offset().top + $(this).height()))) {
+			$(this).find('.mr_zhe_i').show();
+			$(this).find('.mr_zhe_hover').hide().stop().animate({ top: '190px' }, { queue: false, duration: 190 });
+			return false;
+		}
+
+	});
+	$('.mr_zhe').mouseover(function (event) {
+		$(this).find('.mr_zhe_i').hide();
+		$(this).find('.mr_zhe_hover').show().stop().animate({ top: '190px' }, { queue: false, duration: 190 });
+		return false;
+	});
+	
+});
+</script>
+</body>
+</html>

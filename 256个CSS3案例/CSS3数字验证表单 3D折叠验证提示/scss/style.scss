@@ -1,0 +1,119 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+$inputWidth: 300px;
+$inputHeight: 40px;
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  @include background-image(
+    radial-gradient(100px 100px, transparent 0, black 500%),
+    url(http://andredion.com/resources/navy_blue.png)
+  );
+}
+
+form {
+  margin-top: -85px;
+  margin-left: -$inputWidth / 2;
+  width: $inputWidth;
+  height: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+label {
+  color: white;
+  font-weight: 200;
+  line-height: 1.1;
+}
+
+input {
+  border: 1px solid transparent;
+  padding: 5px;
+  width: 100%;
+  @include box-sizing(border-box);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  @include box-shadow(0 0 15px rgba(0,0,0,0.5));
+  @include transition(ease-in-out 250ms);
+  @include transition-property(border, box-shadow);
+  
+  &:focus {
+    border-color: #66afe9;
+    outline: 0;
+    @include box-shadow(
+      inset 0 1px 1px rgba(0,0,0,0.075),
+      0 0 8px rgba(102, 175, 233, 0.6)
+    );
+  }
+  
+  &[type="submit"] {
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px white;
+  }
+}
+
+.field-container {
+  margin-bottom: 1em;
+  position: relative;
+  @include perspective(600px);
+}
+
+.pseudo-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  color: white;
+  @include transform-origin(50%, 0);
+  @include transition(400ms ease-in-out);
+  @include transition-property(visibility, transform);
+  
+  .pseudo-content {
+    padding: 0 5px;
+    @include box-sizing(border-box);
+    line-height: $inputHeight;
+  }
+}
+
+.rotate-90 + .pseudo-input {
+  @include transform(rotateX(-90deg));
+}
+.rotate-270 + .pseudo-input {
+  @include transform(rotateX(270deg));
+}
+
+.validated + .pseudo-input {
+  visibility: visible;
+  @include transform(rotateX(0));
+}
+
+.invalid + .pseudo-input {
+  background-color: desaturate(red, 50%);
+  cursor: pointer;
+  
+  &:before {
+    margin-top: -0.55em;
+    content: '×';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
+}
+
+.valid + .pseudo-input {
+  background-color: desaturate(green, 50%);
+}

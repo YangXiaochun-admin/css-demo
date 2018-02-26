@@ -1,0 +1,102 @@
+body{
+	background: #fff url(../images/stucco.png) repeat top left;
+	font-family: 'Arapey', Arial, sans-serif;
+	color: #000;
+}
+.letter-container{
+	border-bottom: 1px dashed rgba(0,0,0,0.4);
+	border-top: 1px dashed rgba(0,0,0,0.4);
+	margin: 20px;
+	padding: 40px 10px;
+	text-align: center;
+	font-family: 'Arapey', Arial, sans-serif;
+}
+.letter-container h2{
+	text-align: center;
+	position: relative;
+	height: 180px;
+	width: 800px;
+	display: inline-block;
+}
+.letter-container h2 a{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 150px;
+	position: absolute;
+	width: 800px;
+	height: 180px;
+	top:0px;
+	left: 50%;
+	margin-left: -400px;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.letter-container h2 a:nth-child(2){
+	opacity: 0;
+}
+.letter-container h2 a span{
+	display: inline-block;
+	position: relative;
+	width: 120px;
+	margin: 0px;
+	background: #333;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	text-shadow: 
+		2px 2px 2px rgba(0,0,0,0.6), 
+		1px 1px 2px rgba(0,0,0,0.4), 
+		0px 0px 2px rgba(255,255,255,0.9);
+}
+.letter-container h2 a span:nth-child(odd),
+.letter-container h2 a span.char1{
+	-webkit-transform: skewY(10deg);
+	-moz-transform: skewY(10deg);
+	-o-transform: skewY(10deg);
+	-ms-transform: skewY(10deg);
+	transform: skewY(10deg);
+	background: #333;
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	z-index: 10;
+}
+.letter-container h2 a span:nth-child(even),
+.letter-container h2 a span.char2{
+	-webkit-transform: skewY(-10deg);
+	-moz-transform: skewY(-10deg);
+	-o-transform: skewY(-10deg);
+	-ms-transform: skewY(-10deg);
+	transform: skewY(-10deg);
+	background: #666;
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+	z-index: 10;
+}
+.letter-container h2:hover a:nth-child(1){
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=90);
+}
+.letter-container h2:hover a:nth-child(2){
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	filter: alpha(opacity=90);
+}
+.letter-container h2:hover a span{
+	-webkit-transform: skewY(0deg);
+	-moz-transform: skewY(0deg);
+	-o-transform: skewY(0deg);
+	-ms-transform: skewY(0deg);
+	transform: skewY(0deg);
+	background: #680121;
+}
+.letter-container h2 a span:hover{
+	color: #f6b0c5;
+}

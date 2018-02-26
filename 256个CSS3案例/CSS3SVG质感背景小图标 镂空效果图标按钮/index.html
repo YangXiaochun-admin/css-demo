@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3/SVG质感背景小图标 镂空效果图标按钮DEMO演示</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<svg width="0" height="0">
+<defs>
+    <path id="home" d="M100 59.375l-18.75-18.75v-28.125h-12.5v15.625l-18.75-18.75-50 50v3.125h12.5v31.25h31.25v-18.75h12.5v18.75h31.25v-31.25h12.5z" />
+    <path id="heart" d="M100 34.976c0 8.434-3.635 16.019-9.423 21.274h0.048l-31.25 31.25c-3.125 3.125-6.25 6.25-9.375 6.25s-6.25-3.125-9.375-6.25l-31.202-31.25c-5.788-5.255-9.423-12.84-9.423-21.274 0-15.865 12.861-28.726 28.726-28.726 8.434 0 16.019 3.635 21.274 9.423 5.255-5.788 12.84-9.423 21.274-9.423 15.865 0 28.726 12.861 28.726 28.726z" />
+    <path id="cog" d="M100 59.384v-18.768l-14.333-2.389c-0.582-1.771-1.291-3.483-2.119-5.127l8.443-11.82-13.271-13.271-11.799 8.428c-1.651-0.835-3.373-1.552-5.153-2.139l-2.383-14.298h-18.768l-2.383 14.298c-1.78 0.587-3.502 1.304-5.153 2.139l-11.8-8.428-13.271 13.271 8.443 11.82c-0.827 1.644-1.537 3.356-2.118 5.127l-14.333 2.389v18.768l14.367 2.395c0.582 1.755 1.29 3.452 2.113 5.081l-8.471 11.86 13.271 13.271 11.88-8.486c1.621 0.815 3.31 1.516 5.055 2.093l2.4 14.402h18.768l2.4-14.402c1.746-0.577 3.434-1.278 5.055-2.093l11.88 8.486 13.271-13.271-8.471-11.86c0.823-1.629 1.531-3.326 2.113-5.081l14.367-2.394zM50 62.5c-6.904 0-12.5-5.596-12.5-12.5 0-6.904 5.596-12.5 12.5-12.5 6.904 0 12.5 5.596 12.5 12.5 0 6.904-5.596 12.5-12.5 12.5z" />
+    <path id="camera" d="M29.688 59.375c0 11.218 9.094 20.313 20.313 20.313s20.313-9.094 20.313-20.313-9.094-20.313-20.313-20.313-20.313 9.094-20.313 20.313zM93.75 25h-21.875c-1.563-6.25-3.125-12.5-9.375-12.5h-25c-6.25 0-7.813 6.25-9.375 12.5h-21.875c-3.438 0-6.25 2.813-6.25 6.25v56.25c0 3.438 2.813 6.25 6.25 6.25h87.5c3.438 0 6.25-2.813 6.25-6.25v-56.25c0-3.438-2.813-6.25-6.25-6.25zM50 87.109c-15.317 0-27.734-12.417-27.734-27.734 0-15.317 12.417-27.734 27.734-27.734 15.318 0 27.734 12.417 27.734 27.734 0 15.318-12.417 27.734-27.734 27.734zM93.75 43.75h-12.5v-6.25h12.5v6.25z" />
+    <path id="bubble" d="M50 6.25c27.614 0 50 18.188 50 40.625 0 22.437-22.386 40.625-50 40.625-2.652 0-5.255-0.169-7.795-0.493-10.74 10.74-23.56 12.666-35.955 12.949v-2.629c6.693-3.279 12.5-9.252 12.5-16.078 0-0.953-0.074-1.888-0.211-2.802-11.308-7.448-18.539-18.824-18.539-31.573 0-22.437 22.386-40.625 50-40.625z" />
+    
+    <!-- Patterns  -->
+    <pattern id="wood" width="400" height="400"
+             patternUnits="userSpaceOnUse">
+        <image xlink:href="http://img-fotki.yandex.ru/get/6447/5091629.86/0_74298_17a84446_L.jpg" width="400" height="400">
+    </pattern>
+    <pattern id="fire" width="100" height="100"
+             patternUnits="userSpaceOnUse">
+        <image xlink:href="http://img-fotki.yandex.ru/get/9800/5091629.9d/0_812d1_86f3bb32_XS.jpg" width="100" height="100">
+    </pattern>
+    <pattern id="snake" width="300" height="201"
+             patternUnits="userSpaceOnUse">
+        <image xlink:href="http://img-fotki.yandex.ru/get/9755/5091629.9d/0_81258_8ed9ab6e_L.jpg" width="300" height="201">
+    </pattern>
+    <pattern id="grass" width="300" height="300"
+             patternUnits="userSpaceOnUse">
+        <image xlink:href="http://img-fotki.yandex.ru/get/9824/5091629.9d/0_812d8_e17d4cfa_M.jpg" width="300" height="300">
+    </pattern>
+</defs>
+</svg>
+<div class="wrapper">
+    <ul class="icons icons--wood">
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#home">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#heart">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#cog">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#camera">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#bubble">
+            </svg> </li>
+    </ul>
+    <ul class="icons icons--fire">
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#home">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#heart">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#cog">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#camera">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#bubble">
+            </svg> </li>
+    </ul>
+    <ul class="icons icons--snake">
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#home">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#heart">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#cog">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#camera">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#bubble">
+            </svg> </li>
+    </ul>
+    <ul class="icons icons--grass">
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#home">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#heart">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#cog">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#camera">
+            </svg> </li>
+        <li class="icon"> <svg viewbox="0 0 100 100">
+            <use xlink:href="#bubble">
+            </svg> </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery平板样式的焦点图动画插件DEMO演示</title>
+
+<!-- 定义文档类型 视口信息 start-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 定义文档类型 视口信息 end-->
+
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a, img { border: 0; }
+body { font: 12px/180% Arial, Helvetica, sans-serif, "新宋体"; }
+/* 图片滚动 */
+.zt-wrap {
+    margin: 0 auto;
+    width: 784px;
+    height: 440px;
+    background: url(img/bg.png);
+    margin: 0px auto;
+    padding: 72px 106px 100px 110px;
+    position: relative;
+}
+.scene-wrap {
+    width: 784px;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+}
+.scene {
+    width: 784px;
+    height: 440px;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+}
+.s1 {
+    left: 0px;
+    background: url(img/s1.png);
+    background-position: -110px -72px;
+}
+.s2 {
+    background: url(img/s2.png);
+    background-position: -110px -72px;
+}
+.s3 {
+    background: url(img/s3.png);
+    background-position: -110px -72px;
+}
+.s4 {
+    background: url(img/s4.png);
+    background-position: -110px -72px;
+}
+.s5 {
+    background: url(img/s5.png);
+    background-position: -110px -72px;
+}
+.s6 {
+    background: url(img/s6.png);
+    background-position: -110px -72px;
+}
+.s7 {
+    background: url(img/s7.png);
+    background-position: -110px -72px;
+}
+.s8 {
+    background: url(img/s8.png);
+    background-position: -110px -72px;
+}
+.but {
+    width: 40px;
+    height: 80px;
+    background: red;
+    position: absolute;
+    top: 266px;
+    cursor: pointer;
+}
+ @-webkit-keyframes twinkling {
+ 0% {
+ opacity:0;
+}
+ 50% {
+ opacity:1;
+}
+ 100% {
+ opacity:0;
+}
+}
+#but1 {
+    left: 62px;
+    background: url(img/prev.png);
+}
+#but2 {
+    right: 58px;
+    background: url(img/next.png);
+}
+.anim-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.img {
+    position: absolute;
+    border: 0px;
+}
+.s8-2 {
+    background: url(img/s8-2.png);
+    background-position: -110px -72px;
+    opacity: 0;
+}
+.end {
+    width: 100%;
+    height: 100%;
+    background: url(img/s8-3.png);
+    background-position: -110px -72px;
+    opacity: 0;
+}
+.s1 a, .s2 a, .s3 a, .s4 a, .s5 a, .s6 a, .s8 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.s8 a {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 350px;
+    left: 700px;
+}
+/*往期回顾*/
+.jcContact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 290px;
+    margin-top: -100px;
+}
+.jcConraper {
+    width: 270px;
+    overflow: hidden;
+    height: 450px;
+    border-radius: 10px 0px 0px 10px;
+    background: #fff;
+}
+.jcConraper a {
+    display: block;
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+.jcConraper a img {
+    width: 250px;
+    height: 100px;
+}
+.jcConraper a span {
+    display: block;
+    width: 230px;
+    padding: 0px 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background: #000;
+    opacity: 0.85;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.jcConraper a:hover span { color: #dd0625; }
+.jcConBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100px;
+    cursor: pointer;
+}
+.jcConBtn span {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    background: #fb8200;
+    color: #fff;
+    border-radius: 10px 0px 0px 10px;
+    font-family: "新宋体";
+}
+</style>
+</head>
+<body>
+
+<!--图片滚动-->
+<div class="zt-wrap">
+    <div class="scene-wrap">
+        <div class="scene s1"><a href="#"></a></div>
+        <div class="scene s2"><a href="#"></a></div>
+        <div class="scene s3"><a href="#"></a></div>
+        <div class="scene s4"><a href="#"></a></div>
+        <div class="scene s5"><a href="#"></a></div>
+        <div class="scene s6"><a href="#"></a></div>
+        <div class="scene s7">
+            <div class="anim-wrap"> <a href="#"><img src="img/s7-1.png" width="320" height="30" class="img img1"/></a> <a href="#"><img src="img/s7-2.png" width="230" height="60" class="img img2"/></a> <a href="#"><img src="img/s7-3.png" width="180" height="60" class="img img3"/></a> <a href="#"><img src="img/s7-4.png" width="250" height="30" class="img img4"/></a> <a href="#"><img src="img/s7-5.png" width="230" height="30" class="img img5"/></a> </div>
+        </div>
+        <div class="scene s8">
+            <div class="anim-wrap s8-2">
+                <div class="end"><a href="#"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="but" id="but1"></div>
+    <div class="but" id="but2"></div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> 
+
+<!--图片滚动--> 
+<script type="text/javascript">
+$(function(){
+	
+	$(".but").css({"-webkit-animation":"twinkling 3s infinite ease-in-out"});
+	
+	function init(){
+		var h=$(window).height();
+		var h2=612;
+		if(h>h2){
+			var top=(h-h2)/2;
+			$(".zt-wrap").css({"margin-top":top+"px"});
+		}
+		$(".scene").attr({"anim":"stop"});
+		img();
+	};
+	
+	init();
+	
+	var tab=0;
+	var max=$(".scene").length-1;
+	var t=400;
+	$("#but2").click(function(){
+		if(tab<max){
+			$(".scene:eq("+tab+")").animate({"left":"-100%"},t).attr({"anim":"stop"});
+			tab++;
+			$(".scene:eq("+tab+")").animate({"left":"0px"},t).attr({"anim":"run"});
+		}; 
+	});
+	
+	$("#but1").click(function(){
+		if(tab>0){
+			$(".scene:eq("+tab+")").animate({"left":"100%"},t).attr({"anim":"stop"});
+			tab--;
+			$(".scene:eq("+tab+")").animate({"left":"0px"},t).attr({"anim":"run"});
+		} 
+	});
+
+	function img(){
+		var w=$(".anim-wrap").width();
+		var h=$(".anim-wrap").height();
+		$(".img").each(function(){
+			var iw=$(this).attr("width");
+			var ih=$(this).attr("height");
+			var top=((h-ih)/2)-100;
+			var left=(w-iw)/2;
+			$(this).css({"left":left+"px","top":top+"px"});
+		});
+	};
+
+	function img2(){
+		var t=1000;
+		$(".img1").animate({"top":"40px","left":"220px"},t);
+		$(".img2").animate({"top":"220px","left":"5px"},t);
+		$(".img3").animate({"top":"190px","left":"595px"},t);
+		$(".img4").animate({"top":"350px","left":"5px"},t);
+		$(".img5").animate({"top":"335px","left":"550px"},t);
+	};
+	
+	var a7=setInterval(anim7, 10);
+	function anim7(){
+		var anim=$(".s7").attr("anim");
+		if(anim==='run'){
+			img2();
+			clearInterval(a7);
+		}
+	};
+	var a8=setInterval(anim8,10);
+	function anim8(){
+		var anim=$(".s8").attr("anim");
+		if(anim==='run'){
+			$(".s8-2").animate({"opacity":"1"},2000,function(){
+				$(".end").animate({"opacity":"1"},600);
+			});
+			clearInterval(a8);
+		}
+	};
+
+})
+</script>
+</body>
+</html>

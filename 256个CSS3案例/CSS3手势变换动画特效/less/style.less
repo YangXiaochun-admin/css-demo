@@ -1,0 +1,234 @@
+// HAND
+@skincolor: #F3C5AD;
+@darkenskincolor: darken(@skincolor, 40%);
+@size: 300px;
+@borderwidth: 1px;
+
+.hand {
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: @skincolor;
+  width: @size;
+  height: @size/1.3;
+  border-radius: @size/10;
+  border: @borderwidth solid darken(@skincolor, 50%);
+  
+  .finger {
+    position: absolute;
+    bottom: 80%;
+    right: 0;
+    width: @size/4;
+    height: @size/4;
+    border-top-left-radius: @size/4;
+    border-top-right-radius: @size/4;
+    background-color: @skincolor;
+    border-left: @borderwidth solid @darkenskincolor;
+    border-right: @borderwidth solid @darkenskincolor;
+    border-top: @borderwidth solid @darkenskincolor;
+    transition: .3s;
+    
+    @loop: 5;
+    .loop (@index) when (@index > 0){
+      &:nth-of-type(@{index}){
+        right: (@index*@size/4)-(@size/4)-@borderwidth;
+      }
+      .loop (@index - 1);
+    }
+    .loop(0){}
+    .loop(@loop);
+    
+    &.thumb {
+      transform-origin: left bottom;
+      transform: rotate(-45deg);
+      bottom: 10px;
+      right: @size/1.38;
+      z-index: -1;
+      height: @size/2;
+      border-right: 0;
+      border-top: @borderwidth solid @darkenskincolor;
+      
+      &:before {
+        top: 2%;
+      }
+    }
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 7%;
+      width: 85%;
+      height: @size/5;
+      border-top-left-radius: @size/4;
+      border-top-right-radius: @size/4;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%);
+      transition: .2s;
+    }
+    &:after {
+      top: 50%;
+      height: @size/8;
+      background: linear-gradient(to bottom, fade(@darkenskincolor,20%) 0%,fade(@darkenskincolor,0%) 100%);
+      display: none;
+    }
+  }
+  .arm {
+    position: absolute;
+    bottom: -80%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: @size/1.5;
+    height: @size/1.5;
+    background-color: @skincolor;
+    border-left: @borderwidth solid @darkenskincolor;
+    border-right: @borderwidth solid @darkenskincolor;
+  }
+}
+
+// SWITCH
+label {
+  width: 100px;
+  height: @size/10;
+  display: inline-block;
+  border-radius: 14px;
+  line-height:  @size/13;
+  font-style: normal;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: @size/1.5;
+    height: @size/6;
+    background-color: @darkenskincolor;
+    z-index: -1;
+  }
+
+  i {
+    position: absolute;
+    top: -4px;
+    right: 60px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    border-radius: 36px;
+    background: white;
+    box-shadow: inset 0 -3px 3px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.4), 0 2px 0 0 rgba(0, 0, 0, 0.2);
+    transition: .2s;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border-radius: 18px;
+      background-color: @skincolor;
+      box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+  &:before {
+    content: "metal";
+    margin-left: 50px;
+    text-transform: uppercase;
+    transition: .2s;
+  }
+}
+
+input[type=checkbox]:checked ~ label:before {
+  content: "punk";
+  text-transform: uppercase;
+  margin-right: 30px;
+  margin-left: 0;
+}
+input[type=checkbox]:checked ~ label{
+  background: radial-gradient(center, ellipse cover, rgba(141,173,51,1) 0%, rgba(146,178,55,1) 24%, rgba(157,187,64,1) 55%, rgba(166,194,78,1) 100%);
+}
+input[type=checkbox]:checked ~ label i {
+  right: -6px;
+}
+input {
+  opacity: 0;
+}
+// METAL
+input[type=checkbox] ~ .hand .finger {
+  height: @size/4;
+  
+  &:after {
+    display: none;
+  }
+  &:before {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%);
+  }
+  &:nth-of-type(1),
+  &:nth-of-type(4){
+    height: @size/1.4;
+
+    &:before {
+      top: 2%;
+      background: rgba(255,255,255,0.5);
+      border-bottom-left-radius: @size/8;
+      border-bottom-right-radius: @size/8;
+    }
+    &:after {
+      display: block;
+    }
+  }
+  &:nth-of-type(1){
+    height: @size/1.6;
+  }
+  &.thumb {
+    height: @size/2.2;
+  }
+}
+// PUNK
+input[type=checkbox]:checked ~ .hand .finger {
+  height: @size/4;
+  
+  &:after {
+    display: none;
+  }
+  &:before {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%);
+  }
+  &:nth-of-type(3){
+    height: @size/1.2;
+
+    &:before {
+      top: 2%;
+      background: rgba(255,255,255,0.5);
+      border-bottom-left-radius: @size/8;
+      border-bottom-right-radius: @size/8;
+    }
+    &:after {
+      display: block;
+    }
+  }
+  &.thumb {
+    height: @size/2.2;
+  }
+}
+  
+/*}*/
+
+// GENERAL STYLE
+html,body{height:100%;overflow:hidden;}
+body {
+  background: radial-gradient(ellipse at top left, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+}

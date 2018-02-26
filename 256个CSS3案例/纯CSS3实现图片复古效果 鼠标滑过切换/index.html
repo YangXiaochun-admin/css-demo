@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>纯CSS3实现图片复古效果在线演示</title>
+<style>
+figure {
+    box-shadow: inset 0 0 100px rgba(0,0,20,.7), 0 5px 15px rgba(0,0,0,.5);
+    background: -webkit-linear-gradient(top, rgba(255,145,0,0.2) 0%, rgba(255,230,48,0.2) 60%), -webkit-linear-gradient(20deg, rgba(255,0,0,0.5) 0%, rgba(255,0,0,0) 35%);
+    width: 500px;
+    height: 338px;
+}
+figure img {
+    -webkit-filter: sepia(0.2) brightness(1.1) contrast(1.3);
+    transition: -webkit-filter 0.3s ease-in-out;
+    position: relative;
+    z-index: -1;
+}
+figure:hover { background: none; }
+figure:hover img { -webkit-filter: sepia(0) brightness(1) contrast(1); }
+/* BLAH BLAH */
+body { background: url(css/low_contrast_linen.png) repeat; }
+figure { margin: 20px auto; }
+</style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+<figure> <img src="css/7226439182_756e2b00e6.jpg" alt=""> </figure>
+<!-- Another Pen? codepen.io/Twikito --> 
+<script src="js/index.js"></script>
+</body>
+</html>

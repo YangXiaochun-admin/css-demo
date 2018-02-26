@@ -1,0 +1,105 @@
+@import "compass/css3";
+
+$background:#ff9770;
+$sliderBg:#f7f7f7;
+$line:#adccce;
+
+
+*, *:after, *:before {
+  box-sizing:border-box;
+}
+
+html, body {background:$background; font-size:16px;}
+
+.wrapper{
+  width:52px;
+  margin:12% auto;
+}
+
+.map-icon {
+  width: 52px;
+  height:52px;
+  background:$sliderBg;
+  border-radius:3px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+  margin-bottom:15px;
+  text-align:center;
+  color:$line;
+  padding:14px 0;
+  span {
+    font-size:1.3em;
+  }
+  
+}
+
+.map-slider {
+  width:52px;
+  height:330px;
+  background:$sliderBg;
+  border-radius:3px;
+  text-align:center;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+  position:relative;
+  color:#866a62;
+  &::before {
+    content:"";
+    width:100%;
+    height:1px;
+    background:#dedede;
+    position:absolute;
+    left:0;
+    margin-top:50px;
+    box-shadow:
+      0 1px 0 0 white,
+      0 230px 0 0 #dedede, 
+      0 229px 0 0 white;
+  }
+  &::after{
+    
+  }
+  .fa-plus {
+   display:block;
+    padding-top:16px;
+    height:50px;
+    cursor:pointer;
+  }
+  .fa-minus {
+    display:block;
+    height:50px;
+    padding-top:12px;
+    cursor:pointer; 
+  }
+  .drag-line {
+    width:8px;
+    height:182px;
+    background:$background;
+    border-radius:8px;
+    margin:25px auto;
+    position:relative;
+   
+  }
+  .line {
+    width:8px;
+    height:182px;
+    background:$line;
+    border-radius:8px;
+    margin:25px auto;
+    position:absolute;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding-top:10px;
+    clip: rect(0px, 8px, 183px, 0px);
+   
+  }
+  
+  .draggable-button {
+    width:29px; 
+    height:29px;
+    background:$sliderBg;
+    border-radius:50%;
+    position:absolute;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.2);
+    margin-left:-9px;
+    cursor:pointer;
+  }
+}

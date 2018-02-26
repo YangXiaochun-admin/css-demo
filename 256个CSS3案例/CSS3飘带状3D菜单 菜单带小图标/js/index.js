@@ -1,0 +1,1 @@
+// inspired by http://drbl.in/gorN

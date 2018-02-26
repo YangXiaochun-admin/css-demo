@@ -1,0 +1,15 @@
+body {
+  background: #eee;
+}
+body .box {
+  display: none;
+}
+body .render {
+  width: 80%;
+  display: block;
+  margin: 10% auto;
+}
+body .render span {
+  font-size: 70px;
+  font-weight: 300;
+}

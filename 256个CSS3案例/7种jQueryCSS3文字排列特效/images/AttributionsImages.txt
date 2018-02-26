@@ -1,0 +1,4 @@
+Pattern from http://subtlepatterns.com
+
+The image used in the demo is by Andrey & Lili: http://www.behance.net/AndrewLili
+ They are licensed under the <a title="Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)" href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank">Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0) License</a>. 

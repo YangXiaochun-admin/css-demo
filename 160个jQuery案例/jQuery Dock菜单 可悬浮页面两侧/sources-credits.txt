@@ -1,0 +1,9 @@
+Sources
+Nettuts / Harley - http://net.tutsplus.com/tutorials/javascript-ajax/adding-to-our-leopard-desktop-with-jquery/
+Interface - http://interface.eyecon.ro/
+jqDock - http://www.wizzud.com/jqDock/
+Example template - http://www.solucija.com/preview/Internet_Encyclopedia
+
+Credits
+Steve - Twitter
+Rey Bango - Twitter - jQuery Team

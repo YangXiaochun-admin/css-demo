@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  alt=""/>
+<title>jQuery 3D圆盘旋转焦点图DEMO演示</title>
+<link rel="stylesheet" type="text/css" href="css/carousel.css" media="screen" alt=""/>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" alt=""/>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.carousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript">
+
+	jQuery(document).ready(function($){
+		$('#carousel').carousel({width: 870, 
+								 height: 350, 
+								 itemWidth:120, 
+								 horizontalRadius:270, 
+								 verticalRadius:85, 
+								 resize:false, 
+								 mouseScroll:false, 
+								 mouseDrag:true, 
+								 scaleRatio:0.4, 
+								 scrollbar:true, 
+								 tooltip:true, 
+								 mouseWheel:true, 
+								 mouseWheelReverse:true});
+	});
+	
+</script>
+</head>
+
+<body>
+<div id="wide-wrapper">
+    <ul id="carousel">
+        <li> <img src="images/image1.jpg" alt=""/>
+            <div class="tooltip">Image description</div>
+        </li>
+        <li> <img src="images/image2.jpg" alt=""/> </li>
+        <li> <img src="images/image3.jpg" alt=""/> </li>
+        <li> <img src="images/image4.jpg" alt=""/>
+            <div class="tooltip"><u>Image title</u><br/>
+                <br alt=""/>
+                Tooltips 
+                support <i>HTML</i> text.</div>
+        </li>
+        <li> <img src="images/image5.jpg" alt=""/> </li>
+        <li> <img src="images/image6.jpg" alt=""/> </li>
+        <li> <img src="images/image7.jpg" alt=""/>
+            <div class="tooltip"><u>Image title</u><br/>
+                <br/>
+                <img src="images/image7.jpg" width="60" height="50" style="float:left; margin-right:10px; margin-bottom:10px;" alt=""/>Load 
+                images inside the tooltip.</div>
+        </li>
+        <li> <img src="images/image8.jpg" alt=""/> </li>
+        <li> <img src="images/image9.jpg" alt=""/> </li>
+        <li> <img src="images/image10.jpg" alt=""/>
+            <div class="tooltip">Image description</div>
+        </li>
+        <li> <img src="images/image11.jpg" alt=""/> </li>
+        <li> <img src="images/image12.jpg" alt=""/> </li>
+        <li> <img src="images/image13.jpg" alt=""/>
+            <div class="tooltip"><u>Image title</u><br/>
+                <br/>
+                Tooltips 
+                support <i>HTML</i> text.</div>
+        </li>
+        <li> <img src="images/image14.jpg" alt=""/> </li>
+        <li> <img src="images/image15.jpg" alt=""/> </li>
+        <li> <img src="images/image16.jpg" alt=""/>
+            <div class="tooltip"><u>Image title</u><br/>
+                <br/>
+                <img src="images/image16.jpg" width="60" height="50" style="float:left; margin-right:10px; margin-bottom:10px;" alt=""/>Load 
+                images inside the tooltip.</div>
+        </li>
+        <li> <img src="images/image17.jpg" alt=""/> </li>
+        <li> <img src="images/image18.jpg" alt=""/> </li>
+        <li> <img src="images/image19.jpg" alt=""/> </li>
+    </ul>
+</div>
+</body>
+</html>

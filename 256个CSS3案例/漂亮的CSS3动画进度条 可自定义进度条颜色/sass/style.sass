@@ -1,0 +1,90 @@
+@import "compass/css3"
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300)
+$fonts: 'Open sans', Arial, sans-serif 
+$font-size: 100%
+$max-bar-width: 600px
+$breakpoint-smartphone: 350px
+$time: 12s 
+$easing: ease-in-out
+$colors: "mint" #14C3A2, "red" #CF4647, "orange" #EB7B59, "lila" #524656, "gray" #595B5A
+ 
+// GRADIENT MIXIN
+@mixin bg($color)
+  background-color: $color 
+  background-image: repeating-linear-gradient(-45deg, $color, $color ($max-bar-width/20), lighten($color, 10%) ($max-bar-width/20), lighten($color, 10%) ($max-bar-width/10))
+  background-size: $max-bar-width 100%
+  animation: barberpole $time linear infinite 
+    
+*, *:before, *:after
+  box-sizing: border-box
+  
+body 
+  font-size: $font-size
+  font-family: $fonts
+  color: #fff
+  
+.container
+  margin: 3rem auto
+  max-width: $max-bar-width
+  @media(max-width: 610px)
+    padding: 0 5%
+     
+.bar
+  height: 40px
+  width: 0
+  transition: width 1.2s $easing
+  position: relative
+  margin: .5rem 0
+  border-radius: 4px
+  @media(max-width: #{$breakpoint-smartphone})
+    margin: 2.5rem 0 0.5rem
+      
+  @each $type in $colors
+    &.#{nth($type, 1)}
+      //background: nth($type, 2)
+      @include bg(nth($type, 2))
+      border-bottom: 0.2rem solid darken(nth($type, 2), 15%)
+
+  &.active
+    &:after, &:before
+      opacity: 1
+      
+  &:before
+    content: attr(data-skill)
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    padding: 10px
+    height: 40px
+    font-style: italic
+    opacity: 0
+    transition: opacity 2s 0.6s
+    @media(max-width: #{$breakpoint-smartphone})
+      top: -100%
+      color: #000
+      padding: 10px 0 0
+    
+  &:after
+    content: attr(data-percent) "%"
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    height: 40px
+    padding: 10px
+    opacity: 0
+    transition: opacity 2s 0.6s
+    @media(max-width: #{$breakpoint-smartphone})
+      left: 0
+      
+@keyframes barberpole  
+  from 
+    background-position: 0% 0%
+  to  
+    background-position: $max-bar-width 0%
+
+@for $i from 1 through 20 
+  .bar.active[data-percent="#{$i*5}"]
+    width: $i*5%

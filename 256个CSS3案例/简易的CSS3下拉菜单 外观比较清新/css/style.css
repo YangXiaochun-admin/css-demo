@@ -1,0 +1,110 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300');
+
+* { margin: 0; padding: 0; }
+
+html
+{
+	background-image: -webkit-radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
+	background-image: -moz-radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
+	background-image: -ms-radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
+	background-image: -o-radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
+	background-image: radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.content
+{
+	position: relative;
+	top: 30px;
+	width: 250px;
+	margin: 0px auto;
+}
+
+/* Bar */
+
+.mainBar
+{
+	background-color: #4B4B4A;
+	color: rgba(255, 255, 255, 0.8);
+	width: 250px;
+	height: 50px;
+	font-family: 'Lato', 'FontAwesome', Helvetica;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+#liked, #listen, #cog
+{
+	float: left;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+}
+
+#liked { width: 94px; }
+#listen { width: 99px; }
+#cog { width: 55px; }
+
+#liked, #listen { border-right: 1px solid #3E3E3D; }
+
+#liked:before { content: '\f00c'; margin-right: 5px; font-size: 13px; position: relative; bottom: 1px; color: #FFFFFF; }
+#listen:before { content: '\f0da'; margin-right: 7px; font-size: 14px; color: #FFFFFF; }
+#cog:after { content: '\f0d7'; margin-left: 10px; font-size: 12px; color: #FFFFFF; }
+
+#liked:hover, #listen:hover, #cog:hover { background: #807F7D; color: #E7E7E8; cursor: pointer; }
+
+/* Menu */
+
+.menu
+{
+	margin-top: 4px;
+	background-color: #4DAF7C;
+	color: rgba(255, 255, 255, 0.8);
+	width: 250px;
+	height: 152px;
+	font-family: 'Lato', 'FontAwesome', Helvetica;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.menu p { padding: 0 0 0 30px; line-height: 38px; }
+
+.menu p:after
+{
+	opacity: 0;
+	content: '\f0da';
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+.menu p:hover:after { opacity: 1; }
+
+.menu p:hover
+{
+	background: #7EC29C;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+/* Notice */
+
+h1
+{
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'Open Sans', Helvetica;
+	color: #807F7D;
+	font-size: 25px;
+	font-weight: 300;
+}
+
+h1 a { text-decoration: none; color: #4DAF7C; font-weight: 400; }

@@ -1,0 +1,63 @@
+@import "compass/css3";
+
+BODY {
+  font-size: 10px;
+  background: #333 url(http://img-fotki.yandex.ru/get/6425/5091629.7e/0_706a3_c525a707_L.jpg);
+  }
+
+.wrapper {
+  width: 500px;
+  margin: 30px auto;
+  text-align: center;
+  }
+.icons {
+  margin-bottom: 1.5em;
+  }
+.icon {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 7.5em;
+  height: 7.5em;
+  margin: 0 .7em;
+  stroke: rgba(0, 0, 0, .3);
+  stroke-width: 4;
+  transition: .2s;
+  &:hover {
+    top: -2px;
+    }
+  }
+
+.icons--wood {
+  fill: url(#wood); 
+    .icon:hover {
+      fill: none; 
+      stroke: url(#wood); 
+    }
+  }
+
+.icons--fire {
+  fill: url(#fire);  
+  .icon:hover {
+    fill: none; 
+    stroke: url(#fire); 
+    }
+  }
+
+.icons--snake {
+  fill: url(#snake);
+  .icon:hover {
+    fill: none; 
+    stroke: url(#snake); 
+    }
+  }
+
+.icons--grass {
+  fill: url(#grass);
+  .icon:hover {
+    fill: none; 
+    stroke: url(#grass); 
+    }
+  }
+
+

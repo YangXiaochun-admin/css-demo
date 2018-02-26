@@ -1,0 +1,125 @@
+
+/* Keep everything the same */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: bold 14px Arial, sans-serif;
+}
+
+/* So the background is not so plain */
+html {
+  height: 100%;
+  background: white;
+  background: radial-gradient(circle, #fff 20%, #ccc);
+  background-size: cover;
+}
+
+.container {
+  width:425px;
+  height:auto;
+  margin: 100px auto 0;
+  display: block;
+}
+
+.row {
+  display:block;
+  width:100%;
+  min-height:75px;
+  height:auto;
+}
+
+.btn {
+  float: left;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 7px 11px 0;
+  color: #888;
+
+  text-align: center;
+
+  /* so nobody selects the inside text on button */
+  user-select: none;
+
+  /* Smoothing out hover using css3 transitions, if not, the pressed button effect looks a bit hard */
+  transition: all 0.2s ease;
+}
+
+.btn-small {
+  line-height: 36px;
+  width: 78px;
+  height: 36px;
+}
+
+.btn-medium {
+  line-height: 45px;
+  width: 134px;
+  height: 45px;
+  font-size: 120%;
+}
+
+.btn-large {
+  line-height: 80px;
+  width: 100%;
+  height: 85px;
+  font-size: 160%;
+}
+
+/*==========  Different button styles  ==========*/
+
+.submit {
+  background: #b7de01;
+  box-shadow: 0px 5px #687e00;
+  color: #687e00;
+}
+.submit:hover {
+  background: #99ba01;
+  box-shadow: 0px 4px #435100;
+  color: #687e00;
+}
+/* Imitate a pressed effect for buttons */
+.submit:active {
+  box-shadow: 0px 0px #717a33;
+  top: 4px;
+}
+
+
+.cancel {
+  background: #00ddeb;
+  box-shadow: 0px 5px #028d96;
+  color: white;
+}
+
+.cancel:hover {
+  background: #01d1de;
+  box-shadow: 0px 4px #006066;
+  color: white;
+}
+
+/* Imitate a pressed effect for buttons */
+.cancel:active {
+  top: 4px;
+  box-shadow: 0px 0px #d3545d;
+}
+
+.info {
+  background: #d9008f;
+  box-shadow: 0px 5px #5f023f;
+  color: white;
+}
+
+.info:hover {
+  background: #b60178;
+  box-shadow: 0px 4px #3f002a;
+  color: white;
+}
+
+/* Imitate a pressed effect for buttons */
+.info:active {
+  top: 4px;
+  box-shadow: 0px 0px #d3545d;
+}

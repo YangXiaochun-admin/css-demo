@@ -1,0 +1,50 @@
+* { word-break: break-all; word-wrap: break-word; }
+body,select, th, td, input, textarea, button { font: 12px/1.5em Arial, Tahoma, Helvetica, snas-serif; }
+body, h1, h2, h3, h4, h5, h6, p, ul, dl, dt, dd, form, fieldset { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; }
+ul{ list-style: none; }
+img{border:0;}
+
+a:link{color:#333;text-decoration:none}
+a:visited{color:#555;text-decoration:none}
+a:hover{color:#f40;text-decoration:underline}
+
+a.uline,a.uline:visited,.uline a,.uline a:visited{text-decoration:underline}
+a.uline:hover{text-decoration:none}
+
+.f10{font-size:10px;}
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.s{font-weight:normal}
+.b{font-weight:bold}
+
+a.green:link,a.green:visited,.green{color:#599914}
+a.black:link,a.black:visited,.black{color:#345}
+a.red:link,a.red:visited,.red{color:#e00}
+.zs{color:#A71CBC}
+a.gray:link,a.gray:visited,.gray,.gray a,.gray a:visited{color:#81839a}
+a.blue:link,a.blue:visited,.blue,.blue a,.blue a:visited{color:#004Ba6}
+
+.dno{display:none}
+
+.l{float:left;}
+.r{float:right;}
+
+/* album */
+#pic_show { width: 714px; margin:50px auto;}
+#Album li,#Album { list-style: none;}
+#Album{ position: relative; background: url(../images/loader.gif) no-repeat center; height: 203px;}
+#Album li { float: left; margin:1px 1px 0px 0px; display: inline;}
+#Album li img { width: 50px; height: 50px;}
+#Album .album_big {float: right;}
+#Album .album_big span { width: 43px; height: 31px; background: url(../images/you_s.png); position: absolute; right: 0px; bottom: 0px; margin: 0px; padding: 0px; text-indent: -999px; overflow: hidden;}
+.album_big img { width: 101px!important; height: 101px!important;}
+#Album .album_big a { width: 101px!important;height: 101px!important;}
+#Album li strong { display: block; color: #FFFFFF; font-size: 12px; line-height: 16px; padding: 0px 10px; margin-top: 8px; white-space: nowrap;}
+#Album li span { display: block; color: #FFFFFF; font-size: 12px; line-height: 16px; padding: 0px 10px; margin-top: 5px; white-space: nowrap;}
+#Album li a { position: absolute; z-index: 100; visibility: hidden;}
+#Album li a em{ width: 100%;position: absolute; top: 0px; left: 0px; display: none; opacity: 0.5; filter: alpha(opacity=50); background: #000000;}
+#Album img { border: 0px; border: none;}
+#Album .Album_info { display: none; position: absolute; background: #4bae41; z-index:101;-moz-box-shadow: 0 0 10px #000000;-webkit-box-shadow: 0 0 10px #000000;box-shadow: 0 0 10px #000000;}
+#Album .Album_info i{  font-size: 12px; margin-right: 5px; font-style: normal; font-weight: normal;}
+

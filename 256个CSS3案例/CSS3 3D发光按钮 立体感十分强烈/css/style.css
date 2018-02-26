@@ -1,0 +1,283 @@
+@import url(http://fonts.googleapis.com/css?family=Fresca);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.Nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.MainNav:before, .MainNav:after, .MainNav-Button:after, .MainNav-Button_Active:before, .MainNav-Button_Active:after, .MainNav-Button_LeftOfActive:before, .MainNav-Button_RightOfActive:before {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.container {
+  text-align: center;
+  padding: 3.75em 0;
+}
+
+.Nav {
+  list-style: none;
+  margin-left: 0;
+}
+
+.Nav_Small {
+  font-size: 0.65em;
+}
+
+.Nav_Large {
+  font-size: 1.4em;
+}
+
+.MainNav {
+  -moz-border-radius: 0.4375em;
+  -webkit-border-radius: 0.4375em;
+  border-radius: 0.4375em;
+  -moz-box-shadow: #4d4d4d 0 -1px 0px 0px inset, rgba(255, 255, 255, 0.0857) 0 -5px 0px 0px inset, #1e1e1e 0 4px 0px 0px inset;
+  -webkit-box-shadow: #4d4d4d 0 -1px 0px 0px inset, rgba(255, 255, 255, 0.0857) 0 -5px 0px 0px inset, #1e1e1e 0 4px 0px 0px inset;
+  box-shadow: #4d4d4d 0 -1px 0px 0px inset, rgba(255, 255, 255, 0.0857) 0 -5px 0px 0px inset, #1e1e1e 0 4px 0px 0px inset;
+  background: #242424;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  text-align: center;
+  padding: 0.375em 0.3125em;
+  position: relative;
+}
+.MainNav:before {
+  -moz-border-radius-bottomleft: 0.4375em;
+  -webkit-border-bottom-left-radius: 0.4375em;
+  border-bottom-left-radius: 0.4375em;
+  background: rgba(36, 36, 36, 0.4);
+  width: 0.4375em;
+  height: 0.4375em;
+  bottom: 0;
+  left: 0;
+}
+.MainNav:after {
+  -moz-border-radius-bottomright: 0.4375em;
+  -webkit-border-bottom-right-radius: 0.4375em;
+  border-bottom-right-radius: 0.4375em;
+  background: rgba(36, 36, 36, 0.4);
+  width: 0.4375em;
+  height: 0.4375em;
+  bottom: 0;
+  right: 0;
+}
+
+.MainNav-Button {
+  -moz-border-radius: 0.3125em;
+  -webkit-border-radius: 0.3125em;
+  border-radius: 0.3125em;
+  -moz-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.05) 0 1px 0px 1px inset, rgba(0, 0, 0, 0.7) 0 1px 2px 0px, rgba(9, 9, 9, 0.6) 0 2px 3px 2px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.05) 0 1px 0px 1px inset, rgba(0, 0, 0, 0.7) 0 1px 2px 0px, rgba(9, 9, 9, 0.6) 0 2px 3px 2px;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.05) 0 1px 0px 1px inset, rgba(0, 0, 0, 0.7) 0 1px 2px 0px, rgba(9, 9, 9, 0.6) 0 2px 3px 2px;
+  background-color: #343434;
+  background-image: -moz-linear-gradient(top, rgba(78, 78, 78, 0.15) 0%, rgba(65, 65, 65, 0.15) 2%, rgba(59, 59, 59, 0.15) 5%, rgba(56, 56, 56, 0.15) 32%, rgba(54, 54, 54, 0.15) 33%, rgba(53, 53, 53, 0.15) 46%, rgba(51, 51, 51, 0.15) 47%, rgba(50, 50, 50, 0.15) 60%, rgba(48, 48, 48, 0.15) 61%, rgba(42, 42, 42, 0.15) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(78, 78, 78, 0.15) 0%, rgba(65, 65, 65, 0.15) 2%, rgba(59, 59, 59, 0.15) 5%, rgba(56, 56, 56, 0.15) 32%, rgba(54, 54, 54, 0.15) 33%, rgba(53, 53, 53, 0.15) 46%, rgba(51, 51, 51, 0.15) 47%, rgba(50, 50, 50, 0.15) 60%, rgba(48, 48, 48, 0.15) 61%, rgba(42, 42, 42, 0.15) 100%);
+  background-image: linear-gradient(to bottom, rgba(78, 78, 78, 0.15) 0%, rgba(65, 65, 65, 0.15) 2%, rgba(59, 59, 59, 0.15) 5%, rgba(56, 56, 56, 0.15) 32%, rgba(54, 54, 54, 0.15) 33%, rgba(53, 53, 53, 0.15) 46%, rgba(51, 51, 51, 0.15) 47%, rgba(50, 50, 50, 0.15) 60%, rgba(48, 48, 48, 0.15) 61%, rgba(42, 42, 42, 0.15) 100%);
+  background-size: 4px 4px;
+  float: left;
+  margin-right: 0.125em;
+  padding: 0.375em 0.4375em;
+  position: relative;
+}
+.MainNav-Button a {
+  -moz-border-radius: 0.45833em;
+  -webkit-border-radius: 0.45833em;
+  border-radius: 0.45833em;
+  text-shadow: black 0 -1px 0;
+  background: rgba(182, 182, 182, 0.018);
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  font-family: 'Fresca', sans-serif;
+  font-size: 1.5em;
+  padding: 0.5em 2.5em 0.5em;
+  text-decoration: none;
+}
+.MainNav-Button:hover {
+  -moz-box-shadow: rgba(255, 255, 255, 0.05) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.02) 0 1px 0px 1px inset, rgba(9, 9, 9, 0.5) 0 2px 2px 1px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.05) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.02) 0 1px 0px 1px inset, rgba(9, 9, 9, 0.5) 0 2px 2px 1px;
+  box-shadow: rgba(255, 255, 255, 0.05) 0 1px 0px 0px inset, rgba(255, 255, 255, 0.02) 0 1px 0px 1px inset, rgba(9, 9, 9, 0.5) 0 2px 2px 1px;
+}
+.MainNav-Button:hover a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+.MainNav-Button:after {
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.11) 69%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.11) 69%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.11) 69%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  height: 1px;
+  left: 0;
+  top: 0;
+}
+
+.MainNav-Button_Active {
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+  background-color: #2d2d2d;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, #2e2e2e 50%);
+  background-size: 2px 2px;
+}
+.MainNav-Button_Active a {
+  text-shadow: rgba(255, 255, 255, 0.4) 0 0 35px, rgba(76, 190, 255, 0.95) 0 0 25px;
+  background: none;
+  color: #4cbeff;
+}
+.MainNav-Button_Active:before {
+  background-image: -moz-radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  background-image: radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  -moz-box-shadow: rgba(76, 190, 255, 0.02) 0 0 0px 3px inset;
+  -webkit-box-shadow: rgba(76, 190, 255, 0.02) 0 0 0px 3px inset;
+  box-shadow: rgba(76, 190, 255, 0.02) 0 0 0px 3px inset;
+  top: -0.25em;
+  left: 10%;
+  width: 80%;
+  height: 0.375em;
+}
+.MainNav-Button_Active:after {
+  background-image: -moz-radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  background-image: radial-gradient(center, ellipse cover, rgba(41, 137, 216, 0.51) 0%, rgba(30, 87, 153, 0.01) 53%, rgba(30, 87, 153, 0) 54%, rgba(30, 87, 153, 0) 57%);
+  -moz-box-shadow: rgba(255, 255, 255, 0.05) 0 -5px 0px 0px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.05) 0 -5px 0px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.05) 0 -5px 0px 0px inset;
+  top: inherit;
+  bottom: -0.5em;
+  left: 0;
+  width: 100%;
+  height: 0.5em;
+}
+.MainNav-Button_Active:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 0 1px inset;
+}
+
+.MainNav-Button_LeftOfActive:before {
+  -moz-box-shadow: rgba(80, 136, 137, 0.5) -1px 0px 0px 0px;
+  -webkit-box-shadow: rgba(80, 136, 137, 0.5) -1px 0px 0px 0px;
+  box-shadow: rgba(80, 136, 137, 0.5) -1px 0px 0px 0px;
+  background-image: -moz-linear-gradient(top, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  width: 1px;
+  height: 90%;
+  right: 0;
+  top: 5%;
+}
+
+.MainNav-Button_RightOfActive:before {
+  -moz-box-shadow: rgba(80, 136, 137, 0.5) 1px 0px 0px 0px;
+  -webkit-box-shadow: rgba(80, 136, 137, 0.5) 1px 0px 0px 0px;
+  box-shadow: rgba(80, 136, 137, 0.5) 1px 0px 0px 0px;
+  background-image: -moz-linear-gradient(top, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(76, 190, 255, 0) 0%, rgba(76, 190, 255, 0.7) 50%, rgba(76, 190, 255, 0.69) 51%, rgba(76, 190, 255, 0) 100%);
+  width: 1px;
+  height: 90%;
+  left: 0;
+  top: 5%;
+}
+
+body {
+  background: #2a2a2a url('/images/background-pattern.gif');
+  font-family: sans-serif;
+}
+
+h3 {
+  text-shadow: black -1px -2px 0px;
+  text-shadow: black -1px -2px 0px 0px;
+  font-size: 0.75em;
+  color: #a6a6a6;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.TextLink {
+  text-decoration: none;
+  color: #a6a6a6;
+  font-weight: bold;
+}
+.TextLink:hover {
+  text-decoration: underline;
+}
+
+hr {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+  height: 0px;
+  border-top: black 1px solid;
+  margin: 2em auto;
+  width: 60%;
+}
+
+p {
+  color: #a6a6a6;
+  font-size: 0.8125em;
+  line-height: 1.38462em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}

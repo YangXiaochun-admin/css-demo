@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery底部带缩略图的焦点图插件DEMO演示</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/slide.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="picbox">
+    <div id="featured">
+        <div class="image" id="image_pic-01"> <img src="images/001.jpg">
+            <div class="word">
+                <h3>标题一</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-02"> <img class="full" src="images/002.jpg">
+            <div class="word">
+                <h3>标题二</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-03"> <img class="full" src="images/003.jpg">
+            <div class="word">
+                <h3>标题三</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-04"> <img class="full" src="images/004.jpg">
+            <div class="word">
+                <h3>标题四</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-05"> <img class="full" src="images/005.jpg">
+            <div class="word">
+                <h3>标题五</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-06"> <img class="full" src="images/006.jpg">
+            <div class="word">
+                <h3>标题六</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+        <div class="image" id="image_pic-07"> <img class="full" src="images/007.jpg">
+            <div class="word">
+                <h3>标题七</h3>
+                <p>内容介绍</p>
+            </div>
+        </div>
+    </div>
+    <div id="thumbs">
+        <ul>
+            <li class="first btnPrev"><img id="play_prev" src="images/btn_prev.gif"></li>
+            <li class="slideshowItem"><a id="thumb_pic-01" href="javascript:" class="current"><img src="images/001_1.jpg"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-02" href="javascript:"><img src="images/002_1.jpg" width="78" height="37"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-03" href="javascript:"><img src="images/003_1.jpg" width="78" height="37"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-04" href="javascript:"><img src="images/004_1.jpg" width="78" height="37"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-05" href="javascript:"><img src="images/005_1.jpg" width="78" height="37"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-06" href="javascript:"><img src="images/006_1.jpg" width="78" height="37"></a></li>
+            <li class="slideshowItem"><a id="thumb_pic-07" href="javascript:"><img src="images/007_1.jpg" width="78" height="37"></a></li>
+            <li class="last btnNext"><img id="play_next" src="images/btn_next.gif"></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript">
+var target = ["pic-01","pic-02","pic-03","pic-04","pic-05","pic-06","pic-07"];
+</script>
+</body>
+</html>

@@ -1,0 +1,1075 @@
+/* ----- SASS VARIABLES ----- */
+/* ----- MIXINS ----- */
+/* ----- LAYOUT ----- */
+body {
+  width: 600px;
+  margin: 20px auto;
+  background: #eee;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+#crests {
+  margin: 0 auto 20px;
+}
+
+#crests:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.crest-holder {
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+
+.crest {
+  position: relative;
+  background: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.crest:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.crest-name {
+  line-height: 40px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* ----- CREST BASIC SHAPES ----- */
+.crest .circle, .crest .sphere, .crest .comma {
+  border-radius: 50%;
+}
+
+/* ----- AKIYAMA ----- */
+.crest.akiyama {
+  padding: 22px;
+}
+
+.crest.akiyama .diamond {
+  position: relative;
+  margin: 0 auto;
+  background: black;
+  -webkit-transform: rotate(-45deg) skew(14deg, 14deg);
+  -moz-transform: rotate(-45deg) skew(14deg, 14deg);
+  -ms-transform: rotate(-45deg) skew(14deg, 14deg);
+  transform: rotate(-45deg) skew(14deg, 14deg);
+}
+
+.crest.akiyama .diamond:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -12px;
+}
+
+.crest.akiyama .diamond:nth-child(2) {
+  width: 28px;
+  height: 28px;
+  margin-bottom: -18px;
+}
+
+.crest.akiyama .diamond:nth-child(3) {
+  width: 35px;
+  height: 35px;
+}
+
+/* ----- AMAKUSA ----- */
+.crest.amakusa {
+  padding: 0;
+}
+
+.crest.amakusa .sphere {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -11px 0 0 -11px;
+  width: 22px;
+  height: 22px;
+  background: black;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.crest.amakusa .triangles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -6px;
+  background: green;
+}
+
+.crest.amakusa .double-triangle {
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  margin-top: -5px;
+  border-top: 25px solid black;
+  border-bottom: 25px solid black;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  -webkit-transform-origin: 6px center;
+  -moz-transform-origin: 6px center;
+  -ms-transform-origin: 6px center;
+  transform-origin: 6px center;
+}
+
+.crest.amakusa .double-triangle:nth-child(1) {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.crest.amakusa .double-triangle:nth-child(2) {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.crest.amakusa .double-triangle:nth-child(3) {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.crest.amakusa .double-triangle:nth-child(4) {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.crest.amakusa .double-triangle:nth-child(5) {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.crest.amakusa .double-triangle:nth-child(6) {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* ----- AMAKO ----- */
+.crest.amako {
+  padding: 15px;
+}
+
+.crest.amako .wrap {
+  margin: 0 auto;
+  width: 70px;
+}
+
+.crest.amako .square {
+  float: left;
+  margin: 1px;
+  width: 5px;
+  height: 5px;
+  border: 14px solid black;
+}
+
+/* ----- ASO ----- */
+.crest.aso .feather {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -38px 0 0 -15px;
+  width: 30px;
+  height: 75px;
+}
+
+.crest.aso .feather:first-child {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.crest.aso .feather:last-child {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.aso .feather {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -38px 0 0 -15px;
+  width: 30px;
+  height: 75px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.aso .feather .feather-contain {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px white;
+}
+
+.crest.aso .feather .feather-shade {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: black;
+  box-shadow: 1px 1px 0 white, 2px 2px 0 black, 3px 3px 0 white, 4px 4px 0 black, 5px 5px 0 white;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.aso .feather .feather-shade:nth-child(1) {
+  top: 40px;
+  left: 0;
+  border-radius: 50%;
+}
+
+.crest.aso .feather .feather-shade:nth-child(2) {
+  top: 20px;
+  left: 0;
+}
+
+.crest.aso .feather .feather-shade:nth-child(3) {
+  top: -12px;
+  left: 0;
+}
+
+.crest.aso .feather .feather-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: -5px;
+  margin-left: -2px;
+  width: 2px;
+  background: black;
+  border: 1px solid white;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+/* ----- BABA ----- */
+.crest.baba {
+  padding: 19px;
+}
+
+.crest.baba .circle {
+  width: 46px;
+  height: 46px;
+  border: 8px solid black;
+}
+
+.crest.baba .line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -13px 0 0 -23px;
+  width: 46px;
+  height: 26px;
+  width: 46px;
+  height: 26px;
+  border: 8px solid black;
+  border-left: 0;
+  border-right: 0;
+  box-sizing: border-box;
+}
+
+/* ----- DOI ----- */
+.crest.doi .wrap,
+.crest.kurushima .wrap {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.crest.doi .line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -4px 0 0 -15px;
+  width: 30px;
+  height: 8px;
+  background: black;
+  box-shadow: 0 -10px 0 black, 0 10px 0 black;
+}
+
+.crest.doi .corners,
+.crest.kurushima .corners {
+  position: absolute;
+}
+
+.crest.doi .corners .corner,
+.crest.kurushima .corners .corner {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  border: 7px solid black;
+  border-left: 0;
+  border-right: 0;
+  box-sizing: border-box;
+}
+
+.crest.doi .corners .corner.horiz,
+.crest.kurushima .corners .corner.horiz {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.crest.doi .corners.small,
+.crest.kurushima .corners.small {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.crest.doi .corners.small .corner,
+.crest.kurushima .corners.small .corner {
+  width: 16px;
+  margin-left: -8px;
+}
+
+.crest.doi .corners.big,
+.crest.kurushima .corners.big {
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.doi .corners.big .corner,
+.crest.kurushima .corners.big .corner {
+  width: 30px;
+  margin-left: -15px;
+}
+
+/* ----- DOU ----- */
+.crest.dou {
+  padding: 18px;
+}
+
+.crest.dou .ellipse, .crest.dou .shadow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.crest.dou .ellipse {
+  margin: -22px 0 0 -22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 0 100% 0 100%;
+  background: white;
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+}
+
+.crest.dou .shadow {
+  margin: -26px 0 0 -26px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 100% 50% 100%;
+  background: black;
+  -webkit-transform-origin: 26px 26px;
+  -moz-transform-origin: 26px 26px;
+  -ms-transform-origin: 26px 26px;
+  transform-origin: 26px 26px;
+}
+
+.crest.dou .ellipse:nth-child(1),
+.crest.dou .shadow:nth-child(1) {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.crest.dou .ellipse:nth-child(2),
+.crest.dou .shadow:nth-child(2) {
+  -webkit-transform: rotate(-16deg);
+  -moz-transform: rotate(-16deg);
+  -ms-transform: rotate(-16deg);
+  transform: rotate(-16deg);
+}
+
+.crest.dou .ellipse:nth-child(3),
+.crest.dou .shadow:nth-child(3) {
+  -webkit-transform: rotate(106deg);
+  -moz-transform: rotate(106deg);
+  -ms-transform: rotate(106deg);
+  transform: rotate(106deg);
+}
+
+/* ----- GAMO ----- */
+.crest.gamo {
+  padding: 18px;
+}
+
+.crest.gamo .wrap {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.crest.gamo .comma {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: black;
+}
+
+.crest.gamo .comma:after {
+  content: '';
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin-top: -20px;
+  margin-left: -41px;
+  border-radius: 50%;
+  border: 20px solid black;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+.crest.gamo .comma:nth-child(1) {
+  top: 0px;
+  left: 50%;
+  margin-left: -14px;
+}
+
+.crest.gamo .comma:nth-child(2) {
+  bottom: 8px;
+  right: 2px;
+}
+
+.crest.gamo .comma:nth-child(3) {
+  bottom: 8px;
+  left: 2px;
+}
+
+.crest.gamo .comma:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.crest.gamo .comma:nth-child(2) {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.crest.gamo .comma:nth-child(3) {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+/* ----- HARA ----- */
+.crest.hara {
+  padding: 23px;
+}
+
+.crest.hara .fork {
+  margin: 0 auto;
+  width: 26px;
+  height: 14px;
+  border: 8px solid black;
+}
+
+.crest.hara .fork.top {
+  border-top: 0;
+}
+
+.crest.hara .fork.bottom {
+  border-bottom: 0;
+}
+
+.crest.hara .line {
+  margin: 0 auto;
+  width: 8px;
+  height: 10px;
+  background: black;
+}
+
+/* ----- HATAKEYAMA ----- */
+.crest.hatakeyama .halfcircle {
+  position: absolute;
+  left: 50%;
+  width: 40px;
+  height: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+.crest.hatakeyama .halfcircle.left {
+  margin-left: -30px;
+}
+
+.crest.hatakeyama .halfcircle.right {
+  margin-left: -10px;
+}
+
+.crest.hatakeyama .halfcircle.top {
+  bottom: 50%;
+  border-radius: 40px 40px 0 0;
+  border-bottom: 0;
+}
+
+.crest.hatakeyama .halfcircle.bottom {
+  top: 50%;
+  border-radius: 0 0 40px 40px;
+  border-top: 0;
+}
+
+.crest.hatakeyama .halfcircle.top.right:before,
+.crest.hatakeyama .halfcircle.bottom.left:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  border: 1px solid white;
+}
+
+.crest.hatakeyama .halfcircle.top.right:before {
+  border-bottom: 0;
+}
+
+.crest.hatakeyama .halfcircle.bottom.left:before {
+  border-top: 0;
+}
+
+.crest.hatakeyama .halfcircle.top.right:after,
+.crest.hatakeyama .halfcircle.bottom.left:after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  left: -6px;
+  border: 1px solid white;
+}
+
+.crest.hatakeyama .halfcircle.top.right:after {
+  top: -6px;
+  bottom: 0;
+  border-radius: 44px 44px 0 0;
+  border-bottom: 0;
+}
+
+.crest.hatakeyama .halfcircle.bottom.left:after {
+  top: 0;
+  bottom: -6px;
+  border-radius: 0 0 44px 44px;
+  border-top: 0;
+}
+
+/* ----- HOJO ----- */
+.crest.hojo {
+  padding: 20px 0;
+}
+
+.crest.hojo .wrap {
+  margin: 0 auto;
+  width: 72px;
+  height: 52px;
+}
+
+.crest.hojo .triangle {
+  float: left;
+  width: 0;
+  height: 0;
+  border-bottom: 26px solid black;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+}
+
+.crest.hojo .triangle:first-child {
+  float: none;
+  margin: 0 auto;
+}
+
+/* ----- HORI ----- */
+.crest.hori {
+  padding: 28px;
+}
+
+.crest.hori .square {
+  margin: 0 auto;
+  width: 8px;
+  height: 8px;
+  border: 18px solid black;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* ----- HORIO ----- */
+.crest.horio {
+  padding: 15px;
+}
+
+.crest.horio .wrap {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.crest.horio .circle {
+  width: 70px;
+  height: 70px;
+  background: black;
+}
+
+.crest.horio .holes .circle {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+
+.crest.horio .holes .circle:first-child {
+  left: -2px;
+}
+
+.crest.horio .holes .circle:last-child {
+  right: -2px;
+}
+
+/* ----- IJUIN ----- */
+.crest.ijuin {
+  padding: 19px;
+}
+
+.crest.ijuin .circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 6px solid black;
+}
+
+.crest.ijuin .cross {
+  position: absolute;
+  bottom: 50%;
+  top: 2px;
+  left: 50%;
+  width: 6px;
+  margin-left: -3px;
+  background: black;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+.crest.ijuin .cross:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 24px;
+  height: 6px;
+  margin-left: -12px;
+  background: inherit;
+}
+
+.crest.ijuin .cross:nth-child(2) {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.crest.ijuin .cross:nth-child(3) {
+  -webkit-transform: rotate(-120deg);
+  -moz-transform: rotate(-120deg);
+  -ms-transform: rotate(-120deg);
+  transform: rotate(-120deg);
+}
+
+/* ----- ITO ----- */
+.crest.ito .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.crest.ito .circle:nth-child(1) {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: black;
+}
+
+.crest.ito .circle:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  margin: -30px 0 0 -20px;
+  background: white;
+}
+
+.crest.ito .circle:nth-child(3) {
+  width: 14px;
+  height: 14px;
+  margin: -30px 0 0 -7px;
+  background: black;
+}
+
+/* ----- KURUSHIMA ----- */
+.crest.kurushima .wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 14px;
+  margin: -5px 0 0 -16px;
+}
+
+.crest.kurushima .line {
+  float: left;
+  margin-top: 2px;
+  width: 8px;
+  height: 8px;
+  background: black;
+  box-shadow: 0 -10px 0 black, 0 10px 0 black;
+}
+
+.crest.kurushima .line:nth-child(n) {
+  -webkit-transform: skew(0, 28deg);
+  -moz-transform: skew(0, 28deg);
+  -ms-transform: skew(0, 28deg);
+  transform: skew(0, 28deg);
+}
+
+.crest.kurushima .line:nth-child(2n) {
+  -webkit-transform: skew(0, -28deg);
+  -moz-transform: skew(0, -28deg);
+  -ms-transform: skew(0, -28deg);
+  transform: skew(0, -28deg);
+}
+
+/* ----- NAGANO ----- */
+.crest.matsuda .diag {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 76px;
+  height: 17px;
+  margin: -9px 0 0 -38px;
+}
+
+.crest.matsuda .diag.left {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.matsuda .diag.right {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.crest.matsuda .line,
+.crest.matsuda .line.short:after,
+.crest.matsuda .line.long:after {
+  position: relative;
+  height: 7px;
+  background: black;
+}
+
+.crest.matsuda .line.short,
+.crest.matsuda .line.long:after {
+  width: 28px;
+  margin-bottom: 3px;
+}
+
+.crest.matsuda .line.short:after,
+.crest.matsuda .line.long:after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  margin-left: 10px;
+}
+
+.crest.matsuda .line.long,
+.crest.matsuda .line.short:after {
+  width: 38px;
+}
+
+/* ----- NAGANO ----- */
+.crest.nagano .triangle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -24px 0 0 -6px;
+  width: 0px;
+  height: 0px;
+  border-top: 48px solid white;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  -webkit-transform-origin: center 39px;
+  -moz-transform-origin: center 39px;
+  -ms-transform-origin: center 39px;
+  transform-origin: center 39px;
+}
+
+.crest.nagano .triangle:before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  left: -5px;
+  width: 0px;
+  height: 0px;
+  border-top: 46px solid black;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.crest.nagano .triangle:after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  top: -44px;
+  left: -1px;
+  background: white;
+}
+
+.crest.nagano .triangle:nth-child(1) {
+  -webkit-transform: rotate(-56deg);
+  -moz-transform: rotate(-56deg);
+  -ms-transform: rotate(-56deg);
+  transform: rotate(-56deg);
+}
+
+.crest.nagano .triangle:nth-child(2) {
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+
+.crest.nagano .triangle:nth-child(3) {
+  -webkit-transform: rotate(-24deg);
+  -moz-transform: rotate(-24deg);
+  -ms-transform: rotate(-24deg);
+  transform: rotate(-24deg);
+}
+
+.crest.nagano .triangle:nth-child(4) {
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+.crest.nagano .triangle:nth-child(5) {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+}
+
+.crest.nagano .triangle:nth-child(6) {
+  -webkit-transform: rotate(24deg);
+  -moz-transform: rotate(24deg);
+  -ms-transform: rotate(24deg);
+  transform: rotate(24deg);
+}
+
+.crest.nagano .triangle:nth-child(7) {
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+
+.crest.nagano .triangle:nth-child(8) {
+  -webkit-transform: rotate(56deg);
+  -moz-transform: rotate(56deg);
+  -ms-transform: rotate(56deg);
+  transform: rotate(56deg);
+}
+
+/* ----- OTA ----- */
+.crest.ota {
+  padding: 20px;
+}
+
+.crest.ota .circle {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border: 3px solid black;
+}
+
+.crest.ota .ellipse {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: black;
+  border-radius: 100% 0;
+  -webkit-transform-origin: bottom left;
+  -moz-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.crest.ota .ellipse:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 10px;
+  background: white;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.crest.ota .ellipse:nth-child(1) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.crest.ota .ellipse:nth-child(2) {
+  -webkit-transform: rotate(27deg);
+  -moz-transform: rotate(27deg);
+  -ms-transform: rotate(27deg);
+  transform: rotate(27deg);
+}
+
+.crest.ota .ellipse:nth-child(3) {
+  -webkit-transform: rotate(99deg);
+  -moz-transform: rotate(99deg);
+  -ms-transform: rotate(99deg);
+  transform: rotate(99deg);
+}
+
+.crest.ota .ellipse:nth-child(4) {
+  -webkit-transform: rotate(171deg);
+  -moz-transform: rotate(171deg);
+  -ms-transform: rotate(171deg);
+  transform: rotate(171deg);
+}
+
+.crest.ota .ellipse:nth-child(5) {
+  -webkit-transform: rotate(243deg);
+  -moz-transform: rotate(243deg);
+  -ms-transform: rotate(243deg);
+  transform: rotate(243deg);
+}
+
+.crest.ota .sphere {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -4px 0 0 -4px;
+  background: black;
+  border: 1px solid white;
+}
+
+/* ----- TAKEDA ----- */
+.crest.takeda {
+  padding: 27px;
+}
+
+.crest.takeda .wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.crest.takeda .diamond {
+  position: absolute;
+  left: 14px;
+  width: 19px;
+  height: 19px;
+  background: black;
+  -webkit-transform: rotate(-45deg) skew(12deg, 12deg);
+  -moz-transform: rotate(-45deg) skew(12deg, 12deg);
+  -ms-transform: rotate(-45deg) skew(12deg, 12deg);
+  transform: rotate(-45deg) skew(12deg, 12deg);
+}
+
+.crest.takeda .diamond:nth-child(2) {
+  margin-top: 26px;
+}
+
+.crest.takeda .diamond:nth-child(3) {
+  margin-left: -20px;
+}
+
+.crest.takeda .diamond:nth-child(4) {
+  margin-left: 20px;
+}
+
+.crest.takeda .diamond:nth-child(3),
+.crest.takeda .diamond:nth-child(4) {
+  margin-top: 13px;
+}

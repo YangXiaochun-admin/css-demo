@@ -1,0 +1,313 @@
+@import "compass/css3"
+
+@mixin reset
+  // http://meyerweb.com/eric/tools/css/reset/ 
+  // v2.0 | 20110126
+  // License: none (public domain)
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+  p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+  dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+  var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+  legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+  canvas, details, embed, figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary, time, mark, audio, video
+    margin: 0
+    padding: 0
+    border: 0
+    font-size: 100%
+    font: inherit
+    vertical-align: baseline
+  // HTML5 display-role reset for older browsers
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+    display: block
+  body
+    line-height: 1
+  ol, ul
+    list-style: none
+  blockquote, q
+    quotes: none
+  blockquote:before, blockquote:after, q:before, q:after
+    content: ''
+    content: none
+  table
+    border-collapse: collapse
+    border-spacing: 0
+@mixin unselectable
+  -moz-user-select: -moz-none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  user-select: none
+@mixin clearfloat
+  &:before, &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+  zoom: 1
+@mixin border-box
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  *, *:before, *:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+
+html, body
+  margin: 0
+  padding: 0
+  height: 100%
+#wrapper
+  padding: 12px
+select
+  -webkit-appearance: menulist-button
+  width: 200px
+  height: 25px
+.drp-popup
+  font-family: "AvenirLTStd-Heavy", "Avenir LT Std 85 Heavy", "Open Sans", Helvetica, Arial, sans-serif
+
+$outer-border-color: #d6d6d6
+$outer-box-shadow: 0px 4px 10px 0 #828282
+
+$bgcolor: #FFFFFF
+$text-color: #444444
+$border-color: #e0e0e0
+$inactive-color: #e0e0e0
+$selected-color: #2a91ca
+$in-range-bgcolor: #ddf3fe
+$preset-label-color: #bcbcbc
+$month-picker-arrow-color: #afafaf
+
+$light-gray: #cccccc
+$lighter-gray: #efefef
+
+$day-width: 30px
+$day-height: 24px
+$day-spacing: 3px
+
+$calendar-width: ($day-width * 7) + ($day-spacing * 6)
+
+
+.drp-popup
+  top: 30px
+  @include border-box
+  // display: none
+  position: absolute
+  z-index: 9999
+  font-size: 12px
+  color: $text-color
+  background-color: $bgcolor
+  margin: 15px 0
+  padding: 18px 18px 38px
+  text-transform: uppercase
+  border: 1px solid $outer-border-color
+  -webkit-border-radius: 12px
+  -moz-border-radius: 12px
+  border-radius: 12px
+  -webkit-box-shadow: $outer-box-shadow
+  -moz-box-shadow: $outer-box-shadow
+  box-shadow: $outer-box-shadow
+  a
+    text-decoration: none
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+  .drp-timeline
+    position: relative
+    .drp-timeline-bar
+      position: relative
+      height: 13px
+      border-bottom: 3px solid $light-gray
+      bottom: 21px
+      &:before, &:after
+        content: ''
+        position: absolute
+        height: 15px
+        border-left: 3px solid $light-gray
+        bottom: -9px
+        left: 0
+      &:after
+        left: auto
+        right: 0
+    .drp-timeline-presets
+      position: relative
+      z-index: 1
+      li
+        position: relative
+        width: 87px
+        height: 36px
+        display: inline-block
+        color: $preset-label-color
+        // IE8 has issues with mousehover when there is no bg color, and
+        //  "background-color: transparent" doesn't work. I hate you IE8.
+        background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==')
+        text-align: center
+        cursor: pointer
+        &:first-child
+          margin-left: 3px
+        .drp-button
+          z-index: 2
+          cursor: pointer
+          background-color: $border-color
+          width: 12px
+          height: 12px
+          position: absolute
+          bottom: 4px
+          left: 37px
+          -webkit-border-radius: 50%
+          -moz-border-radius: 50%
+          border-radius: 50%
+          border: 2px solid $bgcolor
+          -webkit-transition: all 0.15s ease
+          -moz-transition: all 0.15s ease
+          -o-transition: all 0.15s ease
+          transition: all 0.15s ease
+        &.drp-selected
+          color: $text-color
+        &.drp-selected .drp-button, &:hover .drp-button
+          background-color: $selected-color
+          width: 16px
+          height: 16px
+          left: 35px
+          bottom: 2px
+  .drp-calendar
+    display: table-cell
+    vertical-align: top
+    width: $calendar-width
+    padding-bottom: 8px
+    border-bottom: 1px solid $border-color
+    .drp-month-picker
+      position: relative
+      background-color: $lighter-gray
+      height: 30px
+      -webkit-border-radius: 20px
+      -moz-border-radius: 20px
+      border-radius: 20px
+      margin-bottom: 3px
+      line-height: 32px
+      .drp-month-title
+        font-size: 14px
+        text-align: center
+      .drp-arrow
+        @include unselectable
+        cursor: pointer
+        position: absolute
+        width: 28px
+        height: 30px
+        line-height: 32px
+        text-align: center
+        left: 0
+        top: 0
+        color: $month-picker-arrow-color
+      .drp-arrow-right
+        left: auto
+        right: 0px
+    .drp-day-headers
+      li
+        display: inline-block
+        width: $day-width
+        height: $day-height
+        line-height: 26px
+        margin: 0 0 $day-spacing $day-spacing
+        text-align: center
+        &:first-child
+          margin-left: 0
+    .drp-days
+      @include clearfloat
+      li
+        @include unselectable
+        width: $day-width + $day-spacing
+        height: $day-height
+        border-right: solid $day-spacing $bgcolor
+        float: left
+        cursor: pointer
+        line-height: 26px
+        text-align: center
+        margin: 0 0 $day-spacing 0
+        &.drp-day-last-in-row
+          width: $day-width
+          border-right: none
+        &.drp-day-in-range
+          color: $selected-color
+          background-color: $in-range-bgcolor
+          border-color: $in-range-bgcolor
+        &.drp-day-last-in-range
+          border-color: $bgcolor
+        &.drp-day-selected, &:hover
+          color: $lighter-gray
+          background-color: $selected-color
+        &.drp-day-disabled
+          color: $light-gray
+          &:hover
+            background-color: $bgcolor
+            cursor: default
+      .drp-day-empty
+        background-color: transparent !important
+        cursor: auto
+  .drp-calendars
+    padding: 18px 0 10px
+    border-top: 1px solid $border-color
+  .drp-calendar:first-child
+    .drp-day-selected
+      border-color: $in-range-bgcolor
+
+  .drp-calendar-date
+    position: absolute
+    bottom: 0px
+    height: 34px
+    width: inherit
+    text-align: center
+    color: $selected-color
+    font-size: 16px
+    &:before
+      font-size: 12px
+      color: $text-color
+  .drp-calendar-start
+    .drp-calendar-date:before
+      content: 'Start Date: '
+  .drp-calendar-end
+    .drp-calendar-date:before
+      content: 'End Date: '
+
+  .drp-calendar-separator
+    display: table-cell
+    position: relative
+    width: 69px
+    top: 8px
+    &:before
+      content: ''
+      position: absolute
+      height: 90%
+      border-left: 1px solid $border-color
+      left: 34px
+    &:after
+      content: 'To'
+      position: absolute
+      top: 80px
+      color: $selected-color
+      background-color: $bgcolor
+      height: 38px
+      width: 69px
+      text-align: center
+      font-size: 16px
+      line-height: 41px
+  .drp-tip
+    position: absolute
+    top: 0
+    left: 30px
+    &:before, &:after
+      content: ""
+      position: absolute
+      border-style: solid
+      bottom: 0
+    &:before
+      left: 0
+      border-width: 0 16px 16px
+      border-color: $outer-border-color transparent
+    &:after
+      left: 2px
+      border-width: 0px 14px 14px
+      border-color: $bgcolor transparent

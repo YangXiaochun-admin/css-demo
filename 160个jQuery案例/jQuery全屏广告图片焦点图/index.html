@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery全屏广告图片焦点图DEMO演示</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="banner-box">
+    <div class="bd">
+        <ul>
+            <li style="background:#F3E5D8;">
+                <div class="m-width"> <a href="javascript:void(0);"><img src="images/img1.jpg" /></a> </div>
+            </li>
+            <li style="background:#B01415">
+                <div class="m-width"> <a href="javascript:void(0);"><img src="images/img2.jpg" /></a> </div>
+            </li>
+            <li style="background:#C49803;">
+                <div class="m-width"> <a href="javascript:void(0);"><img src="images/img3.jpg" /></a> </div>
+            </li>
+            <li style="background:#FDFDF5">
+                <div class="m-width"> <a href="javascript:void(0);"><img src="images/img4.jpg" /></a> </div>
+            </li>
+        </ul>
+    </div>
+    <div class="banner-btn"> <a class="prev" href="javascript:void(0);"></a> <a class="next" href="javascript:void(0);"></a>
+        <div class="hd">
+            <ul>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".prev,.next").hover(function(){
+		$(this).stop(true,false).fadeTo("show",0.9);
+	},function(){
+		$(this).stop(true,false).fadeTo("show",0.4);
+	});
+	
+	$(".banner-box").slide({
+		titCell:".hd ul",
+		mainCell:".bd ul",
+		effect:"fold",
+		interTime:3500,
+		delayTime:500,
+		autoPlay:true,
+		autoPage:true, 
+		trigger:"click" 
+	});
+
+});
+</script>
+</body>
+</html>

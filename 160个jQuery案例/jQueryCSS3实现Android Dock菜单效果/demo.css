@@ -1,0 +1,179 @@
+body {
+  padding: 0;
+  margin: 20px 0 0;
+  text-align: center;
+  color: #715241;
+  background: rgb(246,241,232);
+  background: -moz-radial-gradient(center, ellipse cover,  #fbf5f3 49%, #d6c8bd 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(49%,#fbf5f3), color-stop(100%,#d6c8bd));
+  background: -webkit-radial-gradient(center, ellipse cover,  #fbf5f3 49%,#d6c8bd 100%);
+  background: -o-radial-gradient(center, ellipse cover,  #fbf5f3 49%,#d6c8bd 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  #fbf5f3 49%,#d6c8bd 100%);
+  background: radial-gradient(center, ellipse cover,  #fbf5f3 49%,#d6c8bd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf5f3', endColorstr='#d6c8bd',GradientType=1 );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1, em, #information {
+  display: block;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "Overlock";
+  margin: 2em auto;
+}
+
+a {
+  color: #715241;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#container {
+  display: block;
+  margin: 0 auto;
+}
+  
+  #information {
+    color: red;
+    font-size: 34px;
+  }
+  
+  #arrow {
+    position: absolute;
+    left: 50%;
+    margin-left: -66px;
+    bottom: 10em;
+  }
+  
+  #dock-wrapper {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    -webkit-perspective: 3000px;
+       -moz-perspective: 3000px;
+        -ms-perspective: 3000px;
+         -o-perspective: 3000px;
+            perspective: 3000px;
+  }
+  
+    .dock {
+      height: 70px;
+      -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+           -o-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 1s;
+         -moz-transition: -moz-transform 1s;
+          -ms-transition: -ms-transform 1s;
+           -o-transition: -o-transform 1s;
+              transition: transform 1s;
+    }
+  
+    .dock-show {
+      -webkit-transform: translateZ(-25px) rotateX(-95deg);
+         -moz-transform: translateZ(-25px) rotateX(-95deg);
+          -ms-transform: translateZ(-25px) rotateX(-95deg);
+           -o-transform: translateZ(-25px) rotateX(-95deg);
+              transform: translateZ(-25px) rotateX(-95deg);
+    }
+    
+    .dock-front, .dock-top {
+       position: absolute;
+       display: block;
+       width: 100%;
+       height: 40px;
+       padding: 10px 0;
+       box-shadow: 0px -3px 6px rgba(0,0,0,0.3);
+    }
+  
+    .dock-front {
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#434345), to(#161616));
+	    background-image: -webkit-linear-gradient(top, #434345, #161616);
+	    background-image:    -moz-linear-gradient(top, #434345, #161616); 
+       background-image:     -ms-linear-gradient(top, #434345, #161616); 
+       background-image:      -o-linear-gradient(top, #434345, #161616); 
+       background-image:         linear-gradient(to bottom, #434345, #161616);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434345', endColorstr='#161616',GradientType=0 );
+       -webkit-transform: translateZ(30px);
+          -moz-transform: translateZ(30px);
+           -ms-transform: translateZ(30px);
+            -o-transform: translateZ(30px);
+               transform: translateZ(30px);
+    }
+  
+    .dock-top {
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#505052), to(#161616));
+	    background-image: -webkit-linear-gradient(top, #505052, #161616);
+	    background-image:    -moz-linear-gradient(top, #505052, #161616); 
+       background-image:     -ms-linear-gradient(top, #505052, #161616); 
+       background-image:      -o-linear-gradient(top, #505052, #161616); 
+       background-image:         linear-gradient(to bottom, #505052, #161616);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505052', endColorstr='#161616',GradientType=0 );
+       -webkit-transform: rotateX(90deg) translateZ(29px);
+         -moz-transform: rotateX(90deg) translateZ(29px);
+          -ms-transform: rotateX(90deg) translateZ(29px);
+           -o-transform: rotateX(90deg) translateZ(29px);
+              transform: rotateX(90deg) translateZ(29px);
+    }
+      
+      #arrow-up, #arrow-down {
+        cursor: pointer;
+        -webkit-transition: all .2s;
+           -moz-transition: all .2s;
+            -ms-transition: all .2s;
+             -o-transition: all .2s;
+                transition: all .2s;
+      }
+      
+      #arrow-up:hover {
+      	margin-top: -.2em;
+      }
+      
+      #arrow-down:hover {
+      	margin-top: .2em;
+      }
+ 
+    .item {
+    	position: absolute;
+    	width: 526px;
+    	left: 50%;
+    	margin-left: -263px;
+    }	
+     
+      .item img {
+        position: absolute;
+        z-index: -1;
+        cursor: pointer;
+      }
+      
+      .item img:first-child {
+      	left: 0;
+      }
+      
+      .item img:nth-child(2) {
+      	left: 90px;
+      }
+      
+      .item img:nth-child(3) {
+      	left: 180px;
+      }
+      
+      .item img:nth-child(4) {
+      	left: 270px;
+      }
+      
+      .item img:nth-child(5) {
+      	left: 360px;
+      }
+      
+      .item img:nth-child(6) {
+      	left: 450px;
+      }

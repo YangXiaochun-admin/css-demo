@@ -1,0 +1,83 @@
+body {
+	background: #fff url(white_brick_wall.png);
+	font: 15px "Helvetica Neue",Calibri,Helvetica,Arial,sans-serif;
+	color: #666;
+	padding: 0; margin: 0;
+}
+
+h1 {
+	margin-bottom: 0;
+	color: #999;
+}
+
+a {
+	color: #66f;
+	text-decoration: none
+}
+
+.container {
+	text-align: center;
+	padding: 10px 0;
+}
+	/*.wrapper {margin:0 300px}*/
+
+.block {
+	margin: 20px 30px;
+	display:inline-block;
+	width:50px;
+	height:50px;
+}
+
+.big {
+	width: 380px;
+	height: 100px;
+	line-height: 100px;
+	margin-bottom: 200px;
+	border-radius: 10px;
+}
+
+.c  {background:rgba(193,193,193,.5)}
+.cr {background:rgba(255,0,0,.5)}
+.cg {background:rgba(0,200,0,.5)}
+.cb {background:rgba(0,0,255,.5)}
+.crg{background:rgba(255,255,0,.5)}
+.cgb{background:rgba(0,200,255,.5)}
+.cbr{background:rgba(255,0,255,.5)}
+.crgb{background:rgba(255,255,255,.5)}
+
+.round  {border-radius:10px}
+.circle {border-radius:30px}
+.ur {border-radius:5px 50px 5px 5px}
+.ll {border-radius:5px 5px 5px 50px}
+
+.rffdgad {
+	position: absolute;
+	right: 10px;
+	top:  183px;
+}
+
+a#forkme_banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 138px;
+  height: 138px;
+  display: block;
+  background: transparent url(images/fork-sprite.png) 0 0 no-repeat;
+  text-indent: -9000px;
+  z-index: 3;
+}
+
+a#forkme_banner:hover {
+  background-position: 0 -138px;
+}
+
+.flattr, .twitter-share-button, .twitter-follow-button, .IN-widget, .fb-like {
+	position: absolute!important;
+	left: 10px;
+}
+.flattr                { top: 140px }
+.twitter-share-button  { top: 215px }
+.twitter-follow-button { top: 255px }
+.IN-widget             { top: 295px }
+.fb-like               { top: 328px }

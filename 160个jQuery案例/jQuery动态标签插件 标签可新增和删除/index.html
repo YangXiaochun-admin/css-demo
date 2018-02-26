@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery动态标签插件DEMO演示</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a, img { border: 0; }
+body { background: #333; }
+.words-split { vertical-align: middle; }
+.lbl-input {
+    display: inline-block;
+    width: 120px;
+    height: 26px;
+    line-height: 26px;
+    min-height: 26px;
+    text-indent: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #fff;
+    vertical-align: middle;
+}
+.words-split a {
+    display: inline-block;
+    padding: 0 20px 0 8px;
+    position: relative;
+    margin: 0 4px;
+}
+.words-split a em {
+    display: none;
+    width: 16px;
+    height: 100%;
+    position: absolute;
+    background: #f60;
+    right: 0;
+    top: 0;
+}
+.words-split a em:after {
+    content: "-";
+    color: #fff;
+    font: bold 20px 'Microsoft Yahei';
+}
+.words-split a:hover em { display: block; }
+a.words-split-add {
+    display: inline-block;
+    font: bold 20px 'Microsoft Yahei';
+    color: #2cac93
+}
+.fm-button {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 1em;
+    border-radius: 3px;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    background: #2cac93;
+}
+a { text-decoration: none; }
+</style>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div style="width:520px;margin:40px auto 0 auto;">
+    <input type="text" name="staticPath" value="baidu.com,news.cn,sina.com" id="staticPath" />
+</div>
+<script type="text/javascript">
+var WS = function(opt){
+
+	var regexp = opt.regexp || /\S/,
+		el = $(opt.el), 
+			list = el.val().split(','),
+			holder = $('<span class="words-split"></span>'),
+			add = $('<a href="javascript:void(0)" class="words-split-add">+</a>');
+
+	for (var i = 0; i < list.length; i++) {
+		holder.append( $('<a href="javascript:void(0)" class="fm-button">'+list[i]+'<em> </em></a>') );
+	}
+
+	el.hide().after( holder );
+	holder.after(add);
+
+	holder.on('click','a>em',function(){	//刪除
+		$(this).parent().remove();
+		el.val( holder.text().match(/\S+/g).join(',') )
+	});
+	
+	add.on('click',function(){				//添加预处理
+		$(this).hide();
+		holder.append( $('<span class="lbl-input" contenteditable="true"/>') )
+	});
+	
+	holder.on('blur','.lbl-input',function(){	//验证添加字段
+		var t = $(this),v = t.text();
+		if( regexp.test(v) ){
+			t.remove();
+			add.show();
+			holder.append( $('<a href="javascript:void(0)" class="fm-button">'+v+'<em> </em></a>') );
+			el.val( holder.text().match(/\S+/g).join(',') )
+		}else if(!v){
+			t.remove();
+			add.show();
+		}else{
+			alert('输入不合法');
+		}
+	});
+	
+	holder.on('keydown','.lbl-input',function(e){
+		switch(e.keyCode){
+			case 13:
+			case 27: $(this).trigger('blur');
+		}
+	});
+
+}
+
+WS({el:'#staticPath',regexp:/\w+\.\w+/});
+</script>
+</body>
+</html>

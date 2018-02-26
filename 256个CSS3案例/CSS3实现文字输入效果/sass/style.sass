@@ -1,0 +1,241 @@
+@import "compass/css3"
+
+/* custom light solarize theme for public use  in .sass format
+ *
+ * Name:  Matthew
+ * Email:   imagineux@gmail.com
+ * 
+ */
+$black: hsla(0, 0%, 15%, 1)
+$dark-gray: hsla(208, 12%, 25%, 1)
+$medium-gray: hsla(225, 3%, 26%, 1)
+$gray: hsla(0, 0%, 60%, 1)
+$light-gray: hsla(195, 29%, 97%, 1)
+$pre-gray: hsla(195, 29%, 94%, 1)
+$white: hsla(0, 100%, 100%, 1)
+$light-red: hsla(0, 80%, 64%, 1)
+$red: hsla(0, 80%, 56%, 1)
+$light-green: hsla(138, 54%, 59%, 1)
+$green: hsla(138, 54%, 49%, 1)
+$light-blue: hsla(205, 50%, 47%, 1)
+$blue: hsla(205, 51%, 40%, 1)
+$dark-blue: hsla(205, 51%, 30%, 1)
+$gray-button: hsla(208, 12%, 76%, 1)
+$gray-border: hsla(210, 12%, 71%, 1)
+$light-yellow: hsla(52, 100%, 87%, 1)
+
+// font stuff
+$base-font-color: $gray
+$base-accent-color: $gray
+body
+  background: $dark-gray
+
+.pln 
+  color: #bd3613 
+
+.str 
+  color: #269186 
+
+.kwd 
+  color: #859900 
+
+.com 
+  color: #586175
+  font-style: italic 
+
+.typ 
+  color: #b58900 
+
+.lit 
+  color: #2aa198 
+
+.pun 
+  color: #839496 
+
+.opn 
+  color: #839496 
+
+.clo 
+  color: #839496 
+
+.tag 
+  color: #268bd2 
+
+.atn 
+  color: #586175 
+
+.atv 
+  color: #2aa198 
+
+.dec 
+  color: #268bd2 
+
+.var 
+  color: #268bd2 
+
+.fun 
+  color: #FF0000 
+
+/* Put a border around 
+  printed code snippets. */
+pre.prettyprint 
+  padding: 0.5rem 0.5rem
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums 
+  color: #4c666c
+  overflow: hidden
+
+ol.linenums li
+  line-height: 18px
+  margin: 0 0 0.3125rem 0.75rem
+  overflow: hidden
+  flex: 1
+///////////////////////////////////////////////
+
+.linenums > li
+  opacity: 0.7
+  white-space: nowrap
+  overflow: hidden
+  border-right: 1px solid
+  animation: typing 3s steps(26, end), blink-caret 1s step-end 3s
+  &:nth-child(2)
+    animation: typingMid 3s steps(23, end), blink-caret 1s step-end 3s
+    animation-delay: 3s
+    animation-fill-mode: backwards
+  &:nth-child(3)
+    animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s
+    animation-delay: 6s
+    animation-fill-mode: backwards
+  &:nth-child(4)
+    animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s
+    animation-delay: 9s
+    animation-fill-mode: backwards
+  &:nth-child(5)
+    animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s
+    animation-delay: 12s
+    animation-fill-mode: backwards
+  &:nth-child(6)
+    animation: typingNone 0.1s steps(1, end), blink-caret 1s step-end 2s
+    animation-delay: 15s
+    animation-fill-mode: backwards
+  &:nth-child(7)
+    animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s
+    animation-delay: 15.1s
+    animation-fill-mode: backwards
+  &:nth-child(8)
+    animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s
+    animation-delay: 18.1s
+    animation-fill-mode: backwards
+  &:nth-child(9)
+    animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s
+    animation-delay: 21.1s
+    animation-fill-mode: backwards
+  &:nth-child(10)
+    animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s
+    animation-delay: 24.1s
+    animation-fill-mode: backwards
+  &:nth-child(11)
+    animation: typingNone 1s steps(3, end), blink-caret 1s step-end 2s
+    animation-delay: 27.1s
+    animation-fill-mode: backwards
+  &:nth-child(12)
+    animation: typingLast 1s steps(3, end), blink-caret 1s step-end infinite
+    animation-delay: 30.1s
+    animation-fill-mode: both
+
+@keyframes typingMid
+  from
+    width: 0%
+  to
+    width: 100%
+
+
+@keyframes typing
+  from
+    width: 0
+  to
+    width: 320px
+
+
+@keyframes typingLast
+  from
+    width: 0
+  to
+    width: 10px
+
+
+@keyframes typingNone
+  from
+    width: 0
+  to
+    width: 10px
+
+
+@keyframes blink-caret
+  from, to
+    border-color: transparent
+  50%
+    border-color: black
+//////////////////////////////////////////////////////
+  
+.code-editor
+  display: flex
+  flex-direction: row
+  width: 34rem
+  height: 20rem
+  margin: 4rem auto
+  position: relative
+  border-radius: 5px 5px 0 0
+  background: $white
+  &::before
+    content: ''
+    z-index: 20
+    background: $pre-gray
+    padding-top: 6px
+    position: absolute
+    top: -1.875rem
+    left: 0
+    right: 0
+    height: 1.875rem
+    border-radius: 5px 5px 0 0
+    content: ''
+    z-index: 2
+  &::after
+    content: ''
+    background: #f5f8fa
+    padding-top: 6px
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    width: 1.875rem
+    z-index: 1
+span.control::before 
+  content: ''
+  position: absolute
+  top: -1rem
+  left: 0
+  z-index: 30
+  padding: 6px
+  border-radius: 20px
+span.control
+  &:nth-child(1):before 
+    margin-left: 15px
+    background-color: $red
+  &:nth-child(2):before 
+    margin-left: 35px
+    background-color: $light-yellow
+  &:nth-child(3):before 
+    margin-left: 55px
+    background-color: $green
+
+pre.numbers
+  display: flex
+  flex-direction: column
+  margin: 0 
+  opacity: .65
+
+code.css
+  display: flex-direction
+  flex: 1

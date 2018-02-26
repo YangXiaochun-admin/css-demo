@@ -1,0 +1,96 @@
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+body {
+  background-color: #eaeaea;
+  font-family: 'Roboto';
+}
+
+.center-block, .carrousel, .carrousel .wrapper {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.gallery {
+  list-style: none;
+}
+
+.portrait {
+  width: 150px;
+  box-shadow: 0 0 3px #555;
+  background-color: #FFF;
+  padding: 5px;
+  margin: 7px 0px 0px 7px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.portrait:hover {
+  -moz-transform: scale(1.04, 1.04);
+  -ms-transform: scale(1.04, 1.04);
+  -webkit-transform: scale(1.04, 1.04);
+  transform: scale(1.04, 1.04);
+  box-shadow: 0 0 5px #555;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.portrait .pic {
+  width: 100%;
+  margin: 5px 0;
+}
+.portrait .date {
+  font-size: 10px;
+  font-weight: bold;
+}
+.portrait .foot {
+  font-size: 11px;
+}
+.portrait .foot .heart {
+  margin-left: 4px;
+}
+
+.carrousel {
+  position: fixed;
+  background-color: rgba(10, 10, 10, 0.8);
+  display: none;
+}
+.carrousel .wrapper {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  /*.loading{
+    color: #FFF;
+    font-size: 24px;
+    margin: 40% 40%;
+    display: none;
+  }*/
+}
+.carrousel .wrapper > img {
+  width: 100%;
+}
+
+.close {
+  cursor: pointer;
+  color: #FFF;
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 18px;
+}
+.close:hover {
+  font-size: 20px;
+  color: #DDD;
+}

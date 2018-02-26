@@ -1,0 +1,68 @@
+@import "compass/css3";
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+* {
+  position: relative;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('http://upload.wikimedia.org/wikipedia/commons/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg') 50% no-repeat fixed;
+  background-size: cover;
+  font: 14px/1.2 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+p {
+  margin-bottom: 0.4em;
+}
+
+article {
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: inherit;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: inherit;
+    -webkit-filter: blur(10px) saturate(2);
+  }
+  
+  .title {
+    padding: 8px;
+    background: rgba(225,225,225,0.5);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .content {
+    padding: 8px;
+    background: rgba(255,255,255,0.5);
+  }
+}
+
+.attr {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  font-size: 0.8em;
+  color: white;
+}

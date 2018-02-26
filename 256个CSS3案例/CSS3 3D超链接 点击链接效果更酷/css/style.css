@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    padding-top: 50px;
+}
+
+a {
+    display: inline-block;
+    font-size: 3em;
+    text-decoration: none;
+    color: hsl(192, 100%, 31%);
+    font-family: 'Boogaloo', cursive;
+    text-shadow: 0 1px 0 hsl(192, 100%, 21%),
+                 0 2px 0 hsl(192, 100%, 21%),
+                 0 3px 0 hsl(192, 100%, 21%),
+                 0 4px 0 hsl(192, 100%, 21%),
+                 0 5px 0 hsl(192, 100%, 21%),
+                 0 6px 1px hsla(0, 0%, 0%, .1),
+                 0 0 5px hsla(0, 0%, 0%, .1),
+                 0 1px 3px hsla(0, 0%, 0%, .3),
+                 0 3px 5px hsla(0, 0%, 0%, .2),
+                 0 5px 10px hsla(0, 0%, 0%, .25);
+    -webkit-transition: .2s;
+       -moz-transition: .2s;
+         -o-transition: .2s;
+            transition: .2s;
+}
+
+a:hover {
+    color: hsl(192, 100%, 38%);
+    font-family: 'Boogaloo', cursive;
+    text-shadow: 0 1px 0 hsl(192, 100%, 28%),
+                 0 2px 0 hsl(192, 100%, 28%),
+                 0 3px 0 hsl(192, 100%, 28%),
+                 0 4px 0 hsl(192, 100%, 28%),
+                 0 5px 0 hsl(192, 100%, 28%),
+                 0 6px 1px hsla(0, 0%, 0%, .1),
+                 0 0 5px hsla(0, 0%, 0%, .1),
+                 0 1px 3px hsla(0, 0%, 0%, .3),
+                 0 3px 5px hsla(0, 0%, 0%, .2),
+                 0 5px 10px hsla(0, 0%, 0%, .25);
+}
+
+a:focus,
+a:active {
+    outline: none;
+    color: hsl(192, 100%, 21%);
+    text-shadow: 0 0 5px hsla(0, 0%, 0%, .1),
+                 0 0 3px hsla(0, 0%, 0%, .3),
+                 0 0 5px hsla(0, 0%, 0%, .2);
+    -webkit-transform: translateY(6px);
+       -moz-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+         -o-transform: translateY(6px);
+            transform: translateY(6px);
+}

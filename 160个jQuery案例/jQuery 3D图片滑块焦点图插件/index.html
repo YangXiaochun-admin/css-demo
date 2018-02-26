@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>jQuery 3D 图片播放焦点图插件Adaptor在线演示</title>
+<link href="css/screen.css" rel="stylesheet">
+<script src="js/lib/modernizr.min.js"></script>
+</head>
+<body>
+<div id="page">
+    <section>
+        <div id="viewport-shadow"> <a href="#" id="prev" title="go to the next slide"></a> <a href="#" id="next" title="go to the next slide"></a>
+            <div id="viewport">
+                <div id="box">
+                    <figure class="slide"> <img src="img/the-battle.jpg"> </figure>
+                    <figure class="slide"> <img src="img/hiding-the-map.jpg"> </figure>
+                    <figure class="slide"> <img src="img/theres-the-buoy.jpg"> </figure>
+                    <figure class="slide"> <img src="img/finding-the-key.jpg"> </figure>
+                    <figure class="slide"> <img src="img/lets-get-out-of-here.jpg"> </figure>
+                </div>
+            </div>
+            <div id="time-indicator"></div>
+        </div>
+        <footer>
+            <nav class="slider-controls">
+                <ul id="controls">
+                    <li><a class="goto-slide current" href="#" data-slideindex="0"></a></li>
+                    <li><a class="goto-slide" href="#" data-slideindex="1"></a></li>
+                    <li><a class="goto-slide" href="#" data-slideindex="2"></a></li>
+                    <li><a class="goto-slide" href="#" data-slideindex="3"></a></li>
+                    <li><a class="goto-slide" href="#" data-slideindex="4"></a></li>
+                </ul>
+            </nav>
+        </footer>
+    </section>
+    <aside id="effect-switcher">
+        <h2>Select effect</h2>
+        <ul id="effect-list">
+            <li><a href="#" class="effect current" data-fx="scrollVert3d">Vertical 3D scroll</a></li>
+            <li><a href="#" class="effect" data-fx="scrollHorz3d">Horizontal 3D scroll</a></li>
+            <li><a href="#" class="effect" data-fx="scrollVert">Vertical scroll</a></li>
+            <li><a href="#" class="effect" data-fx="scrollHorz">Horizontal scroll</a></li>
+            <li><a href="#" class="effect" data-fx="blindLeft">Blind left</a></li>
+            <li><a href="#" class="effect" data-fx="blindDown">Blind down</a></li>
+            <li><a href="#" class="effect" data-fx="fade">Fade</a></li>
+        </ul>
+    </aside>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/lib/jquery-1.7.2.min.js"><\/script>')</script> 
+<script src="js/box-slider-all.jquery.min.js"></script> 
+<script>
+
+		  $(function () {
+
+        var $box = $('#box')
+          , $indicators = $('.goto-slide')
+          , $effects = $('.effect')
+          , $timeIndicator = $('#time-indicator')
+          , slideInterval = 5000;
+
+        var switchIndicator = function ($c, $n, currIndex, nextIndex) {
+          $timeIndicator.stop().css('width', 0);
+          $indicators.removeClass('current').eq(nextIndex).addClass('current');
+        };
+
+        var startTimeIndicator = function () {
+          $timeIndicator.animate({width: '680px'}, slideInterval);
+        };
+
+        // initialize the plugin with the desired settings
+        $box.boxSlider({
+            speed: 1000
+          , autoScroll: true
+          , timeout: slideInterval
+          , next: '#next'
+          , prev: '#prev'
+          , pause: '#pause'
+          , effect: 'scrollVert3d'
+          , blindCount: 15
+          , onbefore: switchIndicator
+          , onafter: startTimeIndicator
+        });
+
+        startTimeIndicator();
+
+        // pagination isn't built in simply because it's easy to
+        // roll your own with the plugin API methods
+        $('#controls').on('click', '.goto-slide', function (ev) {
+          $box.boxSlider('showSlide', $(this).data('slideindex'));
+          ev.preventDefault();
+        });
+
+        $('#effect-list').on('click', '.effect', function (ev) {
+          var $effect = $(this);
+
+          $box.boxSlider('option', 'effect', $effect.data('fx'));
+          $effects.removeClass('current');
+          $effect.addClass('current');
+
+          switchIndicator(null, null, 0, 0);
+          ev.preventDefault();
+        });
+
+		  });
+
+		</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+#mask {
+	WIDTH: 756px; HEIGHT: 518px
+}
+#images {
+	WIDTH: 3780px
+}
+
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	BACKGROUND-COLOR: #000; FONT-FAMILY: verdana, sans-serif; COLOR: #fff; FONT-SIZE: 12px
+}
+
+
+P {
+	FONT-SIZE: 12px;line-height:22px;
+}
+A {
+	OUTLINE-STYLE: none; COLOR: #fff; TEXT-DECORATION: none
+}
+A:link {
+	OUTLINE-STYLE: none; COLOR: #fff; TEXT-DECORATION: none
+}
+A:visited {
+	OUTLINE-STYLE: none; COLOR: #fff; TEXT-DECORATION: none
+}
+A:active {
+	OUTLINE-STYLE: none; COLOR: #fff; TEXT-DECORATION: none
+}
+A:hover {
+	OUTLINE-STYLE: none; COLOR: #fff; TEXT-DECORATION: none
+}
+IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+
+SPAN.clear {
+	DISPLAY: block; HEIGHT: 0px; CLEAR: both; OVERFLOW: hidden
+}
+BODY.work-thumbnails #content {
+	PADDING-BOTTOM: 100px; MARGIN: 0px auto; WIDTH: 780px
+}
+BODY.work-thumbnails DIV.thumbnail {
+	WIDTH: 240px; DISPLAY: inline; MARGIN-BOTTOM: 20px; FLOAT: left; MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px
+}
+BODY.work-thumbnails H2 {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 20px; MARGIN-RIGHT: 10px
+}
+BODY.work-thumbnails DIV.thumbnail H3 {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 4px; TEXT-TRANSFORM: uppercase; BACKGROUND-COLOR: #fff; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #000; FONT-SIZE: 10px; PADDING-TOP: 4px
+}
+BODY.work-thumbnails DIV.thumbnail H4 {
+	MARGIN-BOTTOM: 5px
+}
+BODY.work-thumbnails DIV.thumbnail P {
+	TEXT-ALIGN: center
+}
+BODY.work-project #content {
+	PADDING-BOTTOM: 10px; MARGIN: 0px auto; WIDTH: 760px
+}
+BODY.work-project #navigation {
+	MARGIN-BOTTOM: 10px
+}
+BODY.work-project #mask {
+	BORDER-BOTTOM: #fff 2px solid; POSITION: relative; BORDER-LEFT: #fff 2px solid; MARGIN-BOTTOM: 10px; OVERFLOW: hidden; BORDER-TOP: #fff 2px solid; BORDER-RIGHT: #fff 2px solid
+}
+BODY.work-project #images {
+	POSITION: absolute; TOP: 0px; LEFT: 0px
+}
+BODY.work-project #title {
+	TEXT-TRANSFORM: uppercase; FLOAT: left; MARGIN-RIGHT: 20px
+}
+BODY.work-project #overview {
+	TEXT-TRANSFORM: uppercase; FLOAT: left; COLOR: #999
+}

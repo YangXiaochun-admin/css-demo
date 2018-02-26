@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery/CSS3可拖动分页插件DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+@import url("http://fonts.googleapis.com/css?family=Oxygen:400,700");
+.pageForm {
+    display: block;
+    margin-top: 14px;
+}
+.pageInput, .pageButton {
+    padding: 0px 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pageInput {
+    width: 28px;
+    height: 28px;
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.pageLabel {
+    position: absolute;
+    left: -9999em;
+}
+.pageButton {
+    background: linear-gradient(#f46652 0%, #dd5846 100%);
+    border-color: #dd5846;
+    color: white;
+}
+.pageSkip {
+    display: inline-block;
+    background: transparent url('css/monotone_arrow_left_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    opacity: 0.7;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+.pageNext { background-image: url('css/monotone_arrow_right.png'); }
+.pageNumber {
+    position: relative;
+    top: -38px;
+    left: 50%;
+    font-size: 12px;
+    color: #333;
+    width: 60px;
+    display: block;
+    text-align: center;
+    margin-left: -17px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(151, 38, 20, 0.15);
+}
+.pageNumber:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 24px;
+    border: 6px solid transparent;
+    border-top-color: white;
+}
+.pagePip {
+    width: 1px;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: -10px;
+    opacity: 0.4;
+    box-shadow: -1px 0 0 #ffffff;
+}
+.pageMaxPip, .pageMinPip {
+    font-size: 12px;
+    color: #777;
+    position: absolute;
+    bottom: -30px;
+    width: 20px;
+}
+.pageMaxPip { right: -10px; }
+.pageMinPip { left: -10px; }
+.pagination {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+.pageSlider { display: inline-block; }
+.ui-slider-horizontal {
+    width: 60%;
+    height: 6px;
+    top: 0px;
+    margin: 0px 10px 2px;
+    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+    background: #F46652;
+    background-image: repeating-linear-gradient(28deg, transparent, transparent 10px, #dd5846 10px, #dd5846 20px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+.ui-slider-horizontal:before {
+    content: " ";
+    position: absolute;
+    width: auto;
+    height: 16px;
+    top: -5px;
+    left: -4px;
+    right: -4px;
+    border-radius: 10px;
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.8) 90%);
+}
+.ui-slider.long .ui-slider-handle {
+    height: 12px;
+    width: 30px;
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    border-radius: 50px;
+    margin-top: -3px;
+    margin-left: -15px;
+    text-decoration: none;
+    background: #f5f5f5;
+    background: linear-gradient(#f5f5f5 0%, #cccccc 100%);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35), 0 0 2px 1px rgba(0, 0, 0, 0.15), 0 3px 3px rgba(0, 0, 0, 0.2), 0 7px 5px rgba(0, 0, 0, 0.1), 0 11px 10px rgba(0, 0, 0, 0.1);
+}
+.ui-slider.long .ui-slider-handle::before, .ui-slider.long .ui-slider-handle::after {
+    content: " ";
+    width: 2px;
+    height: 40%;
+    position: absolute;
+    background: transparent;
+    border-radius: 0px;
+    box-shadow: -1px 0px 0px rgba(255, 255, 255, 0.8), 1px 0px 0px rgba(255, 255, 255, 0.8), 2px 0 0 rgba(0, 0, 0, 0.3), 1px 0 0 rgba(0, 0, 0, 0.3) inset;
+}
+.ui-slider.long .ui-slider-handle::before {
+    left: 10px;
+    top: 30%;
+}
+.ui-slider.long .ui-slider-handle::after {
+    right: 12px;
+    top: 30%;
+}
+
+@media (max-width: 550px) {
+.pagination { width: auto; }
+.pageForm {
+    display: block;
+    margin-top: 20px;
+}
+.pageInput { margin: 0; }
+.pageSlider {
+    width: 260px;
+    margin: 0 15px;
+}
+}
+body {
+    min-height: 400px;
+    padding-top: 20px;
+    background: linear-gradient(#f5f5f5 0%, #dde4e9 100%);
+    font-family: oxygen;
+}
+h1, h3 {
+    width: 80%;
+    color: #555;
+    margin: 0 auto;
+    text-align: center;
+}
+h1 { font-size: 26px; }
+h3 {
+    color: #777;
+    font-size: 18px;
+    font-weight: normal;
+}
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #111;
+    margin-top: 50px;
+}
+#pageSliderDescription {
+    position: absolute;
+    left: -999em;
+    display: inline-block;
+    width: 0;
+    height: 0;
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<h1>Responsive, Accessible, Alternate Pagination experiment.</h1>
+<h3>I'm attempting to make a more interesting and user-friendly pagination</h3>
+<p>Drag or use Arrow Keys to set the desired page, then click 'Go' or press 'Enter' (CTRL + Arrow Keys skip by 10.)</p>
+<section class="pagination" role="navigation">
+    <div id="pageSliderDescription"> Pagination: "Arrow" keys to move between pages, 
+        "Enter" to go to selected page. (ctrl+arrow skips 10).</div>
+    <div class="pageSlider long"></div>
+    <form class="pageForm" action="#">
+        <label class="pageLabel" for="pageInput"> Page number you'd like to go to. (Max of 30) </label>
+        <a 
+      class="pagePrev pageSkip" 
+      href="#?page=6" 
+      title="Previous Page (6)">Previous Page</a>
+        <input id="pageInput" class="pageInput" 
+      type="text" maxlength="3" placeholder="#">
+        <a 
+      class="pageNext pageSkip" 
+      href="#?page=8" 
+      title="Next Page (8)">Next Page</a>
+        <button class="pageButton" 
+      title="Go to chosen page of results">Go</button>
+    </form>
+</section>
+<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script> 
+<script src='http://code.jquery.com/ui/1.10.1/jquery-ui.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

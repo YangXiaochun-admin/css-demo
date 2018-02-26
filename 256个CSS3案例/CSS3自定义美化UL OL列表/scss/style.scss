@@ -1,0 +1,108 @@
+.live{ 
+	overflow:hidden;
+  > li{ 
+    list-style:none; 
+    position:relative; 
+    padding:0 0 0 2em;
+    margin:0 0 .5em 10px;
+    transition:.12s;
+    
+    &::before{
+      position:absolute;
+      content:'\2022'; 
+      font-family:Arial;
+      color:#FFF;
+      top:0;
+      left:0;
+      text-align:center; 
+      font-size:2em; 
+      opacity:.5;
+      line-height:.75; 
+      transition:.5s;
+    }
+    
+    &:hover{
+      color:#FFF;
+      &::before{
+        transform:scale(2); 
+        opacity:1; 
+        text-shadow:0 0 4px;
+        transition:.1s;
+      }
+    }
+  }
+  
+  &.type2{
+    > li{
+      &::before{
+        content:'';
+        width:10px; height:10px;
+        background:#FFF;
+        border-radius:3px;
+        line-height:0;
+        top:.27em; left:5px;
+      }
+      &:hover::before{
+        transform:none; 
+        border-radius:5px; 
+        width:25px; 
+        left:-10px;
+        background:#BA5353;
+      }
+    }
+  }
+}
+
+
+
+// Numbers
+
+
+.live.numbers {
+    counter-reset: xxx 0;
+    > li {
+      &::before {
+        content: counter(xxx, decimal)'.';
+        counter-increment: xxx 1;
+        font-family: 'Roboto Condensed';
+        font-size:1em; 
+        opacity:.5;
+        line-height:1.4; 
+        transition:.5s;
+    }
+    &:hover:before {
+        opacity:1; 
+        left:-10px; 
+        transform:none; 
+        text-shadow:none;
+        transition:.12s;
+    }
+  }
+}
+
+
+
+
+///////////////////////////////
+// page layout (don't look here)
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v7/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format('woff');
+}
+
+html{ height:100%; }
+body{ 
+ height:100%; font:1.33em 'Roboto Condensed', arial; color:#FFF; text-align:center;
+ background-image:radial-gradient(circle, #3c3b52 0%, #252233 80%);
+}
+
+h1{ margin:.5em 0 0; padding:0; text-shadow:0 4px rgba(black,.2); }
+
+*{ box-sizing:padding-box; }
+
+ol,ul{ width:28%; display:inline-block; text-align:left; vertical-align:top; background:rgba(0,0,0,.2); color:rgba(white,.5); border-radius:5px; padding:1.5em; margin:2%; box-shadow:0 0 8px rgba(black,.2); }
+
+

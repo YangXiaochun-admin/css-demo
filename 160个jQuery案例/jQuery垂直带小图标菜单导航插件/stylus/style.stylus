@@ -1,0 +1,106 @@
+/* vars */
+light-gray = #d2d5d9
+gray = #4a4f56
+gray-highlight = #6d7580
+padding = 1em
+radius = 4px
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome)
+
+/* zocial */
+[class*="fontawesome-"]:before
+  font-family 'FontAwesome' sans-serif
+  font-size 1.3em
+  margin-right 0.8em
+  color light-gray
+  
+/* mixin */
+item()
+  box-sizing border-box
+  position relative
+  display block
+  padding padding
+active()
+  background-color gray-highlight
+  color white
+  &:before
+      color white
+  .bubble
+      border 0
+      background red
+      color white
+  &::after
+      arrow-right()
+      content ''
+      display block
+      position absolute
+      right -8px
+      top 1.1em
+arrow-right()
+	width 0
+	height 0
+	border-top 8px solid transparent
+	border-bottom 8px solid transparent
+	border-left 8px solid gray-highlight
+  
+body
+  font-family Arial, sans-serif
+  font-size .9em
+  background-color #f3f4f4
+  
+.nav
+  color gray-highlight
+  min-width 90px
+  max-width 250px
+  height 333px
+  background-color white
+  border 1px solid light-gray
+  border-radius radius
+  box-shadow 0 1px 2px rgba(0,0,0,.1)
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  margin auto
+
+a > span
+  opacity 1
+  transition opacity .3s
+  
+.nav > a
+  item()
+  border-bottom 1px solid light-gray
+  &:last-child
+      border-bottom 0
+      border-radius 0 0 radius radius
+  &:hover
+      active()
+
+a.active
+    active()  
+
+.nav > .title
+  item()
+  background-color gray
+  color white
+  font-weight 500
+  border-radius radius radius 0 0
+  
+.bubble
+  position absolute
+  top 1.3em
+  right padding
+  font-size .8em
+  color gray-highlight
+  border 1px solid gray-highlight
+  border-radius 10px
+  padding 2px 5px
+ 
+/* responsiveness */
+@media (max-width: 180px)
+    .title > span
+        display none
+    .nav > a > span
+        opacity 0
+        transition opacity .3s

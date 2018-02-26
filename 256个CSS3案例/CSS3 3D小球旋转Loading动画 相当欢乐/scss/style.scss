@@ -1,0 +1,86 @@
+@import "compass/css3";
+
+$ANIMATION_DURATION: 1000ms; 
+$PARTICLE_DIAMETER: 100px;
+$TRANSLATE_DISTANCE: 200px;
+$SCALE_DIFF: .5;
+
+#contain {
+  width: $PARTICLE_DIAMETER + $TRANSLATE_DISTANCE; 
+  height: $PARTICLE_DIAMETER;
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+  opacity: 0;
+  animation: fadeIn 1s 1;
+  animation-fill-mode: forwards;
+}
+
+.wrap {
+  animation: rotate $ANIMATION_DURATION infinite ease-in-out alternate, zindex ($ANIMATION_DURATION * 2) infinite ease-in-out;
+  position: absolute;
+  z-index: 0;
+}
+
+.part { 
+  width: $PARTICLE_DIAMETER;
+  height: $PARTICLE_DIAMETER;
+  background: radial-gradient(circle at 0 0, transparent, transparent 65%, hsla(0, 0%, 0%, .1) 65%, hsla(0, 0%, 0%, .1));
+  background-color: #E3746B;
+  border-radius: 50%;
+  animation: scale $ANIMATION_DURATION infinite ease-in-out alternate;
+  animation-delay: -($ANIMATION_DURATION/2);
+  transform: scale(1 - $SCALE_DIFF);
+}
+
+.part:after {
+  content: '';
+  width: $PARTICLE_DIAMETER;
+  height: 10px;
+  background: #eee;
+  position: absolute;
+  top: $PARTICLE_DIAMETER * 1.3;
+  border-radius: 50%;
+}
+
+#wrap2 {
+  animation-delay: $ANIMATION_DURATION * -1;
+}
+
+#part2 {
+  background-color: #397BF9;
+  animation-delay: $ANIMATION_DURATION * -1.5;
+}
+
+#wrap3 {
+  animation-delay: $ANIMATION_DURATION * -1.5;
+}
+
+#part3 {
+  background-color: #F4B400;
+  animation-delay: $ANIMATION_DURATION * -2;
+}
+
+#wrap4 {
+  animation-delay: $ANIMATION_DURATION * -2.5;
+}
+
+#part4 {
+  background-color: #0F9D58;
+  animation-delay: $ANIMATION_DURATION * -3;
+}
+
+@keyframes rotate {
+  100% { transform: translateX($TRANSLATE_DISTANCE); }
+}
+
+@keyframes scale {
+  100% { transform: scale(1); }
+}
+
+@keyframes zindex {
+  25% { z-index: 1; }
+  75% { z-index: -1; }
+}
+
+@keyframes fadeIn { 100% { opacity: 1; } }

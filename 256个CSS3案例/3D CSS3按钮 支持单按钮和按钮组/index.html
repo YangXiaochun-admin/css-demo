@@ -1,0 +1,147 @@
+﻿<!doctype html>  
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+
+<!-- BEGIN Meta tags -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>3D CSS3按钮组合</title>
+
+<meta name="description" content="A collection of extensible CSS3 only buttons" />
+<meta name="author" content="Joe Pettersson, JoePettersson.com" />
+<!-- END Meta tags -->
+
+<!-- BEGIN Mobile layout control -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- END Mobile layout control -->
+
+<!-- BEGIN Demo CSS - Only neccesary for the demo it can be safely ignored-->
+<link rel="stylesheet" href="css/screen.css">
+<!-- END Demo CSS - Only neccesary for the demo it can be safely ignored-->
+
+<!-- BEGIN Buttons CSS - This is where the magic happens -->
+<link rel="stylesheet" href="css/buttons.css">
+<!-- END Buttons CSS -->
+
+<!-- BEGIN JavaScript -->
+<script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+
+	// The function that toggles the CSS classes that are used in the demo
+	$('.classReveal').click(function () {
+		$('.classes').slideToggle(150);
+		$(this).toggleClass('closeS');
+    });
+
+});
+</script>
+<!-- END JavaScript -->
+</head>
+
+<body>
+
+<div class="wrapper clear">
+
+	<h1>CSS3 Button Pack</h1>
+
+	<!-- BEGIN Buttons -->
+	<h2>Single buttons<a href="#" class="classReveal">Toggle Classes</a></h2>
+	<div class="topList clear">
+		<a href="#" class="button grey">Download</a>
+		<a href="#" class="button red">Download</a>
+		<a href="#" class="button blue">Download</a>
+		<a href="#" class="button green">Download</a>
+		<a href="#" class="button black">Download</a>
+		<a href="#" class="button yellow">Download</a>
+		<a href="#" class="button purple">Download</a>
+		<a href="#" class="button gblue">Download</a>
+	</div>
+	<div class="classes clear">
+		<pre>.grey</pre>
+		<pre>.red</pre>
+		<pre>.blue</pre>
+		<pre>.green</pre>
+		<pre>.black</pre>
+		<pre>.yellow</pre>
+		<pre>.purple</pre>
+		<pre>.gblue</pre>
+	</div>
+	
+		<div style="width:700px;margin:10px auto 20px auto;padding:0 0 0 280px;overflow:hidden">
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" style="margin:10px 0 0 -4px">
+        <a class="bds_tsina"></a>
+        <a class="bds_tqq"></a>
+        <a class="bds_renren"></a>
+        <a class="bds_qzone"></a>
+        <a class="bds_douban"></a>
+        <a class="bds_xg"></a>
+        <span class="bds_more">更多</span>
+		<a class="shareCount"></a>
+    </div>
+<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours
+();
+</script>
+<!-- Baidu Button END -->
+</div>
+				
+
+
+
+	<h2>Button groups<a href="#" class="classReveal">Toggle Classes</a></h2>
+	<div class="groupList clear">
+		<!-- Two button group -->
+		<a href="#" class="button grey left">Download</a>
+		<a href="#" class="button grey right">Demo</a>
+		
+		<!-- Three button group -->
+		<a href="#" class="button blue left">Downloads</a>
+		<a href="#" class="button blue middle">Demo</a>
+		<a href="#" class="button blue right">Information</a>
+		
+		<!-- Multi button group -->
+		<a href="#" class="button yellow left">Download</a>
+		<a href="#" class="button yellow middle">Demo</a>
+		<a href="#" class="button yellow middle">Wow another button</a>
+		<a href="#" class="button yellow right">Information</a>
+	</div>
+	<div class="classes clear" id="sizeAdj">
+		<pre class="one">The multi button classes are <em>.left</em>, <em>.middle</em> and <em>.right</em>. With their usage being self evident.</pre>
+	</div>
+	
+	<h2>Large buttons<a href="#" class="classReveal">Toggle Classes</a></h2>
+	<div class="largeList clear">		
+		<a href="#" class="button yellow large">Download</a>
+		<a href="#" class="button red large">Demo</a>
+		<a href="#" class="button purple large">Wow another button</a>
+		<a href="#" class="button gblue large left">Information</a>
+		<a href="#" class="button gblue large middle">Information</a>
+		<a href="#" class="button gblue large right">Information</a>
+	</div>
+	<div class="classes clear" id="sizeAdj">
+		<pre class="one">The large buttons are acheived by simply adding the <em>.large</em> class.</pre>
+	</div>
+	<!-- END Buttons -->
+	
+	<!-- BEGIN Description and Downloads -->
+	<div id="des" class="clear">
+		<p class="credit">By <a href="http://www.joepettersson.com" target="_blank">Joe Pettersson</a></p>
+	</div>
+	<!-- END Description and Downloads -->
+	
+</div>
+
+</body>
+</html>

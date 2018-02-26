@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3</title>
+<style>
+html {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #27ae60;
+}
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1 {
+    width: 500px;
+    margin: 100px auto 20px;
+    color: #f0f0f0;
+    text-align: center;
+}
+.nav {
+    width: 500px;
+    margin: 0 auto;
+    background: #1e8449;
+    color: #f0f0f0;
+}
+.nav a {
+    display: block;
+    padding: 0 16px;
+    line-height: inherit;
+    cursor: pointer;
+}
+.nav__menu {
+    line-height: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav__menu-item {
+    display: inline-block;
+    position: relative;
+}
+.nav__menu-item:hover { background-color: #9b59b6; }
+.nav__menu-item:hover .nav__submenu { display: block; }
+.nav__submenu {
+    font-weight: 300;
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: #9b59b6;
+}
+.nav__submenu-item:hover { background: rgba(0, 0, 0, 0.1); }
+</style>
+</head>
+
+<body>
+<h1>A Simple Dropdown Menu</h1>
+<nav class="nav">
+    <ul class="nav__menu">
+        <li class="nav__menu-item"><a>Home</a></li>
+        <li class="nav__menu-item"><a>Services</a>
+            <ul class="nav__submenu">
+                <li class="nav__submenu-item"> <a>Web Design</a></li>
+                <li class="nav__submenu-item"> <a>Web Development</a></li>
+                <li class="nav__submenu-item"> <a>Web Hosting</a></li>
+            </ul>
+        </li>
+        <li class="nav__menu-item"><a>About</a>
+            <ul class="nav__submenu">
+                <li class="nav__submenu-item"> <a>Our Company</a></li>
+                <li class="nav__submenu-item"> <a>Our Team</a></li>
+                <li class="nav__submenu-item"> <a>Our Reach</a></li>
+            </ul>
+        </li>
+        <li class="nav__menu-item"><a>Blog</a></li>
+        <li class="nav__menu-item"><a>Contact</a></li>
+    </ul>
+</nav>
+</body>
+</html>

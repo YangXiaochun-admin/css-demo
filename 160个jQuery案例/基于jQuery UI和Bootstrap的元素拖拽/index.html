@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基于jQuery UI和Bootstrap的元素拖拽DEMO演示</title>
+<link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<div class="container">
+    <h1>Drag'n Drop Demo <small>jQuery UI and Bootstrap</small></h1>
+    <form role="form">
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Title" />
+        </div>
+        <details>
+            <div class="form-group">
+                <input class="form-control" type="text" name="blah" placeholder="Additional details here" />
+            </div>
+        </details>
+    </form>
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="modules">
+                <p class="drag"><a class="btn btn-default">Text</a></p>
+                <p class="drag"><a class="btn btn-default">Textarea</a></p>
+                <p class="drag"><a class="btn btn-default">Number</a></p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div id="dropzone"></div>
+            <button class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+</div>
+<script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script> 
+<script src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

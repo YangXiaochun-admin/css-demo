@@ -1,0 +1,111 @@
+body {
+  color: #FFF;
+  background: #000;
+  font-weight: 100;
+  font-family: "Segoe UI", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  letter-spacing: 0.075em;
+  text-transform: capitalize;
+}
+
+nav {
+  position: relative;
+  top: 0.5em;
+  margin: 0 auto;
+}
+nav ul {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0;
+}
+nav ul li {
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1.6em;
+  padding: 0 0.6em;
+  margin: 0 0;
+  display: inline-block;
+  list-style-type: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+nav ul li:hover {
+  color: #FFF;
+}
+nav ul :nth-child(1) {
+  color: #bbe006;
+}
+nav ul :nth-child(1):hover {
+  background-color: #bbe006;
+}
+nav ul :nth-child(2) {
+  color: #11d452;
+}
+nav ul :nth-child(2):hover {
+  background-color: #11d452;
+}
+nav ul :nth-child(3) {
+  color: #11b4d4;
+}
+nav ul :nth-child(3):hover {
+  background-color: #11b4d4;
+}
+nav ul :nth-child(4) {
+  color: #308ce8;
+}
+nav ul :nth-child(4):hover {
+  background-color: #308ce8;
+}
+nav ul :nth-child(5) {
+  color: #516dfb;
+}
+nav ul :nth-child(5):hover {
+  background-color: #516dfb;
+}
+nav ul :nth-child(6) {
+  color: #8c5af2;
+}
+nav ul :nth-child(6):hover {
+  background-color: #8c5af2;
+}
+nav ul :nth-child(7) {
+  color: #cd2bee;
+}
+nav ul :nth-child(7):hover {
+  background-color: #cd2bee;
+}
+nav ul :nth-child(8) {
+  color: #e619a1;
+}
+nav ul :nth-child(8):hover {
+  background-color: #e619a1;
+}
+nav ul :nth-child(9) {
+  color: #cf171a;
+}
+nav ul :nth-child(9):hover {
+  background-color: #cf171a;
+}
+nav .indicator {
+  pointer-events: none;
+  position: fixed;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}

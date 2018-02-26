@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简易版CSS3 Tab菜单DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+    background: #FFEFD3;
+    font-family: "Open Sans", "Arial";
+}
+main {
+    background: #FFF;
+    width: 500px;
+    margin: 50px auto;
+    padding: 10px 30px 80px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+p { font-size: 13px; }
+input, section {
+    clear: both;
+    padding-top: 10px;
+    display: none;
+}
+label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    float: left;
+    padding: 10px 30px;
+    border-top: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid #DDD;
+}
+label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3, #tab4:checked ~ #content4 { display: block; }
+input:checked + label {
+    border-top-color: #FFB03D;
+    border-right-color: #DDD;
+    border-left-color: #DDD;
+    border-bottom-color: transparent;
+    text-decoration: none;
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<main>
+    <h2>CSS Tabs</h2>
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1">Home</label>
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2">Away</label>
+    <input id="tab3" type="radio" name="tabs">
+    <label for="tab3">Samples</label>
+    <input id="tab4" type="radio" name="tabs">
+    <label for="tab4">About</label>
+    <section id="content1">
+        <h3>Some Info</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis adipiscing risus, porttitor viverra urna condimentum et. Donec vestibulum lacus vel dolor dictum pellentesque. Aliquam sodales sem quis urna condimentum, sit amet elementum magna semper.</p>
+    </section>
+    <section id="content2">
+        <h3>Something</h3>
+        <p>Aliquam condimentum hendrerit nisi, nec vestibulum mi feugiat ut. Donec lobortis nisi neque, in egestas eros venenatis eu. Vestibulum nulla nisi, venenatis at pretium id, fermentum quis risus. Quisque porta suscipit neque eu placerat. Etiam scelerisque, quam in sodales iaculis, velit velit mattis nunc, quis dapibus massa elit nec enim. Vivamus quis libero aliquam, volutpat nisl sed, consectetur ante. Donec aliquam semper felis, in placerat leo blandit in. Integer interdum elit quis felis tempor venenatis. In faucibus ac mauris id commodo. Proin in sapien tincidunt, luctus mi id, bibendum dui. Nunc tincidunt libero ut purus vehicula, sit amet tincidunt mi sollicitudin. Donec varius erat magna, sed convallis purus adipiscing ut. Duis sagittis ut leo ut auctor. Ut convallis nisl nec purus sollicitudin, nec iaculis felis rutrum. </p>
+    </section>
+    <section id="content3">
+        <h3>Heading Text</h3>
+        <p>Fusce pulvinar porttitor dui, eget ultrices nulla tincidunt vel. Suspendisse faucibus lacinia tellus, et viverra ligula. Suspendisse eget ipsum auctor, congue metus vel, dictum erat. Aenean tristique euismod molestie. Nulla rutrum accumsan nisl, ac semper sapien tincidunt et. Praesent tortor risus, commodo et sagittis nec, aliquam quis augue. Aenean non elit elementum, tempor metus at, aliquam felis.</p>
+    </section>
+    <section id="content4">
+        <h3>Here Are Many Words</h3>
+        <p>Vivamus convallis lectus lobortis dapibus ultricies. Sed fringilla vitae velit id rutrum. Maecenas metus felis, congue ut ante vitae, porta cursus risus. Nulla facilisi. Praesent vel ligula et erat euismod luctus. Etiam scelerisque placerat dapibus. Vivamus a mauris gravida urna mattis accumsan. Duis sagittis massa vel elit tincidunt, sed molestie lacus dictum. Mauris elementum, neque eu dapibus gravida, eros arcu euismod metus, vitae porttitor nibh elit at orci. Vestibulum laoreet id nulla sit amet mattis.</p>
+    </section>
+</main>
+<script src='js/jquery.js'></script>
+</body>
+</html>

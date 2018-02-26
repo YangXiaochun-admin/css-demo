@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery时间轴焦点图在线演示</title>
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/timeliner.css">
+<link rel="stylesheet" href="css/timeliner_styling.css">
+<script src='js/jquery-1.6.2.min.js'></script>
+<script src='js/jquery.timeliner.min.js'></script>
+<script>
+			$(document).ready(function(){
+
+				// EXAMPLE 1:
+				$('#example1').timeliner();
+
+				// EXAMPLE 2:
+				$('#example2').timeliner({
+					tooltipposition: 'below',
+					timelinewidth: 710,
+					timelineverticalmargin: 35,
+					transition: 'slide'
+				});
+
+				// EXAMPLE 3:
+				$('#example3').timeliner({
+					containerwidth: 600,
+					containerheight: 300,
+					timelinewidth: 550,
+					timelineheight: 3,
+					timelineverticalmargin: 0,
+					autoplay: false,
+					showtooltiptime: true,
+					repeat: false,
+					showtotaltime:true,
+					timedisplayposition: 'below',
+					transition: 'fade'
+				});
+
+			});
+
+			// Callback function examples:
+			function start_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" started');
+				}
+			}
+			function newslide_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" changed to slide '+slide);
+				}
+			}
+			function end_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" ended');
+				}
+			}
+			function paused_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" paused at slide '+slide);
+				}
+			}
+			function resumed_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" resumed at slide '+slide);
+				}
+			}
+			function click_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Clicked on slide '+slide+' of Timeliner "'+id+'"');
+				}
+			}
+		</script>
+</head>
+<body>
+<div style="display:none">
+    <p>jQuery是现在最流行的JavaScript工具库。</p>
+    <p>据统计，目前全世界57.3%的网站使用它。也就是说，10个网站里面，有6个使用jQuery。如果只考察使用工具库的网站，这个比例就会上升到惊人的91.7%。</p>
+    <p>虽然jQuery如此受欢迎，但是它臃肿的<a href="http://mathiasbynens.be/demo/jquery-size" target="_blank" data-mce-href="http://mathiasbynens.be/demo/jquery-size">体积</a>也让人头痛不已。jQuery 2.0的原始大小为235KB，优化后为81KB；如果是支持IE6、7、8的jQuery 1.8.3，原始大小为261KB，优化后为91KB。</p>
+    <p>这样的体积，即使是宽带环境，完全加载也需要1秒或更长，更不要说移动设备了。这意味着，如果你使用了jQuery，用户至少延迟1秒，才能看到网 页效果。考虑到本质上，jQuery只是一个操作DOM的工具，我们不仅要问：如果只是为了几个网页特效，是否有必要动用这么大的库？</p>
+</div>
+<div id="content"> 
+    <script src="/adsense.js" type="text/javascript"></script>
+    <noscript>
+    <div id="noscript">This slideshow needs JavaScript to be switched on in your browser.</div>
+    </noscript>
+    <ul id="example1" class="timeliner">
+        <li title="Slide one" style="background:url(images/slide1.jpg)"></li>
+        <li title="Slide two" lang="5"> This is HTML text. It could also be flash, embedded video 
+            etc.<br>
+            More examples and technical info below. </li>
+        <li title="Slide three with a long title<br>and a line-break" lang="5"> This example will repeat automatically. It can also stop at 
+            the last slide if you want it to. </li>
+    </ul>
+    <br>
+</div>
+</body>
+</html>

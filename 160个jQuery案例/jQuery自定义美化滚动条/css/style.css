@@ -1,0 +1,39 @@
+.jp-container{
+    width:500px;
+    height:400px;
+    position:relative;
+    background:#fff;
+    border:1px solid #D8DFEA;
+	float:left;
+}
+.jp-container a{
+    padding:15px 20px;
+    display:block;
+    line-height:20px;
+    background-color: #fff;
+    border-bottom:1px solid #F2F4F8;
+    border-top:1px solid #D8DFEA;
+}
+.jp-container a:first-child{
+    border-top:none;
+}
+.jp-container a:last-child{
+    border-bottom:none;
+}
+.jp-container a:hover{
+   background:#ECEFF5;
+   border-bottom-color:#ECEFF5;
+}
+.jp-container a h3{ 
+    font-size:14px;
+    font-weight:bold;
+    padding:2px 0 5px 0;
+	text-transform:uppercase;
+}
+.jp-container a img{
+    float:left;
+    margin:5px 10px 0px 0px;
+    padding:3px;
+    background:#fff;
+    border:1px solid #D8DFEA;
+}

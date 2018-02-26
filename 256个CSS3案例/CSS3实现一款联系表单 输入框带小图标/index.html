@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3实现一款联系表单 输入框带小图标在线演示</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<!-- external styles -->
+<link rel="stylesheet" href="css/normalize.min.css">
+<link rel="stylesheet" href="css/style2.css">
+<!-- google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato|Lobster' rel='stylesheet' type='text/css'>
+<!-- local styles -->
+<link rel="stylesheet" href="main.css">
+<!-- jquery --> 
+<script src="js/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+<!-- Contact form -->
+<form action="" id="contact" >
+    
+    <!-- Logo, title and informative content -->
+    <div id="logo" class="bouncing"> <em class="icon-food"></em> </div>
+    <h1 id="title"> Contact Us </h1>
+    <p id="pre"> If you wish to congratulate us about our perfectly cooked noodles, or just to remind us how awesome we are, feel free to use this contact form. </p>
+    <p id="post"> Your message was sent ! <br/>
+        We will provide you with an answer as soon as possible.<br/>
+        Meanwhile, you may want to check <a href='http://goo.gl/VxTHcB' target='_blank'>our new menu</a>. </p>
+    
+    <!-- Form fields wrapper -->
+    <div id="wrapper" class="clearfix"> 
+        <!-- Name -->
+        <input type="text" class="has_icon" name="name" placeholder="Name" required>
+        <label class="icon-user" for="name"></label>
+        
+        <!-- Email -->
+        <input type="email"  class="has_icon" name="email" placeholder="Email Address" required>
+        <label class="icon-envelope" for="name"></label>
+        
+        <!-- Contact -->
+        <textarea name="" id="" placeholder="Enter your message" required></textarea>
+        
+        <!-- Submit -->
+        <button id="submit" type="submit" > <i class="icon-chat"></i> Send message </button>
+    </div>
+</form>
+<script src="js/index.js"></script>
+</body>
+</html>

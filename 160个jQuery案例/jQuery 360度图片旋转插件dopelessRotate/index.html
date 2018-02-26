@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html data-type="examples-index">
+<head>
+<title>jQuery 360度图片旋转插件dopelessRotate在线演示</title>
+<meta charset='utf-8' content='text/html' http-equiv='Content-type' />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="scripts/dopelessRotate.js"></script>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+</head>
+<body>
+<div style="width:480px;margin:20px auto"> <img id='rotateimage' src='images/01/0001.jpg' width='450' height='324'> </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#rotateimage').tsRotate({
+			'pathtophp' : 'scripts/',
+			'startfrom' : 5,
+			'disablelogo' : true
+		});
+	});
+	</script>
+</body>
+</html>

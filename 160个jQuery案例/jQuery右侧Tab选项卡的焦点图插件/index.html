@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery右侧Tab选项卡的焦点图插件DEMO演示</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript">
+$(function(){
+	var oFocus=$('#focus'),
+		oRight=oFocus.find('.right'),
+		oLeft=oFocus.find('.left'),
+		aRLi=oRight.find('li'),
+		aLLi=oLeft.find('li'),
+		index=0,
+		timer = null;
+	aRLi.click(function(){
+		index=$(this).index()
+		$(this).addClass('active').siblings().removeClass();
+		aLLi.eq(index).addClass('active').siblings().removeClass();
+		aLLi.eq(index).stop().animate({'opacity':1},300).siblings().stop().animate({'opacity':0},300);
+		stopFoucs();
+	})
+	oLeft.mouseenter(function(){
+		stopFoucs();
+	}).mouseleave(function(){		
+		startFocus();
+	});
+	timer = setInterval(function(){
+		startFocus();
+	},5000);
+	function startFocus(){
+		index++;
+		index = index > aRLi.size()-1 ? 0 :index;
+
+		aLLi.eq(index).addClass('active').siblings().removeClass();
+		aLLi.eq(index).stop().animate({'opacity':1},300).siblings().stop().animate({'opacity':0},300);
+		aRLi.eq(index).addClass('active').siblings().removeClass();
+	}
+	function stopFoucs(){
+		clearInterval(timer);
+	}
+})
+</script>
+<div class="focus" id="focus">
+    <div class="left">
+        <ul>
+            <li class="active" style="opacity:1; filter:alpha(opacity=100);">
+                <p>图一</p>
+                <img src="images/1.jpg"/></li>
+            <li>
+                <p>图二</p>
+                <img src="images/2.jpg"/></li>
+            <li>
+                <p>图三</p>
+                <img src="images/3.jpg"/></li>
+            <li>
+                <p>图四</p>
+                <img src="images/4.jpg"/></li>
+        </ul>
+    </div>
+    <div class="right">
+        <ul>
+            <li class="active"><i class="i1"></i>图一</li>
+            <li><i class="i2"></i>图二</li>
+            <li><i class="i3"></i>图三</li>
+            <li><i class="i4"></i>图四</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

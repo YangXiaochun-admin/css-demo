@@ -1,0 +1,85 @@
+.navigation{
+    position:relative;
+    margin:0 auto;
+    width:915px;
+}
+ul.menu{
+    list-style:none;
+    font-family:"Verdana",sans-serif;
+    border-top:1px solid #bebebe;
+    margin:0px;
+    padding:0px;
+    float:left;
+}
+ul.menu li{
+    float:left;
+}
+ul.menu li a{
+    text-decoration:none;
+    background:#7E7E7E url(../images/bgMenu.png) repeat-x top left;
+    padding:15px 0px;
+    width:128px;
+    color:#333333;
+    float:left;
+    text-shadow: 0 1px 1px #fff;
+    text-align:center;
+    border-right:1px solid #a1a1a1;
+    border-left:1px solid #e8e8e8;
+    font-weight:bold;
+    font-size:13px;
+    -moz-box-shadow: 0 1px 3px #555;
+    -webkit-box-shadow: 0 1px 3px #555;
+}
+ul.menu li a.hover{
+    background-image:none;
+    color:#fff;
+    text-shadow: 0 -1px 1px #000;
+}
+ul.menu li a.first{
+    -moz-border-radius:0px 0px 0px 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-left:none;
+}
+ul.menu li a.last{
+    -moz-border-radius:0px 0px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+ul.menu li span{
+    width:64px;
+    height:64px;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    position:absolute;
+    z-index:-1;
+    top:80px;
+    cursor:pointer;
+}
+ul.menu li span.ipod{
+    background-image:url(../icons/ipod.png);
+    left:33px; /*128/2 - 32(half of icon) +1 of border*/
+}
+ul.menu li span.video_camera{
+    background-image:url(../icons/video_camera.png);
+    left:163px; /* plus 128 + 2px of border*/
+}
+ul.menu li span.television{
+    background-image:url(../icons/television.png);
+    left:293px;
+}
+ul.menu li span.monitor{
+    background-image:url(../icons/monitor.png);
+    left:423px;
+}
+ul.menu li span.toolbox{
+    background-image:url(../icons/toolbox.png);
+    left:553px;
+}
+ul.menu li span.telephone{
+    background-image:url(../icons/telephone.png);
+    left:683px;
+}
+ul.menu li span.print{
+    background-image:url(../icons/print.png);
+    left:813px;
+}
+

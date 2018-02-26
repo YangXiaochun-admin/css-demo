@@ -1,0 +1,81 @@
+* { margin: 0; padding: 0; }
+body { font: 13px "Trebuchet MS", Verdana, Helvetica, sans-serif; color: #666; }
+
+/* ================ DOCK 1 ================ */
+#dock { position: relative; top: 150px; }
+.dock-container { position: relative; top: -8px; height: 50px; padding-left: 20px; }
+a.dock-item { display: block; width: 50px; position: absolute; bottom: 0; text-align: center; text-decoration: none; color: #333; }
+.dock-item span { display: none; padding-left: 20px; }
+.dock-item img { border: 0; margin: 5px 10px 0px; width: 100%; }
+
+/* ================ DOCK 2 ================ */
+#dockContainer { position: fixed; top: 60px; left: 6px; }
+#jqDock { position: relative; bottom: 48px; }
+#jqDock li { list-style: none; }
+.jqDockLabel { background: #333; color: #fff; padding: 3px 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; }
+
+/* ================ STACK #1 ================ */
+.stack { position: fixed; bottom: 28px; right: 40px; }
+.stack > img { position: relative; cursor: pointer; padding-top: 35px; z-index: 2; }
+.stack ul { list-style: none; position: absolute; top: 5px; cursor: pointer; z-index: 1; }
+.stack ul li { position: absolute; }
+.stack ul li img { border: 0; }
+.stack ul li span { display: none; }
+.stack .openStack li span { 
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	display:block;
+	height: 14px;
+	position:absolute;
+	top: 17px;
+	right:60px;
+	line-height: 14px;
+	border: 0;
+	background-color:#000;
+	padding: 3px 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	color: #fcfcfc;
+	text-align: center;
+	text-shadow: #000 1px 1px 1px;
+	opacity: .85;
+	filter: alpha(opacity = 85);
+}
+
+/* IE Fixes */
+.stack { _position: absolute; }
+.stack ul { _z-index:-1; _top:-15px; }
+.stack ul li { *right:5px; }
+
+/* ================ STACK #2 ================ */
+.stack2 { position: fixed; top: 28px; right: 40px; }
+.stack2 > img { position: relative; cursor: pointer; padding-bottom: 35px; z-index: 2; }
+.stack2 ul { list-style: none; position: absolute; top: 7px; cursor: pointer; z-index: 1; }
+.stack2 ul li { position: absolute; }
+.stack2 ul li img { border: 0; }
+.stack2 ul li span { display: none; }
+.stack2 .openStack li span { 
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	display:block;
+	height: 14px;
+	position:absolute;
+	top: 17px;
+	right:60px;
+	line-height: 14px;
+	border: 0;
+	background-color:#000;
+	padding: 3px 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	color: #fcfcfc;
+	text-align: center;
+	text-shadow: #000 1px 1px 1px;
+	opacity: .85;
+	filter: alpha(opacity = 85);
+}
+
+/* IE Fixes */
+.stack2 { _position: absolute; }
+.stack2 ul { _z-index:-1; _top:-15px; }
+.stack2 ul li { *right:5px; }

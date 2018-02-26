@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+		<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>jQuery曲线图片播放效果DEMO</title>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var itemHeight = 250;
+				var delay = 150;
+
+				$('#carousel').carouFredSel({
+					items: 3,
+					scroll: {
+						duration: 1400,
+						timeoutDuration: 2500,
+						onBefore: function( data ) {
+							data.items.old.each(function( i ) {
+								$(this).delay(i*delay).animate({
+									marginTop: itemHeight,
+									marginBottom: -itemHeight
+								}, 500);
+							});
+							data.items.visible.css({
+								marginTop: -itemHeight,
+								marginBottom: itemHeight
+							});
+							data.items.visible.each(function( i ) {
+								$(this).delay((3+i)*delay).animate({
+									marginTop: 0,
+									marginBottom: 0
+								}, 500);
+							});
+						}
+					}
+				});
+			});
+		</script>
+		<style type="text/css">
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    min-height: 350px;
+    background-color: #eee;
+}
+body * {
+    font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 22px;
+}
+#wrapper {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 900px;
+    height: 250px;
+    padding: 0 45px;
+    margin: -125px 0 0 -495px;
+    overflow: hidden;
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    box-shadow: 0 0 10px #bbb;
+}
+#carousel img {
+    padding: 25px;
+    display: block;
+    float: left;
+}
+#donate-spacer { height: 100%; }
+#donate {
+    border-top: 1px solid #999;
+    width: 750px;
+    padding: 50px 75px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#donate p, #donate form {
+    margin: 0;
+    float: left;
+}
+#donate p { width: 650px; }
+#donate form { width: 100px; }
+</style>
+		</head>
+		<body>
+<div id="wrapper">
+            <div id="carousel"> <img src="img/lady-bug.jpg" alt="lady-bug" width="250" height="200" /> <img src="img/caterpillar.jpg" alt="caterpillar" width="250" height="200" /> <img src="img/cactus.jpg" alt="cactus" width="250" height="200" /> <img src="img/snail.jpg" alt="snail" width="250" height="200" /> <img src="img/penguin.jpg" alt="penguin" width="250" height="200" /> <img src="img/giraffe.jpg" alt="giraffe" width="250" height="200" /> <img src="img/flower.jpg" alt="flower" width="250" height="200" /> </div>
+        </div>
+<div id="donate-spacer"></div>
+</body>
+</html>

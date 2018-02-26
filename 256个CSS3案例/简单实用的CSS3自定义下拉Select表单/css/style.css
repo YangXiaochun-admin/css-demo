@@ -1,0 +1,134 @@
+/**
+ * Custom Select Dropdowns
+ */
+/**
+ *  .select Wrapper
+ *
+ *  1. Allow for box model styles
+ *  2. Needed to style the icon absolute, relative to the wrapper
+ *  3. So the .select positions nicely inline with other elements
+ *  4. Ensures padding is done by the child select
+ *  5. Hides default select UI
+ *  6. Extends icon styles
+ *  7. Position icon centered on the right
+ *  8. Allow select to be clicked through icon
+ *
+ *  select
+ *
+ *  9. Force select to appear clickable
+ * 10. Add padding to select rather than the wrapper so that the click target it larger
+ * 11. Leave space on the right for the icon
+ * 12. The magic number to push the default select arrow outside of the wrappers overflow
+ * 13. Hide the default styles of the select
+ * 14. Push the button slighly to the right to hide the select arrow in Firefox
+ *     http://stackoverflow.com/a/18327666
+ * 15. Push the default select arrow a little further on IE8
+ * 16. Hide the select outline
+ */
+.select {
+  display: inline-block;
+  /* 1 */
+  position: relative;
+  /* 2 */
+  vertical-align: middle;
+  /* 3 */
+  padding: 0;
+  /* 4 */
+  overflow: hidden;
+  /* 5 */
+  background: #fff;
+  color: #555;
+  border: 1px solid #aaa;
+  text-shadow: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-transition: box-shadow 0.25s ease;
+  -o-transition: box-shadow 0.25s ease;
+  -webkit-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  /* 6 */
+  /* 6 */
+}
+.select:hover {
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.select:before {
+  position: absolute;
+  /* 7 */
+  top: 0.5em;
+  /* 7 */
+  right: 0.5em;
+  /* 7 */
+  pointer-events: none;
+  /* 8 */
+}
+.select select {
+  cursor: pointer;
+  /* 9 */
+  padding: 0.5em;
+  /* 10 */
+  padding-right: 2em;
+  /* 11 */
+  width: 130%;
+  /* 12 */
+  border: none;
+  /* 13 */
+  background: transparent;
+  /* 13 */
+  background-image: none;
+  /* 13 */
+  -webkit-appearance: none;
+  /* 13 */
+  -moz-appearance: none;
+  /* 13 */
+  appearance: none;
+  /* 13 */
+  text-indent: 0.01px;
+  /* 14 */
+  text-overflow: '';
+  /* 14 */
+  width: 160% \9;
+  /* 15 */
+}
+.select select:focus {
+  outline: none;
+  /* 16 */
+}
+
+/****************************
+ ****************************
+ ****************************
+ * Helpers
+ */
+.select:before {
+  font-family: "icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--down:before, .select:before {
+  content: "\e600";
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAARgAAoAAAAABBgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAANgAAADYZbVvCE9TLzIAAAHMAAAAYAAAAGAIIvy2Y21hcAAAAiwAAABMAAAATBpVzFdnYXNwAAACeAAAAAgAAAAIAAAAEGhlYWQAAAKAAAAANgAAADYAl8viaGhlYQAAArgAAAAkAAAAJANuAeZobXR4AAAC3AAAABQAAAAUAwAAdG1heHAAAALwAAAABgAAAAYABVAAbmFtZQAAAvgAAAFFAAABRVcZpu5wb3N0AAAEQAAAACAAAAAgAAMAAAEABAQAAQEBCGljb21vb24AAQIAAQA6+BwC+BsD+BgEHgoAGVP/i4seCgAZU/+LiwwHi2v4lPh0BR0AAAB2Dx0AAAB7ER0AAAAJHQAAAM8SAAYBAQgPERMWG2ljb21vb25pY29tb29udTB1MXUyMHVFNjAwAAACAYkAAwAFAQEEBwoNTPyUDvyUDvyUDvuUDvgg958VgYD7AiOLi4aFg4iEi4SLg46GkYuL+wLzgZaAloqel5eWlpqMmX8I7yvv6wWZl5qKloCXf4p4gIAIDviUFPiUFYsMCgADAgABkAAFAAABTAFmAAAARwFMAWYAAAD1ABkAhAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAEAAAOYAAeD/4P/gAeAAIAAAAAEAAAAAAAAAAAAAACAAAAAAAAIAAAADAAAAFAADAAEAAAAUAAQAOAAAAAoACAACAAIAAQAg5gD//f//AAAAAAAg5gD//f//AAH/4xoEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAQAAss1nQF8PPPUACwIAAAAAAM/2xdgAAAAAz/bF2AAAAAABjAE1AAAACAACAAAAAAAAAAEAAAHg/+AAAAIAAAAAAAGMAAEAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAQAAAAIAAHQAAFAAAAUAAAAAAA4ArgABAAAAAAABAA4AAAABAAAAAAACAA4ARwABAAAAAAADAA4AJAABAAAAAAAEAA4AVQABAAAAAAAFABYADgABAAAAAAAGAAcAMgABAAAAAAAKADQAYwADAAEECQABAA4AAAADAAEECQACAA4ARwADAAEECQADAA4AJAADAAEECQAEAA4AVQADAAEECQAFABYADgADAAEECQAGAA4AOQADAAEECQAKADQAYwBpAGMAbwBtAG8AbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuAFIAZQBnAHUAbABhAHIAaQBjAG8AbQBvAG8AbgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  padding: 1em;
+  font-size: 20px;
+  color: #090;
+  background: #eee;
+  text-align: center;
+}

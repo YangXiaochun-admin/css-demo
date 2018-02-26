@@ -1,0 +1,95 @@
+/*
+HTML5 Accordion Gallery
+Ghinda - Cristian Colceriu
+www.ghinda.net
+
+v1.0 - 7:40 PM 11/8/2010
+*/
+
+/* accordion elements */
+
+.accordiongallery {
+	overflow: hidden;
+	display: block;
+}
+
+.accordiongallery section {
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+
+.accordiongallery .agtransitions {
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+
+.accordiongallery section .accordiongallery-thumbs a {
+	display: block;
+}
+
+.accordiongallery section a img {
+	border: 0px;
+	margin: 0px;
+}
+
+.accordiongallery section a p {
+	border: 0px;
+	margin: 0px;
+}
+
+.accordiongallery section .accordiongallery-thumbs {
+	overflow: hidden;
+	position: relative;
+}
+
+.accordiongallery section .accordiongallery-scroller {
+	position: relative;
+	top: 0px;
+}
+
+.accordiongallery .accordiongallery-scrollup, .accordiongallery .accordiongallery-scrolldown {
+	display: block;
+	cursor: default;	
+}
+
+.accordiongallery .active-section {}
+
+.accordiongallery .inactive-section a {}
+
+/* preview page */
+
+.accordiongallery-preview>img {
+	clear: both;	
+}
+
+.accordiongallery-scrollleft, .accordiongallery .accordiongallery-scrollright {
+	display: block;	
+	float: left;
+	cursor: default;	
+}
+
+.accordiongallery .accordiongallery-scrollright {	
+	float: right;
+}
+
+.accordiongallery-preview-thumbs {
+	float: left;	
+	overflow: hidden;
+	position: relative;
+}
+
+.accordiongallery-preview-thumbs a img { float: left; }
+
+.accordiongallery-preview-thumbs a {
+	display: block;
+	float: left;
+}
+
+.accordiongallery-preview-scroller {
+	position: relative;
+	overflow: hidden;
+	left: 0px;
+}

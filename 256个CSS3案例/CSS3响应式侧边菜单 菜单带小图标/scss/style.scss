@@ -1,0 +1,173 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  font-style: normal;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #000;
+  height: 100%;
+  font-family: raleway, montserrat, sans-serif;
+  color: #999;
+}
+
+body {
+  height: 100%;
+}
+
+$site-nav--icon-width: 2.2rem;
+
+.site-nav {
+  font-size: .9rem;
+  line-height: 1;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  z-index: 50;
+
+  @media (max-width: 480px) { // smallish
+    &--list {
+      max-height: 0;
+      transition: max-height 200ms;
+    }    
+  } // smallish
+  
+  @media (min-width: 480px) { // midish
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &--list {
+      display: block;
+    }    
+  } // midish
+  
+  
+  
+  
+  ul, li {
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+    list-style-type: none;
+  }
+    
+  a, button {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    padding: .75em  1.5em .75em 0;
+    white-space: nowrap;
+    border-width: 0;
+    background: transparent;
+    color: #aaa;
+    margin: 0;
+    outline: 0;
+    
+    &:link, &:visited {
+      color: #aaa;
+    }
+    
+    &:hover {
+      color: #000;
+      background: cyan;
+    }
+  }
+  
+  i {
+    display: inline-block;
+    width: $site-nav--icon-width;
+    font-size: 1.25em;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+}
+
+.wrapper {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  transition: margin 200ms;
+  min-height: 100%;
+    
+  @media (min-width: 481px) { // smallish
+    margin-left: $site-nav--icon-width;
+    z-index: 100;
+  } // smallish
+}
+
+.site-header {
+  padding: .63rem 1.5rem;
+  background: #222;
+  color: #888;
+  overflow: hidden;
+
+  
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1em;
+    float: left;
+  }
+  
+  &--current {
+    color: #fff;
+  }
+  
+  .account {
+    color: cyan;
+    display: inline-block;
+    padding: 0 1em;
+    
+    i {
+      display: inline-block;
+      width: 1.25em;
+      height: 1.25em;
+      background: white;
+      text-align: center;
+      border-radius: 50%;
+      vertical-align: top;
+      margin: 0 0 0 .3em;
+    }
+    
+    @media (min-width: 400px) {
+      float: right;
+      padding: 0;
+    }
+  }
+}
+
+.workspace {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.body__expanded {
+  
+  @media (max-width: 480px) { // small screens only
+    .site-nav--list {
+      max-height: 2.15rem * 8; // 8 is the number of items in your nav -- yes this sucks
+    }
+  }
+  
+  @media (min-width: 481px) {
+    .wrapper {
+      margin-left: 160px;
+      z-index: 100;
+    }
+  }
+}

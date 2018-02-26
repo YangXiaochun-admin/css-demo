@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-image: -moz-radial-gradient(100px 100px, rgba(0, 0, 0, 0) 0%, #000000 500%), url(http://andredion.com/resources/navy_blue.png);
+  background-image: -webkit-radial-gradient(100px 100px, rgba(0, 0, 0, 0) 0%, #000000 500%), url(http://andredion.com/resources/navy_blue.png);
+  background-image: radial-gradient(100px 100px, rgba(0, 0, 0, 0) 0%, #000000 500%), url(http://andredion.com/resources/navy_blue.png);
+}
+
+form {
+  margin-top: -85px;
+  margin-left: -150px;
+  width: 300px;
+  height: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+label {
+  color: white;
+  font-weight: 200;
+  line-height: 1.1;
+}
+
+input {
+  border: 1px solid transparent;
+  padding: 5px;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -moz-transition: ease-in-out 250ms;
+  -o-transition: ease-in-out 250ms;
+  -webkit-transition: ease-in-out 250ms;
+  transition: ease-in-out 250ms;
+  -moz-transition-property: border, box-shadow;
+  -o-transition-property: border, box-shadow;
+  -webkit-transition-property: border, box-shadow;
+  transition-property: border, box-shadow;
+}
+input:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+input[type="submit"] {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px white;
+}
+
+.field-container {
+  margin-bottom: 1em;
+  position: relative;
+  -moz-perspective: 600px;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+}
+
+.pseudo-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  color: white;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -moz-transition: 400ms ease-in-out;
+  -o-transition: 400ms ease-in-out;
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+  -moz-transition-property: visibility, -moz-transform;
+  -o-transition-property: visibility, -o-transform;
+  -webkit-transition-property: visibility, -webkit-transform;
+  transition-property: visibility, transform;
+}
+.pseudo-input .pseudo-content {
+  padding: 0 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 40px;
+}
+
+.rotate-90 + .pseudo-input {
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+.rotate-270 + .pseudo-input {
+  -moz-transform: rotateX(270deg);
+  -ms-transform: rotateX(270deg);
+  -webkit-transform: rotateX(270deg);
+  transform: rotateX(270deg);
+}
+
+.validated + .pseudo-input {
+  visibility: visible;
+  -moz-transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+}
+
+.invalid + .pseudo-input {
+  background-color: #bf4040;
+  cursor: pointer;
+}
+.invalid + .pseudo-input:before {
+  margin-top: -0.55em;
+  content: '×';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+.valid + .pseudo-input {
+  background-color: #206020;
+}

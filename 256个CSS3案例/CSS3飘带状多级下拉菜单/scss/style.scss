@@ -1,0 +1,217 @@
+@import "compass/css3";
+
+@import url('//fonts.googleapis.com/css?family=Oswald:700');
+@import url('//weloveiconfonts.com/api/?family=typicons');
+
+$navBk: #65c0bb;
+$menuFontColor: #fff;
+$menuHoverColor: #eae8a5;
+$submenuFontColor: $navBk;
+$submenuBorderColor: #ccc;
+$submenuBkColor: #eee;
+$submenuBkHoverColor: #f7f7f7;
+$submenuHoverColor: #4db6b0;
+
+
+body {
+  background: #ccc url('//subtlepatterns.com/patterns/squairy_light.png');
+}
+
+.nav, .nav ul {
+	  margin: 0;
+  	padding: 0;
+  	list-style: none;
+	  line-height: 1;
+}
+.nav {
+  position: relative;
+  margin: 0 auto;
+  height: 46px;
+  width: 900px;
+	  text-align: center;
+	  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  background: $navBk;
+  
+  /* ribbon */
+  &:before, &:after {
+    content: "";
+	    display: block;
+	    position: absolute;
+	    top: 6px;
+    	height: 0px;
+    	width: 0px;
+    	border: 23px solid $navBk;
+    	z-index: -1;
+  }
+  &:before {
+    border-left-color: transparent;
+    left: -30px;
+  }
+  &:after {
+    border-right-color: transparent;
+	    right: -30px;
+  }
+  
+  /* first level */
+  & > li {
+    margin: 0;
+	    line-height: 1;
+	    padding: 0;
+	    display: inline;
+    	position: relative;
+    	margin: 0 12px;
+    &:hover > a {
+      color: $menuHoverColor;
+    }
+    &:last-child > a:after {
+      display: none;
+    }
+    & > a {
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $menuFontColor;
+      font-family: 'Oswald', sans-serif;
+	      font-size: 16px;
+      text-shadow: 1px 2px rgba(0, 0, 0, .2);
+      
+      @include transition(color .3s linear);
+      &:after {
+        content: "=";
+        font-family: 'Typicons', sans-serif;
+        position: absolute;
+        right: -24px;
+        padding-top: 2px;
+      }
+      &:hover {
+        color: $menuHoverColor;
+      }
+    }
+  } /* end of first level */
+  
+  
+  /* sub 1st level */
+  > li:hover > ul {
+    left: 0;
+    opacity: 1;
+    top: 30px;
+  }
+  
+  /* submenu */
+  ul {
+    position: absolute;
+    left: -9999px;
+    padding-top: 10px;
+    border-bottom: 1px solid $submenuBorderColor;
+    opacity: 0;
+    
+    @include transition(opacity .3s linear);
+    
+    /* top arrow */
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    &:before {
+      height: 9px;
+      width: 9px;
+      border: 1px solid $submenuBorderColor;
+      border-right: 0;
+      border-bottom: 0;
+      top: 5px;
+      left: 25px;
+      @include transform(rotate(45deg));
+      background: $submenuBkColor;
+    }
+    &:after {
+      height: 1px;
+      width: 12px;
+      background: $submenuBkColor;
+      top: 10px;
+      left: 24px;
+    }
+    
+    /* sub 2nd level */
+    li {
+      display: block;
+      position: relative;
+      border: 1px solid $submenuBorderColor;
+      border-bottom: 0;
+      width: 150px;
+      text-align: justify;
+      background: $submenuBkColor;
+      box-shadow: 3px 4px 0 rgba(0, 0, 0, .1);
+      @include transition(background .3s linear);
+      
+      &:last-child {
+        border-bottom: 1px;
+      }
+      &:hover {
+        background: $submenuBkHoverColor; 
+        a {
+          color: $submenuHoverColor;
+        }
+      }
+      
+      a {
+        font: 14px "Oswald", sans-serif;
+        color: $submenuFontColor;
+        text-decoration: none;
+        display: block;
+        padding: 7px 12px 7px 20px;
+        @include transition(color .3s linear);
+        
+        &:hover {
+          color: $submenuHoverColor;
+        }
+      }
+      
+      ul {
+        opacity: 1;
+        &:before {
+          font-family: sans-serif;
+          color: darken($submenuBorderColor, 10%);
+          content: '\00BB';
+          background: none;
+          opacity: 1;
+          position: absolute;
+          left: 10130px;
+          top: -27px;
+          z-index: 1;
+          @include transform(none);
+          border: 0;
+        }
+      }
+      &:hover > ul {
+        left: 150px;
+        opacity: 1;
+        top: -11px;
+        padding-left: 12px;
+        border-bottom: 0;
+        box-shadow: none;
+        &:before {
+          content: '';
+          border: 1px solid $submenuBorderColor;
+          border-right: 0;
+          border-bottom: 0;
+          top: 20px;
+          left: 8px;
+          @include transform(rotate(-45deg));
+          background: $submenuBkColor;
+          z-index: -1;
+        }
+        &:after {
+          height: 10px;
+          width: 1px;
+          top: 20px;
+          left: 12px;
+        }
+      }
+      
+    }
+  }
+   
+}

@@ -1,0 +1,164 @@
+h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif; margin:0 auto; }
+table{border-collapse:collapse;border-spacing:0;}
+
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+
+#container{ width:100%; text-align:left;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#ef9b11; text-decoration:underline;}
+
+.run {
+	POSITION: relative; HEIGHT: 484px; width:680px;margin:20px auto;BORDER: #c3e8ef 1px solid; 
+}
+.runlf {
+	Z-INDEX: 100; LEFT: 0px; WIDTH: 51px; POSITION: absolute; TOP: 210px; HEIGHT: 45px
+}
+.runrg {
+	Z-INDEX: 100; RIGHT: 0px; WIDTH: 51px; POSITION: absolute; TOP: 210px; HEIGHT: 45px
+}
+.runlf IMG {
+	CURSOR: pointer
+}
+.runrg IMG {
+	CURSOR: pointer
+}#gdq {
+	MARGIN-LEFT: 31px; OVERFLOW: hidden; WIDTH: 616px; PADDING-TOP: 15px; POSITION: absolute
+}
+#gdq DIV {
+	WIDTH: 50000px
+}
+#gdq DL {
+	FLOAT: left; WIDTH: 308px; POSITION: relative; TEXT-ALIGN: center
+}
+#gdq SPAN {
+	DISPLAY: block; BACKGROUND: #5f626b; FILTER: alpha(opacity=80); LEFT: 5px; WIDTH: 298px; BOTTOM: 0px; POSITION: absolute; HEIGHT: 53px; opacity: 0.80
+}
+#gdq DT {
+	MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 298px
+}
+#gdq IMG {
+	VERTICAL-ALIGN: bottom; WIDTH: 298px; HEIGHT: 450px
+}
+#gdq DD {
+	FONT-SIZE: 20px; LEFT: 5px; OVERFLOW: hidden; WIDTH: 298px; COLOR: #fff; BOTTOM: 0px; LINE-HEIGHT: 28px; FONT-FAMILY: "΢ź",""; WHITE-SPACE: nowrap; POSITION: absolute; HEIGHT: 40px; TEXT-OVERFLOW: ellipsis; TEXT-ALIGN: center
+}
+#gdq DD A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#gdq DD A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#gdq DD A:hover {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#gdq DD A:active {
+	COLOR: #fff; TEXT-DECORATION: none
+}.hy_p12 {
+	FLOAT: left; WIDTH: 268px; HEIGHT: 486px
+}
+.hy_p121 {
+	PADDING-RIGHT: 17px; PADDING-LEFT: 17px; BACKGROUND: url(../i/hy_bg3.gif) no-repeat; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 0px; WIDTH: 234px; PADDING-TOP: 50px; HEIGHT: 140px
+}
+.hy_p1_dl1 {
+	WIDTH: 234px
+}
+.hy_p1_dl1 DT {
+	FONT-WEIGHT: bold; PADDING-BOTTOM: 12px; OVERFLOW: hidden; WIDTH: 234px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis
+}
+.hy_p1_dl1 DD UL LI {
+	OVERFLOW: hidden; WIDTH: 234px; WHITE-SPACE: nowrap; HEIGHT: 24px; TEXT-OVERFLOW: ellipsis
+}
+.hy_p1_dl1 DD UL LI SPAN {
+	COLOR: #5d93b6
+}
+.hy_p1_dl1 DT A:link {
+	COLOR: #5d93b6; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DT A:visited {
+	COLOR: #5d93b6; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DD UL LI SPAN A:link {
+	COLOR: #5d93b6; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DD UL LI SPAN A:visited {
+	COLOR: #5d93b6; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DT A:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p1_dl1 DT A:active {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p1_dl1 DD UL LI SPAN A:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p1_dl1 DD UL LI SPAN A:active {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p1_dl1 DD UL LI A:link {
+	COLOR: #8f8e8e; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DD UL LI A:visited {
+	COLOR: #8f8e8e; TEXT-DECORATION: none
+}
+.hy_p1_dl1 DD UL LI A:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p1_dl1 DD UL LI A:active {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+.hy_p122 {
+	BORDER-RIGHT: #c3e8ef 1px solid; BORDER-TOP: #c3e8ef 1px solid; BACKGROUND: #f9fdfe; BORDER-LEFT: #c3e8ef 1px solid; WIDTH: 266px; BORDER-BOTTOM: #c3e8ef 1px solid; HEIGHT: 284px
+}
+.hy_p1_dl2 {
+	WIDTH: 266px
+}
+.hy_p1_dl2 DT {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; OVERFLOW: hidden; WIDTH: 250px; PADDING-TOP: 8px; HEIGHT: 208px
+}
+.hy_p1_dl2 DD {
+	WIDTH: 266px; PADDING-TOP: 5px
+}
+.hy_p1_dl2 DD LI {
+	PADDING-LEFT: 20px; BACKGROUND: url(http://images.yoka.com/pic/div/2009/circle/mx2.gif) no-repeat 12px 6px; FLOAT: left; OVERFLOW: hidden; WIDTH: 113px; WHITE-SPACE: nowrap; HEIGHT: 24px; TEXT-OVERFLOW: ellipsis
+}
+.hy_p2 {
+	MARGIN-TOP: 10px; OVERFLOW: hidden; HEIGHT: 380px
+}
+.hy_p2_t {
+	HEIGHT: 58px
+}
+.hy_p2_t1 {
+	BACKGROUND: url(../i/hy_bg4.gif) no-repeat; HEIGHT: 58px
+}
+.hy_p2_t1 DT {
+	FLOAT: left
+}
+.hy_p2_t1 DD {
+	PADDING-RIGHT: 16px; FLOAT: right
+}
+.hy_p2_t1 DD SPAN {
+	DISPLAY: inline; BACKGROUND: url(../i/more.gif) no-repeat 0px 18px; FLOAT: right; OVERFLOW: hidden; WIDTH: 46px; PADDING-TOP: 21px; HEIGHT: 23px; TEXT-ALIGN: center
+}
+.hy_p2_t1 DD SPAN A:link {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.hy_p2_t1 DD SPAN A:visited {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+
+.slink11_1 LI.i4 A:hover {
+	BACKGROUND: url(../i/kti1.gif) no-repeat -186px -1037px
+}
+#gdq UL LI {
+	FLOAT: left; WIDTH: 616px
+}
+#open {
+	BACKGROUND: #b1cfe5
+}
+.xlcd_new {
+	BORDER-RIGHT: #91b8d5 1px solid; BORDER-TOP: #91b8d5 1px solid; Z-INDEX: 50; BACKGROUND: url(http://images.yoka.com/pic/div/allnav/a8.gif) no-repeat right 8px; BORDER-LEFT: #91b8d5 1px solid; WIDTH: 70px; CURSOR: pointer; BORDER-BOTTOM: #91b8d5 1px solid; POSITION: relative; HEIGHT: 21px
+}

@@ -1,0 +1,325 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: #adf1ff;
+}
+
+body {
+  font: 100%/1.375  AvenirNext-Regular, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+  color: #111;
+}
+
+.container {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #1942e6;
+}
+
+h2 a {
+  color: #4768eb;
+}
+
+a,
+a:focus {
+  outline: 0;
+}
+
+.main-navigation {
+  overflow: auto;
+  position: relative;
+  margin: 3em auto 0;
+}
+.main-navigation ul {
+  list-style: none;
+  overflow: auto;
+}
+.main-navigation li {
+  float: left;
+  position: relative;
+}
+.main-navigation li.active {
+  z-index: 6;
+}
+.main-navigation li.active a {
+  padding-right: 10px;
+  color: #fff;
+}
+.main-navigation li.active span {
+  width: auto;
+  height: auto;
+  color: #fff;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+.main-navigation a {
+  display: block;
+  position: relative;
+  height: 30px;
+  text-transform: uppercase;
+  padding: 0 0 0 20px;
+  color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+.main-navigation a:hover {
+  padding-right: 10px;
+  color: #fff;
+}
+.main-navigation a:hover span {
+  width: auto;
+  height: auto;
+  color: #fff;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+.main-navigation svg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.main-navigation .tab-left {
+  width: 100%;
+  left: 0;
+}
+.main-navigation .tab-right {
+  width: 20px;
+  /* weird gap in Firefox */
+  /* right: -20px; */
+  right: 0;
+  transform: translateX(20px);
+}
+.main-navigation .icon {
+  top: 3px;
+  left: 20px;
+  width: 24px;
+  height: 23px;
+  /* outline: 1px dotted salmon; */
+}
+.main-navigation .icon-contact {
+  top: 8px;
+  height: 16px;
+  /* outline: 1px dotted red; */
+}
+.main-navigation span {
+  position: relative;
+  font-size: 0.8125em;
+  color: transparent;
+  z-index: 2;
+  display: inline-block;
+  padding-top: 8px;
+  padding-left: 30px;
+  /* background: rgba(0,0,0,.5); */
+  overflow: hidden;
+  vertical-align: top;
+  transition: all 0.5s;
+  letter-spacing: -10px;
+  transition: all .5s ease-in-out;
+}
+.main-navigation .active a {
+  color: #fff;
+}
+.main-navigation .tab-1 {
+  z-index: 4;
+}
+.main-navigation .tab-1 svg {
+  fill: rgba(0, 149, 179, 0.5);
+}
+.main-navigation .tab-1 a:hover svg {
+  fill: rgba(0, 149, 179, 0.75);
+}
+.main-navigation .tab-2 {
+  z-index: 3;
+}
+.main-navigation .tab-2 svg {
+  fill: rgba(23, 130, 207, 0.5);
+}
+.main-navigation .tab-2 a:hover svg {
+  fill: rgba(23, 130, 207, 0.75);
+}
+.main-navigation .tab-3 {
+  z-index: 2;
+}
+.main-navigation .tab-3 svg {
+  fill: rgba(71, 104, 235, 0.5);
+}
+.main-navigation .tab-3 a:hover svg {
+  fill: rgba(71, 104, 235, 0.75);
+}
+.main-navigation .tab-4 {
+  z-index: 1;
+}
+.main-navigation .tab-4 svg {
+  fill: rgba(130, 94, 237, 0.5);
+}
+.main-navigation .tab-4 a:hover svg {
+  fill: rgba(130, 94, 237, 0.75);
+}
+.main-navigation .tab-1.active .tab-left,
+.main-navigation .tab-1.active .tab-right {
+  fill: #0095b3;
+}
+.main-navigation .tab-2.active .tab-left,
+.main-navigation .tab-2.active .tab-right {
+  fill: #1782cf;
+}
+.main-navigation .tab-3.active .tab-left,
+.main-navigation .tab-3.active .tab-right {
+  fill: #4768eb;
+}
+.main-navigation .tab-4.active .tab-left,
+.main-navigation .tab-4.active .tab-right {
+  fill: #825eed;
+}
+
+/* general styles */
+.main-content {
+  position: relative;
+  z-index: 10;
+  background-color: #0095b3;
+  padding-top: .25em;
+  margin-bottom: 3em;
+}
+
+.article {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2em 3em;
+}
+.article h2 {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+.article h3 {
+  font-size: 1.35em;
+  margin-top: 0.25em;
+  margin-bottom: 0.125em;
+  color: #01697e;
+}
+
+h1, h2, h3, .main-navigation span {
+  font-family: AvenirNextCondensed-DemiBold, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+}
+
+p {
+  padding: .5em 0;
+}
+
+footer ul {
+  list-style: square;
+  color: #97a9f3;
+}
+
+footer li {
+  text-indent: -.125em;
+  margin-left: .125em;
+}
+
+footer a {
+  display: block;
+  padding: .125em 0;
+}
+
+@media (max-width: 639px) {
+  .article {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+@media (max-width: 440px) {
+  .main-navigation svg {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  .main-navigation li {
+    width: 50%;
+  }
+
+  .main-navigation a {
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+  .main-navigation a span {
+    width: auto;
+    height: auto;
+    color: rgba(0, 0, 0, 0.85);
+    text-shadow: none;
+    letter-spacing: 0;
+  }
+
+  .tab-1 a {
+    background-color: rgba(0, 149, 179, 0.5);
+  }
+  .tab-1 a:hover {
+    background-color: rgba(0, 149, 179, 0.75);
+  }
+
+  .tab-2 a {
+    background-color: rgba(23, 130, 207, 0.5);
+  }
+  .tab-2 a:hover {
+    background-color: rgba(23, 130, 207, 0.75);
+  }
+
+  .tab-3 a {
+    background-color: rgba(71, 104, 235, 0.5);
+  }
+  .tab-3 a:hover {
+    background-color: rgba(71, 104, 235, 0.75);
+  }
+
+  .tab-4 a {
+    background-color: rgba(130, 94, 237, 0.5);
+  }
+  .tab-4 a:hover {
+    background-color: rgba(130, 94, 237, 0.75);
+  }
+
+  .tab-1.active a {
+    background-color: #0095b3;
+  }
+
+  .tab-2.active a {
+    background-color: #1782cf;
+  }
+
+  .tab-3.active a {
+    background-color: #4768eb;
+  }
+
+  .tab-4.active a {
+    background-color: #825eed;
+  }
+
+  .article {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+@media (max-width: 350px) {
+  .main-navigation li {
+    width: 100%;
+  }
+}

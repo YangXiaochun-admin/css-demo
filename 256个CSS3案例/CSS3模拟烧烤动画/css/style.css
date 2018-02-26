@@ -1,0 +1,319 @@
+:before,
+:after {
+  content: '';
+}
+
+.BBQ {
+  border-radius: 50%/20% 70%;
+  box-shadow: 40px 48px 0 #333, -32px -49.6px 0 #333, -40px 25.6px 0 #333, 28.8px -36.8px 0 #333, 8px 80px #333, -64px 72px #333, 88px 19.2px #333, -104px 25.6px #333, -88px -25.6px #333, -96px 104px #333, -40px 128px #333, 24px 128px #333, 80px 96px #333, -16px 40px 0 120px #C33, -16px 40px 0 140px #333;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 220px auto;
+  background: #333;
+}
+.BBQ:before, .BBQ:after {
+  box-shadow: 18.4px 0 0 #999, 36.8px 0 0 #999, 55.2px 0 0 #999, 73.6px 0 0 #999, 92px 0 0 #999, 110.4px 0 0 #999, 128.8px 0 0 #999, 147.2px 0 0 #999, 165.6px 0 0 #999, 184px 0 0 #999, 202.4px 0 0 #999, 220.8px 0 0 #999, 239.2px 0 0 #999, 257.6px 0 0 #999;
+  display: block;
+  position: absolute;
+  top: -90px;
+  left: -130px;
+  width: 5px;
+  height: 300px;
+  background: #999;
+}
+.BBQ:after {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: -220px;
+  left: 0;
+}
+.BBQ .meat {
+  border-radius: 50%/30% 70% 25% 50%;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3) inset, 0 0 6px rgba(33, 33, 33, 0.3);
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: 80px;
+  height: 80px;
+  background: #B45227;
+  z-index: 1;
+}
+.BBQ .meat:before, .BBQ .meat:after {
+  border-radius: 45%;
+  box-shadow: 15px 0 0 0 rgba(33, 33, 33, 0.2), 30px 0 0 0 rgba(33, 33, 33, 0.2);
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 60%;
+  background: rgba(33, 33, 33, 0.2);
+}
+.BBQ .meat:before {
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  top: 9px;
+  left: 24px;
+}
+.BBQ .meat:after {
+  -ms-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  top: 30px;
+  left: 30px;
+}
+.BBQ .sausage {
+  border-radius: 10px;
+  box-shadow: -6px 0 8px 0 rgba(92, 0, 0, 0.8) inset, 2px 0 2px 0 rgba(33, 33, 33, 0.5), 0 0 5px rgba(33, 33, 33, 0.5);
+  position: absolute;
+  top: 60px;
+  left: -52px;
+  width: 25px;
+  height: 100px;
+  background: #A00;
+  z-index: 1;
+}
+.BBQ .sausage:before {
+  box-shadow: -1px 2px 2px 0 rgba(33, 33, 33, 0.5) inset;
+  position: relative;
+  top: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 5px;
+  height: 30px;
+  background: #F2E6CA;
+}
+.BBQ .sausage:after {
+  border-radius: 0 25px 25px 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  box-shadow: 1px -1px 0 1px rgba(33, 0, 0, 0.7), 0 22px 0 0 #632121, 1px 21px 0 1px rgba(33, 0, 0, 0.7), 0 44px 0 0 #632121, 1px 43px 0 1px rgba(33, 0, 0, 0.7);
+  position: absolute;
+  top: 22%;
+  left: 0;
+  display: block;
+  width: 55%;
+  height: 7px;
+  background: #632121;
+}
+.BBQ .corn {
+  border-radius: 9px;
+  box-shadow: 4px -2px 4px rgba(99, 33, 99, 0.3) inset, -10px -2px 10px rgba(99, 33, 99, 0.5) inset, 0 0 5px rgba(33, 33, 33, 0.3);
+  position: absolute;
+  top: 60px;
+  left: -12px;
+  width: 35px;
+  height: 100px;
+  background: #F2D204;
+  z-index: 1;
+}
+.BBQ .corn:before {
+  box-shadow: -1px 2px 2px 0 rgba(33, 33, 33, 0.5) inset;
+  position: relative;
+  top: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 5px;
+  height: 30px;
+  background: #F2E6CA;
+}
+.BBQ .corn:after {
+  border-radius: 2px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  box-shadow: 1px 1px 0 rgba(33, 33, 33, 0.3), 8px 0 0 #F2D204, 9px 1px 0 rgba(33, 33, 33, 0.5), 16px 0 0 #F2D204, 17px 1px 0 rgba(33, 33, 33, 0.5), 24px 0 0 #F2D204, 25px 1px 0 rgba(33, 33, 33, 0.2), 0 8px 0 #F2D204, 1px 9px 0 rgba(33, 33, 33, 0.3), 8px 8px 0 #F2D204, 9px 9px 0 rgba(33, 33, 33, 0.5), 16px 8px 0 #F2D204, 17px 9px 0 rgba(33, 33, 33, 0.5), 24px 8px 0 #F2D204, 25px 9px 0 rgba(33, 33, 33, 0.2), 0 16px 0 #F2D204, 1px 17px 0 rgba(33, 33, 33, 0.3), 8px 16px 0 #F2D204, 9px 17px 0 rgba(33, 33, 33, 0.5), 16px 16px 0 #F2D204, 17px 17px 0 rgba(33, 33, 33, 0.5), 24px 16px 0 #F2D204, 25px 17px 0 rgba(33, 33, 33, 0.2), 0 24px 0 #F2D204, 1px 25px 0 rgba(33, 33, 33, 0.3), 8px 24px 0 #F2D204, 9px 25px 0 rgba(33, 33, 33, 0.5), 16px 24px 0 #F2D204, 17px 25px 0 rgba(33, 33, 33, 0.5), 24px 24px 0 #F2D204, 25px 25px 0 rgba(33, 33, 33, 0.2), 0 32px 0 #F2D204, 1px 33px 0 rgba(33, 33, 33, 0.3), 8px 32px 0 #F2D204, 9px 33px 0 rgba(33, 33, 33, 0.5), 16px 32px 0 #F2D204, 17px 33px 0 rgba(33, 33, 33, 0.5), 24px 32px 0 #F2D204, 25px 33px 0 rgba(33, 33, 33, 0.2), 0 40px 0 #F2D204, 1px 41px 0 rgba(33, 33, 33, 0.3), 8px 40px 0 #F2D204, 9px 41px 0 rgba(33, 33, 33, 0.5), 16px 40px 0 #F2D204, 17px 41px 0 rgba(33, 33, 33, 0.5), 24px 40px 0 #F2D204, 25px 41px 0 rgba(33, 33, 33, 0.2), 0 48px 0 #F2D204, 1px 49px 0 rgba(33, 33, 33, 0.3), 8px 48px 0 #F2D204, 9px 49px 0 rgba(33, 33, 33, 0.5), 16px 48px 0 #F2D204, 17px 49px 0 rgba(33, 33, 33, 0.5), 24px 48px 0 #F2D204, 25px 49px 0 rgba(33, 33, 33, 0.2), 0 56px 0 #F2D204, 1px 57px 0 rgba(33, 33, 33, 0.3), 8px 56px 0 #F2D204, 9px 57px 0 rgba(33, 33, 33, 0.5), 16px 56px 0 #F2D204, 17px 57px 0 rgba(33, 33, 33, 0.5), 24px 56px 0 #F2D204, 25px 57px 0 rgba(33, 33, 33, 0.2), 0 64px 0 #F2D204, 1px 65px 0 rgba(33, 33, 33, 0.3), 8px 64px 0 #F2D204, 9px 65px 0 rgba(33, 33, 33, 0.5), 16px 64px 0 #F2D204, 17px 65px 0 rgba(33, 33, 33, 0.5), 24px 64px 0 #F2D204, 25px 65px 0 rgba(33, 33, 33, 0.2), 0 72px 0 #F2D204, 1px 73px 0 rgba(33, 33, 33, 0.3), 8px 72px 0 #F2D204, 9px 73px 0 rgba(33, 33, 33, 0.5), 16px 72px 0 #F2D204, 17px 73px 0 rgba(33, 33, 33, 0.5), 24px 72px 0 #F2D204, 25px 73px 0 rgba(33, 33, 33, 0.2), 0 80px 0 #F2D204, 1px 81px 0 rgba(33, 33, 33, 0.3), 8px 80px 0 #F2D204, 9px 81px 0 rgba(33, 33, 33, 0.5), 16px 80px 0 #F2D204, 17px 81px 0 rgba(33, 33, 33, 0.5), 24px 80px 0 #F2D204, 25px 81px 0 rgba(33, 33, 33, 0.2), 0 88px 0 #F2D204, 1px 89px 0 rgba(33, 33, 33, 0.3), 8px 88px 0 #F2D204, 9px 89px 0 rgba(33, 33, 33, 0.5), 16px 88px 0 #F2D204, 17px 89px 0 rgba(33, 33, 33, 0.5), 24px 88px 0 #F2D204, 25px 89px 0 rgba(33, 33, 33, 0.2);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: block;
+  width: 22%;
+  height: 6%;
+}
+.BBQ .waterbamboo {
+  background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #96c56f 30%);
+  background-image: linear-gradient(to top, #ffffff 0%, #96c56f 30%);
+  box-shadow: -5px 0 5px rgba(33, 33, 33, 0.4) inset, 0 0 3px rgba(33, 33, 33, 0.3);
+  border-radius: 70%/60% 10% 0 0;
+  position: absolute;
+  top: 30px;
+  left: -95px;
+  display: block;
+  width: 25px;
+  height: 170px;
+  border-top: 0;
+  z-index: 1;
+}
+.BBQ .waterbamboo:before {
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0) 0%, #428c42 50%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #428c42 50%);
+  box-shadow: -1px -1px 1px 0 rgba(33, 66, 33, 0.2);
+  border-radius: 35% 15% 0 0/70% 30% 0 0;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  display: block;
+  width: 16px;
+  height: 70%;
+}
+.BBQ .shrimp {
+  border-radius: 60%/30% 40% 10% 70%;
+  background-image: -webkit-radial-gradient(circle at center right, rgba(0, 0, 0, 0) 67%, #cc4a04 68%, #ef6921 74%, #ef6921 85%, rgba(33, 33, 33, 0.2) 86%, rgba(0, 0, 0, 0) 90%);
+  background-image: radial-gradient(circle at center right, rgba(0, 0, 0, 0) 67%, #cc4a04 68%, #ef6921 74%, #ef6921 85%, rgba(33, 33, 33, 0.2) 86%, rgba(0, 0, 0, 0) 90%);
+  position: absolute;
+  top: -35px;
+  left: -10px;
+  display: block;
+  width: 86px;
+  height: 70px;
+  z-index: 1;
+}
+.BBQ .shrimp:before {
+  -ms-transform: rotate(24deg);
+  -webkit-transform: rotate(24deg);
+  transform: rotate(24deg);
+  border-radius: 85% 85% 50% 50%/120% 120% 50% 50%;
+  box-shadow: 1px -35px 0 -7px #EF6921, 0 -36px 1px -7px rgba(33, 33, 33, 0.2), 5px -23px 0 -8px #EF6921, 5px -23px 1px -7px rgba(33, 33, 33, 0.2), 0 -2px 0 0 rgba(222, 222, 222, 0.3) inset, -2px 1px 2px rgba(33, 33, 33, 0.2);
+  position: absolute;
+  top: -24px;
+  left: 15px;
+  display: block;
+  width: 18px;
+  height: 45px;
+  background: #EF6921;
+}
+.BBQ .shrimp:after {
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(circle at top center, #ef6921 35%, rgba(0, 0, 0, 0) 36%), -webkit-radial-gradient(circle at center left, #ef6921 27%, #cc4a04 37%, rgba(0, 0, 0, 0) 38%);
+  background-image: -webkit-radial-gradient(top center, circle, #ef6921 35%, rgba(0, 0, 0, 0) 36%), -webkit-radial-gradient(circle at center left, #ef6921 27%, #cc4a04 37%, rgba(0, 0, 0, 0) 38%);
+  background-image: radial-gradient(circle at top center, #ef6921 35%, rgba(0, 0, 0, 0) 36%), radial-gradient(circle at center left, #ef6921 27%, #cc4a04 37%, rgba(0, 0, 0, 0) 38%);
+  box-shadow: -13px -86px 0 -9px rgba(222, 222, 222, 0.5), -14px -85px 0 -7px #212121;
+  position: absolute;
+  top: 60px;
+  left: 25px;
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.BBQ .clams {
+  border-radius: 10px 30px 10px 50px;
+  background-image: -webkit-radial-gradient(circle at top right, #c8c8c8 22%, #827909 30%, #212121 35%, #212121 50%, #665a07 65%, #827909 70%, #c8c8c8 72%, #665a07 75%);
+  background-image: -webkit-radial-gradient(top right, circle, #c8c8c8 22%, #827909 30%, #212121 35%, #212121 50%, #665a07 65%, #827909 70%, #c8c8c8 72%, #665a07 75%);
+  background-image: radial-gradient(circle at top right, #c8c8c8 22%, #827909 30%, #212121 35%, #212121 50%, #665a07 65%, #827909 70%, #c8c8c8 72%, #665a07 75%);
+  box-shadow: 0 0 5px rgba(33, 33, 33, 0.3) inset, -1px 1px 5px rgba(33, 33, 33, 0.3);
+  position: absolute;
+  top: -58px;
+  left: -80px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  z-index: 1;
+}
+.BBQ .clams:after {
+  border-radius: 10px 30px 10px 50px;
+  background-image: -webkit-radial-gradient(circle at top right, #c8c8c8 22%, #827909 30%, #212121 35%, #212121 50%, #665a07 65%, #827909 70%, #c8c8c8 72%, #665a07 75%);
+  background-image: radial-gradient(circle at top right, #c8c8c8 22%, #827909 30%, #212121 35%, #212121 50%, #665a07 65%, #827909 70%, #c8c8c8 72%, #665a07 75%);
+  box-shadow: 0 0 5px rgba(33, 33, 33, 0.3) inset, -1px 1px 5px rgba(33, 33, 33, 0.3);
+  display: block;
+  position: absolute;
+  top: 130%;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+}
+.BBQ .greenpepper {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  box-shadow: -1px 1px 2px 0 rgba(33, 33, 33, 0.5) inset;
+  position: absolute;
+  top: -60px;
+  left: 75px;
+  width: 5px;
+  height: 120px;
+  background: #F2E6CA;
+  z-index: 1;
+}
+.BBQ .greenpepper:before, .BBQ .greenpepper:after {
+  border-radius: 30% 40%/10% 20%;
+  background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgba(33, 99, 33, 0.3) 50%, rgba(0, 0, 0, 0) 75%), -webkit-linear-gradient(330deg, rgba(0, 0, 0, 0) 0%, rgba(33, 120, 33, 0.6) 40%, rgba(0, 0, 0, 0) 65%, rgba(33, 99, 33, 0.5) 100%), -webkit-linear-gradient(45deg, #299a0b 45%, rgba(33, 99, 33, 0.3) 55%, #299a0b 75%), -webkit-linear-gradient(bottom, #299a0b 0%, #299a0b 100%);
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgba(33, 99, 33, 0.3) 50%, rgba(0, 0, 0, 0) 75%), linear-gradient(120deg, rgba(0, 0, 0, 0) 0%, rgba(33, 120, 33, 0.6) 40%, rgba(0, 0, 0, 0) 65%, rgba(33, 99, 33, 0.5) 100%), linear-gradient(45deg, #299a0b 45%, rgba(33, 99, 33, 0.3) 55%, #299a0b 75%), linear-gradient(to top, #299a0b 0%, #299a0b 100%);
+  box-shadow: 2px 2px 1px rgba(33, 33, 33, 0.3) inset, 0 0 3px rgba(33, 33, 33, 0.3);
+  position: relative;
+  display: block;
+  left: -25px;
+  margin-top: 6px;
+  width: 50px;
+  height: 35px;
+}
+.BBQ .smoke {
+  border-radius: 50%;
+  -webkit-animation: roastSmoke 5s ease-in-out infinite;
+  animation: roastSmoke 5s ease-in-out infinite;
+  background-image: -webkit-radial-gradient(ellipse at center center, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  background-image: -webkit-radial-gradient(center center, ellipse, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  background-image: radial-gradient(ellipse at center center, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 60px;
+  z-index: 2;
+}
+.BBQ .smoke:before {
+  border-radius: 50%;
+  -ms-transform: scale(1.6);
+  -webkit-transform: scale(1.6);
+  transform: scale(1.6);
+  background-image: -webkit-radial-gradient(ellipse at center center, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  background-image: -webkit-radial-gradient(center center, ellipse, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  background-image: radial-gradient(ellipse at center center, rgba(33, 33, 33, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+  position: absolute;
+  top: -90px;
+  left: 0;
+  display: block;
+  width: 100px;
+  height: 60px;
+}
+
+@-webkit-keyframes roastSmoke {
+  0% {
+    -ms-transform: scale(0.2) translateY(0);
+    -webkit-transform: scale(0.2) translateY(0);
+    transform: scale(0.2) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  30% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+  }
+  100% {
+    -ms-transform: scale(1) translateY(-200px);
+    -webkit-transform: scale(1) translateY(-200px);
+    transform: scale(1) translateY(-200px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+}
+
+@keyframes roastSmoke {
+  0% {
+    -ms-transform: scale(0.2) translateY(0);
+    -webkit-transform: scale(0.2) translateY(0);
+    transform: scale(0.2) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  30% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+  }
+  100% {
+    -ms-transform: scale(1) translateY(-200px);
+    -webkit-transform: scale(1) translateY(-200px);
+    transform: scale(1) translateY(-200px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+}

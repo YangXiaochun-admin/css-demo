@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+
+#in_ct{width:100%;height:auto;overflow:hidden;margin:6px 0 0;background:url(../images/in_ct_bg.gif) repeat-x;}
+.in_ct{width:1110px;height:auto;overflow:hidden;margin:0 auto;background:#fff;}
+.in_ct1{width:1110px;height:auto;overflow:hidden;}
+.box li{ width:272px;height:514px;margin-left:4px;float:left;overflow:hidden;position:relative;}
+.toll_img{ width:272px;height:514px;}
+.toll_info{ height:514px;vertical-align:middle;display:table-cell;}
+.box li .box1{ color:#666;text-decoration:none;position:absolute;top:0;left:0;cursor:pointer;}

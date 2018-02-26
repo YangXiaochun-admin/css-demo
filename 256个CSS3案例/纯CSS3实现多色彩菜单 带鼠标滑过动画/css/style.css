@@ -1,0 +1,400 @@
+/*!
+ * offCanvas
+ * 
+ * 
+ * @author Chris Yaxley
+ * @version 0.0.0
+ * Copyright . BSD licensed.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* ---------- Compass ------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* ---------- Initialize ---------------------------------------------------- */
+/* ---------- Utils --------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+/*Clear Fix*/
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* ---------- Elements ------------------------------------------------------ */
+/* ---------- Typography ---------------------------------------------------- */
+body {
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+/* ---------- Headings ------------------------------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  color: #27b1f0;
+  font-size: 1.750em;
+}
+
+h2 {
+  color: #fa00f3;
+  font-size: 1.500em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: #27b1f0;
+  margin: 0.625em 0;
+}
+
+h4,
+h5,
+h6 {
+  color: white;
+  font-size: 1.125em;
+}
+
+.page-subtitle {
+  color: white;
+  margin: 0.5em 0;
+}
+
+html, body {
+  background-color: #262626;
+}
+
+.container {
+  padding: 1.500em;
+  max-width: 60em;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Navigation */
+/* Small Screen */
+.navigation {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flexbox;
+  display: flex;
+  -webkit-justify-content: left;
+  -ms-box-pack: left;
+  -moz-justify-content: left;
+  justify-content: left;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+}
+
+.navigation ul {
+  position: absolute;
+  list-style-type: none;
+  margin: 0 0 2em 0;
+  padding: 0;
+  width: 100%;
+  max-width: 20em;
+  left: -20em;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: box;
+  display: flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-box-orient: horizontal;
+  -webkit-justify-content: center;
+  -ms-box-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.navigation li {
+  background-color: #212121;
+  border-left: 1px solid #333333;
+  margin: 0;
+  padding: 1em;
+  transition: all .5s;
+  width: 100%;
+  -webkit-box-flex: auto;
+  -webkit-flex: auto;
+  -moz-box-flex: auto;
+  flex: auto;
+  -webkit-transition: all .5s;
+  /* Safari */
+}
+
+.navigation li:hover {
+  background-color: #414141;
+}
+
+.navigation li:first-child {
+  border-bottom: 5px solid #fc9c9c;
+}
+
+.navigation li:nth-child(2) {
+  border-bottom: 5px solid #FFC;
+}
+
+.navigation li:nth-child(2):hover {
+  border-bottom: 5px solid #FF0;
+}
+
+.navigation li:nth-child(3) {
+  border-bottom: 5px solid #39F;
+}
+
+.navigation li:nth-child(3):hover {
+  border-bottom: 5px solid #00F;
+}
+
+.navigation li:nth-child(4) {
+  border-bottom: 5px solid #6F9;
+}
+
+.navigation li:nth-child(4):hover {
+  border-bottom: 5px solid #0C0;
+}
+
+.navigation li:first-child:hover {
+  border-bottom: 5px solid #ff0000;
+}
+
+.navigation li:last-child {
+  border-bottom: 5px solid #666666;
+}
+
+.navigation li:last-child:hover {
+  border-bottom: 5px solid #ffffff;
+}
+
+.navigation li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navigation li:hover a {
+  text-decoration: underline;
+}
+
+/* When tick box checked show menu*/
+input:checked ~ nav[role="navigation"] ul {
+  left: 0;
+}
+
+div[role="main"] {
+  width: 100%;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+input:checked ~ div[role="main"] {
+  margin-left: 20em;
+}
+
+/* Advanced Checkbox Hack from http://timpietrusky.com/advanced-checkbox-hack*/
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+
+  to {
+    padding: 0;
+  }
+}
+
+input#menu {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+label[for="menu"] {
+  display: block;
+  padding: 1em;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+label[for="menu"]:hover,
+input:checked ~ label[for="menu"] {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 37.5em) {
+  #menu,
+  label[for="menu"] {
+    display: none;
+  }
+
+   .navigation ul{
+    width: 100%;
+    position: relative;
+    max-width: 60em;
+    left: 0;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+  }
+  li{
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+}
+div[role="main"] article {
+  background-color: #414141;
+  margin: 0.5em;
+  width: auto;
+  position: relative;
+  padding: 0.725em 12px;
+}
+
+@media only screen and (min-width: 37.5em) {
+  div[role="main"] .col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: box;
+    display: flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: stretch;
+    -ms-box-pack: stretch;
+    -moz-justify-content: stretch;
+    justify-content: stretch;
+  }
+
+  div[role="main"] article {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: table-cell;
+    width: auto;
+  }
+}
+/* ---------- Page templates ------------------------------------------------ */
+/* Header */
+@media only screen and (min-width: 37.5em) {
+  header {
+    display: flex;
+  }
+
+  header .image-wrapper {
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+    -moz-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+  }
+
+  .page-subtitle {
+    flex: auto;
+    margin: 0;
+    line-height: 1.7em;
+    text-align: right;
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+    -moz-box-flex: 1;
+    -ms-flex: auto;
+  }
+}

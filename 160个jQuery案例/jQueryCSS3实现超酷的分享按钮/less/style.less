@@ -1,0 +1,158 @@
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+@import url('//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css');
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900');
+
+body {
+  font-family: 'Roboto';
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+span.title {
+  color: #fff;
+  font-size: 1.5em;
+  float: left;
+}
+
+
+.fg-facebook {
+  color: #FFF;
+  background-color: #3b5998;
+  border-color: darken(#00acee, 10%) !important;
+  &:hover {
+    color: #FFF;
+    background-color: lighten(#3b5998, 10%);
+    border-color: lighten(#3b5998, 5%) !important;
+  }
+  &:focus, &:active {
+    color: #FFF;
+    background-color: darken(#3b5998, 10%);
+    border-color: darken(#3b5998, 5%) !important;
+  }
+}
+.fg-twitter {
+  color: #FFF;
+  background-color: #00acee;
+  border-color: darken(#00acee, 10%);
+  &:hover {
+    color: #FFF;
+    background-color: lighten(#00acee, 10%);
+    border-color: lighten(#00acee, 5%) !important;
+  }
+  &:focus,&:active {
+    color: #FFF;
+    background-color: darken(#00acee, 10%);
+    border-color: darken(#00acee, 5%) !important;
+  }
+}
+.fg-google-plus {
+  color: #FFF;
+  background-color: #d34836;
+  border-color: darken(#d34836, 10%) !important;
+  &:hover {
+    color: #FFF;
+    background-color: lighten(#d34836, 10%);
+    border-color: lighten(#d34836, 5%) !important;
+  }
+  &:focus,&:active {
+    color: #FFF;
+    background-color: darken(#d34836, 10%);
+    border-color: darken(#d34836, 5%) !important;
+  }
+}
+
+.social-selector {
+  position: relative;
+  margin-left: 10px;
+  font-size: 2em;
+  outline: none !important;
+  border: none;
+  .arrow {
+    font-size: 1em;
+  }
+  &:hover, &.opened {
+    ul.social-baloon {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translate(100%,-50%);
+      transition-delay: 0ms;
+    }
+  }
+  ul.social-baloon {
+    position: absolute;
+    visibility: hidden;
+    list-style: none;
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    top: 50%;
+    right: -1em;
+    backface-visibility: hidden;
+    transform: scale(0) translate(100%,-50%);
+    transform-origin: 100% 0%;
+    transition: all .1s ease;
+    opacity: 0;
+    transition-delay: 500ms;
+    li {
+      display: block;
+      float: left;
+      list-style-type: none;
+      transition: all 0.075s cubic-bezier(0, 1.8, 1, 1.8);
+      &:hover {
+        transform: scale(1.3);
+        a {
+          border-radius: 2px !important;
+        }
+      }
+      &:first-child {
+        a {
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+          &:after {
+            left: -0.9em;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-right-color: #3b5998;
+            border-width: 0.5em;
+            margin-top: -0.5em;
+          }
+          &:hover {
+            &:after {
+              border-right-color: lighten(#3b5998, 10%);
+            }
+          }
+          &:focus,&:active {
+            &:after {
+              border-right-color: darken(#3b5998, 10%) !important;
+            }
+          }
+        }
+      }
+      &:last-child {
+        a {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+      }
+      a {
+        font-size: 1.5em;
+        display: block;
+        padding: 0.25em;
+        min-width: 2em;
+        min-height: 2em;
+        font-smoothing: antialiased;
+      }
+    }
+  }
+}

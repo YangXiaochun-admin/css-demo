@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Source+Sans+Pro:200,300,400,600);
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: floralwhite;
+}
+
+::-moz-selection {
+  background-color: antiquewhite;
+}
+
+::selection {
+  background-color: antiquewhite;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: #111111;
+  font-size: 8em;
+  margin: .2em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.6em;
+}
+
+b {
+  font-weight: 600;
+}
+
+.table {
+  display: table;
+  margin: 0 auto;
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
+}
+.table .content {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+.navbar-container {
+  background-color: #111111;
+  -webkit-box-shadow: 0 1px 1px rgba(17, 17, 17, 0.6);
+  box-shadow: 0 1px 1px rgba(17, 17, 17, 0.6);
+  border-radius: 5px;
+  display: table;
+  width: 100%;
+}
+.navbar-container ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  border: 2px solid #111111;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar-container ul li > a {
+  display: block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 300;
+  color: antiquewhite;
+  text-shadow: 0 1px 0 black;
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+}
+.navbar-container ul li > a:hover {
+  background-color: antiquewhite;
+  color: #111111;
+  text-shadow: none;
+}
+.navbar-container ul li:first-child > a {
+  margin: 0 5px 0 0;
+}
+.navbar-container ul li:last-child > a {
+  margin: 0 0 0 5px;
+}
+.navbar-container ul .h-sep {
+  display: block;
+  width: 1px;
+  background: rgba(250, 235, 215, 0.1);
+}

@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{background:#fff; color:#333;font-weight:500; font-family:'Microsoft Yahei';}
+
+
+.focus{height:415px;width:980px;margin:40px auto 0 auto;}
+.focus .left{float:left; width:680px; height:415px; position:relative;overflow:hidden;}
+.focus .left li{position:absolute; left:0; top:0; width:842px; height:415px; z-index:1; opacity:0; filter:alpha(opacity=0);}
+.focus .left li.active{z-index:2;}
+.focus .left li p{display:none;}
+
+.focus .right{float:right; width:282px;}
+.focus .right li{height:88px; overflow:hidden; padding-left:10px;background-image:url(../images/btns.png);background-position:-120px 0; color:#33cccc; font-size:24px; line-height:88px; margin-bottom:21px;cursor: pointer;}
+.focus .right li:hover,.focus .right li.active{color:#fff;background-position:-120px -120px; }
+.focus .right li i{background-image:url(../images/btns.png); background-repeat:no-repeat; width:60px; height:60px; float:left; margin:15px 19px 0px 0;}
+.focus .right li i.i1{background-position:0 0;}
+.focus .right li i.i2{background-position:0 -60px;}
+.focus .right li i.i3{background-position:0 -120px;}
+.focus .right li i.i4{background-position:0 -180px;}
+.focus .right li:hover i.i1,.focus .right li.active i.i1{background-position:-60px 0;}
+.focus .right li:hover i.i2,.focus .right li.active i.i2{background-position:-60px -60px;}
+.focus .right li:hover i.i3,.focus .right li.active i.i3{background-position:-60px -120px;}
+.focus .right li:hover i.i4,.focus .right li.active i.i4{background-position:-60px -180px;}

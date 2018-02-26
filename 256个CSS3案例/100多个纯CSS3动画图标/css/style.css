@@ -1,0 +1,33 @@
+body {
+  background: #333;
+  font-family: sans-serif;
+  padding: 0 100px;
+  text-align: center;
+}
+h1 {
+  color: #fff;
+}
+a {
+  color: #aaa;
+  margin: 10px;
+}
+a:hover {
+  color: #fff;
+}
+.stage {
+  text-align: left;
+}
+[class*='icono'] {
+  color: #eee;
+  opacity: 0.6;
+}
+span {
+  padding: 10px;
+  display: inline-block;
+}
+span:hover {
+  transform: scale(1.5);
+}
+span:hover i {
+  opacity: 0.8;
+}

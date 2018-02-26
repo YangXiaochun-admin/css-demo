@@ -1,0 +1,19 @@
+.clock-wrapper
+  .clock-border
+    .clock
+      %ul.minute-marks
+        - (1..6).each do |i|
+          %li.five
+          - (1..4).each do |j|
+            %li
+      .hour
+        .hand
+      .minute
+        .hand
+      .second
+        .hand           
+  %h1
+    Pure CSS animated clock
+    %small
+      Inspired by: 
+      %a{href: "http://dribbble.com/shots/1257248-Clock-gif", target: "_blank"} http://dribbble.com/shots/1257248-Clock-gif

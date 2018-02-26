@@ -1,0 +1,696 @@
+@import "compass/css3";
+
+/* ----- SASS VARIABLES ----- */
+$crest-color: black;
+$crest-bg: white;
+
+/* ----- MIXINS ----- */
+@mixin size($w, $h:null) {
+    width: $w;
+    @if $h==null { height: $w; }
+    @else { height: $h; }
+}
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+@mixin skew($x, $y) {
+	-webkit-transform: skew($x, $y);
+	-moz-transform: skew($x, $y);
+	-ms-transform: skew($x, $y);
+	transform: skew($x, $y);
+}
+@mixin rotateSkew($deg, $x, $y) {
+	-webkit-transform: rotate($deg) skew($x, $y);
+	-moz-transform: rotate($deg) skew($x, $y);
+	-ms-transform: rotate($deg) skew($x, $y);
+	transform: rotate($deg) skew($x, $y);
+}
+
+/* ----- LAYOUT ----- */
+body {
+    width: 600px;
+    margin: 20px auto;
+    background: #eee;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#crests {
+    margin: 0 auto 20px;
+}
+#crests:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.crest-holder {
+    float: left;
+    margin: 10px;
+    text-align: center;
+}
+
+.crest {
+    position: relative;
+    background: $crest-bg;
+    @include size(100px);
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.crest:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.crest-name {
+    line-height: 40px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* ----- CREST BASIC SHAPES ----- */
+.crest .circle, .crest .sphere, .crest .comma {
+    border-radius: 50%;
+}
+
+/* ----- AKIYAMA ----- */
+.crest.akiyama {
+    padding: 22px;
+}
+.crest.akiyama .diamond {
+    position: relative;
+    margin: 0 auto;
+    background: $crest-color;
+	 @include rotateSkew(-45deg, 14deg, 14deg);
+}
+.crest.akiyama .diamond:nth-child(1) {
+    @include size(20px);
+    margin-bottom: -12px;
+}
+.crest.akiyama .diamond:nth-child(2) {
+    @include size(28px);
+    margin-bottom: -18px;
+}
+.crest.akiyama .diamond:nth-child(3) {
+    @include size(35px);
+}
+
+/* ----- AMAKUSA ----- */
+.crest.amakusa {
+    padding: 0;
+}
+.crest.amakusa .sphere {
+    position: absolute;
+    left:50%; top:50%;
+    margin: -11px 0 0 -11px;
+    @include size(22px);
+    background: $crest-color;
+    border: 1px solid $crest-bg;
+    box-sizing: border-box;
+}
+.crest.amakusa .triangles {
+    position: absolute;
+    left:50%; top:50%;
+    margin:-25px 0 0 -6px;
+    background: green;
+}
+.crest.amakusa .double-triangle {
+    position: absolute;
+    @include size(0px, 10px);
+    margin-top: -5px;
+    border-top: 25px solid $crest-color;
+    border-bottom: 25px solid $crest-color;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+	 @include transform-origin(6px center);
+}
+@for $i from 1 through 6 {
+	.crest.amakusa .double-triangle:nth-child(#{$i}) {
+		@include rotate($i * 30deg);
+	}
+}
+
+/* ----- AMAKO ----- */
+.crest.amako {
+    padding: 15px;
+}
+.crest.amako .wrap {
+    margin: 0 auto;
+    width: 70px;
+}
+.crest.amako .square {
+    float: left;
+    margin: 1px;
+    @include size(5px);
+    border: 14px solid $crest-color;
+}
+
+/* ----- ASO ----- */
+.crest.aso .feather {
+    position: absolute;
+    left:50%; top:50%;
+    margin:-38px 0 0 -15px;
+    @include size(30px, 75px);
+}
+.crest.aso .feather:first-child {
+	 @include rotate(-45deg);
+}
+.crest.aso .feather:last-child {
+    @include rotate(45deg);
+}
+.crest.aso .feather {
+    position: absolute;
+    left:50%; top:50%;
+    margin: -38px 0 0 -15px;
+    @include size(30px, 75px);
+    @include rotate(45deg);
+}
+.crest.aso .feather .feather-contain {
+    position: absolute;
+    top:0; right:0; bottom:0; left:0;
+    background: $crest-color;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px $crest-bg;
+}
+.crest.aso .feather .feather-shade {
+    position: absolute;
+    @include size(30px);
+    background: $crest-color;
+    box-shadow: 
+        1px 1px 0 $crest-bg,
+        2px 2px 0 $crest-color,
+        3px 3px 0 $crest-bg,
+        4px 4px 0 $crest-color,
+        5px 5px 0 $crest-bg;
+    @include rotate(45deg);
+}
+.crest.aso .feather .feather-shade:nth-child(1) {
+    top:40px; left:0;
+    border-radius: 50%;
+}
+.crest.aso .feather .feather-shade:nth-child(2) {
+    top:20px; left:0;
+}
+.crest.aso .feather .feather-shade:nth-child(3) {
+    top:-12px; left:0;
+}
+.crest.aso .feather .feather-line {
+    position: absolute;
+    top:0; left:50%; bottom:-5px; 
+    margin-left: -2px;
+    width:2px;
+    background: $crest-color;
+    border: 1px solid $crest-bg;
+    border-top:0; border-bottom:0;
+}
+
+/* ----- BABA ----- */
+.crest.baba {
+    padding: 19px;
+}
+.crest.baba .circle {
+    @include size(46px);
+    border: 8px solid $crest-color;
+}
+.crest.baba .line {
+    position: absolute;
+    left:50%; top:50%;
+    margin: -13px 0 0 -23px;
+    width:46px; height:26px;
+    @include size(46px, 26px);
+    border: 8px solid $crest-color;
+    border-left:0; border-right:0;
+    box-sizing: border-box;
+}
+
+/* ----- DOI ----- */
+.crest.doi .wrap,
+.crest.kurushima .wrap{
+    position: absolute;
+    top:20px; right:20px; bottom:20px; left:20px;
+    overflow: hidden;
+}
+.crest.doi .line {
+    position: absolute;
+    left:50%; top:50%;
+    margin: -4px 0 0 -15px;
+    @include size(30px, 8px);
+    background: $crest-color;
+    box-shadow: 0 -10px 0 $crest-color, 0 10px 0 $crest-color;
+}
+.crest.doi .corners,
+.crest.kurushima .corners{
+    position: absolute;
+}
+.crest.doi .corners .corner,
+.crest.kurushima .corners .corner{
+    position: absolute;
+    left:50%; top:0;
+    height: 100%;
+    border: 7px solid $crest-color;
+    border-left:0; border-right:0;
+    box-sizing: border-box;
+}
+.crest.doi .corners .corner.horiz,
+.crest.kurushima .corners .corner.horiz{
+    @include rotate(90deg);
+}
+.crest.doi .corners.small,
+.crest.kurushima .corners.small{
+    top:0; right:0; bottom:0; left:0;
+}
+.crest.doi .corners.small .corner,
+.crest.kurushima .corners.small .corner{
+    width: 16px;
+    margin-left: -8px;
+}
+.crest.doi .corners.big,
+.crest.kurushima .corners.big{
+    top:2px; right:2px; bottom:2px; left:2px;
+    @include rotate(45deg);
+}
+.crest.doi .corners.big .corner,
+.crest.kurushima .corners.big .corner{
+    width: 30px;
+    margin-left: -15px;
+}
+
+/* ----- DOU ----- */
+.crest.dou {
+    padding: 18px;
+}
+.crest.dou .ellipse, .crest.dou .shadow {
+    position: absolute;
+    left:50%; top:50%;
+}
+.crest.dou .ellipse {
+    margin: -22px 0 0 -22px;
+    @include size(22px);
+    border-radius: 0 100% 0 100%;
+    background: $crest-bg;
+    @include transform-origin(bottom right);
+}
+.crest.dou .shadow {
+    margin: -26px 0 0 -26px;
+    @include size(40px);
+    border-radius: 50% 100% 50% 100%;
+    background: $crest-color;
+    @include transform-origin(26px 26px);
+}
+.crest.dou .ellipse:nth-child(1),
+.crest.dou .shadow:nth-child(1) { 
+    @include rotate(-135deg);
+}
+.crest.dou .ellipse:nth-child(2),
+.crest.dou .shadow:nth-child(2) { 
+    @include rotate(-16deg);
+}
+.crest.dou .ellipse:nth-child(3),
+.crest.dou .shadow:nth-child(3) { 
+    @include rotate(106deg);
+}
+
+/* ----- GAMO ----- */
+.crest.gamo {
+    padding: 18px;
+}
+.crest.gamo .wrap {
+    position: relative;
+    @include size(62px);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.crest.gamo .comma {
+    position: absolute;
+    @include size(28px);
+    background: $crest-color;
+}
+.crest.gamo .comma:after {
+    content: '';
+    position: absolute;
+    @include size(44px);
+    margin-top:-20px;
+    margin-left:-41px;
+    border-radius: 50%;
+    border: 20px solid $crest-color;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    @include transform-origin(bottom center);
+}
+.crest.gamo .comma:nth-child(1) {
+    top:0px; left:50%;
+    margin-left: -14px;
+}
+.crest.gamo .comma:nth-child(2) {
+    bottom:8px; right:2px;
+}
+.crest.gamo .comma:nth-child(3) {
+    bottom:8px; left:2px;
+}
+@for $i from 1 through 3 {
+	.crest.gamo .comma:nth-child(#{$i}) {
+		@include rotate(($i - 1) * 120deg);
+	}
+}
+
+/* ----- HARA ----- */
+.crest.hara {
+    padding: 23px;
+}
+.crest.hara .fork {
+    margin: 0 auto;
+    @include size(26px, 14px);
+    border: 8px solid $crest-color;
+}
+.crest.hara .fork.top { border-top: 0; }
+.crest.hara .fork.bottom { border-bottom: 0; }
+.crest.hara .line {
+    margin: 0 auto;
+    @include size(8px, 10px);
+    background: $crest-color;
+}
+
+/* ----- HATAKEYAMA ----- */
+.crest.hatakeyama .halfcircle{
+    position: absolute;
+    left:50%;
+    @include size(40px, 20px);
+    border: 5px solid $crest-color;
+    box-sizing: border-box;
+}
+.crest.hatakeyama .halfcircle.left{ margin-left: -30px; }
+.crest.hatakeyama .halfcircle.right{ margin-left: -10px; }
+.crest.hatakeyama .halfcircle.top{
+    bottom: 50%;
+    border-radius: 40px 40px 0 0;
+    border-bottom: 0;
+}
+.crest.hatakeyama .halfcircle.bottom{
+    top: 50%;
+    border-radius: 0 0 40px 40px;
+    border-top: 0;
+}
+.crest.hatakeyama .halfcircle.top.right:before,
+.crest.hatakeyama .halfcircle.bottom.left:before{
+    content: '';
+    position: absolute;
+    top:0; right:0; bottom:0; left:0;
+    border-radius: inherit;
+    border: 1px solid $crest-bg;
+}
+.crest.hatakeyama .halfcircle.top.right:before {
+    border-bottom: 0;
+}
+.crest.hatakeyama .halfcircle.bottom.left:before{
+    border-top: 0;
+}
+.crest.hatakeyama .halfcircle.top.right:after,
+.crest.hatakeyama .halfcircle.bottom.left:after{
+    content: '';
+    position: absolute;
+    right:-6px; left:-6px;
+    border: 1px solid $crest-bg;
+}
+.crest.hatakeyama .halfcircle.top.right:after{
+    top:-6px; bottom:0;
+    border-radius: 44px 44px 0 0;
+    border-bottom: 0;
+}
+.crest.hatakeyama .halfcircle.bottom.left:after{
+    top:0; bottom:-6px;
+    border-radius: 0 0 44px 44px;
+    border-top: 0;
+}
+
+/* ----- HOJO ----- */
+.crest.hojo {
+    padding: 20px 0;
+}
+.crest.hojo .wrap {
+    margin: 0 auto;
+    @include size(72px, 52px);
+}
+.crest.hojo .triangle{
+    float: left;
+    @include size(0);
+    border-bottom: 26px solid $crest-color;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+}
+.crest.hojo .triangle:first-child{
+    float: none;
+    margin: 0 auto;
+}
+
+/* ----- HORI ----- */
+.crest.hori{
+    padding: 28px;
+}
+.crest.hori .square {
+    margin: 0 auto;
+    @include size(8px);
+    border: 18px solid $crest-color;
+	@include rotate(45deg);
+}
+
+/* ----- HORIO ----- */
+.crest.horio{
+    padding: 15px;
+}
+.crest.horio .wrap{
+    position: relative;
+    @include size(70px);
+}
+.crest.horio .circle{
+    @include size(70px);
+    background: $crest-color;
+}
+.crest.horio .holes .circle{
+    position: absolute;
+    top:50%; margin-top:-10px;
+    @include size(20px);
+    background: $crest-bg;
+}
+.crest.horio .holes .circle:first-child{ left:-2px; }
+.crest.horio .holes .circle:last-child{ right:-2px; }
+
+/* ----- IJUIN ----- */
+.crest.ijuin{
+    padding: 19px;
+}
+.crest.ijuin .circle{
+    position: relative;
+    @include size(50px);
+    border: 6px solid $crest-color;
+}
+.crest.ijuin .cross{
+    position: absolute;
+    bottom:50%; top: 2px; left:50%;
+    width:6px; margin-left:-3px;
+    background: $crest-color;
+    @include transform-origin(bottom center);
+}
+.crest.ijuin .cross:after{
+    content: '';
+    position: absolute;
+    top:6px; left:50%;
+    @include size(24px, 6px);
+    margin-left: -12px;
+    background: inherit;
+}
+.crest.ijuin .cross:nth-child(2){ 
+	@include rotate(120deg);
+}
+.crest.ijuin .cross:nth-child(3){ 
+	@include rotate(-120deg);
+}
+
+/* ----- ITO ----- */
+.crest.ito .circle{
+    position: absolute;
+    top:50%; left:50%;
+}
+.crest.ito .circle:nth-child(1){
+    @include size(56px);
+    margin: -28px 0 0 -28px;
+    background: $crest-color;
+}
+.crest.ito .circle:nth-child(2){
+    @include size(40px);
+    margin: -30px 0 0 -20px;
+    background: $crest-bg;
+}
+.crest.ito .circle:nth-child(3){
+    @include size(14px);
+    margin: -30px 0 0 -7px;
+    background: $crest-color;
+}
+
+/* ----- KURUSHIMA ----- */
+.crest.kurushima .wave {
+    position: absolute;
+    top:50%; left:50%;
+    @include size(32px, 14px);
+    margin: -5px 0 0 -16px;
+}
+.crest.kurushima .line{
+    float: left;
+    margin-top: 2px;
+    @include size(8px);
+    background: $crest-color;
+    box-shadow: 0 -10px 0 $crest-color, 0 10px 0 $crest-color;
+}
+.crest.kurushima .line:nth-child(n){
+    @include skew(0, 28deg);
+}
+.crest.kurushima .line:nth-child(2n){
+    @include skew(0, -28deg);
+}
+
+/* ----- NAGANO ----- */
+.crest.matsuda .diag {
+    position: absolute;
+    left:50%; top:50%;
+    @include size(76px, 17px);
+    margin: -9px 0 0 -38px;
+}
+.crest.matsuda .diag.left { 
+    @include rotate(45deg);
+}
+.crest.matsuda .diag.right { 
+	 @include rotate(-45deg);
+}
+.crest.matsuda .line,
+.crest.matsuda .line.short:after,
+.crest.matsuda .line.long:after{
+    position: relative;
+    height: 7px;
+    background: $crest-color;
+}
+.crest.matsuda .line.short,
+.crest.matsuda .line.long:after{
+    width: 28px;
+    margin-bottom: 3px;
+}
+.crest.matsuda .line.short:after,
+.crest.matsuda .line.long:after {
+    content: '';
+    position: absolute;
+    left:100%; margin-left:10px;
+}
+.crest.matsuda .line.long,
+.crest.matsuda .line.short:after {
+    width: 38px; 
+}
+
+/* ----- NAGANO ----- */
+.crest.nagano .triangle{
+    position: absolute;
+    left:50%; top:50%;
+    margin: -24px 0 0 -6px;
+    @include size(0px);
+    border-top: 48px solid $crest-bg;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    @include transform-origin(center 39px);
+}
+.crest.nagano .triangle:before{
+    content: '';
+    position: absolute;
+    top:-47px; left:-5px;
+    @include size(0px);
+    border-top: 46px solid $crest-color;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.crest.nagano .triangle:after{
+    content: '';
+    position: absolute;
+    @include size(2px);
+    top:-44px; left:-1px;
+    background: $crest-bg;
+}
+@for $i from 1 through 8 {
+	.crest.nagano .triangle:nth-child(#{$i}) {
+		@include rotate((($i - 1) * 16) - 56deg);
+	}
+}
+
+/* ----- OTA ----- */
+.crest.ota {
+    padding: 20px;
+}
+.crest.ota .circle {
+    position: relative;
+    @include size(54px);
+    border: 3px solid $crest-color;
+}
+.crest.ota .ellipse {
+    position: absolute;
+    bottom:50%; left:50%;
+    @include size(18px);
+    background: $crest-color;
+    border-radius: 100% 0;
+    @include transform-origin(bottom left);
+}
+.crest.ota .ellipse:after {
+    content: '';
+    position: absolute;
+    left:0; bottom:0;
+    @include size(1px, 10px);
+    background: $crest-bg;
+    @include transform-origin(bottom center);
+    @include rotate(45deg);
+}
+@for $i from 1 through 5 {
+	.crest.ota .ellipse:nth-child(#{$i}) {
+		@include rotate((($i - 1) * 72) - 45deg);
+	}
+}
+.crest.ota .sphere {
+    position: absolute;
+    top:50%; left:50%;
+    @include size(6px);
+    margin: -4px 0 0 -4px;
+    background: $crest-color;
+    border: 1px solid $crest-bg;
+}
+
+/* ----- TAKEDA ----- */
+.crest.takeda {
+    padding: 27px;
+}
+.crest.takeda .wrap {
+    position: relative;
+    @include size(100%);
+}
+.crest.takeda .diamond {
+    position: absolute;
+    left: 14px;
+    @include size(19px);
+    background: $crest-color;
+    @include rotateSkew(-45deg, 12deg, 12deg);
+}
+.crest.takeda .diamond:nth-child(2) {
+    margin-top: 26px;
+}
+.crest.takeda .diamond:nth-child(3) {
+    margin-left: -20px;
+}
+.crest.takeda .diamond:nth-child(4) {
+    margin-left: 20px;
+}
+.crest.takeda .diamond:nth-child(3),
+.crest.takeda .diamond:nth-child(4) {
+    margin-top: 13px;
+}

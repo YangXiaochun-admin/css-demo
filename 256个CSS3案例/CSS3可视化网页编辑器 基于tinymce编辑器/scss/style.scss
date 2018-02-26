@@ -1,0 +1,59 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Russo+One|Roboto:400,700);
+* {
+  box-sizing: border-box;
+}
+
+body.main {
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  color: white;
+  line-height: 1.5;
+  background: rgb(47, 47, 47);
+  
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  color: rgb(47, 47, 47);
+}
+
+.description {
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+pre {
+  margin: 20px auto;
+  background: rgb(47, 47, 47);
+  padding: 10px;
+  white-space: pre-wrap;       
+  white-space: -moz-pre-wrap;
+  code {
+    color: white;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    text-shadow: 1px 1px 0 black;
+  }
+}
+
+h1 {
+  font-family: "Russo One", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 1.2;
+}

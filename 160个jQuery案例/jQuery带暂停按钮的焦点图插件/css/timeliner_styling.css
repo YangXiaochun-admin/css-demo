@@ -1,0 +1,97 @@
+/*
+ * CSS for Timeliner 1.2
+ *
+ * This CSS is for styling the plugin.
+ * Use timeliner.css for functionality changes.
+ */
+
+/* The container */
+#example1{
+	background:#fff url(loading.gif) center no-repeat;
+	border:1px solid #dedede;
+}
+/* Each slide */
+#example1 .slide{
+	background:#fff url(slide2.jpg);
+	padding:140px 45px 0 45px;
+	font: 20px 'segoe ui',helvetica,arial,sans-serif;
+	line-height:120%;
+	color:#3c3c3c;
+}
+/* The timeline background */
+#example1 .timeline{
+	background:#ddd;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #fff;
+}
+/* The timeline fill bar */
+#example1 .innertimeline{
+	background:#cf3300;
+}
+/* The time display */
+#example1 .timedisplay{
+	color:#777;
+}
+/* Each node */
+#example1 .node{
+	background:url(node.png) center no-repeat;
+	width:26px;
+	height:26px;
+}
+/* The active node */
+#example1 .node_active{
+	background:url(node_active.png) center no-repeat;
+}
+/* Each node tooltip */
+#example1 .tooltip{
+	background:#fff;
+	padding:5px 8px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
+/* The time display inside a tooltip */
+#example1 .tooltiptime{
+	font-size:8pt;
+	font-weight:bold;
+}
+/* The pause/play button */
+#example1 .pause, #example1 .play{
+	width:80px;
+	height:80px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	-webkit-box-shadow:0 0 10px #bbb;
+	-moz-box-shadow:0 0 10px #bbb;
+	box-shadow:0 0 10px #bbb;
+}
+/* The pause button */
+#example1 .pause{
+	background:#fff url(pause.gif) center no-repeat;
+}
+/* The play button */
+#example1 .play{
+	background:#fff url(play.gif) center no-repeat;
+}
+/* The previous/next buttons */
+#example1 .previous, #example1 .next{
+	width:43px;
+	height:50px;
+}
+/* The previous button */
+#example1 .previous{
+	background:#fff url(previous.gif) center no-repeat;
+	-webkit-border-radius:6px 0 0 6px;
+	-moz-border-radius:6px 0 0 6px;
+	border-radius:6px 0 0 6px;
+}
+/* The next button */
+#example1 .next{
+	background:#fff url(next.gif) center no-repeat;
+	-webkit-border-radius:0 6px 6px 0;
+	-moz-border-radius:0 6px 6px 0;
+	border-radius:0 6px 6px 0;
+}

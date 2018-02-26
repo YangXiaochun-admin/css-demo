@@ -1,0 +1,145 @@
+/*
+*  Adaptive jQuery Slider Plugin CSS - v1.0.0
+*  A jQuery plugin for a slider with adaptive colored figcaption and navigation.
+*  http://creative-punch.net
+*
+*  Made by Creative Punch
+*  Under MIT License
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+ul.adaptive-slider {
+  margin: 0 auto;
+  padding: 0;
+  width: 980px;
+  height: 400px;
+  position: relative;
+}
+
+ul.adaptive-slider li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.adaptive-slider li.slider-nav {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 3em;
+  display: block;
+  line-height: 400px;
+  height: 400px;
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+  -moz-transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+  -o-transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+  transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+}
+
+ul.adaptive-slider li.slider-nav:hover {
+  opacity: 1;
+}
+
+ul.adaptive-slider li.slider-nav.next {
+  right: 0;
+}
+
+ul.adaptive-slider li.slider-nav.prev {
+  left: 0;
+}
+
+ul.adaptive-slider li.slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+ul.adaptive-slider li.slider-item.active {
+  opacity: 1;
+}
+
+ul.adaptive-slider li.slider-item figure {
+  margin: 0;
+  position: relative;
+}
+
+ul.adaptive-slider li.slider-item figure img {
+  display: block;
+}
+
+ul.adaptive-slider li.slider-item figure figcaption {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: calc(100% - 120px);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 60px;
+  z-index: 1;
+  max-height: 6em;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition: max-height 1s 0.2s;
+  -o-transition: max-height 1s 0.2s;
+  transition: max-height 1s 0.2s;
+}
+
+ul.adaptive-slider li.slider-item figure figcaption h1 {
+  line-height: 3em;
+  margin: 0;
+  font-weight: 400;
+}
+
+ul.adaptive-slider li.slider-item figure figcaption p {
+  margin: 0;
+  padding: 0 20px 20px 20px;
+  display: block;
+  overflow: hidden;
+  text-align: justify;
+}
+
+ul.adaptive-slider li.slider-item figure figcaption:hover {
+  max-height: 100%;
+}
+
+/* Demo CSS */
+body {
+  background: #f1f1f1;
+  font-family: "Open Sans";
+}
+
+h1#title, h1#author {
+  text-align: center;
+  color: #222;
+  font-weight: 400;
+}
+
+div.center {
+  text-align: center;
+  margin: 20px auto;
+}
+
+div.center h1#author a {
+  text-decoration: none; 
+  color: #89F;
+}
+div.center h1#author a:hover {
+  text-decoration: none;
+  color: #68E;
+}

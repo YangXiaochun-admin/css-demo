@@ -1,0 +1,464 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>纯CSS3实现的一组ICON图标DEMO演示</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+	<style>
+body { background-color: #c5c5c5; }
+.demo {
+    width: 900px;
+    text-align: left;
+    margin: 0 auto 0;
+}
+.control_buttons li {
+    display: inline-block;
+    margin-right: 6px;
+}
+.icon {
+    position: relative;
+    display: inline-block;
+    color: #787878;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    background-color: #e5e5e5;
+}
+.icon:hover {
+    color: #3d3d3d;
+    box-shadow: 0 1px 0 #fff inset, 0 0 2px 1px #afafaf;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: linear-gradient(top, #f2f2f2, #e5e5e5);
+}
+.icon:hover span { max-height: 40px; }
+.icon span {
+    position: absolute;
+    left: -32px;
+    top: 50px;
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    text-align: center;
+    -webkit-transition: max-height .3s linear;
+    -moz-transition: max-height .3s linear;
+    -o-transition: max-height .3s linear;
+    transition: max-height .3s linear;
+    z-index: 2;
+}
+.icon span em {
+    position: relative;
+    display: block;
+    width: 130px;
+    line-height: 26px;
+    font-style: normal;
+    color: #fff;
+    text-shadow: 0 0 0 #fff;
+    margin-top: 10px;
+    border: 2px solid rgba(255,255,255,.9);
+    background-color: #222;
+    z-index: 3;
+}
+.icon span em:before,  .icon span em:after {
+    position: absolute;
+    left: 50%;
+    content: '';
+    width: 1px;
+    height: 1px;
+}
+.icon span em:before {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid rgba(255,255,255,.9);
+    top: -15px;
+    margin-left: -16px
+}
+.icon span em:after {
+    top: -11px;
+    border: 5px solid transparent;
+    border-bottom-color: #222;
+    margin-left: -14px;
+}
+.icon:before {
+    font-family: 'iconic';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-size: 24px;
+}
+.icon-chat:before { content: "\21"; }
+.icon-calendar:before { content: "\22"; }
+.icon-move-alt1:before { content: "\23"; }
+.icon-loop:before { content: "\24"; }
+.icon-arrow-up-alt2:before { content: "\25"; }
+.icon-fullscreen-alt:before { content: "\26"; }
+.icon-article:before { content: "\27"; }
+.icon-umbrella:before { content: "\28"; }
+.icon-chart:before { content: "\29"; }
+.icon-chart-alt:before { content: "\2a"; }
+.icon-read-more:before { content: "\2b"; }
+.icon-iphone:before { content: "\2c"; }
+.icon-star:before { content: "\2d"; }
+.icon-map-pin-stroke:before { content: "\2e"; }
+.icon-bars:before { content: "\2f"; }
+.icon-list:before { content: "\30"; }
+.icon-battery-empty:before { content: "\31"; }
+.icon-battery-half:before { content: "\32"; }
+.icon-battery-full:before { content: "\33"; }
+.icon-list-nested:before { content: "\34"; }
+.icon-bars-alt:before { content: "\35"; }
+.icon-eye:before { content: "\36"; }
+.icon-book:before { content: "\37"; }
+.icon-map-pin-alt:before { content: "\38"; }
+.icon-map-pin-fill:before { content: "\39"; }
+.icon-user:before { content: "\3a"; }
+.icon-battery-charging:before { content: "\3b"; }
+.icon-book-alt:before { content: "\3c"; }
+.icon-target:before { content: "\3d"; }
+.icon-steering-wheel:before { content: "\3e"; }
+.icon-cd:before { content: "\3f"; }
+.icon-arrow-down-alt2:before { content: "\40"; }
+.icon-arrow-down-alt1:before { content: "\41"; }
+.icon-arrow-down:before { content: "\42"; }
+.icon-loop-alt1:before { content: "\43"; }
+.icon-loop-alt2:before { content: "\44"; }
+.icon-loop-alt3:before { content: "\45"; }
+.icon-loop-alt4:before { content: "\46"; }
+.icon-magnifying-glass:before { content: "\47"; }
+.icon-award-fill:before { content: "\48"; }
+.icon-move-alt2:before { content: "\49"; }
+.icon-equalizer:before { content: "\4a"; }
+.icon-calendar-alt-stroke:before { content: "\4b"; }
+.icon-calendar-alt-fill:before { content: "\4c"; }
+.icon-share:before { content: "\4d"; }
+.icon-mail:before { content: "\4e"; }
+.icon-heart-stroke:before { content: "\4f"; }
+.icon-award-stroke:before { content: "\50"; }
+.icon-comment-stroke:before { content: "\51"; }
+.icon-comment-alt1-fill:before { content: "\52"; }
+.icon-comment-alt1-stroke:before { content: "\53"; }
+.icon-chat-alt-stroke:before { content: "\54"; }
+.icon-chat-alt-fill:before { content: "\55"; }
+.icon-comment-fill:before { content: "\56"; }
+.icon-comment-alt2-fill:before { content: "\57"; }
+.icon-comment-alt2-stroke:before { content: "\58"; }
+.icon-checkmark:before { content: "\59"; }
+.icon-check-alt:before { content: "\5a"; }
+.icon-x:before { content: "\5b"; }
+.icon-document-fill:before { content: "\5c"; }
+.icon-document-stroke:before { content: "\5d"; }
+.icon-document-alt-fill:before { content: "\5e"; }
+.icon-document-alt-stroke:before { content: "\5f"; }
+.icon-heart-fill:before { content: "\60"; }
+.icon-movie:before { content: "\61"; }
+.icon-trash-stroke:before { content: "\62"; }
+.icon-trash-fill:before { content: "\63"; }
+.icon-beaker-alt:before { content: "\64"; }
+.icon-beaker:before { content: "\65"; }
+.icon-transfer:before { content: "\66"; }
+.icon-move-vertical:before { content: "\67"; }
+.icon-move-vertical-alt1:before { content: "\68"; }
+.icon-move-vertical-alt2:before { content: "\69"; }
+.icon-move-horizontal:before { content: "\6a"; }
+.icon-move-horizontal-alt1:before { content: "\6b"; }
+.icon-move-horizontal-alt2:before { content: "\6c"; }
+.icon-key-fill:before { content: "\6d"; }
+.icon-key-stroke:before { content: "\6e"; }
+.icon-microphone:before { content: "\6f"; }
+.icon-compass:before { content: "\70"; }
+.icon-book-alt2:before { content: "\71"; }
+.icon-download:before { content: "\72"; }
+.icon-home:before { content: "\73"; }
+.icon-upload:before { content: "\74"; }
+.icon-clock:before { content: "\75"; }
+.icon-pen:before { content: "\76"; }
+.icon-box:before { content: "\77"; }
+.icon-headphones:before { content: "\78"; }
+.icon-volume:before { content: "\79"; }
+.icon-folder-stroke:before { content: "\7a"; }
+.icon-pen-alt-stroke:before { content: "\7b"; }
+.icon-cloud-download:before { content: "\7c"; }
+.icon-lock-stroke:before { content: "\7d"; }
+.icon-cloud-upload:before { content: "\7e"; }
+.icon-lock-fill:before { content: "\e000"; }
+.icon-pen-alt-fill:before { content: "\e001"; }
+.icon-folder-fill:before { content: "\e002"; }
+.icon-volume-mute:before { content: "\e003"; }
+.icon-play:before { content: "\e004"; }
+.icon-pause:before { content: "\e005"; }
+.icon-ampersand:before { content: "\e006"; }
+.icon-at:before { content: "\e007"; }
+.icon-pen-alt2:before { content: "\e008"; }
+.icon-brush:before { content: "\e009"; }
+.icon-unlock-fill:before { content: "\e00a"; }
+.icon-unlock-stroke:before { content: "\e00b"; }
+.icon-fork:before { content: "\e00c"; }
+.icon-paperclip:before { content: "\e00d"; }
+.icon-tag-stroke:before { content: "\e00e"; }
+.icon-tag-fill:before { content: "\e00f"; }
+.icon-sun-stroke:before { content: "\e010"; }
+.icon-sun-fill:before { content: "\e011"; }
+.icon-moon-stroke:before { content: "\e012"; }
+.icon-moon-fill:before { content: "\e013"; }
+.icon-cloud:before { content: "\e014"; }
+.icon-rain:before { content: "\e015"; }
+.icon-aperture-alt:before { content: "\e016"; }
+.icon-aperture:before { content: "\e017"; }
+.icon-camera:before { content: "\e018"; }
+.icon-image:before { content: "\e019"; }
+.icon-layers:before { content: "\e01a"; }
+.icon-layers-alt:before { content: "\e01b"; }
+.icon-eyedropper:before { content: "\e01c"; }
+.icon-brush-alt:before { content: "\e01d"; }
+.icon-info:before { content: "\e01e"; }
+.icon-question-mark:before { content: "\e01f"; }
+.icon-pilcrow:before { content: "\e020"; }
+.icon-hash:before { content: "\e021"; }
+.icon-left-quote:before { content: "\e022"; }
+.icon-right-quote:before { content: "\e023"; }
+.icon-left-quote-alt:before { content: "\e024"; }
+.icon-right-quote-alt:before { content: "\e025"; }
+.icon-fullscreen:before { content: "\e026"; }
+.icon-fullscreen-exit-alt:before { content: "\e027"; }
+.icon-fullscreen-exit:before { content: "\e028"; }
+.icon-play-alt:before { content: "\e029"; }
+.icon-last:before { content: "\e02a"; }
+.icon-first:before { content: "\e02b"; }
+.icon-eject:before { content: "\e02c"; }
+.icon-stop:before { content: "\e02d"; }
+.icon-arrow-left:before { content: "\e02e"; }
+.icon-new-window:before { content: "\e02f"; }
+.icon-plus:before { content: "\e030"; }
+.icon-x-altx-alt:before { content: "\e031"; }
+.icon-denied:before { content: "\e032"; }
+.icon-plus-alt:before { content: "\e033"; }
+.icon-lightbulb:before { content: "\e034"; }
+.icon-arrow-left-alt1:before { content: "\e035"; }
+.icon-arrow-left-alt2:before { content: "\e036"; }
+.icon-spin-alt:before { content: "\e037"; }
+.icon-minus:before { content: "\e038"; }
+.icon-cursor:before { content: "\e039"; }
+.icon-rss:before { content: "\e03a"; }
+.icon-minus-alt:before { content: "\e03b"; }
+.icon-spin:before { content: "\e03c"; }
+.icon-arrow-right:before { content: "\e03d"; }
+.icon-arrow-right-alt1:before { content: "\e03e"; }
+.icon-curved-arrow:before { content: "\e03f"; }
+.icon-pin:before { content: "\e040"; }
+.icon-rss-alt:before { content: "\e041"; }
+.icon-wrench:before { content: "\e042"; }
+.icon-dial:before { content: "\e043"; }
+.icon-cog:before { content: "\e044"; }
+.icon-move:before { content: "\e045"; }
+.icon-bolt:before { content: "\e046"; }
+.icon-link:before { content: "\e047"; }
+.icon-undo:before { content: "\e048"; }
+.icon-reload:before { content: "\e049"; }
+.icon-reload-alt:before { content: "\e04a"; }
+.icon-arrow-up-alt1:before { content: "\e04b"; }
+.icon-arrow-up:before { content: "\e04c"; }
+.icon-arrow-right-alt2:before { content: "\e04d"; }
+@font-face {
+    font-family: 'iconic';
+    src: url('fonts/iconic.eot');
+    src: url('fonts/iconic.eot?#iefix') format('embedded-opentype'),  url('fonts/iconic.svg#iconic') format('svg'),  url('fonts/iconic.woff') format('woff'),  url('fonts/iconic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+	</head>
+	<body>
+<div style="text-align:center;clear:both"> 
+        <script src="/follow.js" type="text/javascript"></script> 
+        <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script> 
+    </div>
+<p class="source-url">来自：<a href="http://www.w3cplus.com/demo/172-iconic-icon-ui.html" target="_blank">w3cplus.com</a> 作者：藤藤</p>
+<div class="page">
+        <section class="demo">
+        <ul class="control_buttons">
+                <li> <a href="#" class="icon icon-chat"> <span> <em>&nbsp;icon-chat</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-calendar"> <span> <em>&nbsp;icon-calendar</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-alt1"> <span> <em>&nbsp;icon-move-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-loop"> <span> <em>&nbsp;icon-loop</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-up-alt2"> <span> <em>&nbsp;icon-arrow-up-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-fullscreen-alt"> <span> <em>&nbsp;icon-fullscreen-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-article"> <span> <em>&nbsp;icon-article</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-umbrella"> <span> <em>&nbsp;icon-umbrella</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-chart"> <span> <em>&nbsp;icon-chart</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-chart-alt"> <span> <em>&nbsp;icon-chart-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-read-more"> <span> <em>&nbsp;icon-read-more</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-iphone"> <span> <em>&nbsp;icon-iphone</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-star"> <span> <em>&nbsp;icon-star</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-map-pin-stroke"> <span> <em>&nbsp;icon-map-pin-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-bars"> <span> <em>&nbsp;icon-bars</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-list"> <span> <em>&nbsp;icon-list</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-battery-empty"> <span> <em>&nbsp;icon-battery-empty</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-battery-half"> <span> <em>&nbsp;icon-battery-half</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-battery-full"> <span> <em>&nbsp;icon-battery-full</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-list-nested"> <span> <em>&nbsp;icon-list-nested</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-bars-alt"> <span> <em>&nbsp;icon-bars-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-eye"> <span> <em>&nbsp;icon-eye</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-book"> <span> <em>&nbsp;icon-book</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-map-pin-alt"> <span> <em>&nbsp;icon-map-pin-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-map-pin-fill"> <span> <em>&nbsp;icon-map-pin-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-user"> <span> <em>&nbsp;icon-user</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-battery-charging"> <span> <em>&nbsp;icon-battery-charging</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-book-alt"> <span> <em>&nbsp;icon-book-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-target"> <span> <em>&nbsp;icon-target</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-steering-wheel"> <span> <em>&nbsp;icon-steering-wheel</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cd"> <span> <em>&nbsp;icon-cd</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-down-alt2"> <span> <em>&nbsp;icon-arrow-down-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-down-alt1"> <span> <em>&nbsp;icon-arrow-down-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-down"> <span> <em>&nbsp;icon-arrow-down</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-loop-alt1"> <span> <em>&nbsp;icon-loop-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-loop-alt2"> <span> <em>&nbsp;icon-loop-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-loop-alt3"> <span> <em>&nbsp;icon-loop-alt3</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-loop-alt4"> <span> <em>&nbsp;icon-loop-alt4</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-magnifying-glass"> <span> <em>&nbsp;icon-magnifying-glass</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-award-fill"> <span> <em>&nbsp;icon-award-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-alt2"> <span> <em>&nbsp;icon-move-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-equalizer"> <span> <em>&nbsp;icon-equalizer</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-calendar-alt-stroke"> <span> <em>&nbsp;icon-calendar-alt-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-calendar-alt-fill"> <span> <em>&nbsp;icon-calendar-alt-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-share"> <span> <em>&nbsp;icon-share</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-mail"> <span> <em>&nbsp;icon-mail</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-heart-stroke"> <span> <em>&nbsp;icon-heart-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-award-stroke"> <span> <em>&nbsp;icon-award-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-stroke"> <span> <em>&nbsp;icon-comment-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-alt1-fill"> <span> <em>&nbsp;icon-comment-alt1-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-alt1-stroke"> <span> <em>&nbsp;icon-comment-alt1-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-chat-alt-stroke"> <span> <em>&nbsp;icon-chat-alt-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-chat-alt-fill"> <span> <em>&nbsp;icon-chat-alt-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-fill"> <span> <em>&nbsp;icon-comment-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-alt2-fill"> <span> <em>&nbsp;icon-comment-alt2-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-comment-alt2-stroke"> <span> <em>&nbsp;icon-comment-alt2-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-checkmark"> <span> <em>&nbsp;icon-checkmark</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-check-alt"> <span> <em>&nbsp;icon-check-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-x"> <span> <em>&nbsp;icon-x</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-document-fill"> <span> <em>&nbsp;icon-document-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-document-stroke"> <span> <em>&nbsp;icon-document-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-document-alt-fill"> <span> <em>&nbsp;icon-document-alt-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-document-alt-stroke"> <span> <em>&nbsp;icon-document-alt-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-heart-fill"> <span> <em>&nbsp;icon-heart-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-movie"> <span> <em>&nbsp;icon-movie</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-trash-stroke"> <span> <em>&nbsp;icon-trash-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-trash-fill"> <span> <em>&nbsp;icon-trash-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-beaker-alt"> <span> <em>&nbsp;icon-beaker-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-beaker"> <span> <em>&nbsp;icon-beaker</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-transfer"> <span> <em>&nbsp;icon-transfer</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-vertical"> <span> <em>&nbsp;icon-move-vertical</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-vertical-alt1"> <span> <em>&nbsp;icon-move-vertical-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-vertical-alt2"> <span> <em>&nbsp;icon-move-vertical-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-horizontal"> <span> <em>&nbsp;icon-move-horizontal</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-horizontal-alt1"> <span> <em>&nbsp;icon-move-horizontal-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move-horizontal-alt2"> <span> <em>&nbsp;icon-move-horizontal-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-key-fill"> <span> <em>&nbsp;icon-key-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-key-stroke"> <span> <em>&nbsp;icon-key-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-microphone"> <span> <em>&nbsp;icon-microphone</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-compass"> <span> <em>&nbsp;icon-compass</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-book-alt2"> <span> <em>&nbsp;icon-book-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-download"> <span> <em>&nbsp;icon-download</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-home"> <span> <em>&nbsp;icon-home</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-upload"> <span> <em>&nbsp;icon-upload</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-clock"> <span> <em>&nbsp;icon-clock</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pen"> <span> <em>&nbsp;icon-pen</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-box"> <span> <em>&nbsp;icon-box</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-headphones"> <span> <em>&nbsp;icon-headphones</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-volume"> <span> <em>&nbsp;icon-volume</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-folder-stroke"> <span> <em>&nbsp;icon-folder-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pen-alt-stroke"> <span> <em>&nbsp;icon-pen-alt-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cloud-download"> <span> <em>&nbsp;icon-cloud-download</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-lock-stroke"> <span> <em>&nbsp;icon-lock-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cloud-upload"> <span> <em>&nbsp;icon-cloud-upload</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-lock-fill"> <span> <em>&nbsp;icon-lock-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pen-alt-fill"> <span> <em>&nbsp;icon-pen-alt-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-folder-fill"> <span> <em>&nbsp;icon-folder-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-volume-mute"> <span> <em>&nbsp;icon-volume-mute</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-play"> <span> <em>&nbsp;icon-play</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pause"> <span> <em>&nbsp;icon-pause</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-ampersand"> <span> <em>&nbsp;icon-ampersand</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-at"> <span> <em>&nbsp;icon-at</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pen-alt2"> <span> <em>&nbsp;icon-pen-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-brush"> <span> <em>&nbsp;icon-brush</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-unlock-fill"> <span> <em>&nbsp;icon-unlock-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-unlock-stroke"> <span> <em>&nbsp;icon-unlock-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-fork"> <span> <em>&nbsp;icon-fork</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-paperclip"> <span> <em>&nbsp;icon-paperclip</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-tag-stroke"> <span> <em>&nbsp;icon-tag-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-tag-fill"> <span> <em>&nbsp;icon-tag-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-sun-stroke"> <span> <em>&nbsp;icon-sun-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-sun-fill"> <span> <em>&nbsp;icon-sun-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-moon-stroke"> <span> <em>&nbsp;icon-moon-stroke</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-moon-fill"> <span> <em>&nbsp;icon-moon-fill</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cloud"> <span> <em>&nbsp;icon-cloud</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-rain"> <span> <em>&nbsp;icon-rain</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-aperture-alt"> <span> <em>&nbsp;icon-aperture-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-aperture"> <span> <em>&nbsp;icon-aperture</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-camera"> <span> <em>&nbsp;icon-camera</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-image"> <span> <em>&nbsp;icon-image</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-layers"> <span> <em>&nbsp;icon-layers</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-layers-alt"> <span> <em>&nbsp;icon-layers-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-eyedropper"> <span> <em>&nbsp;icon-eyedropper</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-brush-alt"> <span> <em>&nbsp;icon-brush-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-info"> <span> <em>&nbsp;icon-info</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-question-mark"> <span> <em>&nbsp;icon-question-mark</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pilcrow"> <span> <em>&nbsp;icon-pilcrow</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-hash"> <span> <em>&nbsp;icon-hash</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-left-quote"> <span> <em>&nbsp;icon-left-quote</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-right-quote"> <span> <em>&nbsp;icon-right-quote</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-left-quote-alt"> <span> <em>&nbsp;icon-left-quote-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-right-quote-alt"> <span> <em>&nbsp;icon-right-quote-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-fullscreen"> <span> <em>&nbsp;icon-fullscreen</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-fullscreen-exit-alt"> <span> <em>&nbsp;icon-fullscreen-exit-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-fullscreen-exit"> <span> <em>&nbsp;icon-fullscreen-exit</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-play-alt"> <span> <em>&nbsp;icon-play-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-last"> <span> <em>&nbsp;icon-last</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-first"> <span> <em>&nbsp;icon-first</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-eject"> <span> <em>&nbsp;icon-eject</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-stop"> <span> <em>&nbsp;icon-stop</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-left"> <span> <em>&nbsp;icon-arrow-left</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-new-window"> <span> <em>&nbsp;icon-new-window</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-plus"> <span> <em>&nbsp;icon-plus</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-x-altx-alt"> <span> <em>&nbsp;icon-x-altx-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-denied"> <span> <em>&nbsp;icon-denied</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-plus-alt"> <span> <em>&nbsp;icon-plus-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-lightbulb"> <span> <em>&nbsp;icon-lightbulb</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-left-alt1"> <span> <em>&nbsp;icon-arrow-left-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-left-alt2"> <span> <em>&nbsp;icon-arrow-left-alt2</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-spin-alt"> <span> <em>&nbsp;icon-spin-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-minus"> <span> <em>&nbsp;icon-minus</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cursor"> <span> <em>&nbsp;icon-cursor</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-rss"> <span> <em>&nbsp;icon-rss</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-minus-alt"> <span> <em>&nbsp;icon-minus-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-spin"> <span> <em>&nbsp;icon-spin</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-right"> <span> <em>&nbsp;icon-arrow-right</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-right-alt1"> <span> <em>&nbsp;icon-arrow-right-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-curved-arrow"> <span> <em>&nbsp;icon-curved-arrow</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-pin"> <span> <em>&nbsp;icon-pin</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-rss-alt"> <span> <em>&nbsp;icon-rss-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-wrench"> <span> <em>&nbsp;icon-wrench</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-dial"> <span> <em>&nbsp;icon-dial</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-cog"> <span> <em>&nbsp;icon-cog</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-move"> <span> <em>&nbsp;icon-move</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-bolt"> <span> <em>&nbsp;icon-bolt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-link"> <span> <em>&nbsp;icon-link</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-undo"> <span> <em>&nbsp;icon-undo</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-reload"> <span> <em>&nbsp;icon-reload</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-reload-alt"> <span> <em>&nbsp;icon-reload-alt</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-up-alt1"> <span> <em>&nbsp;icon-arrow-up-alt1</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-up"> <span> <em>&nbsp;icon-arrow-up</em> </span> </a> </li>
+                <li> <a href="#" class="icon icon-arrow-right-alt2"> <span> <em>&nbsp;icon-arrow-right-alt2</em> </span> </a> </li>
+            </ul>
+    </section>
+    </div>
+</body>
+</html>

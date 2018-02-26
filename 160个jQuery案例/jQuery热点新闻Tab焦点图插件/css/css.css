@@ -1,0 +1,130 @@
+/* css 重置 */* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body {
+	background: #fff;
+	font: normal 12px/22px 宋体;
+}
+img {
+	border: 0;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+a:hover {
+	color: #1974A1;
+}/* 本例子css */
+.msn-focus {
+	width: 300px;
+	height: 260px;
+}
+.msn-focus img {
+	width: 300px;
+	height: 223px;
+	display: block
+}
+.msn-focus .hd {
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	width: 307px;
+	margin-right: -7px
+}
+.msn-focus .hd li {
+	float: left;
+	display: inline;
+	float: left;
+	margin: 0 7px 0 0;
+	height: 35px
+}
+.msn-focus .hd .on {
+	background: url("../images/arrow.png") no-repeat scroll center bottom
+}
+.msn-focus .hd .on a {
+	background-color: #38a3db;
+	color: #fff
+}
+.msn-focus .hd a {
+	height: 30px;
+	background-color: #eee;
+	float: left;
+	padding: 0 8px
+}
+.msn-focus .bd {
+	width: 300px;
+	height: 223px;
+	position: relative;
+	overflow: hidden
+}
+.msn-focus .bd ul {
+	height: 223px;
+	overflow: hidden;
+	position: relative;
+	font-size: 14px;
+	line-height: 28px
+}
+.msn-focus .bd li {
+	width: 300px;
+	height: 223px;
+	background-color: #fff;
+	position: relative
+}
+.msn-focus .bd li p {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	line-height: 35px;
+	height: 35px;
+	width: 300px;
+	white-space: nowrap;
+	overflow: hidden
+}
+.msn-focus .bd li p i {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 300px;
+	height: 35px;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity=50)
+}
+.msn-focus .bd li p a, .msn-focus .bd li p a:visited {
+	position: relative;
+	color: #fff;
+	margin-left: 20px
+}
+.msn-focus .bd li p a:hover {
+	color: #f60
+}
+.msn-focus .prev, .msn-focus .next {
+	position: absolute;
+	bottom: 85px;
+	width: 29px;
+	height: 64px;
+	opacity: .6;
+	filter: alpha(opacity=60);
+	overflow: hidden;
+	display: none;
+	text-indent: -999px;
+	border: none;
+	background: url(../images/arrowLR.png) no-repeat;
+}
+.msn-focus .prev: hover, .msn-focus .next: hover {
+	opacity: .9;
+	filter: alpha(opacity=90)
+}
+.msn-focus .prev {
+	left: 0;
+	background-position: -50px 0
+}
+.msn-focus .next {
+	right: 0;
+}
+.msn-focus .bdOn .prev, .msn-focus .bdOn .next {
+	display: block;
+}

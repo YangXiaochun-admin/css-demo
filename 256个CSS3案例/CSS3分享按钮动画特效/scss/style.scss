@@ -1,0 +1,94 @@
+@import "compass/css3";
+
+
+$icon-size: 3em;
+
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+$brands: (
+  twitter: #00acee \f099,
+  facebook: #3b5998 \f09a,
+  pinterest: #cb2027 \f0d2,
+  youtube: #b00 \f167,
+  soundcloud: #FF5700 \f1be
+);
+
+
+.fa {
+  height: 2em;
+  font-size: $icon-size;
+  overflow: hidden;
+  margin: 0.5em;
+  position: relative;
+  text-decoration: none;
+  width: 2em;     
+  -webkit-backface-visibility: hidden;
+
+  
+  &:before, &:after {
+    left: 0;    
+    position: absolute;  
+    text-align: center;
+    transition: 0.5s;
+    top: 50%; 
+    width: 100%;
+  }
+  
+  &:before {
+    color: white;
+    transform: translate3D(0, -50%, 0);
+    z-index: 2;
+  }
+  
+  &:after {
+    padding-bottom: 25%;
+    padding-top: 300%;
+    top: 0;
+  }
+  
+  &:hover {
+    &:after {
+     transform: translate3D(0, -73%, 0);
+    }
+    &:before {
+      transform: translate3D(0, -250%, 0);
+    }    
+  }
+}
+
+
+@each $brand, $properties in $brands {
+  $color: nth($properties, 1);
+  $icon: nth($properties, 2);
+  
+  .fa-#{$brand} {
+    
+    &:after {
+      background-image: linear-gradient($color 25%, white 75%);
+      content: '#{$icon}';
+      color: $color;
+    }  
+
+  }
+  
+}
+
+
+// Demo styles
+
+
+html {
+  background: radial-gradient(#222, #000); 
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}

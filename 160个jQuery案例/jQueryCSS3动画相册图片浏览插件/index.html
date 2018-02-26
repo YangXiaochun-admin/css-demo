@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery+CSS3动画相册代码DEMO演示</title>
+<link rel="stylesheet" href="css/zzsc.css" />
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/scripts.js"></script>
+</head>
+<body>
+<!-- 代码 开始 -->
+<div id="gallery-container">
+    <ul class="items--small">
+        <li class="item"><a href="#"><img src="images/small-1.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-2.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-3.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-4.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-5.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-6.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-7.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-8.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-9.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-10.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-11.png" alt="" /></a></li>
+        <li class="item"><a href="#"><img src="images/small-12.png" alt="" /></a></li>
+    </ul>
+    <ul class="items--big">
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-1.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-2.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-3.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-4.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-5.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-6.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-7.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-8.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-9.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-10.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-11.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+        <li class="item--big"> <a href="#">
+            <figure> <img src="images/big-12.jpg" alt="" />
+                <figcaption class="img-caption"> Caption </figcaption>
+            </figure>
+            </a> </li>
+    </ul>
+    <div class="controls"> <span class="control icon-arrow-left" data-direction="previous"></span> <span class="control icon-arrow-right" data-direction="next"></span> <span class="grid icon-grid"></span> <span class="fs-toggle icon-fullscreen"></span> </div>
+</div>
+<script>
+    $(document).ready(function(){
+     $('#gallery-container').sGallery({
+        fullScreenEnabled: true
+      });
+    });
+</script> 
+<!-- 代码 结束 -->
+
+</body>
+</html>

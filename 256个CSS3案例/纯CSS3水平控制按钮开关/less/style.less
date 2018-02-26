@@ -1,0 +1,440 @@
+@color-light: #899299;
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+html, body, nav, label, p {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  letter-spacing: 0.4px;
+  background: #f9f9f9;
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+::-moz-selection {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.main {
+  padding: 30px;
+  font-size: 1rem;
+  position: relative;
+  color: @color-light;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+
+  > h1, h2 {
+    font-weight: 300;
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  > p {
+    font-weight: 300;
+    font-size: 1.16em;
+    width: 100%;
+    color: lighten(@color-light, 20%);
+    margin-top: 16px;
+  }
+
+  .segmented-control {
+  }
+}
+
+.options {
+  background: rgba(255, 255, 255, 0.9);
+  width: 200px;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  border-radius: 1px;
+
+  &-section {
+    border-bottom: 1px solid #f9f9f9;
+    padding: 15px;
+    font-size: 12px;
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-weight: 800;
+      color: #CCC;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    > input[type='range'] {
+      width: 100%;
+    }
+  }
+}
+
+/*! Copyright (c) 2014 François St-Germain */
+
+@transition-duration-fast   : 50ms;
+@transition-duration-normal : 700ms;
+@transition-duration-slow   : 1000ms;
+@transition-duration-slower : 2000ms;
+
+@transition-easing          : cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+@color-pink                 : #F87E94;
+@color-green                : #11AC63;
+@color-orange               : #f7ae40;
+@color-purple               : #8D74C0;
+@color-blue                 : #319DD4;
+@color-red                  : #E35354;
+@color-turquoise            : #5FBAAC;
+@color-dark-blue            : #4C5457;
+
+.segmented-control {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background: white;
+  border: 2px solid white;
+  border-radius: 2px;
+  margin: 20px 5px 10px 5px;
+  box-shadow: 0 0 0 1px #EEE;
+  min-width: 100px;
+  color: @color-dark-blue;
+  overflow: hidden;
+  display: inline-block;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition-duration: @transition-duration-normal;
+  -webkit-transition-duration: @transition-duration-normal;
+
+  transition-timing-function: @transition-easing;
+  -webkit-transition-timing-function: @transition-easing;
+
+  > input[type='radio'], > input[type='checkbox'] {
+    position: absolute;
+    left: -1000px;
+
+    &:nth-child(1):checked {
+      ~ label:nth-of-type(1) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(1) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 0; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(2) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 0; }
+      }
+    }
+
+    &:nth-child(2):checked {
+      ~ label:nth-of-type(2) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(2) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 50%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(3) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 33.33%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(4) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 25%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(5) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 20%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(6) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 16.66%; }
+      }
+    }
+
+    &:nth-child(3):checked {
+      ~ label:nth-of-type(3) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(3) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 66.66%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(4) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 50%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(5) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 40%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(6) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 33.33%; }
+      }
+    }
+
+    &:nth-child(4):checked {
+      ~ label:nth-of-type(4) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(4) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 75%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(5) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 60%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(6) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 50%; }
+      }
+    }
+
+    &:nth-child(5):checked {
+      ~ label:nth-of-type(5) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(5) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 80%; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(6) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 66.66%; }
+      }
+    }
+
+    &:nth-child(6):checked {
+      ~ label:nth-of-type(6) {
+        &:after, &:before { opacity: 1; }
+      }
+
+      ~ label:first-of-type:nth-last-of-type(6) {
+        &:after, &:before, & ~ label:after, & ~ label:before { left: 83.33%; }
+      }
+    }
+
+    &:disabled {
+      &:nth-child(1) ~ label:nth-of-type(1),
+      &:nth-child(2) ~ label:nth-of-type(2),
+      &:nth-child(3) ~ label:nth-of-type(3),
+      &:nth-child(4) ~ label:nth-of-type(4),
+      &:nth-child(5) ~ label:nth-of-type(5),
+      &:nth-child(6) ~ label:nth-of-type(6) {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  > label {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: -4px;
+    vertical-align: text-bottom;
+
+    transition-duration: inherit;
+    -webkit-transition-duration: inherit;
+
+    transition-timing-function: inherit;
+    -webkit-transition-timing-function: inherit;
+
+    &.italic       { font-style: italic; }
+    &.bold         { font-weight: bold; }
+    &.underline    { text-decoration: underline; }
+    &.line-through { text-decoration: line-through; }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #FFF;
+      opacity: 0;
+      padding: inherit;
+      pointer-events: none;
+      content: attr(data-value);
+      text-align: center;
+      z-index: 1000;
+
+      font-style: inherit;
+      text-decoration: inherit;
+      font-weight: inherit;
+
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+
+      -webkit-transition-property: all;
+      -webkit-transition-duration: inherit;
+      -webkit-transition-timing-function: inherit;
+
+      transition-property: all;
+      transition-duration: inherit;
+      transition-timing-function: inherit;
+    }
+
+    &, &:after {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: @color-dark-blue;
+      color: #FFF;
+      opacity: 0;
+      height: 100%;
+      pointer-events: none;
+
+      -webkit-transition-property: left;
+      -webkit-transition-duration: inherit;
+      -webkit-transition-timing-function: inherit;
+
+      transition-property: left;
+      transition-duration: inherit;
+      transition-timing-function: inherit;
+    }
+
+    &, &:before {
+      border-radius: 1px;
+    }
+
+    &:first-of-type:nth-last-of-type(1) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    &:first-of-type:nth-last-of-type(2) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 50%;
+        }
+      }
+    }
+
+    &:first-of-type:nth-last-of-type(3) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 33.33%;
+        }
+      }
+    }
+
+    &:first-of-type:nth-last-of-type(4) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 25%;
+        }
+      }
+    }
+
+    &:first-of-type:nth-last-of-type(5) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 20%;
+        }
+      }
+    }
+
+    &:first-of-type:nth-last-of-type(6) {
+      &, & ~ label {
+        &, &:after, &:before {
+          width: 16.66%;
+        }
+      }
+    }
+  }
+
+  > input[type='checkbox'] ~ label {
+    transition-duration: 0;
+    -webkit-transition-duration: 0;
+  }
+
+  /* Options */
+
+  &--slow > label {
+    &:after, &:before {
+      -webkit-transition-duration: @transition-duration-slow;
+      transition-duration: @transition-duration-slow;
+    }
+  }
+
+  &--slower > label {
+    &:after, &:before {
+      -webkit-transition-duration: @transition-duration-slower;
+      transition-duration: @transition-duration-slower;
+    }
+  }
+
+  &--no-transition > label {
+    &:after, &:before {
+      -webkit-transition-duration: 0;
+      transition-duration: 0;
+    }
+  }
+
+  /* Colors */
+
+  &--turquoise > label:before { background: @color-turquoise; }
+  &--red       > label:before { background: @color-red; }
+  &--blue      > label:before { background: @color-blue; }
+  &--purple    > label:before { background: @color-purple; }
+  &--orange    > label:before { background: @color-orange; }
+  &--green     > label:before { background: @color-green; }
+  &--pink      > label:before { background: @color-pink; }
+  &--dark-blue > label:before { background: @color-dark-blue; }
+
+  /* Transparent */
+
+  &--transparent {
+    border-color: transparent;
+    background: transparent;
+  }
+}

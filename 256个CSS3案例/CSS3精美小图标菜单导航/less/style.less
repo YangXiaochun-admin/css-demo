@@ -1,0 +1,136 @@
+
+/* Variables */
+
+@width: 5em;
+@height: @width;
+@body-bg: mediumturquoise;
+@main-bg: darken(@body-bg, 10%);
+@default-link-color: lighten(@body-bg, 60%);
+
+/* timer */
+@timing: .5s;
+
+
+/* Custom / Personal reset */
+
+*{ 
+  margin: 0;
+  padding:0;
+}
+body {
+  font: 16px/1.5em Tahoma, sans-serif;
+  background-color: @body-bg;
+}
+.container {
+  max-width: (@width * 5) + (@width*10/5) + (@width*10/60);
+  margin: 10% auto;
+  border-radius: @width / 10;
+  background-color: lighten(@main-bg, 15%);
+}
+a {
+  text-decoration: none;
+  color: @default-link-color;
+}
+
+/* Utility classes */
+
+.reset-position{
+  top: 0;
+  left: 0;
+}
+.align-v {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+
+.align-h {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+}
+.align-vh {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+}
+.transform-custom(@x: -50%,@y: -50%){
+  -webkit-transform: translate(@x,@y); 
+}
+
+/* Main style */
+
+.navigation {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  li {
+    list-style: none;
+    float: left;
+    display: inline-block;
+    margin: @width/5;
+    a {
+      display: block;
+      width: @width;
+      height: @height;
+      border-radius: @width/15;
+      line-height: @height;
+      position: relative;
+      text-align: center;
+      background-color: @main-bg;
+      border: @width/60 solid darken(@main-bg, 3%);
+      overflow: hidden;
+      z-index: 1;
+      i {
+        display: block;
+        position: absolute;
+        font-size: @width/3;
+        .align-vh();
+        -webkit-transition: all @timing ease;
+      }
+      span {
+        position: absolute;
+        .align-vh();
+        opacity: 0;
+        font-size: 1em;
+        text-transform: uppercase;
+        -webkit-transition: all @timing/2 @timing/4 ease;
+      }
+
+      &:hover {
+        .positioning();
+        i {
+          .transform-custom(-50%, @height);
+          color: fadeout(@default-link-color, 60);
+        }
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.positioning(){
+  &.to{
+    &.bottom {
+      i {
+        .transform-custom(-50%, @height);
+      }
+    }
+    &.top {
+      i {
+        .transform-custom(-50%, -@height);
+      }
+    }
+    &.left {
+      i {
+        .transform-custom(-@height, -50%);
+      }
+    }
+    &.right {
+      i {
+        .transform-custom(@height, -50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>jQuery热点新闻Tab焦点图插件DEMO演示</title>
+<link href="css/css.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.pack.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+</head>
+<body>
+<div class="msn-focus" style="margin:30px auto">
+    <div class="hd">
+        <ul>
+            <li class=" "><a target="_blank" href="#">资讯</a></li>
+            <li class=" "><a target="_blank" href="#">环球</a></li>
+            <li class=" "><a target="_blank" href="#">汽车</a></li>
+            <li class=" "><a target="_blank" href="#">娱乐</a></li>
+            <li class="on"><a target="_blank" href="#">奢品</a></li>
+            <li><a target="_blank" href="#">历史</a></li>
+        </ul>
+    </div>
+    <div class="bd">
+        <ul>
+            <li style="display: none;"><a href="#" target="_blank"><img src="photo/1.jpg"></a>
+                <p> <i> </i> <a href="#"> 莫言造访瑞典一中学展示书法技艺 </a> </p>
+            </li>
+            <li style="display: none;"><a href="#" target="_blank"><img src="photo/2.jpg"></a>
+                <p> <i> </i> <a href="#"> 美高中跳“江南style”被称最烂 </a> </p>
+            </li>
+            <li style="display: none;"><a href="#" target="_blank"><img src="photo/3.jpg"></a>
+                <p> <i> </i> <a href="#"> 本周上市新车一览 雪铁龙C4 L领衔 </a> </p>
+            </li>
+            <li style="display: none;"><a href="#" target="_blank"><img src="photo/4.jpg"></a>
+                <p> <i> </i> <a href="#"> Hello World </a> </p>
+            </li>
+            <li style="display: list-item;"><a href="#" target="_blank"><img src="photo/5.jpg"></a>
+                <p> <i> </i> <a href="#"> 百年品牌记：中国老字号如何重生？ </a> </p>
+            </li>
+            <li style="display: none;"><a href="#" target="_blank"><img src="photo/6.jpg"></a>
+                <p> <i> </i> <a href="#"> 我从哪里来？图解史上各国性教育尺度 </a> </p>
+            </li>
+        </ul>
+        <a class="prev" href="javascript:void(0)"></a><a class="next" href="javascript:void(0)"></a></div>
+</div>
+<script type="text/javascript">jQuery(".msn-focus .bd").hover(function(){ jQuery(this).addClass("bdOn") },function(){ jQuery(this).removeClass("bdOn") });jQuery(".msn-focus").slide({ mainCell:".bd ul",delayTime:500,triggerTime:0,autoPlay:true });</script>
+</body>
+</html>

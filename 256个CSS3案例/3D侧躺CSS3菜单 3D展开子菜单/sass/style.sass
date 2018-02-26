@@ -1,0 +1,119 @@
+@import "compass/css3"
+
+// Author: Daniel Peterson @dpidan
+// codepen.io/dpidan
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro|Oswald:300)
+
+body
+  font: 14px/120% 'Source Sans Pro', sans-serif
+  color: #999
+  background: #111
+  transition: all .2s
+
+h1, h2, h3
+  font-family: 'Oswald', 'Arial Narrow', sans-serif
+    
+.logo
+  margin: 1em auto
+  text-align: center
+  h1
+    font-size: 2em
+    
+.menu_wrapper
+  padding: 1em
+  perspective: 500px
+    
+nav
+  width: 230px
+  max-width: 360px
+  margin: 0 auto
+  transform-style: preserve-3d
+  transform: rotateY(20deg) rotateX(36deg) rotateZ(-6deg)
+  transition: transform 1s
+  
+  // Top-level
+  > ul
+    list-style: none
+    padding: 1em
+    transform: translateZ(-100px)
+    transform-style: preserve-3d
+    transition: all .2s
+      
+    > li
+      margin: 0 0 .5em 0
+      position: relative
+      color: #222
+      font-family: 'Oswald', 'Arial Narrow', sans-serif
+      transition: all .2s
+      transform-style: preserve-3d
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, .7)
+      border-radius: 6px
+      background-color: #ffac05 // Old browsers
+      @include filter-gradient(#ffac05, #d96404, vertical) // IE6-9
+      @include background-image(linear-gradient(top, #ffac05 0%,#d96404 100%))
+        
+      &:hover
+        background: #fff
+        transform: translateZ(16px) rotateY(4deg)
+          
+        a
+          color: #222
+        
+        // 2nd-level (only on hover of parent)
+        ul
+          opacity: 1
+          visibility: visible
+          transform: translateZ(60px) rotateY(-25deg)
+          
+          li
+            margin-left: .325em
+            transition: all .4s
+      
+      a
+        display: block
+        padding: .5em
+        min-height: 2.5em
+        line-height: 2.5em
+        color: #fff
+        font-size: 1.5em
+        text-decoration: none
+        transition: all .2s
+          
+        &:hover
+          color: #222
+
+      // 2nd-level
+      ul
+        opacity: 0
+        visibility: hidden
+        position: absolute
+        left: 83%
+        top: 0
+        padding-left: 2em
+        min-width: 300px
+        transition: all .2s
+        transform: translateZ(-5px) rotateY(-10deg)
+        
+        li
+          display: inline-block
+          width: 45%
+          margin: 0 0 .325em -3em
+          box-shadow: 5px 5px 20px rgba(0, 0, 0, .7)
+          transform-style: preserve-3d
+          
+          &:hover
+            //background: #f92
+          
+          a
+            color: #000
+            font-size: 1.325em
+            line-height: 120%
+            background: #fff
+            border-radius: 4px
+            
+            &:hover
+              background: #f92
+            
+        div
+          font-family: 'Source Sans Pro', sans-serif
+          color: #ddd

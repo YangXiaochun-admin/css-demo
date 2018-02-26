@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Typography Effects with CSS3 and jQuery</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Typography Effects with CSS3 and jQuery" />
+        <meta name="keywords" content="typography, css3, effect, lettering, letters, transition, jquery" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style7.css" />
+        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a href="http://tympanus.net/Development/HoverClickTriggerCircle/">
+                    <strong>&laquo; Previous Demo: </strong>Hover &amp; Click Trigger for Circular Elements
+                </a>
+                <span class="right">
+                    <a href="http://www.behance.net/AndrewLili" target="_blank">Images by Andrey Yakovlev &amp; Lili Aleeva</a>
+                    <a href="http://tympanus.net/codrops/2011/11/28/typography-effects-with-css3-and-jquery/">
+                        <strong>Back to the Codrops Article</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div>
+            <h1>Typography Effects with <span>CSS3 and jQuery</span></h1>
+			<p class="demos">
+				<a href="index.html">Demo 1</a>
+				<a href="index2.html">Demo 2</a>
+				<a href="index3.html">Demo 3</a>
+				<a href="index4.html">Demo 4</a>
+				<a href="index5.html">Demo 5</a>
+				<a href="index6.html">Demo 6</a>
+				<a class="current-demo" href="index7.html">Demo 7</a>
+			</p>
+         			           
+		
+			<div id="letter-container" class="letter-container">
+				<h2><a href="#">Sun</a></h2>
+			</div>
+			<div class="content">
+				<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+
+				<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
+
+				<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.</p>
+
+				<p>Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was.</p>
+			</div>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script type="text/javascript" src="js/jquery.lettering.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#letter-container h2 a").lettering();
+				});
+			</script>
+        </div>
+    </body>
+</html>

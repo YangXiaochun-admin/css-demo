@@ -1,0 +1,78 @@
+/***********************
+	-	BASICS 	-
+***********************/
+html {
+	overflow-x:hidden;
+	padding: 0 !important;
+	background:#fff;
+	margin:0px !important;
+}
+
+
+.fullwidthbanner-container{
+		width:100% !important;
+		position:relative;
+		padding:0;
+		overflow:hidden;
+		background: gray;
+}
+
+#revolution-slider{
+		max-height:450px !important;
+}
+
+.tparrows{ top:50% !important;}
+
+.med{
+	font-size:24px;
+	letter-spacing:-.5px;
+}
+
+
+.med-white{
+	color:#fff;
+	font-size:24px;
+	letter-spacing:-.5px;
+}
+.med-green{
+	color:#469159;
+	font-size:24px;
+	letter-spacing:-.5px;
+}
+.small-white{
+	color:#fff;
+	line-height:1.7em;
+}
+
+.very-big-white{
+	font-size:84px;
+	letter-spacing:-5px;
+	font-weight:bold;
+	color:#fff;
+}
+
+.very-big-black{
+	font-size:84px;
+	letter-spacing:-5px;
+	font-weight:bold;
+	color:#333;
+}
+
+.block{
+	display:inline-block;
+	font-size:20px;
+	color:#fff;
+	padding:8px 12px 8px 12px;
+}
+
+.block-black{
+	display:inline-block;
+	font-size:20px;
+	background:#333;
+	color:#fff;
+	padding:8px 12px 8px 12px;
+}
+
+a.btn{
+	color:#fff !important;
+}

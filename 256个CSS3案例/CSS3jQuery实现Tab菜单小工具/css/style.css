@@ -1,0 +1,154 @@
+/*
+ * Copyright (c) 2013 Thibaut Courouble
+ * http://www.cssflow.com
+ * Licensed under the MIT License
+ *
+ * Sass/SCSS source: http://goo.gl/1r6UDT
+ * PSD by Aaron Sananes: http://goo.gl/AlBLzO
+ */
+
+body {
+  font: 12px/20px 'Lucida Grande', Verdana, sans-serif;
+  color: #404040;
+  background: #eee;
+}
+
+.widget {
+  position: relative;
+  margin: 20px auto 10px;
+  width: 320px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+}
+
+.widget-tabs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 9px 12px 0;
+  text-align: left;
+  direction: rtl;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  border-radius: 3px 3px 0 0;
+}
+
+.widget-tab,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child ~ .widget-tab,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) ~ .widget-tab,
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child ~ .widget-tab {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+  line-height: 36px;
+  font-weight: normal;
+  color: #999;
+  background: #fcfcfc;
+  border: solid #ddd;
+  border-width: 1px 1px 0;
+  border-radius: 5px 5px 0 0;
+  padding-bottom: 0;
+  bottom: auto;
+}
+
+.widget-tab > .widget-tab-link,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child ~ .widget-tab > .widget-tab-link,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) ~ .widget-tab > .widget-tab-link,
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child ~ .widget-tab > .widget-tab-link {
+  margin: 0;
+  border-top: 0;
+}
+
+.widget-tab + .widget-tab {
+  margin-right: -1px;
+}
+
+.widget-tab:last-child,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2),
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child {
+  bottom: -1px;
+  margin-top: 0;
+  padding-bottom: 2px;
+  line-height: 34px;
+  font-weight: bold;
+  color: #555;
+  background: white;
+  border-top: 0;
+}
+
+.widget-tab:last-child > .widget-tab-link,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child > .widget-tab-link,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) > .widget-tab-link,
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child > .widget-tab-link {
+  margin: 0 -1px;
+  border-top: 4px solid #4cc8f1;
+}
+
+.widget-tab-link {
+  display: block;
+  min-width: 60px;
+  padding: 0 15px;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.widget-list {
+  display: none;
+  padding-top: 50px;
+}
+
+.widget-list > li + li {
+  border-top: 1px solid #e8e8e8;
+}
+
+.widget-list:last-of-type {
+  display: block;
+}
+
+.widget-list:target {
+  display: block;
+}
+
+.widget-list:target ~ .widget-list {
+  display: none;
+}
+
+.widget-list-link {
+  display: block;
+  line-height: 18px;
+  padding: 10px 12px;
+  font-weight: bold;
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.widget-list-link:hover {
+  background: #f7f7f7;
+}
+
+li:last-child > .widget-list-link {
+  border-radius: 0 0 3px 3px;
+}
+
+.widget-list-link > img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin: 2px 12px 0 0;
+}
+
+.widget-list-link > span {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  color: #999;
+}

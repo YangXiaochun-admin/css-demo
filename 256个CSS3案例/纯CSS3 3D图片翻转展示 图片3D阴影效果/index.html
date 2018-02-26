@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>纯CSS3 3D图片翻转展示 图片3D阴影效果DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+html, body {
+    background: #212121;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+}
+.main-container {
+    margin: 4em auto 0 auto;
+    width: 650px;
+}
+.main-container .controls {
+    margin: 0 auto;
+    padding: 2em 0 0 0;
+    text-align: center;
+}
+.coverflow-container { box-reflect: below 0px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.1) 100%); }
+label {
+    color: #999;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    background: #252525;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+label:hover { color: #FFF; }
+.coverflow-list { width: 100%; }
+.coverflow-list .coverflow-item {
+    display: inline-block;
+    background: #414141;
+    margin: 0 -50px;
+    position: relative;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+.coverflow-list .coverflow-item .album-cover {
+    display: block;
+    height: 150px;
+    margin: 0;
+}
+.coverflow-list .coverflow-item .album-cover img {
+    height: 150px;
+    width: 150px;
+    opacity: 0.5;
+}
+.coverflow-list .coverflow-item .album-name {
+    text-align: center;
+    display: block;
+    color: #444;
+}
+.coverflow-list .coverflow-item label {
+    padding: 0;
+    border: none;
+    display: block;
+    text-shadow: none;
+}
+/* Now apply 3D transforms (never done this before!) */
+.coverflow-list {
+    -webkit-transform: perspective(900px);
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective-origin: 100% 30%;
+}
+.coverflow-list .coverflow-item {
+    -webkit-transition: all 0.4s ease;
+    background: #212121;
+    -webkit-transform: rotateY(45deg);
+}
+input[type="radio"] { display: none; }
+input[type="radio"]:checked + .coverflow-item {
+    -webkit-transform: rotateY(0deg);
+    margin: 0 auto;
+    background: #313131;
+    transition: all 0.4s ease;
+}
+input[type="radio"]:checked + .coverflow-item img { opacity: 1; }
+input[type="radio"]:checked + .coverflow-item figcaption { color: #FFFFFF; }
+input[type="radio"]:checked + .coverflow-item ~ .coverflow-item {
+    -webkit-transform: rotateY(-45deg);
+    background: #515151;
+}
+/*@keyframes cover-forward {
+  0% { transform: rotateY( 45deg ); }
+  50% { transform: rotateY( 0deg ) translate3d( 60px,0,0 ) scale3d(1.2,1.2,1.2); z-index:999; }
+  100% { transform: rotateY( 45deg ) translate3d( 0,0,0 ) scale3d(1,1,1); }
+}
+
+@keyframes cover-return {
+  0% { transform: rotateY( 45deg ); }
+  100% { transform: rotateY( 0deg ) translate3d( 150px,0,0 ) scale3d(1.2,1.2,1.2); }
+}*/
+</style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+<!--- This may need to change --->
+<div class="main-container">
+    <div class="coverflow-container">
+        <ol class="coverflow-list">
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-1">
+            <li class="coverflow-item">
+                <label for="cover-1">
+                <figure class="album-cover">
+                <img src="love-is-blind.jpg">
+                <figcaption class="album-name">Love Is Blind</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-2">
+            <li class="coverflow-item">
+                <label for="cover-2">
+                <figure class="album-cover">
+                <img src="disintegration.jpg" />
+                <figcaption class="album-name">Disintegration</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-3">
+            <li class="coverflow-item">
+                <label for="cover-3">
+                <figure class="album-cover">
+                <img src="dream-harder.jpg">
+                <figcaption class="album-name">Dream Harder</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-4">
+            <li class="coverflow-item">
+                <label for="cover-4">
+                <figure class="album-cover">
+                <img src="wish.jpg">
+                <figcaption class="album-name">Wish</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-5">
+            <li class="coverflow-item">
+                <label for="cover-5">
+                <figure class="album-cover">
+                <img src="two-five-four.jpg">
+                <figcaption class="album-name">2:54</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-6">
+            <li class="coverflow-item">
+                <label for="cover-6">
+                <figure class="album-cover">
+                <img src="garbage.jpg">
+                <figcaption class="album-name">Garbage</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-7">
+            <li class="coverflow-item">
+                <label for="cover-7">
+                <figure class="album-cover">
+                <img src="long-way-round.jpg">
+                <figcaption class="album-name">Long Way Round</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-8">
+            <li class="coverflow-item">
+                <label for="cover-8">
+                <figure class="album-cover">
+                <img src="homegrown.jpg">
+                <figcaption class="album-name">HomeGrown</figcaption>
+                </figure>
+                </label>
+            </li>
+            <!-- Cover item -->
+            <input type="radio" name="cover-item" id="cover-9">
+            <li class="coverflow-item">
+                <label for="cover-9">
+                <figure class="album-cover">
+                <img src="casanova.jpg">
+                <figcaption class="album-name">Casanova</figcaption>
+                </figure>
+                </label>
+            </li>
+        </ol>
+    </div>
+    <div class="controls">
+        <label for="cover-1">1</label>
+        <label for="cover-2">2</label>
+        <label for="cover-3">3</label>
+        <label for="cover-4">4</label>
+        <label for="cover-5">5</label>
+        <label for="cover-6">6</label>
+        <label for="cover-7">7</label>
+        <label for="cover-8">8</label>
+        <label for="cover-9">9</label>
+    </div>
+</div>
+</body>
+</html>

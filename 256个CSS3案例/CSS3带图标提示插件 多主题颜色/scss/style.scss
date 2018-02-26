@@ -1,0 +1,149 @@
+@import "compass/css3";
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700,400,300);
+@import url(https://raw.github.com/necolas/normalize.css/master/normalize.css);
+
+$spacing: 24px;
+
+/**
+* Set up reusable colors
+*/
+$main-color:           #9b59b6;
+$secondary-color:      #34495e;
+/**
+* Colors from Flat UI
+* Source: http://flatuicolors.com
+*/
+$pomegranate:          #c0392b;
+$alizarin: 			      #e74c3c;
+$pumpkin: 			       #d35400;
+$carrot: 			        #e67e22;
+$orange:               #f39c12;
+$sunflower:            #f1c40f;
+$emerald:              #2ecc71;
+$nephritis:            #27ae60;
+$turquoise:            #1abc9c;
+$green-sea:            #16a085;
+$peter-river:          #3498db;
+$belize-hole:          #2980b9;
+$amethyst:             #9b59b6;
+$wisteria:             #8e44ad;
+$clouds:               #ecf0f1;
+$silver:               #bdc3c7;
+$concrete:             #95a5a6;
+$asbestos:             #7f8c8d;
+$wet-asphalt:          #34495e;
+$midnight-blue:        #2c3e50;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  background-color: #e7e7e7;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: $spacing * 2;
+}
+
+
+/**
+* Reusable single-direction margin declaration
+*/
+.margin {
+  margin-top: 0;
+  margin-bottom: $spacing;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+p {
+  @extend .margin;
+}
+
+/**
+* Flag Object
+* Original Source: http://csswizardry.com/2013/05/the-flag-object/
+*/
+.flag {
+  @extend .margin;
+  display: table;
+  width: 100%;
+}
+
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
+  .flag--top & {
+    vertical-align: top;
+  }
+  .flag--bottom & {
+    vertical-align: bottom;
+  }
+}
+
+.flag__image {
+  padding-right: $spacing;
+  > img {
+    display: block;
+    max-width: none;
+  }
+  .flag--rev & {
+    padding-right: 0;
+    padding-left: $spacing;
+  }
+}
+
+.flag__body {
+  width: 100%;
+}
+
+  
+/**
+* Notification Styles
+*/
+.note {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: $main-color;
+}
+
+.note--secondary { background-color: $secondary-color; }
+.note--success   { background-color: $nephritis; }
+.note--warning   { background-color: $orange; }
+.note--error     { background-color: $alizarin; }
+.note--info      { background-color: $peter-river; }
+
+  .note__icon,
+  .note__text {
+    padding: $spacing;
+  }
+
+  .note__icon {
+    min-width: ($spacing * 2) + 32px;
+    text-align: center;
+    font-size: 32px;
+    font-size: 2rem;
+    background-color: rgba(black, .25);
+  }
+
+  .note__text {
+    padding-right: $spacing * 3;
+  }
+
+  .note__close {
+    position: absolute;
+    top: $spacing;
+    right: $spacing;
+    font-size: 24px;
+    color: white;
+  }
+
+

@@ -1,0 +1,74 @@
+.cb_select{
+  width:200px;
+  float:left;
+  clear:both;
+  position:relative;
+  margin:30px 5px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size:12px;
+  text-transform:uppercase;
+}
+.cb_select .cb_selectMain{
+  color:#777;
+  border:2px solid #ddd;
+  background-color:#f0f0f0;
+  background-repeat:no-repeat;
+  background-position:95% 50%;
+  cursor:pointer;
+  text-align:left;
+  height:20px;
+  line-height:20px;
+  text-indent:10px;
+  width:200px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:10;
+  text-shadow:1px 1px 1px #fff;
+  -moz-box-shadow:0px 0px 2px #333 inset;
+  -webkit-box-shadow:0px 0px 2px #333 inset;
+  box-shadow:0px 0px 2px #333 inset;
+}
+.cb_down{
+  background-image:url(down.png);
+}
+.cb_up{
+  background-image:url(up.png);
+}
+.cb_selectWrapper{
+  width:200px;
+  display:none;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:1000;
+  height:150px;
+  border:2px solid #ddd;
+  background-color:#fff;
+  margin:22px 0px 0px 0px;
+  background:#f0f0f0 url(overlay.png) repeat-x top left;
+  -moz-box-shadow:0px 0px 2px #333 inset;
+  -webkit-box-shadow:0px 0px 2px #333 inset;
+  box-shadow:0px 0px 2px #333 inset;
+}
+.cb_selectWrapper ul {
+  list-style:none;
+  padding:0px;
+  margin:0px;
+  width:100%;
+}
+.cb_selectWrapper ul li a{
+  text-decoration:none;
+  cursor:pointer;
+  display:block;
+  padding:3px 0px;
+  text-indent:10px;
+  letter-spacing:1px;
+  color:#777;
+  text-shadow:1px 1px 1px #fff;
+}
+.cb_selectWrapper ul li a:hover{
+  background-color:#616161;
+  color:#fff;
+  text-shadow:1px 1px 1px #000;
+}

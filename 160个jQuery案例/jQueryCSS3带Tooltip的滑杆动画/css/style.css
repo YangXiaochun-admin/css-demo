@@ -1,0 +1,121 @@
+body{
+  background: #edebeb;
+}
+
+.range-holder{
+	margin: 3em auto;
+	padding: 200px 0 70px 0;
+	width: 960px;
+	background: url("pr-plan-scale.png") bottom center no-repeat;
+	
+}
+
+.dragdealer {
+  position: relative;
+  height: 30px;
+  background: #FFF;
+  border-radius: 8px;
+  border: 1px solid #a7a7a7;
+}
+.dragdealer .handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.stripe{
+	background: #ddd  url("stripe-bg.png") top left repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 3px;
+	height: 24px;
+	border-radius: 8px;
+}
+
+	#green-highlight{position: absolute; top:0; left: 67px; height: 24px; opacity: .5; background: #8dc63f; display: none;}
+	#orange-highlight{position: absolute; top:0; left: 381px; height: 24px; opacity: .5; background: #e07c00; display: none;}
+	#blue-highlight{position: absolute; top:0; left: 814px; height: 24px; opacity: .5; background: #008da8; display: none;}
+
+.square{
+  position: absolute;
+  top: 0;
+  left: 0;	  
+  margin-top: -13px;
+  margin-left: -10px;
+  cursor: pointer;
+  width: 50px;
+  height: 37px;
+  background: #505054;
+  border-radius: 8px;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  padding-top: 13px;
+}
+
+.menu-line{width: 50%; margin: 2px auto; height: 5px; background: #FFF; display: block;}
+
+.infobox{
+	position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -235px;
+    margin-left: -117px;
+	width: 260px;
+	height: 190px;
+	background: #FFF;
+	padding: 0px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	border: #008da8 solid 2px;
+}
+
+	.infobox:after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-width: 20px 23px 0;
+		border-color: #FFFFFF transparent;
+		display: block;
+		width: 0;
+		z-index: 1;
+		bottom: -20px;
+		left: 107px;
+	}
+	
+	.infobox:before {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-width: 21px 24px 0;
+		border-color: #008da8 transparent;
+		display: block;
+		width: 0;
+		z-index: 0;
+		bottom: -23px;
+		left: 106px;
+	}
+	
+	.titlebar{
+		background: #008da8;
+		color: #FFF;
+		padding: .5em;
+     line-height: 1.5em;
+		font-size: 15px;
+	}
+	#plan-holder{font-weight: bold;}
+	
+	.innerbox{
+		padding: 1em;
+	}
+	
+	.info-price{color: #e07c00; font-size: 33px; line-height: 1.8em;}
+
+	
+	.annual-label{
+	  color: #505054; font-size: 14px; font-weight: bold; width: 110px; line-height: 1.8em;}
+	.annual-price{color: #939393; font-size: 17px; width: 110px;} 
+

@@ -1,0 +1,27 @@
+#window(style="display:none;")
+	.page.page-front
+		.page-content
+			.input-row
+				label.label.fadeIn Username
+				input.input.fadeIn.delay1#username(type="text" data-fyll="pineapple")
+			.input-row
+				label.label.fadeIn.delay2 Password
+				input.input.fadeIn.delay3#password(type="password" data-fyll="hackmeplease")
+			.input-row.perspective
+				button.button.load-btn.fadeIn.delay4#submit
+					span.default
+						i.ion-arrow-right-b
+						| Login
+					.load-state
+						.ball
+						.ball
+						.ball
+	.page.page-back
+		.page-content
+			img.avatar(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/avatar.jpg")
+			p.welcome Welcome back, Dog!
+			.perspective
+				button.button.inline.trigger-anim-replay
+					i.ion-refresh
+					| Replay animation
+.browser-warning.hidden Glitchy or weird animation? Let it play through once, then press Replay.

@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=" " />
+<meta name="description" content="  " />
+<title>jQuery图片360度旋转DEMO演示</title>
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+    font: 12px/1.5 "\5B8B\4F53", san-serif;
+    background: #fff;
+}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, p {
+    padding: 0;
+    margin: 0;
+}
+table, td, tr, th { font-size: 12px; }
+li { list-style-type: none; }
+img {
+    vertical-align: top;
+    border: 0;
+}
+ol, ul { list-style: none; }
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    font-weight: normal;
+}
+address, cite, code, em, th, i {
+    font-weight: normal;
+    font-style: normal;
+}
+label { vertical-align: middle }
+.inputEle { vertical-align: middle; }
+input { vertical-align: middle; }
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+.under_line { text-decoration: underline; }
+html, body { height: 100%; }
+#bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+filter:alpha(opacity:30);
+    opacity: 0.3;
+    background: black;
+    z-index: 1;
+}
+#photo {
+    width: 502px;
+    height: 502px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -251px;
+    margin-top: -251px;
+}
+#bigphoto {
+    width: 500px;
+    height: 500px;
+    border: solid 1px #d8d8d8;
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+#imgBig {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 800px;
+    margin-left: -400px;
+    margin-top: -400px;
+}
+#smallphoto {
+    width: 500px;
+    height: 500px;
+    margin: 0;
+    background: #fff;
+    border: solid 1px #d8d8d8;
+}
+#prog {
+    width: 324px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -162px;
+    font-family: arial;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+}
+#prog span { font-family: "����"; }
+#bar {
+    width: 126px;
+    height: 22px;
+    background: url(images/loading.gif) no-repeat center top;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 99px;
+}
+#box360 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+#box360 a {
+    background: url(images/360_flash_no.png) no-repeat left top;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+#box360 a.active {
+    background: url(images/360_flash.png) no-repeat left top;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+#loading {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    background: #fff url(http://js.fgm.cc/learn/lesson2/img/loading.gif) 50% 50% no-repeat;
+}
+#loading img { margin: 240px auto; }
+</style>
+<script language="javascript" type="text/javascript">
+function $(id)
+{
+	return document.getElementById(id);
+}
+
+window.onload=function ()
+{
+	var oPhoto=$('photo');
+	var oBigPhoto=$('bigphoto');
+	var oSmallPhoto=$('smallphoto');
+	var oProg=$('prog');
+	var oImg=$('img');
+	var oBg=$('bg');
+	var iImgCount=24;
+	var oTxt=oProg.getElementsByTagName('span')[0];
+	var iLoaded=1;
+	var iNow=0;
+	var scale=10;
+	var oBox360=$('box360');
+	var oBox360a=oBox360.getElementsByTagName('a')[0];
+	var aImg=[];
+	var num=0;
+	var oImgBig=$('imgBig');
+	var oLoading=$('loading');
+	for(var i=1; i<=iImgCount+1; i++)
+	{
+		var oNewImg=new Image();
+		oNewImg.onload=function ()
+		{
+			sacle=Math.ceil(100*iLoaded/iImgCount);
+			oTxt.innerHTML=sacle+'%';
+			oNewImg.onload=null;			
+			if(++iLoaded==iImgCount)onLoad();
+		};
+		oNewImg.src='images/z3d/small/image '+i+'.jpg';
+	}
+	function onLoad()
+	{
+		oProg.style.display=oBg.style.display='none';
+		
+		oSmallPhoto.onmouseover=function(ev)
+		{
+			var oEvent=ev||event;
+			var disX=oEvent.clientX;
+			oSmallPhoto.onmousemove=function(ev)
+			{
+				var oEvent=ev||event;
+				var l=oEvent.clientX-disX;
+				var iCur=parseInt(l/20)%iImgCount;
+				iNow=iCur>0?iCur:(iImgCount-Math.abs(iCur));
+				oImg.src='images/z3d/small/image '+iNow+'.jpg';
+				var newNow=0;
+				
+				if(iNow<10)
+				{
+					newNow='0'+iNow;
+				}
+				else
+				{
+					newNow=iNow;
+				}
+				
+				oImg.setAttribute('index',newNow);				
+				oImg.setAttribute('_src','http://video10.360buyimg.com/0/13/341/134178/27693/img/z3d0'+newNow+'.jpg');
+			}
+			oSmallPhoto.onmouseout=function(ev)
+			{
+				iNow=num;
+			}
+		}
+		oImg.onclick=function()
+		{
+			var _this=this;
+			oSmallPhoto.style.display='none';
+			oBigPhoto.style.display='block';
+			oBox360a.className='active';
+			oLoading.style.display = "block";
+			
+			var bigSrc=_this.getAttribute('_src');
+			document.title=bigSrc;
+			
+			var img = new Image();			
+			img.src=decodeURI(bigSrc);
+			oImgBig.src=decodeURI(img.src);
+			if(img.complete)
+			{
+				 oLoading.style.display = "none";
+				 bigPhoto();
+			}
+			else
+			{
+				img.onload=function()
+				{
+					oImgBig.src=decodeURI(img.src);
+					oLoading.style.display = "none";
+					bigPhoto();
+				}
+			}
+			oImgBig.style.margin='0px';
+			oImgBig.style.left='-150px';
+			oImgBig.style.top='-150px';
+		}
+		function bigPhoto()
+		{
+			oBigPhoto.onmouseover=function(ev)
+			{
+				oBigPhoto.onmousemove=function(ev)
+				{
+					var oEvent=ev||event;
+					var l=oEvent.clientX-oPhoto.offsetLeft;
+					var t=oEvent.clientY-oPhoto.offsetTop;
+					var sacleX=(l/oBigPhoto.offsetWidth).toFixed(2);
+					var sacleY=(t/oBigPhoto.offsetWidth).toFixed(2);
+					oImgBig.style.margin='0px';
+					oImgBig.style.left=-sacleX*(oImgBig.offsetWidth-oBigPhoto.offsetWidth)+'px';
+					oImgBig.style.top=-sacleY*(oImgBig.offsetWidth-oBigPhoto.offsetWidth)+'px';
+				}
+			}
+			oBox360a.onclick=function()
+			{
+				this.className='';
+				oBigPhoto.style.display='none';
+				oSmallPhoto.style.display='block';
+				oImgBig.src='images/t.gif';
+			}
+		}
+	}
+};
+</script>
+</head>
+<body>
+<div id="photo">
+    <div id="bigphoto"><img src="images/t.gif" width="800" height="800" id="imgBig"/>
+        <div id="loading"></div>
+    </div>
+    <!--/bigphoto-->
+    <div id="smallphoto"> <img src="images/z3d/small/image 1.jpg" id="img" _src="images/z3d/big/z3d001.jpg"/> </div>
+    <!--/smallphoto-->
+    <div id="box360"><a href="javascript:;"></a></div>
+</div>
+<!--/photo-->
+<div id="prog"> 图片正在加载中请稍后.....<span>0%</span>
+    <div id="bar"></div>
+</div>
+<div id="bg"></div>
+<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3实现文字输入效果DEMO演示</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<div class="code-editor"><span class="control"></span><span class="control"></span><span class="control"></span>
+    <pre class="numbers linenums prettyprint prettyprinted"><ol class="linenums"><li class="L0"><code class="css"><span class="pln">describe</span><span class="pun">(</span><span class="str">'Connection'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span></code></li><li class="L1"><code class="css"><span class="pln"> </span><span class="kwd">var</span><span class="pln"> db </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Connection</span></code></li><li class="L2"><code class="css"><span class="pln"> </span><span class="pun">,</span><span class="pln"> tobi </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="str">'tobi'</span><span class="pun">)</span></code></li><li class="L3"><code class="css"><span class="pln"> </span><span class="pun">,</span><span class="pln"> loki </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="str">'loki'</span><span class="pun">)</span></code></li><li class="L4"><code class="css"><span class="pln"> </span><span class="pun">,</span><span class="pln"> jane </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="str">'jane'</span><span class="pun">);</span></code></li><li class="L5"><code class="css"></code></li><li class="L6"><code class="css"><span class="pln"> beforeEach</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="kwd">done</span><span class="pun">){</span></code></li><li class="L7"><code class="css"><span class="pln"> db</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">){</span></code></li><li class="L8"><code class="css"><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">done</span><span class="pun">(</span><span class="pln">err</span><span class="pun">);</span></code></li><li class="L9"><code class="css"><span class="pln"> db</span><span class="pun">.</span><span class="pln">save</span><span class="pun">([</span><span class="pln">tobi</span><span class="pun">,</span><span class="pln"> loki</span><span class="pun">,</span><span class="pln"> jane</span><span class="pun">],</span><span class="pln"> </span><span class="kwd">done</span><span class="pun">);</span></code></li><li class="L0"><code class="css"><span class="pln"> </span><span class="pun">});</span></code></li><li class="L1"><code class="css"><span class="pln"> </span><span class="pun">})</span></code></li></ol>
+</pre>
+</div>
+<script src='jquery.js'></script> 
+<script src='prettify.js'></script>
+</body>
+</html>

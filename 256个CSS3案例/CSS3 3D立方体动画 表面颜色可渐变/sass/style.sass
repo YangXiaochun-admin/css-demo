@@ -1,0 +1,221 @@
+@import "compass/css3"
+
+
+@import compass/reset
+@import compass/css3
+@mixin animation($values)
+  -webkit-animation: $values
+  -moz-animation: $values
+  -o-animation: $values
+  -ms-animation: $values
+  animation: $values
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+$animationDuration: 10s
+$maxOpacity: 0.9
+
+body
+  background-color: #2c3035
+
+.background
+  width: 600px
+  height: 300px
+  margin: 0px auto
+  position: relative
+
+.object-container
+  width: 100%
+  height: 100%
+  position: absolute
+  @include perspective(1600px)
+  @include perspective-origin(50% -340px)
+  @include animation(introduceCube 1.5s ease-out)
+
+  .cube
+    width: 100%
+    height: 100%
+    @include transform-style(preserve-3d)
+    @include animation(rotate $animationDuration infinite linear)
+
+  figure
+    display: block
+    width: 300px
+    height: 300px
+    left: 150px
+    top: 100px
+    background-color: #ddd
+    position: absolute
+    @include backface-visibility(hidden)
+
+    &:before, &:after
+      content: ""
+      display: block
+      position: absolute
+      width: 100%
+      height: 100%
+      opacity: 0
+
+    &:before
+      @include background(radial-gradient(top left, rgba(20,20,20,0.5), #000))
+
+    &:after
+      @include background(radial-gradient(bottom left, #000, rgba(20,20,20,0.5)))
+
+  .back
+    background-color: #52acff
+    @include transform(rotateX(180deg) translateZ(150px))
+    &:before
+      @include background(radial-gradient(bottom left, rgba(0,0,0,0), #000))
+      @include animation(backShading1 $animationDuration infinite linear)
+    &:after
+      @include background(radial-gradient(top left, #000, rgba(0,0,0,0)))
+      @include animation(backShading2 $animationDuration infinite linear)
+  .top
+    background-color: #fff952
+    @include transform(rotateX(90deg) translateZ(150px))
+    overflow: hidden
+    &:after
+      opacity: 1
+      width: 200%
+      height: 200%
+      margin-left: -50%
+      margin-top: -50%
+      @include background(radial-gradient(bottom, rgba(0,0,0,0), #000))
+      @include animation(rotateTop $animationDuration infinite linear)
+
+  .bottom
+    @include transform(rotateX(-90deg) translateZ(150px))
+    @include box-shadow(0 10px 100px #000)
+    @include backface-visibility(visible)
+    background-color: rgba(0,0,0,0)
+  .left
+    background-color: #52ff73
+    @include transform(rotateY(-90deg) translateZ(150px))
+    &:before
+      @include animation(leftShading1 $animationDuration infinite linear)
+    &:after
+      @include animation(leftShading2 $animationDuration infinite linear)
+  .right
+    background-color: #ff5262
+    @include transform(rotateY(90deg) translateZ(150px))
+    &:before
+      @include animation(rightShading1 $animationDuration infinite linear)
+    &:after
+      @include animation(rightShading2 $animationDuration infinite linear)
+  .front
+    background-color: #60c2ef
+    @include transform(translateZ(150px))
+    &:before
+      @include animation(frontShading1 $animationDuration infinite linear)
+    &:after
+      @include animation(frontShading2 $animationDuration infinite linear)
+
+
+@include keyframes(rotate)
+  0%
+    @include transform(rotateY(0))
+  100%
+    @include transform(rotateY(360deg))
+
+@include keyframes(frontShading1)
+  2%
+    opacity: 0
+  25%
+    opacity: $maxOpacity
+  35%
+    opacity: $maxOpacity
+  50%
+    opacity: 0
+
+@include keyframes(frontShading2)
+  50%
+    opacity: 0
+  60%
+    opacity: $maxOpacity
+  75%
+    opacity: $maxOpacity
+  100%
+    opacity: 0
+
+@include keyframes(backShading1)
+  25%
+    opacity: $maxOpacity
+  50%
+    opacity: 0
+  75%
+    opacity: 0
+  80%
+    opacity: $maxOpacity
+
+@include keyframes(backShading2)
+  25%
+    opacity: 0
+  50%
+    opacity: 0
+  75%
+    opacity: $maxOpacity
+  80%
+    opacity: $maxOpacity
+
+@include keyframes(leftShading1)
+  0%
+    opacity: 0
+  25%
+    opacity: 0
+  50%
+    opacity: $maxOpacity
+  60%
+    opacity: $maxOpacity
+
+@include keyframes(leftShading2)
+  0%
+    opacity: $maxOpacity
+  25%
+    opacity: 0
+  50%
+    opacity: 0
+  100%
+    opacity: $maxOpacity
+
+@include keyframes(rightShading2)
+  50%
+    opacity: $maxOpacity
+  75%
+    opacity: 0
+  100%
+    opacity: 0
+
+@include keyframes(rightShading1)
+  10%
+    opacity: $maxOpacity
+  50%
+    opacity: 0
+  75%
+    opacity: 0
+  100%
+    opacity: $maxOpacity
+
+@include keyframes(rotateTop)
+  0%
+    @include transform(rotateZ(0))
+  100%
+    @include transform(rotateZ(360deg))
+
+@include keyframes(introduceCube)
+  0%
+    opacity: 0
+    top: -20px
+    @include transform(scale(0.6))
+  20%
+    opacity: 1
+  100%
+    top: 0
+    @include transform(scale(1))

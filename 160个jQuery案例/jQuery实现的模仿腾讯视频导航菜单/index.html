@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if IE 8 ]> <html class="ie ie8 lte_ie8" lang="zh-CN"> <![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>腾讯视频+站酷jQuery导航</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<script src="jquery.min.js"></script>
+<style type="text/css">
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+body, button, input, select, textarea { font: 12px/1.6 Verdana, Helvetica, sans-serif; }/*雅黑：\5FAE\8F6F\96C5\9ED1  Verdana, Helvetica, sans-serif*/
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+button, input, select, textarea { font-size: 100%; }
+a { text-decoration: none; }
+ul, ol { list-style: none; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.layout:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.layout { *zoom:1;
+}
+.cf:before, .cf:after {
+    content: '';
+    display: table;
+}
+.cf:after { clear: both; }
+.cf { *zoom:1;
+}
+small, cite, code, em, th, i, b {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+}
+.topcool {
+    height: 45px;
+    width: 100%;
+    background: url(topBg.png) repeat-x;
+    position: relative;
+    text-align: center;
+    z-index: 999;
+}
+.topheader {
+    height: 45px;
+    width: 1083px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+.toplogo {
+    width: 124px;
+    height: 31px;
+    background: url(logo.png) no-repeat;
+    display: inline-block;
+    float: left;
+    margin: 5px 0 0 0;
+}
+.topnav {
+    height: 43px;
+    float: left;
+    padding: 0 0 0 10px;
+}
+.topnav > a {
+    height: 43px;
+    width: 50px;
+    line-height: 44px;
+    line-height: 47px\9;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    font-size: 14px;
+}
+.topnav > a:hover {
+    background: #2d2d2d;
+    font-weight: bold;
+    color: #fff;
+}
+.topnav > a.selected {
+    background: #2d2d2d;
+    font-weight: bold;
+    color: #fff;
+}
+.navmore {
+    width: 50px;
+    height: 43px;
+    line-height: 44px;
+    line-height: 47px\9;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    float: left;
+    cursor: default;
+    position: relative;
+    padding-right: 10px;
+}
+.navmore b {
+    position: absolute;
+    top: 21px;
+    right: 7px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-style: solid dashed dashed dashed;
+    border-width: 5px 5px;
+    border-color: #8c6000 #ffae00 #ffae00;
+}
+.navMoreUL {
+    position: absolute;
+    top: 43px;
+    left: 0;
+    background: #2d2d2d;
+    text-align: left;
+    display: none;
+}
+.navMoreUL li {
+    width: 100px;
+    height: 34px;
+}
+.navMoreUL li a {
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    color: #ababab;
+    font-size: 12px;
+    white-space: nowrap;
+    padding-left: 15px;
+    font-weight: normal;
+}
+.navMoreUL li a:hover {
+    background: #111;
+    color: #ffba00;
+}
+.navmore-hover {
+    background: #2d2d2d;
+    color: #FFF;
+    font-weight: bold;
+}
+.navmore-hover b { border-color: #8c8c8c #2d2d2d #2d2d2d; }
+.topheadright {
+    float: right;
+    margin-right: -1px;
+}
+.thrUl {
+    float: right;
+    height: 43px;
+}
+.thrUl > li {
+    float: left;
+    position: relative;
+}
+.doLogBox { line-height: 43px; }
+.thrUl .doLogBox a {
+    color: #000;
+    margin: 0 5px;
+}
+.topSearch {
+    display: inline-block;
+    height: 25px;
+    float: right;
+    margin: 9px 10px 0 0;
+    margin: 8px 10px 0 0\9;
+    position: relative;
+    border: 1px solid #ff9200;
+    background: #fff;
+}
+.topSearchTxt {
+    height: 25px;
+    width: 143px;
+    line-height: 25px;
+    border: 0;
+    float: left;
+    margin-right: 5px;
+    padding: 0 0 0 5px;
+}
+.topSearchBtn {
+    height: 25px;
+    width: 24px;
+    cursor: pointer;
+    background: url(bs.png) no-repeat;
+    border: 0;
+}
+.topSearchBtn:hover { background: url(bs.png) #fff no-repeat left -24px; }
+.chooseS {
+    background: #2d2d2d;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 177px;
+    padding: 5px 0;
+    display: none;
+}
+.chooseS input {
+    margin: 0 3px 0 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.chooseS label {
+    color: #FFF;
+    vertical-align: middle;
+    display: inline-block;
+}
+/* cool end*/
+.tengxun-head {
+    position: relative;
+    height: 45px;
+    z-index: 888;
+    background: url(nav_simple.png) 0 0 repeat-x;
+}
+.tengxun-con {
+    width: 980px;
+    position: relative;
+    margin: 0 auto;
+}
+.tengxun-logo {
+    width: 106px;
+    height: 45px;
+    float: left;
+}
+.tengxun-logo a {
+    display: block;
+    height: 45px;
+    line-height: 100;
+    overflow: hidden;
+    background: url(nav_simple.png) -115px -46px no-repeat;
+}
+.tengxun-logo a:hover {
+    background: url(nav_simple.png) 0 -46px no-repeat;
+    text-decoration: none;
+}
+.tengxun-nav { float: left; }
+.tengxun-channel {
+    width: 350px;
+    padding-left: 18px;
+    white-space: nowrap;
+}
+.tengxun-channel .channel_item {
+    display: inline;
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 15px;
+    margin-top: 16px\9;
+    padding: 0 12px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #2C2C2C;
+    color: #cecece;
+    font-size: 14px;
+    font-family: microsoft yahei;
+}
+.tengxun-channel .channel_home { border-left: 0 none; }
+.tengxun-channel .channel_item:hover { color: #fff; }
+.tengxun-channel-more {
+    width: 64px;
+    height: 45px;
+    float: left;
+    position: relative;
+}
+.tengxun-channel-more .channel_item { border-right: none; }
+.tengxun-channel-more .ico_text {
+    float: left;
+    display: inline-block;
+    margin-right: 3px;
+}
+.tengxun-channel-more .triangle-down {
+    float: left;
+    position: relative;
+    top: 6px;
+*top:6px;
+[;
+    top: 7px;
+];
+    vertical-align: top;
+    border-style: solid dashed dashed dashed;
+    border-color: #4E4E4E transparent transparent transparent;
+    border-width: 4px;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    display: inline-block;
+}
+.tengxun-more-channels {
+    width: 546px;
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -1px;
+    z-index: 100;
+}
+.tengxun-more-count {
+    position: relative;
+    background: #353535;
+    z-index: 5;
+}
+.tengxun-list-wrap {
+    padding: 8px 14px;
+    overflow: hidden;
+}
+.tengxun-list-left {
+    width: 336px;
+    position: relative;
+    overflow: visible;
+    border-right: 1px solid #2D2D2D;
+    float: left;
+    height: auto;
+}
+.tengxun-list-wrap li {
+    float: left;
+    display: inline;
+    width: 46px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 3px 0;
+    vertical-align: top;
+}
+.tengxun-list-wrap li a { color: #A7A7A7; }
+.tengxun-list-wrap .link {
+    display: inline-block;
+    height: 22px;
+    line-height: 19px;
+    padding-left: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: none;
+}
+.tengxun-list-wrap .link span {
+    display: inline-block;
+    vertical-align: top;
+    height: 22px;
+*line-height:22px;
+    line-height: 22px\9;
+    padding-right: 8px;
+    background: none;
+}
+.tengxun-list-wrap .link:hover span, .tengxun-list-wrap .link:hover {
+    background-image: url(nav_simple.png);
+    text-decoration: none;
+    color: #262626;
+    text-shadow: 0 1px 0 #7a7a7a;
+    cursor: pointer;
+}
+.tengxun-list-wrap .link:hover { background-position: 0 -150px; }
+.tengxun-list-wrap .link:hover span { background-position: right -150px }
+.tengxun-list-wrap li.link-name1 { width: 58px; }
+.tengxun-list-wrap li.link-name2 { width: 70px; }
+.tengxun-list-right {
+    width: 174px;
+    padding-left: 6px;
+    overflow: hidden;
+    float: left;
+    height: auto;
+    border-left: 1px solid #3a3a3a;
+}
+.tengxun-channel-more-hover {
+    margin-left: -1px;
+    border-left: 1px solid #353535;
+    background-color: #353535;
+}
+.tengxun-channel-more-hover .channel_item {
+    color: #ccc;
+    border-left: 1px solid #353535;
+    color: #FFF;
+}
+.tengxun-channel-more-hover .triangle-down {
+    top: 2px;
+[;
+    top: 4px;
+];
+*top:0;
+    border-color: transparent transparent #ccc transparent;
+    border-style: dashed dashed solid;
+}
+.tengxun-right-quick {
+    width: 490px;
+    float: right;
+    padding-top: 9px;
+}
+.tengxun-seachfrom {
+    position: relative;
+    float: right;
+    margin-left: 10px;
+    display: inline;
+}
+.tengxun-search {
+    width: 194px;
+    position: static;
+    height: 28px;
+    line-height: 26px;
+    overflow: hidden;
+    background: #383838 url(nav_simple.png) 0 -92px no-repeat;
+}
+.tengxun-search-text {
+    float: left;
+    width: 156px;
+    height: 16px;
+    margin: 0 0 0 1px;
+    font-size: 12px;
+    border: 0 none;
+    background: none;
+    color: #ccc;
+    padding: 5px 0 7px 10px;
+    line-height: normal;
+    display: inline;
+    _width: 150px;
+    font-family: microsoft yahei;
+}
+.focus {
+    background-color: #fff;
+    background-position: -0px -121px;
+    color: #333
+}
+.tengxun-search-text:focus { outline: 0 none }
+.tengxun-search-btn {
+    float: right;
+    width: 26px;
+    height: 28px;
+    line-height: 26px;
+    overflow: hidden;
+    border: 0 none;
+    cursor: pointer;
+    background: none;
+}
+.tengxun-search-btn span { visibility: hidden; }
+.form-focus {
+    background-color: #fff;
+    background-position: -0px -121px;
+    color: #333;
+}
+.tengxun-right-menu {
+    float: right;
+    padding-top: 6px;
+    white-space: nowrap;
+}
+.tengxun-mun-list { float: right; }
+.tengxun-mun-list .mun-item {
+    position: relative;
+    float: left;
+    display: inline;
+    top: auto;
+    right: auto;
+    width: auto;
+    height: 14px;
+    line-height: 14px;
+    margin-left: 0;
+    padding: 0 10px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #2C2C2C;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: microsoft yahei;
+}
+.tengxun-mun-list .mun-item a {
+    color: #cecece;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.tengxun-mun-list .timeline-video-wrap a:hover { color: #828282; }
+.tengxun-mun-list .mun-user { border-left: 0 none; }
+.tengxun-mun-list .mun-upload { border-right: 0 none; }
+.tengxun-mun-list span.btn-inner {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-right: 8px;
+}
+.tengxun-mun-list .triangle-down {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-color: #7C7C7D transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+    border-width: 3px;
+    -webkit-transition: border .1s ease-in-out;
+}
+.tengxun-mun-list .muen-history, .muen-favorites {
+    width: 310px;
+    position: absolute;
+    right: auto;
+    top: 27px;
+    left: 50%;
+    overflow: hidden;
+    margin-left: -154px;
+    padding-top: 10px;
+    font-size: 12px;
+    display: none;
+    z-index: 1000;
+}
+.tengxun-mun-list .muen-main {
+    position: relative;
+    border-top: 1px solid #BDBDBD;
+    color: #898989;
+    min-height: auto;
+}
+.tengxun-mun-list .triangle-up {
+    position: absolute;
+    top: -5px;
+    top: -7px\9;
+    left: 50%;
+    border: 0 none;
+    border-top: 1px solid #BDBDBD;
+    border-right: 1px solid #BDBDBD;
+    background: #fff;
+    background: -moz-linear-gradient(top, rgba(255,255,255,.96) 0, rgba(255,255,255,.96) 55%, rgba(255,255,255,0) 56%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, right top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(55%, rgba(255,255,255,1)), color-stop(56%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(right top, rgba(255,255,255,.96) 0, rgba(255,255,255,.96) 55%, rgba(255,255,255,0) 56%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(right top, rgba(255,255,255,.96) 0, rgba(255,255,255,.96) 55%, rgba(255,255,255,0) 56%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(right top, rgba(255,255,255,.96) 0, rgba(255,255,255,.96) 55%, rgba(255,255,255,0) 56%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to left bottom, rgba(255,255,255,.96) 0, rgba(255,255,255,.96) 55%, rgba(255,255,255,0) 56%, rgba(255,255,255,0) 100%);
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865483, M12=0.7071067811865467, M21=-0.7071067811865467, M22=0.7071067811865483, SizingMethod='auto expand')
+}
+.tengxun-mun-list .history-info-content {
+    position: relative;
+    box-shadow: 0 5px 2px 0 rgba(0,0,0,.15);
+    background-color: rgba(255,255,255,.97);
+    border-radius: 0 0 3px 3px;
+}
+.tengxun-mun-list .history-timeline-wrap { padding-left: 14px; }
+.tengxun-mun-list .timeline-video-wrap {
+    width: 280px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 2px solid #e3e3e3;
+}
+.tengxun-mun-list .timeline-video-list {
+    position: relative;
+    padding-left: 4px;
+    padding-bottom: 6px;
+}
+.tengxun-mun-list .timeline-video-list .timeline-dot {
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    display: inline-block;
+    background: #AAA;
+    border-radius: 8px;
+    color: transparent;
+    box-shadow: 0 0 0 2px #FFF;
+}
+.lte_ie8 .timeline-video-list .timeline-dot {
+    display: block;
+    top: 3px;
+    left: -6px;
+    width: 11px;
+    height: 11px;
+    text-indent: -9999px;
+    background-color: transparent;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    background: url(sprite_common.32.png) -170px -60px no-repeat;
+    _background-image: url(img/common/sprite_common.ie6.png);
+}
+.tengxun-mun-list .timeline-video-list .timeline-date {
+    position: relative;
+    height: 18px;
+    line-height: 18px;
+    margin: 0 0 2px 10px;
+    padding: 0 6px 1px;
+    font-size: 14px;
+    font-family: microsoft yahei;
+    cursor: default;
+    background: #8F8F8F;
+    color: #fff;
+    display: inline-block;
+    _font-family: simsun;
+    _font-size: 12px;
+}
+.tengxun-mun-list .timeline-video-list .date-green { background: #38AA00; }
+.tengxun-mun-list .timeline-video-list .date-orange { background: #EE9300; }
+.tengxun-mun-list .timeline-video-list .triangle-left {
+    border-width: 5px;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent transparent transparent transparent;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 4px;
+    left: -9px;
+}
+.tengxun-mun-list .timeline-video-list .date-green .triangle-left { border-right-color: #38AA00; }
+.tengxun-mun-list .timeline-video-list .date-orange .triangle-left { border-right-color: #EE9300; }
+.tengxun-mun-list .timeline-video-list dd {
+    position: relative;
+    height: 18px;
+    padding: 6px 0px 6px 6px;
+    overflow: hidden;
+    vertical-align: top;
+    cursor: default;
+    -webkit-transition: background .08s ease;
+    transition: background .08s ease;
+}
+.tengxun-mun-list .timeline-video-list .video-name {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    white-space: nowrap;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    -webkit-transition: color .06s ease, width .2s ease;
+    -moz-transition: color .06s ease, width .2s ease;
+    transition: color .06s ease, width .2s ease;
+    width: 12em;
+    overflow: hidden;
+}
+.history-info-content .btn-pop-link {
+    display: block;
+    width: 262px;
+    margin-left: 14px;
+    margin: 6px 0 0 5px;
+    height: 26px;
+    line-height: 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    backgound: #fff;
+    border: 1px solid #C6C6C6;
+    border-radius: 2px;
+}
+.history-info-content .btn-pop-link:hover {
+    background: #FF7E0C;
+    border-color: #FF7E0C;
+    box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    color: #fff !important;
+}
+.tengxun-mun-list .muen-history a {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    color: #828282;
+}
+.tengxun-mun-list .video-timestamp {
+    position: absolute;
+    right: 0;
+    width: 94px;
+    display: inline-block;
+    color: #888;
+    text-align: right;
+    opacity: 1;
+}
+.tengxun-mun-list .timeline-video-list dd.hover-video { background: #e3e3e3; }
+.tengxun-mun-list .timeline-video-list dd.hover-video .video-timestamp {
+    opacity: 0;
+    display: none;
+}
+.tengxun-mun-list .timeline-video-list dd.hover-video .video-name { width: 15em; }
+.tengxun-mun-list a:hover { color: #fff; }
+.tengxun-mun-list .muen-favorites {
+    margin-left: -99px;
+    width: 198px;
+}
+.tengxun-mun-list .muen-favorites .history-info-pd { padding: 5px 0; }
+.tengxun-mun-list .muen-favorites .history-info-login { padding: 75px 10px 65px; }
+.tengxun-mun-list .btn-login {
+    display: block;
+    background: #FF7800;
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+    color: #FFF !important;
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    font-size: 15px;
+}
+.tengxun-mun-list .hint-text {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #aaa;
+    text-align: center;
+}
+</style>
+<script type="text/javascript">
+      $(document).ready(function(e) {
+          $(".navmore").hover(function(){
+			$(this).addClass("navmore-hover");
+		    $(this).find(".navMoreUL").show();
+		  },function(){
+			$(this).removeClass("navmore-hover");
+		    $(this).find(".navMoreUL").hide();	  
+	 }); 
+	   
+	    $(".topSearch").hover(function(){
+		   $(this).find(".chooseS").show();
+		},function(){
+		   $(this).find(".chooseS").hide();
+		});
+		/** cool end **/
+		 $(".tengxun-channel-more").hover(function(){
+			 $(this).addClass("tengxun-channel-more-hover");
+			 $(this).find(".tengxun-more-channels").show();
+		 },function(){
+			 $(this).removeClass("tengxun-channel-more-hover");
+			 $(this).find(".tengxun-more-channels").hide();
+			 });
+			 
+		$(".tengxun-search-text").focusin(function(){
+			 $(this).parent().addClass("focus");
+			 $(".tengxun-search-text").val("");
+		 });
+		 $(".tengxun-search-text").focusout(function(){
+			 $(this).parent().removeClass("focus");
+			 $(".tengxun-search-text").val("中国合伙人");
+		});
+		
+		 $(".head-history").hover(function(){
+		   $('.muen-history').show(0);
+		
+		 },function(){
+	      $('.muen-history').delay(150).hide(0);
+		});  
+		
+		$(".head-favorites").hover(function(){
+		   $('.muen-favorites').delay(0).show(0);
+		  
+		},function(){
+		   $('.muen-favorites').delay(150).hide(0);
+		});  
+		
+		 $(".timeline-video-list dd").hover(function(){
+			 $(this).addClass("hover-video");
+		 },function(){
+			 $(this).removeClass("hover-video");
+		});	 
+      
+        
+    });
+   
+   </script>
+</head>
+
+<body>
+<div class="topcool">
+    <div class="topheader"> <a href="#" class="toplogo"></a>
+        <div class="topnav"> <a class="selected" href="#">首页</a> <a href="#">作品</a> <a href="#">经验</a> <a href="#">欣赏</a> <a href="#">素材</a> <a href="#">招聘</a> <a href="#">活动</a> <span class="navmore">更多<b></b>
+            <ul class="navMoreUL">
+                <li><a href="#">酷友/设计师</a></li>
+                <li><a href="#">酷友精彩评论</a></li>
+                <li><a href="#">小组</a></li>
+                <li><a href="#">找服务</a></li>
+                <li><a href="#">cool</a></li>
+            </ul>
+            </span> </div>
+        <div class="topheadright">
+            <ul class="thrUl">
+                <li class="doLogBox"><a href="#">登录</a>|<a href="#">注册</a></li>
+            </ul>
+            <span class="topSearch">
+            <form action="" method="get">
+                <input type="text" name="world" class="topSearchTxt">
+                <input type="submit" class="topSearchBtn" value="">
+                <div class="chooseS layout">
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td><input type="radio" name="page" id="a1" value="0" checked="">
+                                    <label for="a1">全部</label></td>
+                                <td><input type="radio" name="page" id="a2" value="1">
+                                    <label for="a2">作品</label></td>
+                                <td><input type="radio" name="page" id="a3" value="2">
+                                    <label for="a3">经验</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="page" id="a4" value="3">
+                                    <label for="a4">欣赏</label></td>
+                                <td><input type="radio" name="page" id="a5" value="4">
+                                    <label for="a5">素材</label></td>
+                                <td><input type="radio" name="page" id="a6" value="5">
+                                    <label for="a6">设计师</label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            </span> </div>
+    </div>
+</div>
+<!-- cool --> 
+<br>
+<br>
+<br>
+<div class="tengxun-head">
+    <div class="tengxun-con">
+        <div class="tengxun-logo"> <a href="#">腾讯视频</a> </div>
+        <div class="tengxun-nav">
+            <div class="tengxun-channel"> <a class="channel_item channel_home" href="#">首页</a> <a class="channel_item" href="#">电影</a> <a class="channel_item" href="#">电视剧</a> <a class="channel_item" href="#">综艺</a> <a class="channel_item" href="#">娱乐</a>
+                <div class="tengxun-channel-more"> <a class="channel_item" href="#"><span class="ico_text">更多</span> <i class="triangle-down"></i> </a>
+                    <div class="tengxun-more-channels">
+                        <div class="tengxun-more-count">
+                            <div class="tengxun-list-wrap cf">
+                                <ul class="tengxun-list-left">
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li class="link-name1"><a href="#" class="link"><span>纪录片</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li class="link-name1"><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                </ul>
+                                <ul class="tengxun-list-right">
+                                    <li class="link-name1"><a href="#" class="link"><span>好莱坞</span></a></li>
+                                    <li class="link-name2"><a href="#" class="link"><span>腾讯出品</span></a></li>
+                                    <li><a href="#" class="link"><span>拍客</span></a></li>
+                                    <li class="link-name1"><a href="#" class="link"><span>好莱坞</span></a></li>
+                                    <li class="link-name2"><a href="#" class="link"><span>好莱坞</span></a></li>
+                                    <li><a href="#" class="link"><span>美剧</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tengxun-right-quick">
+            <form action="" method="get" class="tengxun-seachfrom">
+                <div class="tengxun-search">
+                    <input type="text" name="" maxlength="40" class="tengxun-search-text" value="中国合伙人">
+                    <button class="tengxun-search-btn" type="submit"><span>搜索</span></button>
+                </div>
+            </form>
+            <div class="tengxun-right-menu">
+                <ul class="tengxun-mun-list  cf">
+                    <li class="mun-item mun-user"><a href="#"><span >登录</span></a></li>
+                    <li class="mun-item head-history"><a href="#"><span class="btn-inner">看过<i class="triangle-down"></i></span></a>
+                        <div class="muen-history">
+                            <div class="muen-main"> <i class="triangle-up"></i>
+                                <div class="history-info-content">
+                                    <div class="history-timeline-wrap">
+                                        <div class="timeline-video-wrap">
+                                            <dl class="timeline-video-list">
+                                                <dt> <i class="timeline-dot">●</i> <span class="timeline-date date-green"> <i class="triangle-left"></i>今天</span> </dt>
+                                                <dd><a href="#" class="video-name">笑功震武林</a><span class="video-timestamp">正在观看</span></dd>
+                                            </dl>
+                                            <dl class="timeline-video-list">
+                                                <dt> <i class="timeline-dot">●</i> <span class="timeline-date date-orange"> <i class="triangle-left"></i>更早</span> </dt>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                                <dd><a href="#" class="video-name">我好想你 (《小时代》主题曲)</a><span class="video-timestamp">观看至3分47秒</span></dd>
+                                            </dl>
+                                            <a href="#" target="_blank" class="btn-pop-link"><span class="ico_text">登录查看更多</span></a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mun-item head-favorites"><a href="#"><span class="btn-inner">收藏<i class="triangle-down"></i></span></a>
+                        <div class="muen-favorites">
+                            <div class="muen-main"> <i class="triangle-up"></i>
+                                <div class="history-info-content history-info-pd">
+                                    <div class="history-info-login"> <a href="javascript:;" class="btn-login">登录</a>
+                                        <p class="hint-text">请登录查看收藏记录</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mun-item mun-upload"><span class="btn-inner"><a href="#">上传</a></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

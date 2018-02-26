@@ -1,0 +1,106 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,100,900);
+* {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background: #e1e1e1;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  max-width: 300px;
+  background: #eee;
+}
+.sidebar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  height: 100%;
+  width: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), to(transparent));
+  -webkit-mask-box-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(0.5, rgba(0, 0, 0, 0.8)), color-stop(1, transparent));
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-header {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  padding: 20px;
+  font-size: 20px;
+}
+.sidebar-header:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(transparent));
+  -webkit-mask-box-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), color-stop(0.5, rgba(0, 0, 0, 0.8)), color-stop(1, transparent));
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-title {
+  margin: 0;
+  color: #666;
+}
+
+.sidebar-content {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  overflow: auto;
+  padding: 20px;
+  color: #444;
+}
+
+::-webkit-scrollbar {
+  height: 16px;
+  overflow: visible;
+  width: 16px;
+}
+
+::-webkit-input-placeholder element,
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+
+::-webkit-slider-thumb element,
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
+
+::-webkit-search-cancel-button element,
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+}
+
+::-webkit-search-results-decoration element,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.page {
+  margin-left: 300px;
+  padding: 5%;
+}

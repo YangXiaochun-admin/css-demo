@@ -1,0 +1,276 @@
+@import "compass/css3";
+
+@import "compass";
+@import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Fresca);
+
+//Colours
+
+$blue:#4cbeff;
+$charcoal:#242424;
+
+// SASS Helpers:;
+
+//Em Calculator
+@function emCalc($target, $context:16) {
+	@return $target / $context * 1em;
+}
+
+//Clearfix
+%clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+//Drier Psuedo Elements
+%pseudo {
+	content:'';
+	display:block;
+	position:absolute;
+}
+
+
+// Main Navigation
+.container {
+	text-align: center;
+	padding: emCalc(60) 0;
+}
+
+.Nav{
+	@extend %clearfix;
+	list-style:none;
+	margin-left:0;
+}
+
+.Nav_Small {
+	font-size:0.65em;
+}
+
+.Nav_Large {
+	font-size:1.4em;
+}
+
+.MainNav {
+	@include border-radius(emCalc(7));
+	@include box-shadow(
+		#4d4d4d 0 -1px 0px 0px inset,
+		rgba(#fff,0.0857)  0 -5px 0px 0px inset,
+		rgba(#1e1e1e,1) 0 4px 0px 0px inset
+	);
+
+	background:$charcoal;
+	border-top:1px solid rgba(#000,0.1);
+	border-bottom:1px solid rgba(#fff,0.1);
+	display:inline-block;
+	text-align: center;
+	padding: emCalc(6) emCalc(5);
+	position: relative;
+
+	&:before {
+		@include border-bottom-left-radius(emCalc(7));
+		@extend %pseudo;
+		background:rgba($charcoal,0.4);
+		width:emCalc(7);
+		height:emCalc(7);
+		bottom:0;
+		left:0;
+		
+	}
+
+	&:after {
+		@include border-bottom-right-radius(emCalc(7));
+		@extend %pseudo;
+		background:rgba($charcoal,0.4);
+		width:emCalc(7);
+		height:emCalc(7);
+		bottom:0;
+		right:0;
+
+	}
+}
+
+.MainNav-Button {
+	@include border-radius(emCalc(5));
+	@include box-shadow(
+		rgba(#fff,.15) 0 1px 0px 0px inset,
+		rgba(#fff,.05) 0 1px 0px 1px inset,
+		rgba(#000,0.7) 0 1px 2px 0px,
+		rgba(#090909,0.6) 0 2px 3px 2px
+	);
+
+	background-color: #343434;
+	@include background-image(linear-gradient(top, rgba(#4e4e4e,0.15) 0%,rgba(#414141,0.15) 2%,rgba(#3b3b3b,0.15) 5%,rgba(#383838,0.15) 32%,rgba(#363636,0.15) 33%,rgba(#353535,0.15) 46%,rgba(#333333,0.15) 47%,rgba(#323232,0.15) 60%,rgba(#303030,0.15) 61%,rgba(#2a2a2a,0.15) 100%));
+	background-size: 4px 4px;
+	float:left;
+	margin-right: emCalc(2);
+	padding: emCalc(6) emCalc(7);
+	position: relative;
+
+	a {
+		@include border-radius(emCalc(11,24));
+		@include text-shadow(#000 0 -1px 0);
+		background:rgba(#b6b6b6,0.018);
+		color:rgba(#fff,0.85);
+		display:block;
+		font-family: 'Fresca', sans-serif;
+		font-size: emCalc(24);
+		padding: emCalc(12,24) emCalc(60,24) emCalc(12,24);
+		text-decoration: none;
+	}
+
+	&:hover {
+		@include box-shadow(
+			rgba(#fff,.05) 0 1px 0px 0px inset,
+			rgba(#fff,.02) 0 1px 0px 1px inset,
+			rgba(#090909,0.5) 0 2px 2px 1px
+		);
+
+		a {
+			@include opacity(0.8);
+		}
+	}
+
+	&:after {
+		@extend %pseudo;		
+		@include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0.11) 69%,rgba(255,255,255,0) 80%,rgba(255,255,255,0) 100%));
+		
+		width:100%;
+		height:1px;
+		left:0;
+		top:0;
+	}
+}
+
+.MainNav-Button_Active {
+	@include box-shadow(
+		rgba(#000,0.4) 0 0 0 1px inset
+	);
+
+	background-color:#2d2d2d;
+	background-image: linear-gradient(transparent 50%, #2e2e2e 50%);
+	background-size: 2px 2px;
+	
+	a {
+		@include text-shadow(
+			rgba(#fff,0.4)  0 0 35px,
+			rgba($blue,0.95)  0 0 25px
+		);
+		background:none;
+		color:$blue;
+	}
+
+	&:before {
+		@extend %pseudo;
+		@include background-image(radial-gradient(center, ellipse cover, rgba(41,137,216,0.51) 0%,rgba(30,87,153,0.01) 53%,rgba(30,87,153,0) 54%,rgba(30,87,153,0) 57%));
+		@include box-shadow(
+			rgba($blue,0.02)  0 0 0px 3px inset
+		);
+
+		top:- emCalc(4);
+		left:10%;
+		width:80%;
+		height:emCalc(6);
+
+	}
+
+	&:after {
+		@extend %pseudo;		
+		@include background-image(radial-gradient(center, ellipse cover, rgba(41,137,216,0.51) 0%,rgba(30,87,153,0.01) 53%,rgba(30,87,153,0) 54%,rgba(30,87,153,0) 57%));
+		@include box-shadow(
+			rgba(#fff,0.05)  0 -5px 0px 0px inset
+		);
+
+		top:inherit;
+		bottom:- emCalc(8);
+		left:0;
+		width:100%;
+		height:emCalc(8);
+	}
+
+	&:hover {
+		@include box-shadow(
+			rgba(#000,0.4) 0 0 0 1px inset
+		);
+	}
+
+}
+
+
+.MainNav-Button_LeftOfActive {
+	&:before {
+		@extend %pseudo;
+		@include box-shadow(
+			rgba(#508889,0.5)  -1px 0px 0px 0px
+		);
+		@include background-image(linear-gradient(top, rgba(76,190,255,0) 0%,rgba(76,190,255,0.7) 50%,rgba(76,190,255,0.69) 51%,rgba(76,190,255,0) 100%));
+		
+		width:1px;
+		height:90%;
+		right:0;
+		top:5%;
+
+	}
+}
+
+.MainNav-Button_RightOfActive {
+	&:before {
+		@extend %pseudo;
+		@include box-shadow(
+			rgba(#508889,0.5)  1px 0px 0px 0px
+		);
+
+		@include background-image(linear-gradient(top, rgba(76,190,255,0) 0%,rgba(76,190,255,0.7) 50%,rgba(76,190,255,0.69) 51%,rgba(76,190,255,0) 100%));
+		
+		width:1px;
+		height:90%;
+		left:0;
+		top:5%;
+
+	}
+}
+
+
+// Other HTML Elements for demo only.
+body {
+	background:#2a2a2a image-url('background-pattern.gif');
+	font-family: sans-serif;
+}
+
+h3 {
+	@include text-shadow(rgba(#000,1)  -1px -2px 0px 0px);
+	font-size:emCalc(12);
+	color:#a6a6a6;
+	text-transform: uppercase;
+	margin-bottom:1em;
+	font-weight: normal;
+	letter-spacing: 2px;
+}
+
+.TextLink {
+	text-decoration: none;
+	color:#a6a6a6;
+	font-weight: bold;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+hr {
+	@include opacity(0.1);
+	height:0px;
+	border-top:black 1px solid;
+	margin:2em auto;
+	width:60%;
+}
+
+p {
+	color:#a6a6a6;
+	font-size:emCalc(13);
+	line-height:emCalc(18,13);
+	margin-top:2em;
+  margin-bottom:2em;
+}

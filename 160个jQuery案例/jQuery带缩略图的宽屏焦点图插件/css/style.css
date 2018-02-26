@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font-size:12px;}
+
+/* banner */
+.banner{height:500px;}
+.banner .ban_c img{position:absolute;width:1920px;left:50%;margin-left:-960px;top:0;}
+.banner .ban_nav{display:none;}
+.banner .Left,.banner .Right{position:absolute;width:38px;height:38px;background:url(../img/cir_white.gif) no-repeat #aaa;right:50%;bottom:15px;}
+.banner .Left{margin-right:-450px;background-position:5px 0}
+.banner .Right{margin-right:-490px;background-position:-33px 0;background-color:#e6292f;}
+.bann_ext{position:relative;}
+.frontCover{position:absolute;top:-120px;padding:0 0 16px;border-bottom:5px solid #de0000;}
+.frontCover li{float:left;width:82px;padding:3px;background:#000;color:#fff;overflow:hidden;margin-right:10px;cursor:pointer;}
+.frontCover p{text-align:center;height:14px;line-height:18px;overflow:hidden;}
+.frontCover .img{position:relative;height:50px;overflow:hidden;}
+.frontCover img{position:absolute;width:192px;height:50px;left:-50px;}
+.frontCover .open{background:#e60013;}
+.wrap{width:980px;margin-left:auto;margin-right:auto;}
+/*幻灯片(组件)*/
+.slide{position:relative;width:100%;}
+.ban_c{display:none;position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;}
+.ban_c img{width:100%;height:100%;}
+.ban_t{position:absolute;left:0;bottom:0;width:100%;padding:4px 0;text-indent:10px;white-space:nowrap;overflow:hidden;color:#fff;background:rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#88000000,endcolorstr=#88000000);z-index:3;}
+.ban_nav{position:absolute;bottom:0;left:0;width:100%;text-align:right;z-index:4;}
+.ban_nav a{display:inline-block;vertical-align:middle;width:14px;height:14px;line-height:14px;overflow:hidden;text-align:center;margin-right:8px;cursor:pointer;text-decoration:none;font-size:10px;-webkit-text-size-adjust:none;background:#ccc;}
+.ban_nav .on{background:#f90;color:#fff;}
+.Left,.Right{cursor:pointer;}

@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif;text-align:center; margin:0 auto; font-family:"宋体"; color:#898989;}
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3{ font-size:14px;}
+h4{font-weight:normal; font-size:14px;}
+h5{ font-size:12px;}
+h6{ font-size:12px;font-weight:normal;}
+img{display:block;}
+.adpic{ width:100%; float:left; margin-bottom:10px;}
+.adpic img{ width:100%;}
+#wrap .noright{ margin-right:0; padding-right:0;}
+#wrap .nobottom{ margin-bottom:0; padding-bottom:0;}
+#wrap .notop{ margin-top:0; padding-top:0;}
+#wrap .nobg{ background:none;}
+#wrap .noline{ border:none;}
+.check,.radio{margin-right:3px;_margin-right:0;}
+.pcenter{ text-align:center;}
+.pcenter img{ margin:0 auto;}
+
+#wrap{width:950px; overflow:hidden; margin:0 auto; text-align:left;}
+a{color:#6e6e76;text-decoration:none;}
+a:hover{ text-decoration:underline; color:#ef9b11;}
+.l{ width:100%; float:left;}
+.fl{display:inline; float:left;}
+.fr{display:inline; float:right;}
+.content{ float:left; _display:inline; overflow:hidden;}
+.side{ float:right; _display:inline; overflow:hidden;}
+
+#slides{ width:1000px; margin:20px auto; height:240px; overflow:hidden; position:relative;}
+.slides_container li{ width:1000px; float:left;}
+.slides_container li a{ display:inline-block; width:198px; height:162px; border:1px solid #fff;}
+.slides_container li a img{ width:198px; height:132px;}
+.slides_container li a span{ display:block; width:198px; cursor:pointer; height:30px; line-height:30px; background:#262626; color:#fff;}
+.slides_container li a:hover{ border:1px solid #ff8400;}
+.slides_container li a:hover span{ color:#ff8400;}
+
+.pagination{ position:absolute; left:483px; z-index:10; top:170px;}
+.pagination li{ float:left; padding-right:7px;}
+.pagination a{ display:block; outline:none; background:url(../images/pg.gif) no-repeat -1px 0; text-indent:-999em; width:14px; height:14px;}
+.pagination li.current a{ background-position:-22px 0;}
+
+.prev{ background:url(../images/arr.png) no-repeat; width:29px; height:43px; display:block; left:1px; top:50px; position:absolute; text-indent:-999em; outline:none; z-index:11;}
+.prev:hover{ background-position:0 -43px;}
+.next{ background:url(../images/arr.png) no-repeat -29px 0; width:29px; height:43px; display:block; right:1px; top:50px; position:absolute; text-indent:-999em;outline:none;z-index:11;}
+.next:hover{ background-position:-29px -43px;}

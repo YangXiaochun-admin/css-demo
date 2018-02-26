@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>纯CSS3实现的3D小盒子动画 可自定义旋转角度在线演示</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<h1>3D Box <span>With Pure CSS</span></h1>
+<section class="container">
+    <div id="box" class="box show-front">
+        <figure class="front"></figure>
+        <figure class="back"></figure>
+        <figure class="right"></figure>
+        <figure class="left"></figure>
+        <figure class="top"></figure>
+        <figure class="bottom"></figure>
+    </div>
+</section>
+<ul id="options">
+    <li>
+        <button class="current show-front">Front</button>
+    </li>
+    <li>
+        <button class="show-back">Back</button>
+    </li>
+    <li>
+        <button class="show-right">Right</button>
+    </li>
+    <li>
+        <button class="show-left">Left</button>
+    </li>
+    <li>
+        <button class="show-top">Top</button>
+    </li>
+    <li>
+        <button class="show-bottom">Bottom</button>
+    </li>
+    <!--
+   <li><button id="toggle-backface-visibility">Toggle Backface Visibility</button></li>
+   -->
+</ul>
+
+<!-- TO DO
+<h1>Other Samples <span>With Different Positions</span></h1>
+
+<section class="container">
+  <div id="box" class="box show-front">
+    <figure class="front"></figure>
+    <figure class="back"></figure>
+    <figure class="right"></figure>
+    <figure class="left"></figure>
+    <figure class="top"></figure>
+    <figure class="bottom"></figure>
+  </div>
+</section>
+--> 
+
+<script src='js/jquery.js'></script> 
+<script src='js/utils.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

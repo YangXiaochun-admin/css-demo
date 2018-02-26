@@ -1,0 +1,141 @@
+body{
+	background: #222 url(../images/broken_noise.jpg) repeat top left;
+	font-family: 'Prociono', Georgia, serif;
+	color: #fff;
+}
+h1{
+	color: #f0f0f0;
+}
+.letter-container{
+	border-bottom: 1px dashed rgba(255,255,255,0.1);
+	border-top: 1px dashed rgba(255,255,255,0.1);
+	margin: 20px;
+	padding: 40px 10px;
+	font-family: 'Aldrich', Arial, sans-serif;
+}
+.letter-container h2{
+	text-align: center;
+}
+.letter-container h2 a{
+	color: #fff;
+	text-transform: uppercase;
+	display: inline-block;
+}
+.letter-container h2 .twrap{
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 120px;
+	line-height: 120px;
+	font-size: 120px;
+	border: 15px solid rgba(0,0,0,0.5);
+	-webkit-perspective: 400;
+	-webkit-box-shadow: 1px 1px 4px #000;
+	-moz-box-shadow: 1px 1px 4px #000;
+	box-shadow: 1px 1px 4px #000;
+}
+.letter-container h2 .tbg{
+	background: #121212;
+	position: absolute;
+	color: #f2c200;
+	width: 100%;
+	height: 100%;
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+}
+.letter-container h2 .tdown{
+	height: 50%;
+	top: 50%;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+	background: #151515;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.letter-container h2 .tdown span,
+.letter-container h2 .tup .tback span{
+	display: block;
+	margin-top:-60px;
+}
+.letter-container h2 .tup{
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	-webkit-transform-origin: 50% 100%;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+}
+.letter-container h2 .tup .tfront,
+.letter-container h2 .tup .tback{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	background: #151515;
+}
+.letter-container h2 .tup .tback{
+	background: #121212;
+	color: #f2c200;
+}
+.csstransforms3d .letter-container h2 .tup .tback{
+	-webkit-transform: rotateX(-180deg); 
+}
+.csstransforms3d .letter-container h2 a .twrap:hover .tup{
+	-webkit-transform: rotateX(-180deg);
+}
+
+/* For browsers with no 3d transfrom support */
+.no-csstransforms3d .letter-container h2 .tup .tback{
+	display: none;
+}
+.no-csstransforms3d .letter-container h2 a .twrap:hover .tup{
+	-moz-animation: moveBackUp 0.7s ease-in-out forwards;
+}
+.no-csstransforms3d .letter-container h2 a .twrap:hover .tdown{
+	-moz-animation: moveBackDown 0.7s ease-in-out forwards;
+}
+@-moz-keyframes moveBackUp {
+    0%{ 
+		-moz-transform: translateY(0%);
+	}
+	50%{
+		-moz-transform: translateY(-120%);
+		z-index: -1;
+	}
+	100%{
+		-moz-transform: translateY(0%);
+		z-index: -1;
+	}
+}
+@-moz-keyframes moveBackDown {
+    0%{ 
+		-moz-transform: translateY(0%);
+	}
+	50%{
+		-moz-transform: translateY(120%);
+		z-index: -1;
+	}
+	100%{
+		-moz-transform: translateY(0%);
+		z-index: -1;
+	}
+}
+

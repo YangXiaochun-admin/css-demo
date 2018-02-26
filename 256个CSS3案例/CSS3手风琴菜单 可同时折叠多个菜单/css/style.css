@@ -1,0 +1,197 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:arial, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+	background:#3f4348 url('http://www.frecosse.com/workshop/accordion_menu/bg.png');
+}
+
+ul {
+	list-style:none;
+	margin:0; 
+	padding:0;
+	width:300px;
+	margin:0 auto;
+	-moz-box-shadow: 0 0 5px #111;
+	-webkit-box-shadow: 0 0 5px #111;
+	box-shadow: 0 0 5px #111;
+}
+
+ul li label {
+	background: #575e63; /* fallback colour */
+	border-top:1px solid #878e98;
+	border-bottom:1px solid #33373d;
+	color: #fff;
+	text-shadow: 0 1px 1px #000;
+	letter-spacing: 0.09em;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#575e63), to(#3f4347));
+	background: -webkit-linear-gradient(top, #575e63, #3f4347);
+	background: -moz-linear-gradient(top, #575e63, #3f4347);
+	background: -ms-linear-gradient(top, #575e63, #3f4347);
+	background: -o-linear-gradient(top, #575e63, #3f4347);
+}
+
+ul li input[type='checkbox'] {
+	display: none;
+}
+
+ul li label {
+	display:block;
+	padding:12px;
+	width:300px;
+}
+
+ul li i {
+	font-size:18px;
+	vertical-align: middle;
+	width:20px;
+	display:inline-block;
+}
+
+ul li span {
+	display:inline;
+	float:right;
+	background:#48515c;
+	border:1px solid #3c434c;
+	border-bottom:1px solid #707781;
+	padding:4px 6px;
+	font-size:10px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: inset 0 0 10px #111;
+	-webkit-box-shadow: inset 0 0 10px #111;
+	box-shadow: inner 0 0 10px #111;
+	position:relative;
+}
+
+ul li label:hover {
+	background: #566f82; /* fallback colour */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+	background: -webkit-linear-gradient(top, #566f82, #3e505e);
+	background: -moz-linear-gradient(top, #566f82, #3e505e);
+	background: -ms-linear-gradient(top, #566f82, #3e505e);
+	background: -o-linear-gradient(top, #566f82, #3e505e);
+}
+
+ul li label:hover span {
+	background:#3e505e;
+}
+
+ul li input[type='checkbox']:checked ~ label {
+	background: #44c6eb; /* fallback colour */
+	border-top:1px solid #878e98;
+	border-bottom:1px solid #2799db;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#44c6eb), to(#2799db));
+	background: -webkit-linear-gradient(top, #44c6eb, #2799db);
+	background: -moz-linear-gradient(top, #44c6eb, #2799db);
+	background: -ms-linear-gradient(top, #44c6eb, #2799db);
+	background: -o-linear-gradient(top, #44c6eb, #2799db);
+}
+
+ul li input[type='checkbox']:checked ~ label span {
+	background: #2173a1; /* fallback colour */
+	border-top:1px solid #1b5f85;
+	border-bottom:1px solid #4cb1e4;
+	-moz-box-shadow: inset 0 0 5px #111;
+	-webkit-box-shadow: inset 0 0 5px #111;
+	box-shadow: inner 0 0 5px #111;
+}
+
+ul li input[type='checkbox']:checked ~ .options {
+	height: auto;
+	display:block;
+	min-height:40px;
+	max-height:400px;
+}
+
+ul ul {
+	background:#fff; margin:0; padding:0;
+	-moz-box-shadow: inset 0 2px 2px #b3b3b3;
+	-webkit-box-shadow: inset 0 2px 2px #b3b3b3;
+	box-shadow: inner 0 2px 2px #b3b3b3;
+}
+
+ul ul li a {
+	display:block;
+	padding:6px 12px;
+	color:#999;
+	text-decoration:none;
+}
+
+ul ul li a:hover {
+	color:#44c6eb;
+}
+
+ul ul li a span {
+	color:#999;
+	background:none;
+	border:1px solid #ccc; 
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+ul ul li {
+	border-bottom:1px solid #ccc;
+}
+
+ul ul li:first-child {
+	padding-top:6px;
+}
+
+ul ul li:last-child {
+	padding-bottom:6px; border:0;
+}
+
+.options {
+	height: 0;
+	display: block;
+	overflow: hidden;
+}
+	
+/* Abridged icomoon font styles
+/* (Hosted on Frecosse - Please don't hotlink!)
+=============================================== */
+@font-face {
+	font-family: 'icomoon';
+	src:url('http://www.frecosse.com/workshop/accordion_menu/icomoon.eot');
+	src:url('http://www.frecosse.com/workshop/accordion_menu/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('http://www.frecosse.com/workshop/accordion_menu/icomoon.woff') format('woff'),
+		url('http://www.frecosse.com/workshop/accordion_menu/icomoon.ttf') format('truetype'),
+		url('http://www.frecosse.com/workshop/accordion_menu/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-music:before, .icon-search:before, .icon-fire:before, .icon-dribbble:before, .icon-flickr:before, .icon-deviantart:before, .icon-picassa:before, .icon-reddit:before, .icon-android:before, .icon-users:before, .icon-film:before, .icon-eye:before, .icon-point-right:before, .icon-microphone:before, .icon-download:before, .icon-warning:before, .icon-images:before, .icon-movie:before, .icon-cloud:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-music:before { content: "\61"; }
+.icon-search:before { content: "\62"; }
+.icon-fire:before { content: "\63"; }
+.icon-dribbble:before { content: "\64"; }
+.icon-flickr:before { content: "\65"; }
+.icon-deviantart:before { content: "\66"; }
+.icon-picassa:before { content: "\67"; }
+.icon-reddit:before { content: "\68"; }
+.icon-android:before { content: "\69"; }
+.icon-users:before { content: "\6a"; }
+.icon-film:before { content: "\6b"; }
+.icon-eye:before { content: "\6c"; }
+.icon-point-right:before { content: "\6d"; }
+.icon-microphone:before { content: "\6e"; }
+.icon-download:before { content: "\6f"; }
+.icon-warning:before { content: "\70"; }
+.icon-images:before { content: "\71"; }
+.icon-movie:before { content: "\72"; }
+.icon-cloud:before { content: "\73"; }

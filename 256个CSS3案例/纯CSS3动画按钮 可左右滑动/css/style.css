@@ -1,0 +1,236 @@
+
+
+body{
+  background:radial-gradient(circle, #e3ecf7 ,#b7d7ff);
+  background:-webkit-radial-gradient(circle, #e3ecf7 ,#b7d7ff);
+}
+
+
+a{
+  text-decoration:none;
+  color:#fff;
+  font-family:Nova Mono;
+  font-size:22px;
+  text-shadow: 0px 2px 1px rgba(0,0,0, 0.5);
+}
+
+
+#button{
+  width:300px;
+  height:70px;
+  background:#6959ff;
+  margin:100px auto;
+  z-index:1;
+  overflow:hidden;
+  border: 1px solid #606060;
+  border-radius:10px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+  
+  
+  
+ }
+
+
+
+
+
+
+#second{
+  width:300px;
+  height:70px;
+  background:linear-gradient(#ffcc60, #efb134);
+  background:-webkit-linear-gradient(#ffcc60, #efb134);
+  -webkit-transform:translatex(-310px) skew(0deg);
+  -moz-transform:translatex(-310px) skew(0deg);
+  -ms-transform:translatex(-310px) skew(0deg);
+  -o-transform:translatex(-310px) skew(0deg);
+  transform:translatex(-310px) skew(0deg);
+  text-align:center;
+  line-height:70px;
+  z-index:3;
+  position: relative;
+  border-radius:10px;
+  box-shadow:inset 0px 2px 1px rgba(255, 255, 255, 0.5);
+  -webkit-animation:removesecond 1s reverse;
+  
+  
+  
+  
+  
+}
+
+
+#first{
+  width:300px;
+  height:70px;
+  background:linear-gradient(#3570d6, #215dc4);
+  background:-webkit-linear-gradient(#3570d6, #215dc4);
+  position: relative;
+  top:-70px;
+  text-align:center;
+  line-height:70px;
+  z-index:2;
+  border-radius:10px;
+  box-shadow:inset 0px 2px 1px rgba(255, 255, 255, 0.5);
+  
+  
+}
+
+
+
+#second a{
+  display:block;
+}
+
+
+
+#button:hover #second{
+  -webkit-animation:movesecond 1s forwards;
+  -moz-animation:movesecond 1s forwards;
+  -ms-animation:movesecond 1s forwards;
+  -o-animation:movesecond 1s forwards;
+  animation:movesecond 1s forwards;
+}
+
+
+
+#Third{
+  width:300px;
+  height:70px;
+  background:linear-gradient(#9944ff, #7a22e5);
+  background:-webkit-linear-gradient(#9944ff, #7a22e5);
+  border-radius:10px;
+  -webkit-transform:translateY(10px);
+  -moz-transform:translateY(10px);
+  -ms-transform:translateY(10px);
+  -o-transform:translateY(10px);
+  transform:translateY(10px);
+  box-shadow:inset 0px 2px 1px rgba(255, 255, 255, 0.5);
+ 
+}
+
+#second:active #Third{
+  -webkit-animation: moveThird 1s forwards;
+  -moz-animation: moveThird 1s forwards;
+  -ms-animation: moveThird 1s forwards;
+  -o-animation: moveThird 1s forwards;
+  animation: moveThird 1s forwards;
+}
+
+
+
+
+
+/********************
+Animation Keyframes
+********************/
+
+/* This animation for second button (Click me Yellow)*/
+
+@-webkit-keyframes removesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+@-webkit-keyframes movesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+@-moz-keyframes movesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+@-ms-keyframes movesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+@-o-keyframes movesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+@keyframes movesecond{
+  0%{-webkit-transform:translateX(-320px) skew(0deg);}
+  20%{-webkit-transform:translateX(50px) skew(-20deg);}
+  40%{-webkit-transform:translateX(-50dpx) skew(20deg);}
+  60%{-webkit-transform:translateX(25dpx) skew(-8deg);}
+  80%{-webkit-transform:translateX(-15px) skew(8deg);}
+  100%{-webkit-transform:translateX(0px) skew(0deg);}
+}
+
+
+
+/* This animation for third button ( that's it purple)*/
+
+@-webkit-keyframes moveThird{
+  0%{-webkit-transform:translateY(10px);}
+  20%{-webkit-transform:translateY(-170px) ;}
+  40%{-webkit-transform:translateY(50dpx) ;}
+  60%{-webkit-transform:translateY(-25dpx) ;}
+  80%{-webkit-transform:translateY(15px) ;}
+  100%{-webkit-transform:translateY(-70px) ;}
+}
+
+@-moz-keyframes moveThird{
+  0%{-webkit-transform:translateY(10px);}
+  20%{-webkit-transform:translateY(-170px) ;}
+  40%{-webkit-transform:translateY(50dpx) ;}
+  60%{-webkit-transform:translateY(-25dpx) ;}
+  80%{-webkit-transform:translateY(15px) ;}
+  100%{-webkit-transform:translateY(-70px) ;}
+}
+
+@-ms-keyframes moveThird{
+  0%{-webkit-transform:translateY(10px);}
+  20%{-webkit-transform:translateY(-170px) ;}
+  40%{-webkit-transform:translateY(50dpx) ;}
+  60%{-webkit-transform:translateY(-25dpx) ;}
+  80%{-webkit-transform:translateY(15px) ;}
+  100%{-webkit-transform:translateY(-70px) ;}
+}
+
+@-o-keyframes moveThird{
+  0%{-webkit-transform:translateY(10px);}
+  20%{-webkit-transform:translateY(-170px) ;}
+  40%{-webkit-transform:translateY(50dpx) ;}
+  60%{-webkit-transform:translateY(-25dpx) ;}
+  80%{-webkit-transform:translateY(15px) ;}
+  100%{-webkit-transform:translateY(-70px) ;}
+}
+
+@keyframes moveThird{
+  0%{-webkit-transform:translateY(10px);}
+  20%{-webkit-transform:translateY(-170px) ;}
+  40%{-webkit-transform:translateY(50dpx) ;}
+  60%{-webkit-transform:translateY(-25dpx) ;}
+  80%{-webkit-transform:translateY(-95px) ;}
+  100%{-webkit-transform:translateY(-70px) ;}
+}
+
+
+
+
+

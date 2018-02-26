@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery纵向分类下拉菜单导航DEMO演示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/b2c_pub.css" />
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/b2c.tip.css" />
+<div class="header">
+    <div class="topM sline clearfix">
+        <div class="OfcardLogo"><a href="/">欧飞数卡</a></div>
+        <div class="searchBar">
+            <div class="searchVInput">
+                <form action="http://sc.chinaz.com/" method="post" name="fo" id="fo" target="_blank">
+                    <a href="javascript:document.getElementById('fo').submit()">搜索</a>
+                    <div>
+                        <input type="text" id="cardname" name="cardname" autocomplete="off" />
+                    </div>
+                </form>
+            </div>
+            <!-- searchVInput end -->
+            <input name="producttype" id="producttype" value="0" type="hidden" />
+        </div>
+        <!-- searchBar end --> 
+    </div>
+    <!-- sline end -->
+    
+    <div class="navigationBar">
+        <div class="navigationBarInnel"> <tt title="所有产品分类"></tt>
+            <div class="mainMenuV"> <a href="http://sc.chinaz.com/">首页</a> <a href="http://sc.chinaz.com/" target="_blank">网游交易区</a> <a href="http://sc.chinaz.com/" target="_blank">积分商城</a> <a href="http://sc.chinaz.com/?" target="_blank">免费游戏</a> </div>
+            <!-- mainMenuV end --> 
+        </div>
+        <!-- mainMenudl end --> 
+    </div>
+    <!-- navigationBar end --> 
+</div>
+<!-- header end -->
+<div class="of_whole">
+<!--tp通栏广告--> 
+
+<!--tp通栏广告--> 
+
+<!--主体内容区开始-->
+<div id="of_mainBody" class="push_t">
+<!--左侧栏开始--> 
+<script>
+		$(document).ready(function() {
+			var OLeft = $(".searchBar").offset().left;
+			var Otop = $(".searchBar").offset().top + $(".searchBar").height() - 3;
+			$("#KsmanDisp").css({left: OLeft,top: Otop});//搜索联想的DIV被幻灯片图片盖住。
+			$("#cardname").addClass("cardnameV");
+			$("#cardname").focus(function() {
+				if ($(this).val() != "") {
+					$(this).removeClass("cardnameV");
+				} else {
+					$(this).addClass("cardnameV");
+				}
+			})
+			$("#cardname").keyup(function() {
+				$(this).removeClass("cardnameV");
+			})
+			$("#cardname").blur(function() {
+				if ($(this).val() != "") {
+					$(this).removeClass("cardnameV");
+				} else {
+					$(this).addClass("cardnameV");
+				}
+			})
+			$(".mainProNav dl dt").mouseover(function() {
+				$(".mainProNav dl").removeClass("dlHover");
+				$(this).parent().addClass("dlHover");
+			})
+			$(".mainProNav").hover(function() {
+				$(this).addClass("mainProNavHover");
+			},function() {
+				$(this).removeClass("mainProNavHover");
+				$(".mainProNav dl").removeClass("dlHover");
+			})
+		});
+		</script>
+<div class="side_small tag_line float_l">
+    <div class="mainProNav">
+        <dl class="navM1">
+            <dd>
+                <h6><a href="http://sc.chinaz.com/?cp22.html">游戏直充</a></h6>
+                <p><a href="http://sc.chinaz.com/?2226.html">91游戏</a><a href="http://www.ofcard.comhttp://sc.chinaz.com/?2216.html">梦幻国度</a><a href="http://sc.chinaz.com/?2206.html">Q币随意直充</a><a href="http://sc.chinaz.com/?2209.html">魔兽世界</a><a href="http://sc.chinaz.com/?cp22.html" class="more">查看更多...</a></p>
+                <h6><a href="http://sc.chinaz.com/?cp21.html">游戏卡密</a></h6>
+                <p><a href="http://sc.chinaz.com/">骏网一卡通</a><a href="http://sc.chinaz.com/?2108.html">完美一卡通</a><a href="http://sc.chinaz.com/?2102.html">盛大一卡通</a><a href="http://sc.chinaz.com/?2107.html">巨人一卡通</a><a href="http://sc.chinaz.com/?cp22.html" class="more">查看更多...</a></p>
+                <h5>上面没找到，别漏了这些哦。</h5>
+                <ul>
+                    <li><a href="http://sc.chinaz.com/?cp26.html">网页游戏充值</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp24.html">外服网游点卡</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp23.html">游戏辅助卡</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp25.html">棋牌休闲游戏</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp42.html">游戏相关实物</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp27.html">手机游戏</a></li>
+                </ul>
+            </dd>
+            <dt>游戏充值类</dt>
+        </dl>
+        <dl class="navM2">
+            <dd>
+                <h2><a href="http://sc.chinaz.com/?140101.htm">手机充值(直充)</a></h2>
+                <h6><a href="http://sc.chinaz.com/?cp13.html">话费充值卡</a></h6>
+                <p><a href="http://sc.chinaz.com/?130102.htm">全国移动话费100元卡密</a><a href="http://sc.chinaz.com/?130204.htm">全国联通话费100元卡密</a><a href="http://sc.chinaz.com/?cp13.html" class="more">查看更多...</a></p>
+                <ul class="hide">
+                    <li><a href="http://sc.chinaz.com/?cp12.html">IP电话卡</a></li>
+                </ul>
+            </dd>
+            <dt>话费充值类</dt>
+        </dl>
+        <dl class="navM3">
+            <dd>
+                <ul>
+                    <li><a href="http://sc.chinaz.com/?cp31.html">网络及休闲</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp34.html">学习教育</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp35.html">娱乐影视</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp38.html">网络加速器</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp43.html">网上保险</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp37.html">电子杂志</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp65.html">生活服务类</a></li>
+                </ul>
+            </dd>
+            <dt>互联网充值类</dt>
+        </dl>
+        <dl class="navM4">
+            <dd>
+                <h2> <a href="http://sc.chinaz.com/?620101.htm">银行转帐</a> </h2>
+                <ul class="hide">
+                    <li><a href="http://sc.chinaz.com/?610101.htm">信用卡还款</a></li>
+                    <li><a href="http://sc.chinaz.com/?3603.html">欧飞游戏一卡通</a></li>
+                    <li><a href="http://sc.chinaz.com/?3604.html">欧飞话费一卡通</a></li>
+                </ul>
+                <h6><a href="http://sc.chinaz.com/?cp63.html">支付帐号充值</a></h6>
+                <p><a href="http://sc.chinaz.com/?630101.htm">支付宝账号充值</a><a href="http://sc.chinaz.com/?6303.html">支付宝卡</a><a href="http://sc.chinaz.com/?6304.html">支付宝实物卡</a><a href="http://sc.chinaz.com/?cp63.html" class="more">查看详情...</a></p>
+                <h6><a href="http://sc.chinaz.com/?6401.html">江苏电费充值缴费卡</a></h6>
+                <p><a href="http://sc.chinaz.com/?640103.htm">50元</a><a href="http://sc.chinaz.com/?640101.htm">100元</a><a href="http://sc.chinaz.com/?640102.htm">200元</a><a href="http://sc.chinaz.com/?6401.html" class="more">查看其他面值...</a></p>
+                <h6><a href="http://sc.chinaz.com/?3603.html">欧飞游戏一卡通</a></h6>
+                <p><a href="http://sc.chinaz.com/?360301.htm">5元</a><a href="http://sc.chinaz.com/?360302.htm">10元</a><a href="http://sc.chinaz.com/?360303.htm">15元</a><a href="http://sc.chinaz.com/?360304.htm">30元</a><a href="http://sc.chinaz.com/?360305.htm">50元</a><a href="http://sc.chinaz.com/?360306.htm">100元</a><a href="http://sc.chinaz.com/?3603.html" class="more">查看详情...</a></p>
+                <h6><a href="http://sc.chinaz.com/?3604.html">欧飞话费一卡通</a></h6>
+                <p class="last"><a href="http://sc.chinaz.com/?360401.htm">30元</a><a href="http://sc.chinaz.com/?360402.htm">50元</a><a href="http://sc.chinaz.com/?360403.htm">100元</a><a href="http://sc.chinaz.com/?3604.html" class="more">查看详情...</a></p>
+            </dd>
+            <dt>缴费支付类</dt>
+        </dl>
+        <dl class="navM5">
+            <dd>
+                <ul>
+                    <li><a href="http://sc.chinaz.com/?cp33.html">系统应用类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp41.html">媒体娱乐类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp46.html">股票证券类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp47.html">图形图像类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp48.html">行业管理类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp49.html">网吧特供类</a></li>
+                    <li><a href="http://sc.chinaz.com/?cp32.html">在线杀毒卡</a></li>
+                </ul>
+            </dd>
+            <dt>软件产品类</dt>
+        </dl>
+        <dl class="navM6">
+            <dd>
+                <ul>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">武尊</a></li>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">无双三国</a></li>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">武斗乾坤</a></li>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">烈焰</a></li>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">三国论剑</a></li>
+                    <li><a href="http://sc.chinaz.com/" target="_blank">战三国</a></li>
+                </ul>
+                <h2><a href="http://sc.chinaz.com/" target="_blank">更多超酷游戏</a></h2>
+            </dd>
+            <dt>超酷游戏</dt>
+        </dl>
+    </div>
+    <!-- mainProNav end --> 
+</div>
+</body>
+</html>

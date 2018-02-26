@@ -1,0 +1,94 @@
+@font-face{
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+        url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+        url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.a-btn{
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    padding:10px 30px 10px 70px;
+    position:relative;
+    float:left;
+    display:block;
+    overflow:hidden;
+    margin:10px;
+    background:#9cedef;
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(#b7f2f4,0),color-stop(#7ce7ea,1));
+    background:-webkit-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
+    background:-moz-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
+    background:-o-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
+    background:linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7f2f4', endColorstr='#7ce7ea',GradientType=0 );
+    border:1px solid #90c6c8;
+    border-color:#90c6c8 #78bdc0 #65b6ba;
+    -webkit-box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
+    -moz-box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
+    box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+}
+.a-btn-symbol{
+    font-family:'WebSymbolsRegular', cursive;
+    color:#437b7d;
+    text-shadow:0 1px 0 #bef3f5;
+    font-size:20px;
+    position:absolute;
+    left:20px;
+    width:20px;
+    text-align:center;
+    line-height:32px;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+.a-btn-text{
+    font-size:20px;
+    color:#437b7d;
+    text-shadow:0 1px 0 #bef3f5;
+    line-height:16px;
+    font-weight:bold;
+    font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+    display:block;
+}
+.a-btn-slide-text{
+    font-family:Arial, sans-serif;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#555;
+    text-shadow:0px 1px 1px rgba(255,255,255,0.9);
+}
+.a-btn:hover{
+    -webkit-transform:scale(1.05);
+    -moz-transform:scale(1.05);
+    -ms-transform:scale(1.05);
+    -o-transform:scale(1.05);
+    transform:scale(1.05);
+}
+.a-btn:hover .a-btn-symbol{
+    opacity:0.5;
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+.a-btn:active{
+    -webkit-transform:scale(0.95);
+    -moz-transform:scale(0.95);
+    -ms-transform:scale(0.95);
+    -o-transform:scale(0.95);
+    transform:scale(0.95);
+    -webkit-box-shadow:0px 0px 0px 1px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8), 0px 1px 1px 2px #fff;
+    -moz-box-shadow:0px 0px 0px 1px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8), 0px 1px 1px 2px #fff;
+    box-shadow:0px 0px 0px 1px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8), 0px 1px 1px 2px #fff;
+}

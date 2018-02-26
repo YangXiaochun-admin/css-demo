@@ -1,0 +1,39 @@
+/* default color: #F86E4E */
+.feature-box i,
+.feature-box-small-icon i,
+#mainmenu li li a:hover,
+.blog-list .date,
+.date-box .month,
+.blog-read .date,
+.slider-info .text1,
+#filters a.selected,
+span.overlay,
+#testimonial-full,
+.widget_tags li a,
+.btn-primary,
+.bg-id-color
+{
+	background:#F86E4E;
+}
+
+#mainmenu a:hover,
+#mainmenu li:hover > ul,
+.date-box .day,
+.slider_text h1,
+.id-color,
+.pricing-box li h1,
+.title span,
+a, a:visited,
+i.large:hover{
+	color:#F86E4E;
+}
+
+#filters a:hover,
+#filters a.selected
+{
+	border-color:#F86E4E;
+}
+
+.callbacks_nav {
+	background-color:#F86E4E;
+}

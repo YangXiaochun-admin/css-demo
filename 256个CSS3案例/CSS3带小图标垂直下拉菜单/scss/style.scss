@@ -1,0 +1,124 @@
+@import "compass/css3";
+
+$base-gap: 10px;
+$menu-radius: 5px;
+$nav-arrow-size: 6px;
+
+body {
+  background: #F4F4F4;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.l-main {
+  width: 530px;
+  margin: 0 auto;
+}
+
+// --- MENU ---
+
+.menu {
+  width: 250px;
+  margin: $base-gap*4;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(#000, .3);
+  border-radius: $menu-radius;
+  float: left;
+}
+
+.menu__header {
+  background: #4B4F55;
+  border-bottom: 1px solid #353A40;
+  border-radius: $menu-radius $menu-radius 0 0;  
+}
+
+.menu__header-title {
+  color: #fff;
+  padding: $base-gap*1.5;
+  text-shadow: 0 1px 0 rgba(#000, .4);
+}
+
+.menu__body {
+  border-radius: 0 0 $menu-radius $menu-radius;    
+}
+
+// --- MENU: SMALL ---
+
+.menu--small {
+  width: 110px;
+}
+
+// --- NAV ---
+
+.nav {
+  list-style: none;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item-link {
+  padding: $base-gap $base-gap*1.5;
+  text-decoration: none;
+  color: #8B8E93;
+  display: block;
+  border-bottom: 1px solid #F0F0F0;
+  
+  &:hover {
+    background: #f0f0f0;   
+  }
+  
+  &.is-active {
+    background: #6E757F;
+    color: #fff;
+    border-bottom-color: #4B4F55;
+    box-shadow: 0 1px 0 #7A828D inset;
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -$nav-arrow-size;
+      margin-top: -$nav-arrow-size;      
+      border-top: $nav-arrow-size solid transparent;
+      border-bottom: $nav-arrow-size solid transparent;      
+      border-left: $nav-arrow-size solid #6E757F;
+    }
+    
+    .nav__item-icon {
+      color: #fff;
+    }
+  }  
+  
+  .nav__item:last-child & {
+    border-bottom: none;
+  }
+}
+
+.nav__item-icon {
+  color: #D2D5DA;
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+  margin-right: $base-gap;
+}
+
+// --- BADGE ---
+
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 1px solid #D1D1D1;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.badge--warning {
+  background: #ED373F;
+  border-color: #ED373F;
+}

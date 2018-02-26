@@ -1,0 +1,22 @@
+%h2 Toggle it!
+%ul.tg-list
+  %li.tg-list-item
+    %h4 Light
+    %input#cb1.tgl.tgl-light{type: "checkbox"}/
+    %label.tgl-btn{for: "cb1"}
+  %li.tg-list-item
+    %h4 iOS 7
+    %input#cb2.tgl.tgl-ios{type: "checkbox"}/
+    %label.tgl-btn{for: "cb2"}
+  %li.tg-list-item
+    %h4 Skewed
+    %input#cb3.tgl.tgl-skewed{type: "checkbox"}/
+    %label.tgl-btn{"data-tg-off" => "OFF", "data-tg-on" => "ON", for: "cb3"}
+  %li.tg-list-item
+    %h4 Flat
+    %input#cb4.tgl.tgl-flat{type: "checkbox"}/
+    %label.tgl-btn{for: "cb4"}
+  %li.tg-list-item
+    %h4 Flip
+    %input#cb5.tgl.tgl-flip{type: "checkbox"}/
+    %label.tgl-btn{"data-tg-off" => "Nope", "data-tg-on" => "Yeah!", for: "cb5"}

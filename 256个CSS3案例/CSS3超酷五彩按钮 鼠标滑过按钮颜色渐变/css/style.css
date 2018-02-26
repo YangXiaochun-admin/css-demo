@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+  background: #262626;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 27px;
+  color: #444444;
+  font-weight: 700;
+}
+h1 span {
+  font-weight: 400;
+}
+
+.container {
+  width: 735px;
+  margin: 50px auto;
+  background: whitesmoke;
+  padding: 25px;
+}
+
+.button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 16.795%;
+  /* auto */
+  text-align: center;
+  /* DELETE WHEN WIDTH AUTO */
+}
+.button.red {
+  background: none repeat scroll 0 0 #e0645c;
+  color: white;
+}
+.button.red:hover {
+  background: none repeat scroll 0 0 #999999;
+  color: white;
+}
+.button.dark {
+  background: none repeat scroll 0 0 #444444;
+  color: white;
+}
+.button.dark:hover {
+  background: none repeat scroll 0 0 #2db6cf;
+  color: white;
+}
+.button.light {
+  background: none repeat scroll 0 0 #999999;
+  color: white;
+}
+.button.light:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: white;
+}
+.button.green {
+  background: none repeat scroll 0 0 #46b98a;
+  color: white;
+}
+.button.green:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: white;
+}
+.button.blue {
+  background: none repeat scroll 0 0 #2db6cf;
+  color: white;
+}
+.button.blue:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: white;
+}

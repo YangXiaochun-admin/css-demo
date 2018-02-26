@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery快速排序算法动画特效</title>
+<script language="javascript" src="js/jquery.min.js"></script>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body { background-color: #666; }
+#box {
+    width: 1000px;
+    height: 480px;
+    background-color: #000;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+#select {
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 12px;
+    color: #fff;
+}
+.test {
+    border: 1px solid #CCC;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.pass { background-color: #F00; }
+.change { background-color: #0F3; }
+.changeEnd { background-color: #FF0; }
+</style>
+<body>
+<div id="box"></div>
+<div id="select"> 算法:
+    <select id="algorithm">
+        <option value="1" selected="selected">冒泡算法</option>
+        <option value="2">鸡尾酒算法</option>
+        <option value="3">插入算法</option>
+    </select>
+    子元素个数:
+    <select id="num">
+        <option value="200" selected="selected" >200</option>
+        <option value="150" >150</option>
+        <option value="100" >100</option>
+        <option value="50" >50</option>
+        <option value="10" >10</option>
+    </select>
+    算法执行速度:
+    <select id="speed">
+        <option value="1" selected="selected" >fast</option>
+        <option value="5" >normal</option>
+        <option value="10" >slow</option>
+        <option value="100" >snail</option>
+    </select>
+    附加动画:
+    <input type="checkbox" id="isAnimat" />
+    <input type="button" value="开始" />
+</div>
+<script language="javascript">
+/*
+*  排序算法 js动画演示运算过程. Author:Cui;
+*/
+var $isAnimat,$speed;
+$("#select>:button").click(function() {
+    //父容器
+    var $box = $("#box");
+    $box.empty();
+    //算法;
+    var selects = $("#algorithm").val();
+	//附加动画;
+	$isAnimat = $('#isAnimat').is(':checked');
+	//执行速度
+	$speed = $('#speed').val();
+    //子元素个数;
+    var $max = $("#num").val();
+    //子元素宽度;
+    var $width = (1e3 - $max * 2) / $max;
+    //获取一个随机数数组 length=200(父容器的宽度/元素的宽+边框) 500最大高度,10最小高度;
+    var H = getRandom(10, 500, $max);
+    //添加演示用容器
+    var i = 0;
+    var time = window.setInterval(function() {
+        if (i >= H.length) {
+            window.clearInterval(time);
+            selectAnimate(H, selects);
+            $("#select").slideUp();
+        }
+        var $child = $('<div class="test"></div>');
+        var height = H[i] + "px";
+        var left = i * ($width + 2) + "px";
+        $child.css({
+            height:height,
+            left:left,
+            width:$width
+        }).appendTo($box);
+        i++;
+    }, 10);
+});
+
+//选择要执行的动画;
+function selectAnimate(arr, selects) {
+    if (selects == 1) {
+        bubbleSort(arr);
+    }
+    if (selects == 2) {
+        cocktailSort(arr);
+    }
+	if (selects == 3) {
+        insertSort(arr);
+    }
+}
+
+//生成count个 范围在maxs-mins之间不重复的随机数
+function getRandom(mins, maxs, count) {
+    if (maxs - mins < count - 1) {
+        return false;
+    }
+    var _this = {
+        limit:{
+            maxs:maxs,
+            mins:mins,
+            count:count
+        },
+        rondomArr:[]
+    };
+    _this.randomFunc = function() {
+        return parseInt(Math.random() * (_this.limit.maxs - _this.limit.mins + 1) + _this.limit.mins);
+    };
+    _this.in_array = function(val) {
+        for (var i = 0; i < _this.rondomArr.length && _this.rondomArr[i] != val; i++) ;
+        return !(i == _this.rondomArr.length);
+    };
+    _this.getRandomArr = function() {
+        for (var i = 0; i < _this.limit.count; i++) {
+            var val = _this.randomFunc();
+            if (_this.in_array(val)) {
+                i--;
+            } else {
+                _this.rondomArr.push(val);
+            }
+        }
+        return _this.rondomArr;
+    };
+    return _this.getRandomArr();
+}
+
+//冒泡算法动画;
+function bubbleSort(arr) {
+    var i = arr.length, j;
+    var tempExchangVal;
+    var timeDo = function() {
+        var time1 = window.setTimeout(function() {
+            if (i > 0) {
+                j = 0;
+                var time2 = window.setInterval(function() {
+                    if (j < i - 1) {
+                        changeBox(j, "pass");
+                        if (arr[j] > arr[j + 1]) {
+                            tempExchangVal = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = tempExchangVal;
+                            //演示用容器;
+                            changeBox(j, "changeEnd", arr[j]);
+                            changeBox(j + 1, "change", tempExchangVal);
+                        }
+                        j++;
+                    } else {
+                        window.clearInterval(time2);
+                        removeBoxColor();
+                        i--;
+                        timeDo();
+                    }
+                }, $speed);
+            } else {
+                //结束;
+                doEnd(arr);
+            }
+        }, $speed);
+    };
+    timeDo();
+}
+
+//鸡尾酒算法动画;
+function cocktailSort(arr) {
+    var i = 0, j;
+    var timedo = function() {
+        var time = window.setTimeout(function() {
+            if (i < arr.length / 2) {
+                j = i;
+                var time2 = window.setInterval(function() {
+                    if (j >= arr.length - i - 1) {
+                        window.clearInterval(time2);
+                        var k = arr.length - i;
+                        var time3 = window.setInterval(function() {
+                            if (k <= i) {
+                                removeBoxColor();
+                                window.clearInterval(time3);
+                                timedo();
+                            }
+                            changeBox(k, "pass");
+                            if (arr[k] > arr[k + 1]) {
+                                var temp = arr[k];
+                                arr[k] = arr[k + 1];
+                                arr[k + 1] = temp;
+                                changeBox(k, "changeEnd", arr[k]);
+                                changeBox(k + 1, "change", temp);
+                            }
+                            k--;
+                        }, $speed);
+                    }
+                    changeBox(j, "pass");
+                    if (arr[j] < arr[j - 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = temp;
+                        changeBox(j - 1, "changeEnd", temp);
+                        changeBox(j, "change", arr[j]);
+                    }
+                    j++;
+                }, $speed);
+            } else {
+                doEnd(arr);
+            }
+            i++;
+        }, $speed);
+    };
+    timedo();
+}
+
+//插入算法
+function insertSort(arr) {//插入算法;
+	var i = 1;
+	var timedo = function() {
+		var time = window.setTimeout(function() {
+			if (i < arr.length) {
+				var tmp = arr[i];
+				var key = i - 1;
+				removeBoxColor();
+				var time2 = window.setInterval(function(){
+					changeBox(i, "pass");
+					if(key >= 0 && tmp < arr[key]){
+						arr[key + 1] = arr[key];
+						changeBox(key + 1, "change", arr[key]);
+						key--;
+					}else{
+						if (key + 1 != i) {
+							arr[key + 1] = tmp;
+							changeBox(key + 1, "changeEnd", tmp);
+						}
+						window.clearInterval(time2);
+						timedo();	
+					}
+				},$speed);
+			}else{
+				doEnd(arr);
+			}
+			i++;
+		}, $speed);
+	}
+	timedo();
+	
+}
+
+
+//改变容器颜色及其高度;
+function changeBox(index, className, height) {
+    if (arguments[2]) {
+		if($isAnimat){
+			var $thisSpeed = 10*$speed;
+			$(".test").eq(index).animate({height:height},$thisSpeed).addClass(className);
+		}else{
+			$(".test").eq(index).height(height).addClass(className);	
+		}
+    } else {
+        $(".test").eq(index).removeClass("change changeEnd").addClass(className);
+    }
+}
+
+//清除容器颜色
+function removeBoxColor() {
+    $(".test").removeClass("pass change changeEnd");
+}
+
+//结束动画
+function doEnd(arr) {
+    removeBoxColor();
+    var i = 0;
+    var time = window.setInterval(function() {
+        if (i >= arr.length) {
+            window.clearInterval(time);
+            $("#select").slideDown();
+        }
+        $(".test").eq(i).addClass("change").next().addClass("pass");
+        i++;
+    }, 5);
+}
+
+/**************算法原型*****************/
+function prototype_bubbleSort(arr) {
+    //冒泡;
+    var i = arr.length, j;
+    var tempExchangVal;
+    while (i > 0) {
+        for (j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                tempExchangVal = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tempExchangVal;
+            }
+        }
+        i--;
+    }
+    return arr;
+}
+
+function prototype_cocktailSort(arr) {
+    //鸡尾酒 
+    for (var i = 0; i < arr.length / 2; i++) {
+        //将最小值排到队头
+        for (var j = i; j < arr.length - i - 1; j++) {
+            if (arr[j] < arr[j - 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+            }
+        }
+        //将最大值排到队尾
+        for (var j = arr.length - i; j > i; j--) {
+            if (arr[j] > arr[j + 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+function prototype_insertSort(arr) {//插入算法;
+    for (var i = 1; i < arr.length; i++) {
+        var tmp = arr[i];
+        var key = i - 1;
+        while (key >= 0 && tmp < arr[key]) {
+            arr[key + 1] = arr[key];
+            key--;
+        }
+        if (key + 1 != i) arr[key + 1] = tmp;
+    }
+    return arr;
+}
+/**************算法原型*End***************/
+
+</script>
+</body>
+</html>

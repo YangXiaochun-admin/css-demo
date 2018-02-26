@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery适合移动页面和PC页面的分页插件DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Exo);
+@import url(http://fonts.googleapis.com/css?family=Englebert);
+/* ==========================================================================
+   Normalise
+   ========================================================================== */
+html, button, input, select, textarea { color: #222222; }
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 50px 0;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+img { vertical-align: middle; }
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea { resize: vertical; }
+.chromeframe {
+    background: #ccc;
+    color: #000;
+    margin: .2em 0;
+    padding: 0.2em 0;
+}
+::-moz-selection, ::selection {
+ background: #b3d4fc;
+ text-shadow: none;
+}
+/* ==========================================================================
+   Actual Styles
+   ========================================================================== */
+body {
+    background: radial-gradient(center, ellipse, #fcfff4 0%, #b3bead 100%);
+    text-align: center;
+    color: #444;
+    padding: 50px 100px;
+}
+.rapper {
+    width: 360px;
+    height: 100px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 30px 0 0;
+    background: #505050;
+}
+.intro {
+    font-family: Englebert, Arial;
+    font-size: 1.5em;
+}
+.intro h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+}
+.intro p {
+    margin: 0;
+    padding: 0;
+}
+.pagination {
+    width: 100%;
+    overflow: scroll;
+    height: 80px;
+    position: relative;
+    background: #eee;
+}
+.pagination.desktop { overflow: hidden; }
+.pagination ul {
+    background: transparent;
+    list-style: none;
+    padding: 30px 10px 18px;
+    margin: auto;
+    width: 490px;
+    height: 32px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.page-item {
+    font-family: 'Exo', Arial;
+    display: inline-block;
+ *display: inline;
+ *zoom: 1;
+    margin-right: 0;
+    text-align: center;
+    background: rgba(115, 147, 168, 0.9);
+    border-radius: 3px;
+}
+.page-item.arrow { background: none; }
+.page-item.arrow a { color: #777; }
+.page-item a:hover, .page-item a:focus, .page-item.current a {
+    background: rgba(40, 110, 250, 0.9);
+    color: white;
+}
+.page-item, .page-item a { -webkit-transition: all 0.3s ease; }
+.page-item a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 6px 5px 4px;
+    min-width: 22px;
+    border-radius: 3px;
+}
+.pagination-title {
+    width: auto;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    color: #666;
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<div class="intro">
+    <h3>Pagination</h3>
+</div>
+<h3>Mobile</h3>
+<div class="rapper">
+    <section id="pagination" class="pagination">
+        <ul>
+            <li class="page-item arrow"> <a href="#next" title="Previous Results Page (Previous)">&larr;</a> </li>
+            <li class="page-item"> <a href="#1" title="Results Page 1 (Aa - Ar)">1</a> </li>
+            <li class="page-item current"> <a href="#2" title="Results Page 2 (As - Be)">2</a> </li>
+            <li class="page-item"> <a href="#3" title="Results Page 3 (Be - Cr)">3</a> </li>
+            <li class="page-item"> <a href="#4" title="Results Page 4 (Ct - El)">4</a> </li>
+            <li class="page-item"> <a href="#5" title="Results Page 5 (El - Gr)">5</a> </li>
+            <li class="page-item"> <a href="#6" title="Results Page 6 (Gu - Hu)">6</a> </li>
+            <li class="page-item"> <a href="#7" title="Results Page 7 (Ja - Le)">7</a> </li>
+            <li class="page-item"> <a href="#8" title="Results Page 8 (Li - My)">8</a> </li>
+            <li class="page-item"> <a href="#9" title="Results Page 9 (Ne - Pe)">9</a> </li>
+            <li class="page-item"> <a href="#10" title="Results Page 10 (Pe - Qu)">10</a> </li>
+            <li class="page-item"> <a href="#11" title="Results Page 11 (Ra - Sa)">11</a> </li>
+            <li class="page-item"> <a href="#12" title="Results Page 12 (Se - Vi)">12</a> </li>
+            <li class="page-item"> <a href="#13" title="Results Page 13 (Wa - Wu)">13</a> </li>
+            <li class="page-item"> <a href="#14" title="Results Page 14 (Ya - Za)">14</a> </li>
+            <li class="page-item arrow"> <a href="#next" title="Next Results Page (Next)">&rarr;</a> </li>
+        </ul>
+        <div class="pagination-help"> <span class="pagination-title">swipe / drag to see more pages</span> </div>
+    </section>
+</div>
+<h3>Desktop</h3>
+<section class="pagination desktop">
+    <ul>
+        <li class="page-item arrow"> <a href="#next" title="Previous Results Page (Previous)">&larr;</a> </li>
+        <li class="page-item"> <a href="#1" title="Results Page 1 (Aa - Ar)">1</a> </li>
+        <li class="page-item current"> <a href="#2" title="Results Page 2 (As - Be)">2</a> </li>
+        <li class="page-item"> <a href="#3" title="Results Page 3 (Be - Cr)">3</a> </li>
+        <li class="page-item"> <a href="#4" title="Results Page 4 (Ct - El)">4</a> </li>
+        <li class="page-item"> <a href="#5" title="Results Page 5 (El - Gr)">5</a> </li>
+        <li class="page-item"> <a href="#6" title="Results Page 6 (Gu - Hu)">6</a> </li>
+        <li class="page-item"> <a href="#7" title="Results Page 7 (Ja - Le)">7</a> </li>
+        <li class="page-item"> <a href="#8" title="Results Page 8 (Li - My)">8</a> </li>
+        <li class="page-item"> <a href="#9" title="Results Page 9 (Ne - Pe)">9</a> </li>
+        <li class="page-item"> <a href="#10" title="Results Page 10 (Pe - Qu)">10</a> </li>
+        <li class="page-item"> <a href="#11" title="Results Page 11 (Ra - Sa)">11</a> </li>
+        <li class="page-item"> <a href="#12" title="Results Page 12 (Se - Vi)">12</a> </li>
+        <li class="page-item"> <a href="#13" title="Results Page 13 (Wa - Wu)">13</a> </li>
+        <li class="page-item"> <a href="#14" title="Results Page 14 (Ya - Za)">14</a> </li>
+        <li class="page-item arrow"> <a href="#next" title="Next Results Page (Next)">&rarr;</a> </li>
+    </ul>
+    <div class="pagination-help"> <span class="pagination-title">swipe / drag to see more pages</span> </div>
+</section>
+<script src='js/jquery.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

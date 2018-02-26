@@ -1,0 +1,101 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+body{
+  background-color: #eaeaea;
+  font-family: 'Roboto';
+}
+
+.center-block{
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.gallery{
+  list-style: none;
+}
+
+//gallery items width
+$width: 150px;
+//preview image size
+$width-wide: 600px;
+$height-wide: 600px;
+
+.portrait{
+  width: $width;
+  box-shadow: 0 0 3px #555;
+  background-color: #FFF;
+  padding: 5px;
+  margin: 7px 0px 0px 7px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  @include transition( all 0.3s ease );
+  @include filter(grayscale(100%));
+  
+  &:hover{
+    @include scale(1.04);
+    box-shadow: 0 0 5px #555;
+    @include filter(grayscale(0%));
+  }
+  .pic{
+    width: 100%;
+    margin: 5px 0;
+  }
+  .date{
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .foot{
+    font-size: 11px;
+    .comment{}
+    .heart{
+      margin-left: 4px;
+    }
+  }
+}//.portrait
+
+.carrousel{
+  @extend .center-block;
+  position: fixed;
+  background-color: rgba(10, 10, 10, 0.8);
+  display: none;
+  .wrapper{
+    @extend .center-block;
+    width: $width-wide;
+    height: $height-wide;
+    overflow: hidden;
+    /*.loading{
+      color: #FFF;
+      font-size: 24px;
+      margin: 40% 40%;
+      display: none;
+    }*/
+    >img{
+      width: 100%;
+    }
+  }
+}
+
+.close{
+  cursor: pointer;
+  color: #FFF;
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 18px;
+  &:hover{
+    font-size: 20px;
+    color: #DDD;
+  }
+}

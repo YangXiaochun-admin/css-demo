@@ -1,0 +1,104 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fa {
+  height: 2em;
+  font-size: 3em;
+  overflow: hidden;
+  margin: 0.5em;
+  position: relative;
+  text-decoration: none;
+  width: 2em;
+  -webkit-backface-visibility: hidden;
+}
+.fa:before, .fa:after {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  top: 50%;
+  width: 100%;
+}
+.fa:before {
+  color: white;
+  -webkit-transform: translate3D(0, -50%, 0);
+  -ms-transform: translate3D(0, -50%, 0);
+  transform: translate3D(0, -50%, 0);
+  z-index: 2;
+}
+.fa:after {
+  padding-bottom: 25%;
+  padding-top: 300%;
+  top: 0;
+}
+.fa:hover:after {
+  -webkit-transform: translate3D(0, -73%, 0);
+  -ms-transform: translate3D(0, -73%, 0);
+  transform: translate3D(0, -73%, 0);
+}
+.fa:hover:before {
+  -webkit-transform: translate3D(0, -250%, 0);
+  -ms-transform: translate3D(0, -250%, 0);
+  transform: translate3D(0, -250%, 0);
+}
+
+.fa-twitter:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #00acee), color-stop(75%, #ffffff));
+  background-image: -webkit-linear-gradient(#00acee 25%, #ffffff 75%);
+  background-image: linear-gradient(#00acee 25%, #ffffff 75%);
+  content: "\f099";
+  color: #00acee;
+}
+
+.fa-facebook:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #3b5998), color-stop(75%, #ffffff));
+  background-image: -webkit-linear-gradient(#3b5998 25%, #ffffff 75%);
+  background-image: linear-gradient(#3b5998 25%, #ffffff 75%);
+  content: "\f09a";
+  color: #3b5998;
+}
+
+.fa-pinterest:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #cb2027), color-stop(75%, #ffffff));
+  background-image: -webkit-linear-gradient(#cb2027 25%, #ffffff 75%);
+  background-image: linear-gradient(#cb2027 25%, #ffffff 75%);
+  content: "\f0d2";
+  color: #cb2027;
+}
+
+.fa-youtube:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #bb0000), color-stop(75%, #ffffff));
+  background-image: -webkit-linear-gradient(#bb0000 25%, #ffffff 75%);
+  background-image: linear-gradient(#bb0000 25%, #ffffff 75%);
+  content: "\f167";
+  color: #bb0000;
+}
+
+.fa-soundcloud:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #ff5700), color-stop(75%, #ffffff));
+  background-image: -webkit-linear-gradient(#ff5700 25%, #ffffff 75%);
+  background-image: linear-gradient(#ff5700 25%, #ffffff 75%);
+  content: "\f1be
+";
+  color: #ff5700;
+}
+
+html {
+  background: -webkit-radial-gradient(#222222, #000000);
+  background: radial-gradient(#222222, #000000);
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+}

@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jquery动画摇奖特效DEMO演示</title>
+<script id="jquery_183" type="text/javascript" class="library" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="g-mn g-mn-3">
+    <div class="m-prodlist m-prodlist-3" id="drawprod">
+        <div class="m-prod">
+            <div class="m-prod-box">
+                <div class="img"><img src="images/prod_02.jpg" width="194" height="380" alt="妖精的旋律"></div>
+                <div class="title">妖精的旋律</div>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <div class="m-prod">
+            <div class="m-prod-box">
+                <div class="img"><img src="images/prod_02.jpg" width="194" height="380" alt="妖精的旋律"></div>
+                <div class="title">妖精的旋律</div>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <div class="m-prod">
+            <div class="m-prod-box">
+                <div class="img"><img src="images/prod_02.jpg" width="194" height="380" alt="妖精的旋律"></div>
+                <div class="title">妖精的旋律</div>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <input name="抽奖" type="image" id="drawbtn" class="drawbtn" src="images/drawbtn.png">
+    </div>
+</div>
+</body>
+</html>
+<style>
+.g-mn { clear: both; }
+.g-mn-3 {
+    background-color: #1b0a03;
+    height: 304px;
+}
+.m-prodlist {
+    width: 976px;
+    padding-left: 10px;
+}
+.m-prod {
+    float: left;
+    width: 222px;
+    padding-left: 22px;
+    height: 190px;
+    margin-top: 89px;
+}
+.m-prod-current {
+    position: relative;
+    z-index: 10;
+}
+.m-prod-current .img { top: -100% !important; }
+.m-prod-box {
+    position: relative;
+    background-image: url(images/prod_shadow.png);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding-right: 28px;
+    width: 194px;
+    height: 190px;
+    overflow: hidden;
+}
+.m-prod-box .img {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+.m-prod-box .title {
+    text-align: center;
+    color: #8c5e49;
+    font-weight: bold;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 194px;
+    z-index: 2;
+}
+.m-prod-box .brand {
+    background-image: url(images/ico.png);
+    background-position: 0 -80px;
+    background-repeat: repeat;
+    background-color: transparent;
+    width: 46px;
+    height: 58px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #7c4f00;
+    padding-top: 5px;
+}
+.m-prod-box .brand span {
+    font-size: 12px;
+    display: block;
+    text-decoration: line-through;
+}
+.m-prod-box .brand2 {
+    background-image: url(images/ico.png);
+    background-position: 0 -160px;
+    background-repeat: repeat;
+    background-color: transparent;
+    width: 46px;
+    height: 52px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #4d0803;
+    padding-top: 12px;
+}
+.m-prod-box .ctrl {
+    position: absolute;
+    left: 35px;
+    bottom: 20px;
+    z-index: 4;
+}
+.m-prod-box .ctrl li {
+    float: left;
+    margin-right: 5px;
+}
+.m-prod-box .ctrl .btn {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -30000px;
+    overflow: hidden;
+    background-image: url(images/ico.png);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-color: transparent;
+}
+.m-prod-box .ctrl .btn-1 { background-position: 0 0; }
+.m-prod-box .ctrl .btn-2 { background-position: -40px 0; }
+.m-prod-box .ctrl .btn-3 { background-position: -80px 0; }
+.m-prod-box .ctrl .btn-4 { background-position: -120px 0; }
+.m-prod-box .ctrl .btn-5 { background-position: -160px 0; }
+.m-prod-box .ctrl a:hover {
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
+.m-prod-player {
+    width: 194px;
+    height: 34px;
+    background-image: url(images/ico.png);
+    background-position: -60px -80px;
+    background-repeat: repeat;
+    background-color: transparent;
+    display: none;
+}
+.m-prod-player .btn {
+    display: block;
+    width: 30px;
+    height: 33px;
+    background-image: url(images/ico.png);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-color: transparent;
+    float: left;
+    text-indent: -30000px;
+    overflow: hidden;
+}
+.m-prod-player .btn-1 { background-position: -30px -28px; }
+.m-prod-player .btn-2 { background-position: 10px -28px; }
+.m-prod-player .btn-3 {
+    background-position: -70px -28px;
+    float: right;
+}
+.m-prod-player a:hover {
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
+.m-prod-player .screen {
+    line-height: 24px;
+    float: left;
+    width: 124px;
+    height: 24px;
+    padding: 5px 5px 0;
+    text-align: center;
+    color: #8c5e49;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.m-prod-player .screen span { margin: 0 15px; }
+.m-prod-player .screen .scroll { width: 1000px; }
+.m-prod-player .screen .scroll span { float: left; }
+.m-prod-tips {
+    background: #340d03;
+    border: 6px solid #4d210e;
+    color: #8c5e49;
+    width: 158px;
+    height: 144px;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 5px 12px;
+    display: none;
+}
+.m-prod-tips .ico {
+    float: right;
+    margin: -6px -12px -10px 0;
+}
+.m-prodlist-3 { width: 976px; }
+.m-prodlist-3 .m-prod {
+    margin-top: 38px;
+    position: relative;
+}
+.m-prodlist-3 .m-prod-box {
+    background-image: none;
+    cursor: pointer;
+}
+.m-prodlist-3 .drawbtn {
+    float: right;
+    margin: 50px 50px 0 0;
+}
+.m-prodlist-3 .drawbtn:hover {
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90); opacity: 0.9; }
+.m-prodlist-3 .mask {
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 194px;
+    height: 190px;
+    background: #281109;
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    z-index: 3;
+}
+.m-prodlist-3 .mask01 {
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+.m-prodlist-3 .mask02 { display: none; }
+</style>
+<script>$.fn.draw = function(options){
+  var $_this = $(this);
+	var $dp = options.prod;
+  var $i = 0; //index
+  var $r = 0; //round
+  var $s = 150; //spead
+  function dr(){
+  	//drawround
+    if($_this.res!='' && $_this.res!=undefined && $i==0){
+			dr2();
+    }else{
+      $dp.find(".mask").removeClass("mask01").eq($i).addClass("mask01");
+      $i = $i >= 2 ? 0 : $i+1;
+			setTimeout(dr,$s);
+    }
+  }
+	function dr2(){
+		$dp.find(".mask").removeClass("mask01").eq($i).addClass("mask01");
+    $i = $i >= 2 ? 0 : $i+1;
+    $s = $s+200;
+    if( $r < $_this.res + 3 ){
+      $r++;
+    }else{
+      $i = 0;
+      $r = 0;
+      $s = 100;
+      setTimeout(result,1000);
+      return;
+    }
+		setTimeout(dr2,$s);
+	}
+  function getRes(){
+		$_this.res = '';
+		//赋结果值
+  	setTimeout(function(){$_this.res = 1},2000);
+  }
+  function click(){
+    $_this.bind("click",function(){
+			getRes();
+      dr();
+      $_this.unbind("click");
+    });
+  }click();
+  function result(){
+  	alert("你得到奖项"+(options.id+1));
+    click();
+  }
+}
+
+$("#drawbtn").draw({
+	prod:$("#drawprod")
+});</script>

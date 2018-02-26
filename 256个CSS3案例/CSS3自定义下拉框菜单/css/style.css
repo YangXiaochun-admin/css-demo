@@ -1,0 +1,106 @@
+body {
+    background-color: #313233;
+    font-family: arial, san-serif;
+}
+nav {
+    width: 300px;
+    margin:0 auto;
+    margin-top:50px
+}
+.menu {
+    /* height:70px; */
+    background-color: #ff782e;
+    border-radius:10px;    
+    color:#fff;
+    display:block;
+    position: relative;
+    font-size: 20px;
+    padding:20px;
+		-webkit-transition: 300ms ease;
+		-moz-transition: 300ms ease;
+		-o-transition: 300ms ease;
+		-ms-transition: 300ms ease;
+		transition: 300ms ease; 
+    border-bottom: 3px solid #cc6025;
+}
+
+.dropdownIcon {        
+    display: block;
+    width:24px;
+    margin-top:2px;
+    /* position: absolute;
+    right:0; */
+    float:right;
+}
+.dropdownIcon span {
+    width:24px;
+    height:4px;
+    border-radius:3px;
+    color:#fff;
+    display:block;
+    background: white;
+    margin:2px
+}
+
+nav:hover .menu{
+    cursor:pointer;
+    background: #ff853a;    
+}
+
+.menu:hover .dropdownIcon span{
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+}
+
+.dropDown {
+    background: #f0f0f0;
+    border-radius: 10px;
+    text-align: center;
+    margin:0;
+    padding:0;
+    list-style:none;
+    position: relative;
+    margin-top:20px;
+    display:none;
+    
+}
+
+.dropDown:before {
+    content: "";
+    position:absolute;
+    border: 15px solid #f0f0f0;
+    border-top: 0 solid transparent!important;
+    border-right: 15px solid transparent!important;
+    border-left: 15px solid transparent!important;
+    right:10px;
+    top:-15px
+}
+
+.dropDown a {
+   color: #494b4d;
+   text-decoration: none;
+    display:block;
+    padding:20px 0;
+    font-weight:700;
+    font-size:16px
+}
+
+.dropDown li:nth-child(even) a {
+    background:#ebebeb
+}
+
+/*nav:hover .dropDown{
+    display:block;
+}*/
+
+.credit {
+  position:absolute;
+  bottom:0;
+  color:#aaa;
+  font-size:12px;
+}
+
+.credit a {
+  color: #eee;
+}

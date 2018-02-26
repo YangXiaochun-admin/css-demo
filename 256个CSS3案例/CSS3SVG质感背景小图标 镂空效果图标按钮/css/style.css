@@ -1,0 +1,62 @@
+BODY {
+  font-size: 10px;
+  background: #333333 url(http://img-fotki.yandex.ru/get/6425/5091629.7e/0_706a3_c525a707_L.jpg);
+}
+
+.wrapper {
+  width: 500px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.icons {
+  margin-bottom: 1.5em;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  width: 7.5em;
+  height: 7.5em;
+  margin: 0 .7em;
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-width: 4;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+.icon:hover {
+  top: -2px;
+}
+
+.icons--wood {
+  fill: url(#wood);
+}
+.icons--wood .icon:hover {
+  fill: none;
+  stroke: url(#wood);
+}
+
+.icons--fire {
+  fill: url(#fire);
+}
+.icons--fire .icon:hover {
+  fill: none;
+  stroke: url(#fire);
+}
+
+.icons--snake {
+  fill: url(#snake);
+}
+.icons--snake .icon:hover {
+  fill: none;
+  stroke: url(#snake);
+}
+
+.icons--grass {
+  fill: url(#grass);
+}
+.icons--grass .icon:hover {
+  fill: none;
+  stroke: url(#grass);
+}

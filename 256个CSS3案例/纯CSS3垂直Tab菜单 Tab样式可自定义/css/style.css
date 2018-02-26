@@ -1,0 +1,143 @@
+body {
+   line-height:1;
+  font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+}
+
+p, .tab-content li, h1, h2, h3{ /* This insures that there's enough space between your paragraphs, headings, etc */
+    margin-bottom: 10px;
+}
+
+.tab-container h3{ /* Effects only the h3 headings inside the tabs */
+	font-size:147%;
+	color:#000;
+}
+/* `Containers
+----------------------------------------------------------------------------------------------------*/
+
+#container{ /* Use this to position the entire tab module */
+	margin: 0 auto;	
+	margin-top: 4%;	
+}
+
+.tab-container {
+	position: relative; /* It's important to keep this position relative and the absolute positions in this file the same */
+	width: 100%;
+	z-index: 0;
+
+}
+
+/* `Common Styles
+----------------------------------------------------------------------------------------------------*/
+
+/* Tabs */
+
+.tab-container > div { 
+	
+}
+
+.tab-container > div > a {
+	position: relative !important; /* Keeps the tabs in line with each other */
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+	font-size: 15px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 1px;
+	background: #ddd; /* old browsers */
+	border: dashed 2px #9b9b9b;
+	padding: 20px 55px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 0px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 4px 10px -5px #000000;
+	box-shadow: 0 4px 10px -5px #000000;
+	-webkit-box-shadow: 0 4px 10px -5px #000000;
+	width: 50px;
+	height: 10px;
+}
+
+.tab-container > div:not(:target) > a {
+}	
+
+.tab-container > div:target > a { 
+    background: none repeat scroll 0 0 #948a81;
+    text-shadow: 0 1px 0 #4C4648;
+}
+
+.tab-container > div > div { 
+	background: #ddd;
+	z-index: -2;
+	top: 0;
+	padding: 20px;
+	border: solid 4px #aa0000;
+	outline: 2px dashed #9b9b9b;
+	outline-offset: -8px; /*Delete if you don't want an offset*/
+	min-height: 250px; /* Change this value if you need more or less content space */
+	position: absolute; /* Fixes IE 7 & 8 */
+	left: 180px;
+	width: 400px;
+}
+
+.tab-container > div:not(:target) > div { 
+	position: absolute; /* This keeps the tab module contained */
+}
+
+.tab-container > div:target > div { 
+	position: absolute; 
+	z-index: 3 !important; /* Brings the content to the front depending on the tab that was clicked */ 
+}
+
+div.tab-content{ /* Styles the inner content of the tabs */
+	padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tab-content img{ 
+	margin:0 auto; 
+	display:block; 
+	padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+
+
+/*tabs*/
+
+#tabs-right { 
+    position: relative; 
+    padding-right: 6.5em; 
+}
+
+#tabs-right .ui-tabs-nav { 
+    position: absolute; 
+    right: 0.25em; 
+    top: 0.25em; 
+    bottom: 0.25em; 
+    width: 6em; 
+    padding: 0.2em 0.2em 0.2em 0em; 
+}
+
+#tabs-right .ui-tabs-nav li { 
+    width: 100%; 
+    border-left: none; 
+    border-bottom-width: 1px !important; 
+    -moz-border-radius: 0px 4px 4px 0px; 
+    -webkit-border-radius: 0px 4px 4px 0px; 
+    border-radius: 0px 4px 4px 0px; 
+    overflow: hidden; 
+} 
+
+#tabs-right .ui-tabs-nav li.ui-tabs-selected, 
+#tabs-right .ui-tabs-nav li.ui-state-active { 
+    left: -1px; 
+    border-left: 1px solid transparent; 
+} 
+#tabs-right .ui-tabs-nav li a { 
+    width: 100%; 
+} 
+

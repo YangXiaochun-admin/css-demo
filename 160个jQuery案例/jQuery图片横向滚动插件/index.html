@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery图片自动滚动效果代码DEMO演示</title>
+<link href="css/goodteacher.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+window.onload = function () {
+	var oBtnLeft = document.getElementById("goleft");
+	var oBtnRight = document.getElementById("goright");
+	var oDiv = document.getElementById("indexmaindiv");
+	var oDiv1 = document.getElementById("maindiv1");
+	var oUl = oDiv.getElementsByTagName("ul")[0];
+	var aLi = oUl.getElementsByTagName("li");
+	var now = -5 * (aLi[0].offsetWidth + 13);
+	oUl.style.width = aLi.length * (aLi[0].offsetWidth + 13) + 'px';
+	oBtnRight.onclick = function () {
+		var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 13) + oUl.offsetLeft) / aLi[0].offsetWidth);
+
+		if (n <= 5) {
+			move(oUl, 'left', 0);
+		}
+		else {
+			move(oUl, 'left', oUl.offsetLeft + now);
+		}
+	}
+	oBtnLeft.onclick = function () {
+		var now1 = -Math.floor((aLi.length / 5)) * 5 * (aLi[0].offsetWidth + 13);
+
+		if (oUl.offsetLeft >= 0) {
+			move(oUl, 'left', now1);
+		}
+		else {
+			move(oUl, 'left', oUl.offsetLeft - now);
+		}
+	}
+	var timer = setInterval(oBtnRight.onclick, 5000);
+	oDiv.onmouseover = function () {
+		clearInterval(timer);
+	}
+	oDiv.onmouseout = function () {
+		timer = setInterval(oBtnRight.onclick, 5000);
+	}
+
+};
+
+function getStyle(obj, name) {
+	if (obj.currentStyle) {
+		return obj.currentStyle[name];
+	}
+	else {
+		return getComputedStyle(obj, false)[name];
+	}
+}
+
+function move(obj, attr, iTarget) {
+	clearInterval(obj.timer)
+	obj.timer = setInterval(function () {
+		var cur = 0;
+		if (attr == 'opacity') {
+			cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+		}
+		else {
+			cur = parseInt(getStyle(obj, attr));
+		}
+		var speed = (iTarget - cur) / 6;
+		speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+		if (iTarget == cur) {
+			clearInterval(obj.timer);
+		}
+		else if (attr == 'opacity') {
+			obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
+			obj.style.opacity = (cur + speed) / 100;
+		}
+		else {
+			obj.style[attr] = cur + speed + 'px';
+		}
+	}, 30);
+}  
+</script>
+</head>
+<body style="background:#CCC;">
+<div class="indexmaindiv" id="indexmaindiv">
+    <div class="indexmaindiv1 clearfix" >
+        <div class="stylesgoleft" id="goleft"></div>
+        <div class="maindiv1 " id="maindiv1">
+            <ul id="count1">
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/1.jpg" /></div>
+                        <div class="teanames">乐静老师1</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/2.jpg" /></div>
+                        <div class="teanames">乐静老师2</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/3.jpg" /></div>
+                        <div class="teanames">乐静老师3</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/4.jpg" /></div>
+                        <div class="teanames">乐静老师4</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/5.jpg" /></div>
+                        <div class="teanames">乐静老师5</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/6.jpg" /></div>
+                        <div class="teanames">乐静老师6</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/7.jpg" /></div>
+                        <div class="teanames">乐静老师7</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/8.jpg" /></div>
+                        <div class="teanames">乐静老师8</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/1.jpg" /></div>
+                        <div class="teanames">乐静老师9</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/2.jpg" /></div>
+                        <div class="teanames">乐静老师10</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/3.jpg" /></div>
+                        <div class="teanames">乐静老师11</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/4.jpg" /></div>
+                        <div class="teanames">乐静老师12</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/5.jpg" /></div>
+                        <div class="teanames">乐静老师13</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/6.jpg" /></div>
+                        <div class="teanames">乐静老师14</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/7.jpg" /></div>
+                        <div class="teanames">乐静老师15</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+                <li>
+                    <div class="playerdetail">
+                        <div class="detailimg"><img src="css/images/areabackground/8.jpg" /></div>
+                        <div class="teanames">乐静老师16</div>
+                        <div class="teadetail">获得新加坡南阳理工学院计算机学士学位擅长营销学培训</div>
+                        <a class="checkdetail" href="#"></a> </div>
+                </li>
+            </ul>
+        </div>
+        <div class="stylesgoright" id="goright"></div>
+    </div>
+</div>
+</body>
+</html>

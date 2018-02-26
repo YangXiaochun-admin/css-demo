@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>jquery马赛克图片翻转拼接</title>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="style/demo.css" />
+        <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-1.7.2.custom.min.js"></script>
+        <script src="js/jquery.flip.min.js"></script>
+        <script type="text/javascript">
+			$(document).ready(function() {
+				var container			= $('#container');
+				var containerHeight	= parseInt(container.height())/100;
+				var containerWidth	= parseInt(container.width())/100;
+				var blockCount			= (containerHeight * containerWidth);
+				for(x = 1; x <= blockCount; x++) {
+					
+					randomNum			= Math.floor(Math.random()*4) + parseFloat(1);
+					container.append('<div class="block' + randomNum + '"></div>');
+				}
+				$('#container div').addClass('black');
+				var stack = {
+					'delay': 150,
+					'actions': [],
+					'run': function() {
+						if (stack.actions.length) {
+							stack.actions.shift()();
+							setTimeout(stack.run, stack.delay);
+						}
+					}
+				};
+				$('#container div').each(function(){
+					var that = this;
+					stack.actions.push(function(){
+						$(that).flip({
+							color: '#ffffff',
+							speed: 70,	
+							direction:'lr',
+							onEnd: function() {
+								$(that).removeClass('black');
+							}
+						});
+					});
+				});
+					stack.run();
+			});
+		</script>
+        </head>
+        <body>
+<p class="title">jquery马赛克图片翻转拼接</p>
+<div id="container"> </div>
+<br/>
+</body>
+</html>

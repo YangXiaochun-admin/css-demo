@@ -1,0 +1,57 @@
+* {box-sizing: border-box}
+html {background: #88bfd4; text-align: center}
+
+/* First styling the menu */
+#menu {
+	list-style: none;
+	padding: 0 12px; margin: 0;
+	background: #5c8a97;
+	margin: 100px;
+	display: inline-block;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 5px;
+	
+	/* 3d effect using box-shadows */
+	box-shadow: 0px 4px #3b636e, 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Now the list items */
+#menu li {
+	margin-left: 10px;
+	display: inline-block;
+	position: relative;
+	bottom: -11px;
+}
+
+#menu li:first-child {margin: 0}
+
+/* The real fun begins here :D */
+#menu li a {
+	background: #a1d0dd;
+	display: block;
+	border-radius: 3px;
+	padding: 0 12px;
+	color: white;
+	position: relative;
+	text-decoration: none;
+	height: 27px;
+	font: 12px / 27px "PT Sans", Arial, sans-serif;
+	/* Now the 3d effect */
+	box-shadow: 0px 3px #7fafbc, 0px 4px 5px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+}
+
+/* Basic design is ready, now let's make it animate when hovered or clicked */
+/* For this, we'll use transition property */
+
+#menu li a:hover {background: #bae0ea}
+#menu li a:active {
+	background: #bae0ea;
+	/* Now, let's make it look like its pressed down when clicked */
+	bottom: -3px;
+	box-shadow: 0px 0px #7fafbc, 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Perfect */
+/* Using the same technique, you can create buttons, menus and what not! I have already put some examples in the PSD. Get it here  http://dribbble.com/shots/757549-Freebie-3D-Pagination-and-Buttons-with-PSD */

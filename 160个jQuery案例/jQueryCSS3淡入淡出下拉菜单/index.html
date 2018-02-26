@@ -1,0 +1,114 @@
+﻿<html>
+<head>
+<title>jQuery淡入淡出下拉菜单</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+// Executes the function when DOM will be loaded fully
+$(document).ready(function () {	
+	// hover property will help us set the events for mouse enter and mouse leave
+	$('.navigation li').hover(
+		// When mouse enters the .navigation element
+		function () {
+			//Fade in the navigation submenu
+			$('ul', this).fadeIn(); 	// fadeIn will show the sub cat menu
+		}, 
+		// When mouse leaves the .navigation element
+		function () {
+			//Fade out the navigation submenu
+			$('ul', this).fadeOut();	 // fadeOut will hide the sub cat menu		
+		}
+	);
+});
+	</script>
+<style type="text/css">
+/* Giving a font-family and Size to give good look */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+/* Adjusting the margins, paddings and no list styles */
+.navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* Little tricking with positions */
+.navigation li {
+    float: left;			/* Show list items inline */
+    width: 150px;
+    position: relative;
+}
+/* Playing with Main Categories */
+.navigation li a {
+    background: #262626;
+    color: #fff;
+    display: block;  	/* Making sure a element covers whole li area */
+    padding: 8px 7px 8px 7px;
+    text-decoration: none; /* No underline */
+    border-top: 1px solid #F2861D;
+    text-align: center;
+    text-transform: uppercase;
+}
+.navigation li a:hover { color: #F2861D; }
+/* Sub Cat Menu stuff*/
+.navigation ul {
+    position: absolute;
+    left: 0;
+    display: none; /* Hide it by default */
+    margin: 0 0 0 -1px;
+    padding: 0;
+    list-style: none;
+    border-bottom: 3px solid #F2861D;
+}
+.navigation ul li {
+    width: 150px;
+    float: left;
+    border-top: none;
+}
+/* Sub Cat menu link properties */
+.navigation ul a {
+    display: block;    	/* Making sure a element covers whole li area */
+    height: 15px;
+    padding: 8px 7px 13px 7px;
+    color: #fff;
+    text-decoration: none;
+    border-top: none;
+    border-bottom: 1px dashed #6B6B6B;
+}
+.navigation ul a:hover { color: #F2861D; }
+</style>
+</head>
+<body>
+<div style="width:650px; margin:0 auto"> <br/>
+    <br/>
+    <br/>
+    <ul class="navigation">
+        <li><a href="#">Main Cat 1</a></li>
+        <li><a href="#">Main Cat 2 </a>
+            <ul>
+                <li><a href="#">Sub Cat 2-1</a></li>
+                <li><a href="#">Sub Cat 2-2</a></li>
+                <li><a href="#">Sub Cat 2-3</a></li>
+                <li><a href="#">Sub Cat 2-4</a></li>
+                <li><a href="#">Sub Cat 2-5</a></li>
+            </ul>
+            <div class="clear"></div>
+        </li>
+        <li><a href="#">Main Cat 3 </a>
+            <ul>
+                <li><a href="#">Sub Cat 3-1</a></li>
+                <li><a href="#">Sub Cat 3-2</a></li>
+                <li><a href="#">Sub Cat 3-3</a></li>
+                <li><a href="#">Sub Cat 3-4</a></li>
+                <li><a href="#">Sub Cat 3-5</a></li>
+                <li><a href="#">Sub Cat 3-6</a></li>
+                <li><a href="#">Sub Cat 3-7</a></li>
+            </ul>
+            <div class="clear"></div>
+        </li>
+        <li><a href="#">Main Cat </a></li>
+    </ul>
+    <div class="clear"></div>
+</div>
+</body>
+</html>

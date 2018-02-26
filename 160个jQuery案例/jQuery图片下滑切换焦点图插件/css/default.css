@@ -1,0 +1,38 @@
+@charset "utf-8";
+a{ color:#333;font-size:12x;}
+.w280{ width:280px}
+.w200{ width:200px}
+.w180{ width:180px}
+.box{_border:1px solid #CCC;box-shadow:0 1px 5px rgba(0, 0, 0, .25);-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .25);-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .25); background:#FFF}
+
+input[type=text],input[type=password],input[type=url],input[type=email],textarea{background:#fff;border:1px solid #ccc;padding:3px 5px;line-height:20px}
+input[type=text]:focus,input[type=password]:focus,input[type=url]:focus,input[type=email]:focus,textarea:focus{border-color:#92cae4;}
+.ie6input{ _height:28px; _line-height:28px}
+.form_box td{padding:5px; color:#666}
+/*表格*/
+.table{width:100%;border-collapse:collapse;line-height:150%}
+.table td,.table th{border:1px solid #ddd;padding:5px 8px;}
+.table th{text-align:left;background-color:#f3f3f3;color:#333;}
+.table tr.tbg td{color:#000000;background-color:#f5f5f5;}
+/*CSS page style*/
+DIV.pagelist { margin:10px  0; padding:0 10px; TEXT-ALIGN: center; clear:both;}
+DIV.pagelist a,DIV.pagelist SPAN{_border:1px solid #CCC;box-shadow:0 1px 5px rgba(0, 0, 0, .25);-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .25);-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .25);height:20px; line-height:20px;TEXT-DECORATION: none; color:#136fa0;  display:block; float:left; padding:0 5px; margin-left:5px;_border:1px solid #CCC;}
+DIV.pagelist A:hover { BACKGROUND: #136fa0;  COLOR: #FFF;}
+DIV.pagelist A:on { BACKGROUND: #136fa0; COLOR: #FFF;}
+DIV.pagelist A:active { BACKGROUND:#136fa0;COLOR: #FFF;}
+DIV.pagelist SPAN.current {FONT-WEIGHT: bold; BACKGROUND: #136fa0;  COLOR: #fff; }
+DIV.pagelist SPAN.disabled {}
+/* CSS Document */
+body{background:url(../images/bg.png) repeat}
+#Header{height:161px;width:100%;background:url(../images/menu_bg.png) repeat-x bottom; margin-bottom:20px}
+.Top{height:120px;width:990px; margin:auto;}
+.top-logo{ padding-top:20px; display:block}
+.Top-right{float:right}
+.tags{ color:#666}
+.tags a{ color:#136fa0;}
+.member-info{ margin-top:10px; text-align:right;  height:60px; width:400px; color:#666; font-family:'微软雅黑'}
+.member-info a{color:#2974c5}
+.searchbox{ clear:both}
+.searchinput{text-align:right; }
+.search-input{_height:22px}
+#Main{width:990px;margin:auto}

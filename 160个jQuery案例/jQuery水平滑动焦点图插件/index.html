@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>jquery滑动式图片幻灯片播放特效演示</title>
+<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	//JSON PORTFOLIO
+	var portfolioJSON = [{"0":"Mother's Ring Builder","4":"2013-03-25 20:00:50","1":"2013\/03\/mothers.jpg","3":"191"},{"0":"BCI Rentals - Custom CMS","4":"2012-10-28 19:24:24","1":"2013\/03\/bci.jpg","3":"201"},{"0":"Schoolwires Creative Services","4":"2012-03-07 03:07:55","1":"2012\/03\/creative.jpg","2":"#FFFFFF","3":"82"},{"0":"Self-Service","4":"2012-03-06 16:43:34","1":"2012\/03\/selfservice11.jpg","2":"#669900","3":"4"},{"0":"Portfolio: \"Infinite Scolling\" Wall","4":"2012-03-05 16:44:51","1":"2012\/03\/portfolio1.jpg","2":"#304B89","3":"176"}];
+	var featuresTimer;
+	var resizeTimer;
+	var hoverTimer;
+</script>
+<script type="text/javascript" src="js/features.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+<div id="pagewrap">
+<div id="ajax-container">
+    <div id="ajax-relative"></div>
+</div>
+<div id="content-outer">
+    <div class="content-container home">
+        <link href="css/features.css" rel="stylesheet" type="text/css">
+        <div id="features-container">
+            <div id="glow-container">
+                <div id="glow-color-active" style="background-color:"></div>
+                <img id="glow-fg" src="images/glow-fg.png" /> </div>
+            <h1 id="frame-title">Featured Projects</h1>
+            <div class="frame-smaller-outer left">
+                <div class="frame-smaller-inner">
+                    <div class="slider"> <img src='images/selfservice11.jpg' /><img src='images/portfolio1.jpg' /><img src='images/mothers.jpg' /><img src='images/bci.jpg' /><img src='images/creative.jpg' /><img src='images/selfservice11.jpg' /><img src='images/portfolio1.jpg' /><img src='images/mothers.jpg' /> </div>
+                </div>
+            </div>
+            <div class="frame-smaller-outer right">
+                <div class="frame-smaller-inner">
+                    <div class="slider"> <img src='images/selfservice11.jpg' /><img src='images/portfolio1.jpg' /><img src='images/mothers.jpg' /><img src='images/bci.jpg' /><img src='images/creative.jpg' /><img src='images/selfservice11.jpg' /><img src='images/portfolio1.jpg' /><img src='images/mothers.jpg' /> </div>
+                </div>
+            </div>
+            <img id="frame-center-shadow" src="images/frame-shadow.png" />
+            <div id="frame-center-outer">
+                <div id="frame-center-inner">
+                    <div class="slider"> <a href='#'><span class='title'>Self-Service</span><span class='more'>view more</span><span class='image-holder'><img src='images/selfservice11.jpg' /></span></a><a href='#'><span class='title'>Portfolio: "Infinite Scolling" Wall</span><span class='more'>view more</span><span class='image-holder'><img src='images/portfolio1.jpg' /></span></a><a href='#'><span class='title'>Mother's Ring Builder</span><span class='more'>view more</span><span class='image-holder'><img src='images/mothers.jpg' /></span></a><a href='#'><span class='title'>BCI Rentals - Custom CMS</span><span class='more'>view more</span><span class='image-holder'><img src='images/bci.jpg' /></span></a><a href='#'><span class='title'>Schoolwires Creative Services</span><span class='more'>view more</span><span class='image-holder'><img src='images/creative.jpg' /></span></a><a href='#'><span class='title'>Self-Service</span><span class='more'>view more</span><span class='image-holder'><img src='images/selfservice11.jpg' /></span></a><a href='#'><span class='title'>Portfolio: "Infinite Scolling" Wall</span><span class='more'>view more</span><span class='image-holder'><img src='images/portfolio1.jpg' /></span></a><a href='#'><span class='title'>Mother's Ring Builder</span><span class='more'>view more</span><span class='image-holder'><img src='images/mothers.jpg' /></span></a>
+                        <pre>-ms-filter: &quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;    /* IE 5-7 */   filter: alpha(opacity=50);</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-arrow back"></div>
+            <div class="nav-arrow next"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

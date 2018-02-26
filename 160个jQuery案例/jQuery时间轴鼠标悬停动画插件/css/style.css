@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS 定制的公共样式 */
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+h1, h2, h3, h4, h5, h6{ font-weight:normal; font-size:12px;}
+a{color:#666; text-decoration:none;transition:background-color 0.1s ease-in 0s, color 0.2s ease-in 0s;-webkit-transition:background-color 0.1s ease-in 0s, color 0.2s ease-in 0s;outline:none}
+a:hover{color:#333;}
+.clear{ clear:both; margin:0; padding:0; font-size:0px; line-height:0px; height:0px; overflow:hidden;} 
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+*html .clearfix {zoom:1;}
+*+html .clearfix {zoom:1;}
+
+/* 时间轴样式 */
+.course_nr{height:162px; background:url(../images/ico9.gif) repeat-x center;}
+.course_nr li{ float:left; background:url(../images/ico10.gif) no-repeat center top; padding-top:30px; width:140px; text-align:center; position:relative; margin-top:65px;}
+.shiji{ position:absolute; width:100%; left:0; top:-20px; display:none;}
+.shiji h1{ height:67px; line-height:67px; color:#518dbb; font-weight:bold; background:url(../images/ico11.gif) no-repeat center top; margin-bottom:8px;}
+.shiji p{ line-height:14px; color:#999;}
+

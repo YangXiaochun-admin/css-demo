@@ -1,0 +1,221 @@
+.hand {
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f3c5ad;
+  width: 300px;
+  height: 230.76923077px;
+  border-radius: 30px;
+  border: 1px solid #8c3e15;
+}
+.hand .finger {
+  position: absolute;
+  bottom: 80%;
+  right: 0;
+  width: 75px;
+  height: 75px;
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+  background-color: #f3c5ad;
+  border-left: 1px solid #b9511b;
+  border-right: 1px solid #b9511b;
+  border-top: 1px solid #b9511b;
+  transition: .3s;
+}
+.hand .finger:nth-of-type( 5) {
+  right: 299px;
+}
+.hand .finger:nth-of-type( 4) {
+  right: 224px;
+}
+.hand .finger:nth-of-type( 3) {
+  right: 149px;
+}
+.hand .finger:nth-of-type( 2) {
+  right: 74px;
+}
+.hand .finger:nth-of-type( 1) {
+  right: -1px;
+}
+.hand .finger.thumb {
+  transform-origin: left bottom;
+  transform: rotate(-45deg);
+  bottom: 10px;
+  right: 217.39130435px;
+  z-index: -1;
+  height: 150px;
+  border-right: 0;
+  border-top: 1px solid #b9511b;
+}
+.hand .finger.thumb:before {
+  top: 2%;
+}
+.hand .finger:before,
+.hand .finger:after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 7%;
+  width: 85%;
+  height: 60px;
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: .2s;
+}
+.hand .finger:after {
+  top: 50%;
+  height: 37.5px;
+  background: linear-gradient(to bottom, rgba(185, 81, 27, 0.2) 0%, rgba(185, 81, 27, 0) 100%);
+  display: none;
+}
+.hand .arm {
+  position: absolute;
+  bottom: -80%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+  background-color: #f3c5ad;
+  border-left: 1px solid #b9511b;
+  border-right: 1px solid #b9511b;
+}
+label {
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 14px;
+  line-height: 23.07692308px;
+  font-style: normal;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+label:after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 50px;
+  background-color: #b9511b;
+  z-index: -1;
+}
+label i {
+  position: absolute;
+  top: -4px;
+  right: 60px;
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 36px;
+  background: white;
+  box-shadow: inset 0 -3px 3px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.4), 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  transition: .2s;
+}
+label i:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-radius: 18px;
+  background-color: #f3c5ad;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
+}
+label:before {
+  content: "metal";
+  margin-left: 50px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+input[type=checkbox]:checked ~ label:before {
+  content: "punk";
+  text-transform: uppercase;
+  margin-right: 30px;
+  margin-left: 0;
+}
+input[type=checkbox]:checked ~ label {
+  background: radial-gradient(center, ellipse cover, #8dad33 0%, #92b237 24%, #9dbb40 55%, #a6c24e 100%);
+}
+input[type=checkbox]:checked ~ label i {
+  right: -6px;
+}
+input {
+  opacity: 0;
+}
+input[type=checkbox] ~ .hand .finger {
+  height: 75px;
+}
+input[type=checkbox] ~ .hand .finger:after {
+  display: none;
+}
+input[type=checkbox] ~ .hand .finger:before {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+input[type=checkbox] ~ .hand .finger:nth-of-type(1),
+input[type=checkbox] ~ .hand .finger:nth-of-type(4) {
+  height: 214.28571429px;
+}
+input[type=checkbox] ~ .hand .finger:nth-of-type(1):before,
+input[type=checkbox] ~ .hand .finger:nth-of-type(4):before {
+  top: 2%;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 37.5px;
+  border-bottom-right-radius: 37.5px;
+}
+input[type=checkbox] ~ .hand .finger:nth-of-type(1):after,
+input[type=checkbox] ~ .hand .finger:nth-of-type(4):after {
+  display: block;
+}
+input[type=checkbox] ~ .hand .finger:nth-of-type(1) {
+  height: 187.5px;
+}
+input[type=checkbox] ~ .hand .finger.thumb {
+  height: 136.36363636px;
+}
+input[type=checkbox]:checked ~ .hand .finger {
+  height: 75px;
+}
+input[type=checkbox]:checked ~ .hand .finger:after {
+  display: none;
+}
+input[type=checkbox]:checked ~ .hand .finger:before {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+input[type=checkbox]:checked ~ .hand .finger:nth-of-type(3) {
+  height: 250px;
+}
+input[type=checkbox]:checked ~ .hand .finger:nth-of-type(3):before {
+  top: 2%;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 37.5px;
+  border-bottom-right-radius: 37.5px;
+}
+input[type=checkbox]:checked ~ .hand .finger:nth-of-type(3):after {
+  display: block;
+}
+input[type=checkbox]:checked ~ .hand .finger.thumb {
+  height: 136.36363636px;
+}
+/*}*/
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: radial-gradient(ellipse at top left, #699bc8 0%, #b5c5d8 57%);
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*重置样式*/
+body, textarea{font:12px/1.5 Tahoma,Arial,'宋体',sans-serif;color:#333;background-color:#FFF;}
+body.mainbg {background-color:#fff;}
+div.mainborder {width:1000px;border:solid 1px #D5D5D5;margin:15px auto;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {margin:0px;padding:0px;}
+table tr td .row {padding-bottom:0px;}
+input, select, textarea, button{vertical-align:middle;}
+img{border:0px;}
+ul, ol{list-style:none;margin:0px;padding:0px;}
+li{list-style:none outside none;}
+a{color:#0A8CD2;text-decoration:none;}
+a:hover{color:#FF6600;text-decoration:underline;}
+
+/*首页*/
+div.indexmaindiv{height:270px;margin:0px auto;width:1010px;}
+div.indexmaindiv div.playerstyles{width:168px;height:44px;background:url('images/areabackground/playstyles.png') no-repeat;}
+div.indexmaindiv1{margin-top:25px;}
+div.indexmaindiv1 div.stylesgoleft{float:left;width:21px;height:28px;background:url('images/areabackground/arrowhead.png') no-repeat left top;margin:106px 5px 0px 0px;cursor:pointer;}
+div.indexmaindiv1 div.stylesgoleft:hover{float:left;width:21px;height:28px;background:url('images/areabackground/arrowhead.png') no-repeat left -28px;margin:106px 5px 0px 0px;cursor:pointer;}
+div.indexmaindiv1 div.playerdetail{width:172px;height:245px;background:#FFF;font-family:'微软雅黑';}
+div.indexmaindiv1 div.playerdetail div.detailimg{width:172px;height:124px;}
+div.indexmaindiv1 div.playerdetail div.detailimg img{width:172px;height:115px;}
+div.indexmaindiv1 div.playerdetail div.teanames{text-align:center;font-size:14px;margin-top:5px;color:#404040;}
+div.indexmaindiv1 div.playerdetail div.teadetail{width:156px;height:27px;margin:5px 8px;color:#666;}
+div.indexmaindiv1 div.playerdetail .checkdetail{width:134px;height:27px;display:block;background:url('images/areabackground/checkdetail.png') no-repeat;margin:18px;}
+div.indexmaindiv1 div.stylesgoright{float:left;width:21px;height:28px;background:url('images/areabackground/arrowhead.png') no-repeat left -56px;margin:106px 0px 0px 15px;cursor:pointer;}
+div.indexmaindiv1 div.stylesgoright:hover{float:left;width:21px;height:28px;background:url('images/areabackground/arrowhead.png') no-repeat left -84px;margin:106px 0px 0px 15px;cursor:pointer;}
+/*滚动*/
+div.maindiv1{float:left;width:937px;height:245px;overflow:hidden;position:relative;}
+div.maindiv1 ul{position:absolute;left:0;top:0;}
+div.maindiv1 ul li{float:left;width:172px;height:245px;margin-left:13px;}

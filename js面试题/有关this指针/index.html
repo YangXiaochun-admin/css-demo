@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>区分指针和赋值</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function A(){
+        this.name="";
+        this.age=18;
+    }
+
+    var a1 = new A();
+    a1.name="尼古拉斯";
+    var a2 = a1;
+    a2.name="blue";
+    console.log(a1.name);//blue
+/* 
+    注释：
+        指针：代表一个变量或者属性的指向谁
+        上述a1和a2指向的是同一个对象
+*/
+
+    var str1 = "尼古拉斯";
+    var str2 = str1;
+    console.log(str1);//尼古拉斯
+/* 
+    注释：
+        赋值：代表改变变量或属性的指向
+*/
+</script>

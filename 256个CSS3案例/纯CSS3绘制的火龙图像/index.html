@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>纯CSS3绘制的火龙图像DEMO演示</title>
+<style>
+body, html {
+    margin: 0px;
+    padding: 0px;
+}
+#DRAGON {
+    width: 1px;
+    margin: 165px auto;
+    text-align: center;
+}
+#SELECT { margin-left: 17px; }
+.bellyStart {
+    width: 0px;
+    height: 0px;
+    border: 25px solid transparent;
+    border-top: 70px solid #ac9d86;
+    border-left: 7px solid #ac9d86;
+    margin-top: 185px;
+    transform: scaleX(1.6);
+}
+.bellyStart:before {
+    content: ' ';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin-top: -70px;
+    margin-left: -39px;
+    border: 25px solid transparent;
+    border-top: 70px solid #bbaf9c;
+    border-right: 7px solid #bbaf9c;
+}
+.BStop {
+    width: 0px;
+    height: 0px;
+    border: 25px solid transparent;
+    border-bottom: 70px solid #CCC2B6;
+    border-left: 7px solid #CCC2B6;
+    margin-top: -165px;
+    margin-left: -7px;
+}
+.BStop:before {
+    content: ' ';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin-top: -25px;
+    margin-left: -39px;
+    border: 25px solid transparent;
+    border-bottom: 70px solid #DBD5C5;
+    border-right: 7px solid #DBD5C5;
+}
+.BSround {
+    position: absolute;
+    width: 64px;
+    height: 13px;
+    background-color: #DBD5C5;
+    border-radius: 0px 0px 50px 50px;
+    margin-top: -70px;
+    margin-left: -39px;
+}
+.BSRright {
+    position: absolute;
+    width: 32px;
+    height: 13px;
+    background-color: #CCC2B6;
+    border-radius: 0px 0px 50px 0px;
+    margin-top: 0px;
+    margin-left: 32px;
+}
+.headStart {
+    position: absolute;
+    z-index: 1;
+    width: 0px;
+    height: 0px;
+    border: 20px solid transparent;
+    border-top: 20px solid #F97100;
+    border-right: 20px solid #F97100;
+    margin-top: -110px;
+    margin-left: -51px;
+    transform: scale(1.1);
+}
+.HSotherSideStart {
+    position: absolute;
+    z-index: 1;
+    width: 0px;
+    height: 0px;
+    border: 20px solid transparent;
+    border-top: 20px solid #F97100;
+    border-right: 20px solid #F97100;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+.HSotherSide {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 20px solid transparent;
+    border-top: 20px solid #E03300;
+    border-left: 20px solid #E03300;
+    margin-top: -20px;
+    margin-left: 20px;
+    z-index: 1;
+}
+.horn {
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 50px solid #530800;
+    transform: skew(19deg);
+    position: absolute;
+    margin-top: -77px;
+    margin-left: -29px;
+}
+.horn:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 50px solid #530800;
+    transform: skew(-38deg);
+    position: absolute;
+    margin-top: -6px;
+    margin-left: 79px;
+}
+.pokeSpike {
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #F97100;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+.pokeSpike:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom: 8px solid #F97100;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: -25px;
+}
+.pokeSpike:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom: 8px solid #DF3400;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: 15px;
+}
+.PSright {
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid #DF3400;
+    border-left: 5px solid #DF3400;
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 0px;
+}
+.leftSideFace {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 50px solid #E13300;
+    border-right: 10px solid #E13300;
+    position: absolute;
+    margin-top: -22px;
+    margin-left: -49px;
+    transform: rotate(-65deg) scaleX(0.8) scaleY(1.3);
+    z-index: -1;
+}
+.rightSideFace {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #940000;
+    border-left: 10px solid #940000;
+    position: absolute;
+    margin-top: -23px;
+    margin-left: 30px;
+    transform: rotate(65deg) scaleX(0.8) scaleY(1.3);
+    z-index: -10;
+}
+.LSFeye {
+    width: 20px;
+    height: 20px;
+    background-color: #FBC614;
+    border-radius: 100%;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -17px;
+    transform: rotate(60deg) scaleX(0.8);
+    border: 3px solid #980100;
+}
+.RSFeye {
+    width: 20px;
+    height: 20px;
+    background-color: #FBC614;
+    border-radius: 100%;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -10px;
+    transform: rotate(-60deg) scaleX(0.8);
+    border: 3px solid #510700;
+}
+.snout {
+    width: 6px;
+    height: 0px;
+    border: 9px solid transparent;
+    border-bottom: 18px solid #FA7300;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 8px;
+    z-index: 2;
+}
+.snout:before {
+    content: ' ';
+    width: 33px;
+    height: 25px;
+    background-color: #E23401;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: -17px;
+    z-index: 3;
+    overflow: hidden;
+}
+.snout:after {
+    content: ' ';
+    width: 16px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0px 50px 50px 0px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 0px;
+    z-index: 100;
+}
+.SNwrap {
+    width: 33px;
+    height: 25px;
+    background-color: #E23401;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: -14px;
+    z-index: 3;
+    overflow: hidden;
+}
+.nost {
+    width: 15px;
+    height: 15px;
+    background-color: #540700;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -2px;
+    z-index: 4;
+    border-top-right-radius: 4px;
+}
+.nost:before {
+    content: ' ';
+    width: 11px;
+    height: 11px;
+    background-color: #E23401;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: 6px;
+    z-index: 4;
+    border-radius: 4px;
+    box-shadow: 0px 5px 0px #540700, 0px 10px 0px #540700;
+}
+.nost:after {
+    content: ' ';
+    width: 15px;
+    height: 15px;
+    background-color: #540700;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 16px;
+    z-index: 4;
+    border-top-left-radius: 4px;
+}
+.BSstripe {
+    position: absolute;
+    width: 50px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom: 15px solid #CCC2B6;
+    margin-top: -95px;
+    margin-left: -37px;
+    z-index: 5;
+}
+.BSstripe:after {
+    content: ' ';
+    position: absolute;
+    width: 25px;
+    height: 0px;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid #BBB09D;
+    margin-top: 0px;
+    margin-left: 0px;
+    z-index: 5;
+}
+.BSstripeTwo {
+    position: absolute;
+    width: 28px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom: 15px solid #CCC2B6;
+    margin-top: -125px;
+    margin-left: -26px;
+    z-index: 5;
+}
+.BSstripeTwo:after {
+    content: ' ';
+    position: absolute;
+    width: 14px;
+    height: 0px;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid #BBB09D;
+    margin-top: 0px;
+    margin-left: 0px;
+    z-index: 5;
+}
+.belt {
+    width: 160px;
+    height: 60px;
+    position: absolute;
+    background-color: #F97200;
+    margin-top: -115px;
+    margin-left: -90px;
+    z-index: -1;
+    border-radius: 10px;
+}
+.belt:after {
+    content: ' ';
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    background-color: #E23401;
+    border-radius: 0px 10px 10px 0px;
+}
+.wingsStart {
+    width: 154px;
+    height: 15px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: -86px;
+    z-index: -3;
+}
+.WSleftBall {
+    width: 22px;
+    height: 22px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -3;
+    margin-top: -10px;
+    margin-left: -25px;
+    border: 10px solid #960001;
+}
+.WSleftBall:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 9px solid transparent;
+    border-bottom: 15px solid #960001;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: -10px;
+    transform: rotate(-35deg);
+}
+.WSleftBallTwo {
+    width: 22px;
+    height: 22px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -3;
+    margin-top: -10px;
+    margin-left: 134px;
+    border: 10px solid #960001;
+}
+.WSleftBallTwo:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 9px solid transparent;
+    border-bottom: 15px solid #960001;
+    position: absolute;
+    margin-top: -3px;
+    margin-left: -7px;
+    transform: rotate(35deg);
+}
+.insideBarUpLeft {
+    position: absolute;
+    width: 14px;
+    height: 140px;
+    background-color: #960001;
+    margin-top: -145px;
+    margin-left: 4px;
+}
+.insideBarUpLeft > .ball {
+    width: 14px;
+    height: 14px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -3;
+    margin-top: -23px;
+    margin-left: -8px;
+    border: 8px solid #960001;
+}
+.insideBarUpLeft .skewBarOut {
+    width: 17px;
+    height: 140px;
+    background-color: #960001;
+    position: absolute;
+    z-index: -500;
+    margin-top: -30px;
+    margin-left: -48px;
+    transform: skew(-45deg);
+    z-index: -500;
+}
+.insideBarUpLeft .webHold {
+    width: 14px;
+    height: 132px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 46px;
+    margin-left: -54px;
+}
+.insideBarUpLeft .webHold:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;
+    position: absolute;
+    margin-top: 118px;
+    margin-left: -7px;
+}
+.insideBarUpLeft .conect {
+    width: 33px;
+    height: 14px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 104px;
+    margin-left: 10px;
+}
+.insideBarUpLeft .lastBall {
+    width: 12px;
+    height: 12px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+    margin-top: 95px;
+    margin-left: -120px;
+    border: 6px solid #960001;
+}
+.insideBarUpLeft .lastConect {
+    width: 14px;
+    height: 150px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -1px;
+}
+.insideBarUpLeft .lastConect:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;
+    border-right: 7px solid white;
+    position: absolute;
+    margin-top: 136px;
+    margin-left: -7px;
+}
+.insideBarUpLeft .web {
+    width: 41px;
+    height: 102px;
+    background-color: #FB5700;
+    position: absolute;
+    margin-top: 48px;
+    margin-left: -40px;
+}
+.insideBarUpLeft .web:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 20px solid transparent;
+    border-bottom: 21px solid #FB5700;
+    border-right: 21px solid #FB5700;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -21px;
+}
+.insideBarUpLeft .web:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #960001;
+    border-right: 7px solid #960001;
+    position: absolute;
+    margin-top: 88px;
+    margin-left: 7px;
+}
+.insideBarUpLeft .webTwo {
+    width: 47px;
+    height: 116px;
+    background-color: #FB5700;
+    position: absolute;
+    margin-top: 86px;
+    margin-left: -101px;
+    transform: skewY(-45deg);
+}
+.insideBarUpRight {
+    position: absolute;
+    width: 14px;
+    height: 140px;
+    background-color: #960001;
+    margin-top: -145px;
+    margin-left: 6px;
+}
+.insideBarUpRight > .ball {
+    width: 14px;
+    height: 14px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -3;
+    margin-top: -23px;
+    margin-left: -8px;
+    border: 8px solid #960001;
+}
+.insideBarUpRight .skewBarOut {
+    width: 17px;
+    height: 140px;
+    background-color: #960001;
+    position: absolute;
+    z-index: -500;
+    margin-top: -30px;
+    margin-left: 47px;
+    transform: skew(45deg);
+    z-index: -500;
+}
+.insideBarUpRight .webHold {
+    width: 14px;
+    height: 132px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 55px;
+}
+.insideBarUpRight .webHold:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;
+    position: absolute;
+    margin-top: 118px;
+    margin-left: -7px;
+}
+.insideBarUpRight .conect {
+    width: 33px;
+    height: 14px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 104px;
+    margin-left: -33px;
+}
+.insideBarUpRight .lastBall {
+    width: 12px;
+    height: 12px;
+    background-color: #DF3200;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+    margin-top: 95px;
+    margin-left: 111px;
+    border: 6px solid #960001;
+}
+.insideBarUpRight .lastConect {
+    width: 14px;
+    height: 150px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -1px;
+}
+.insideBarUpRight .lastConect:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;
+    border-right: 7px solid white;
+    position: absolute;
+    margin-top: 136px;
+    margin-left: -7px;
+}
+.insideBarUpRight .web {
+    width: 41px;
+    height: 102px;
+    background-color: #FB5700;
+    position: absolute;
+    margin-top: 47px;
+    margin-left: 14px;
+}
+.insideBarUpRight .web:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 20px solid transparent;
+    border-bottom: 20px solid #FB5700;
+    border-left: 20px solid #FB5700;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -21px;
+}
+.insideBarUpRight .web:after {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #960001;
+    border-left: 7px solid #960001;
+    position: absolute;
+    margin-top: 88px;
+    margin-left: -22px;
+}
+.insideBarUpRight .webTwo {
+    width: 47px;
+    height: 115px;
+    background-color: #FB5700;
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 69px;
+    transform: skewY(45deg);
+}
+.legsStart {
+    width: 100px;
+    height: 100px;
+    background-color: #530700;
+    position: absolute;
+    margin-top: -55px;
+    margin-left: -39px;
+    z-index: -5;
+}
+.legsStart:before {
+    content: ' ';
+    width: 30px;
+    height: 65px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -71px;
+    z-index: -1;
+    border-radius: 0px 0px 11px 11px;
+}
+.legsStart:after {
+    content: ' ';
+    width: 30px;
+    height: 65px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 41px;
+    z-index: -1;
+    border-radius: 0px 0px 11px 11px;
+}
+.footStart {
+    width: 14px;
+    height: 25px;
+    background-color: #E23301;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: -13px;
+}
+.footStart:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 28px solid transparent;
+    border-top: 28px solid #E33302;
+    border-right: 28px solid #E33302;
+    position: absolute;
+    margin-top: -65px;
+    margin-left: -71px;
+    z-index: -2;
+}
+.footStart:after {
+    content: ' ';
+    width: 52px;
+    height: 38px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: -29px;
+    margin-left: -59px;
+    z-index: -2;
+    transform: skewY(45deg);
+}
+.footStartTwo {
+    width: 14px;
+    height: 25px;
+    background-color: #E23301;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 99px;
+}
+.footStartTwo:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 28px solid transparent;
+    border-top: 28px solid #E33302;
+    border-left: 28px solid #E33302;
+    position: absolute;
+    margin-top: -65px;
+    margin-left: 15px;
+    z-index: -2;
+}
+.footStartTwo:after {
+    content: ' ';
+    width: 52px;
+    height: 36px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: -27px;
+    margin-left: 7px;
+    z-index: -2;
+    transform: skewY(-45deg);
+}
+.LShelper {
+    width: 27px;
+    height: 12px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -48px;
+    transform: skewY(45deg);
+}
+.LShelper:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 6px solid transparent;
+    border-top: 6px solid #960001;
+    border-right: 6px solid #960001;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: -26px;
+    transform: skewY(-45deg);
+}
+.LShelper:after {
+    content: ' ';
+    width: 14px;
+    height: 11px;
+    background-color: #52323A;
+    position: absolute;
+    margin-top: 48px;
+    margin-left: 21px;
+    transform: skewY(-45deg);
+}
+.LShelperTwo {
+    width: 27px;
+    height: 12px;
+    background-color: #960001;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 121px;
+    transform: skewY(-45deg);
+}
+.LShelperTwo:before {
+    content: ' ';
+    width: 0px;
+    height: 0px;
+    border: 6px solid transparent;
+    border-top: 6px solid #960001;
+    border-left: 6px solid #960001;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 13px;
+    transform: skewY(45deg);
+}
+.LShelperTwo:after {
+    content: ' ';
+    width: 14px;
+    height: 11px;
+    background-color: #52323A;
+    position: absolute;
+    margin-top: 48px;
+    margin-left: -36px;
+    transform: skewY(45deg);
+}
+.foot {
+    width: 200px;
+    height: 17px;
+    background-color: #7c6369;
+    border-radius: 50px 50px 0px 0px;
+    margin-left: -50px;
+    margin-top: 100px;
+    position: absolute;
+}
+.toe {
+    width: 61px;
+    height: 9px;
+    background-color: #60434b;
+    border-radius: 11px 11px 0px 0px;
+    margin-top: 8px;
+    margin-left: 19px;
+    position: absolute;
+}
+.Ctoe {
+    width: 22px;
+    height: 17px;
+    border-radius: 17px 17px 0px 0px;
+    background-color: #60434b;
+    margin-left: 33px;
+    position: absolute;
+    z-index: 1;
+}
+.toeTwo {
+    width: 61px;
+    height: 9px;
+    background-color: #60434b;
+    border-radius: 11px 11px 0px 0px;
+    margin-top: 8px;
+    margin-left: 117px;
+    position: absolute;
+}
+.CtoeTwo {
+    width: 22px;
+    height: 17px;
+    border-radius: 17px 17px 0px 0px;
+    background-color: #60434b;
+    margin-left: 143px;
+    position: absolute;
+    z-index: 1;
+}
+.particles {
+    width: 135px;
+    height: 45px;
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    line-height: 22px;
+    font-size: 20px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'HelveticaNeue-UltraLight', 'Open Sans', 'Helvetica Neue UltraLight', Roboto, Arial, Sans-serif;
+    color: #151B1F;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+a { color: #1abc9c; }
+</style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+<div id="DRAGON">
+    <div id="SELECT">
+        <div class="headStart">
+            <div class="HSotherSideStart"></div>
+            <div class="HSotherSide"></div>
+            <div class="horn"></div>
+            <div class="pokeSpike">
+                <div class="PSright"></div>
+            </div>
+            <div class="leftSideFace">
+                <div class="LSFeye"></div>
+            </div>
+            <div class="rightSideFace">
+                <div class="RSFeye"></div>
+            </div>
+            <div class="snout">
+                <div class="SNwrap">
+                    <div class="nost"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wingsStart">
+            <div class="WSleftBall">
+                <div class="insideBarUpLeft">
+                    <div class="ball"></div>
+                    <div class="skewBarOut"></div>
+                    <div class="webHold">
+                        <div class="conect"></div>
+                    </div>
+                    <div class="lastBall">
+                        <div class="lastConect"></div>
+                    </div>
+                    <div class="web"></div>
+                    <div class="webTwo"></div>
+                </div>
+            </div>
+            <div class="WSleftBallTwo">
+                <div class="insideBarUpRight">
+                    <div class="ball"></div>
+                    <div class="skewBarOut"></div>
+                    <div class="webHold">
+                        <div class="conect"></div>
+                    </div>
+                    <div class="lastBall">
+                        <div class="lastConect"></div>
+                    </div>
+                    <div class="web"></div>
+                    <div class="webTwo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bellyStart">
+            <div class="BSstripeTwo"></div>
+            <div class="BSstripe"></div>
+            <div class="BSround">
+                <div class="BSRright"></div>
+            </div>
+            <div class="BStop"></div>
+        </div>
+        <div class="belt"></div>
+    </div>
+    <div class="legsStart">
+        <div class="LShelper"></div>
+        <div class="LShelperTwo"></div>
+        <div class="footStart"></div>
+        <div class="footStartTwo"></div>
+        <div class="foot">
+            <div class="toe"></div>
+            <div class="Ctoe"></div>
+            <div class="toeTwo"></div>
+            <div class="CtoeTwo"></div>
+        </div>
+    </div>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

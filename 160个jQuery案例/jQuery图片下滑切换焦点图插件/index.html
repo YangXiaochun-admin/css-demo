@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery图片下滑切换焦点图插件DEMO演示</title>
+<link rel="stylesheet" href="css/base.css" type="text/css">
+<link rel="stylesheet" href="css/slider.css" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.slider.pack.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+	jQuery('#cycle-prev, #cycle-next').css({opacity: '0'});
+	jQuery('.cycleslider-wrap').hover(function(){
+		jQuery('#cycle-prev',this).stop().animate({left: '-31', opacity: '1'},200,'easeOutCubic');
+		jQuery('#cycle-next',this).stop().animate({right: '-31', opacity: '1'},200,'easeOutCubic');	 
+	}, function() {
+		jQuery('#cycle-prev',this).stop().animate({left: '-50', opacity: '0'},400,'easeInCubic');
+		jQuery('#cycle-next',this).stop().animate({right: '-50', opacity: '0'},400,'easeInCubic');		
+	});
+	
+	jQuery(".cycleslider-wrap").fadeIn(1000);
+	jQuery(".slider-wrap .loader").css({display: "none"});
+	jQuery("#slider").cycle({
+		fx:  "scrollDown",
+		speed:  "800", 
+		timeout: "1000",
+		easing:  "easeOutBounce",
+		next:  "#cycle-next",
+		prev:  "#cycle-prev",
+		pager:  "#cycle-nav"
+	});
+
+});
+</script>
+<style>
+.slider-wrap {
+    width: 990px;
+    margin: 30px auto
+}
+</style>
+</head>
+<body>
+<div class="slider-wrap col-width">
+    <div class="cycleslider-wrap" style="display: block;">
+        <div id="slider" class="cycleslider" style="position: relative; width: 970px; height: 350px;">
+            <div class="cycle-slider"><a href="http://js.itivy.com/"><img src="./images/1.jpg" width="970" height="350" alt="用最少的代码完成对多的事情"></a></div>
+            <div class="cycle-slider"><a href="http://js.itivy.com/"><img src="images/2.jpg" width="970" height="350" alt="为客户创造价值就是我们存在的价值"></a></div>
+            <div class="cycle-slider"><a href="http://js.itivy.com/"><img src="./images/1.jpg" width="970" height="350" alt="用最少的代码完成对多的事情"></a></div>
+            <div class="cycle-slider"><a href="http://js.itivy.com/"><img src="images/2.jpg" width="970" height="350" alt="为客户创造价值就是我们存在的价值"></a></div>
+        </div>
+        <a id="cycle-prev" href="#" style="opacity: 0; left: -50px;">Prev</a> <a id="cycle-next" href="#" style="opacity: 0; right: -50px;">Next</a>
+        <div id="cycle-nav"> </div>
+    </div>
+    <div class="loader" style="display: none;"></div>
+</div>
+</body>
+</html>

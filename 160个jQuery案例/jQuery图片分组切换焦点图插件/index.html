@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery图片分组切换焦点图插件DEMO演示</title>
+<link href="css/zzsc.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="device">
+    <h2><a href="javascript:;" class="pre">上一组</a><a href="javascript:;" class="next">下一组</a></h2>
+    <div class="scroll">
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/5.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/1.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/5.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/1.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/5.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/1.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+            <li><a href="#"><img src="images/5.jpg" /></a><a href="#" class="link">HTML5资源教程</a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script> 
+<script>
+$(function(){
+	var $number = Math.ceil($('.scroll ul li').length/4); //获取滚动几屏个数
+	var margin = 10; //设置图片间距
+	var $w = $('.scroll li').width() + margin; // 一屏图片的宽度
+	var $width = $w*$number*2; //设置ul宽度
+	var pre = $('.device .pre');
+	var next = $('.device .next');
+	if($number ==1){pre.hide();next.hide();}
+	$('.scroll ul').width($width);
+	var num = 0;
+	function autoscroll(){
+		num++;
+		if($number ==1){return false}
+		if(num ==$number){
+			num = 0;	
+		}
+		var distance = -2*$w * num;
+		$('.scroll ul').stop().animate({left:distance});
+	}
+	var scrollChange = setInterval(autoscroll,8000);
+	//鼠标悬停，暂停滚动
+	$(".scroll ul,.pre,.next").mouseover(function(){ 
+		$('.scroll ul').stop()
+		clearInterval(scrollChange);
+	});
+	// 鼠标移走，滚动继续
+	$('.scroll ul,.pre,.next').mouseout(function(){ 
+		scrollChange = setInterval(autoscroll,8000);
+	});
+	
+	//下一组
+	next.click(function(){
+		num++;
+		if(num >= $number){num = 0}
+		var leftdis = -2*$w * num;
+		$('.scroll ul').stop().animate({left:leftdis});
+	});
+	//上一组
+	pre.click(function(){
+		num--;
+		if(num < 0){num = $number-1}
+		var rightdis = -2*$w * num;
+		$('.scroll ul').stop().animate({left:rightdis});
+	});
+	
+});
+</script>
+</body>
+</html>

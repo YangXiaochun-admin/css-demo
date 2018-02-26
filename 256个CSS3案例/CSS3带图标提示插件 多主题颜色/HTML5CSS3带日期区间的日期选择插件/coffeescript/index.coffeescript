@@ -1,0 +1,207 @@
+$ = jQuery
+DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+TEMPLATE = """
+  <div class="drp-popup">
+    <div class="drp-timeline">
+      <ul class="drp-timeline-presets"></ul>
+      <div class="drp-timeline-bar"></div>
+    </div>
+    <div class="drp-calendars">
+      <div class="drp-calendar drp-calendar-start">
+        <div class="drp-month-picker">
+          <div class="drp-arrow"><</div>
+          <div class="drp-month-title"></div>
+          <div class="drp-arrow drp-arrow-right">></div>
+        </div>
+        <ul class="drp-day-headers"></ul>
+        <ul class="drp-days"></ul>
+        <div class="drp-calendar-date"></div>
+      </div>
+      <div class="drp-calendar-separator"></div>
+      <div class="drp-calendar drp-calendar-end">
+        <div class="drp-month-picker">
+          <div class="drp-arrow"><</div>
+          <div class="drp-month-title"></div>
+          <div class="drp-arrow drp-arrow-right">></div>
+        </div>
+        <ul class="drp-day-headers"></ul>
+        <ul class="drp-days"></ul>
+        <div class="drp-calendar-date"></div>
+      </div>
+    </div>
+    <div class="drp-tip"></div>
+  </div>
+"""
+
+class DateRangePicker
+  constructor: (@$select) ->
+    @$dateRangePicker = $(TEMPLATE)
+    @$select
+      .attr('tabindex', '-1')
+      .before @$dateRangePicker
+    @isHidden = true
+    @customOptionIndex = @$select[0].length-1
+    @initBindings()
+    @setRange @$select.val()
+
+  initBindings: ->
+    self = @
+    # Prevent the select dropdown from appearing
+    @$select.on 'focus mousedown', (e) ->
+      $select = @
+      setTimeout ->
+        $select.blur()
+      , 0
+      return false
+    # show/hide logic for the popup
+    @$dateRangePicker.click (evt) ->
+      evt.stopPropagation()
+    $('body').click (evt) ->
+      if evt.target == self.$select[0] && self.isHidden
+        self.show()
+      else if !self.isHidden
+        self.hide()
+
+    # Timeline buttons
+    @$select.children().each ->
+      self.$dateRangePicker.find('.drp-timeline-presets').append $("<li class='#{(@.selected && 'drp-selected') || ''}'>#{$(@).text()}<div class='drp-button'></div></li>")
+    @$dateRangePicker.find('.drp-timeline-presets li').click (evt) ->
+      $(@).addClass('drp-selected').siblings().removeClass('drp-selected')
+      presetIndex = $(@).index()
+      self.$select[0].selectedIndex = presetIndex
+      self.setRange self.$select.val()
+      self.showCustomDate() if presetIndex == self.customOptionIndex
+  hide: ->
+    @isHidden = true
+    @$dateRangePicker.hide()
+  show: ->
+    @isHidden = false
+    @$dateRangePicker.show()
+  showCustomDate: ->
+    @$dateRangePicker.find('.drp-timeline-presets li:last-child').addClass('drp-selected').siblings().removeClass('drp-selected')
+    text = @formatDate(@startDate()) + ' - ' + @formatDate(@endDate())
+    @$select.find('option:last-child').text text
+    @$select[0].selectedIndex = @customOptionIndex
+  formatDate: (d) ->
+    "#{d.getMonth() + 1}/#{d.getDate()}/#{d.getFullYear().toString().substr(2,2)}"
+  setRange: (daysAgo) ->
+    return false if isNaN daysAgo
+    daysAgo -= 1
+    endDate = new Date()
+    startDate = new Date()
+    startDate.setDate(endDate.getDate() - daysAgo)
+    @startCalendar = new Calendar(@, @$dateRangePicker.find('.drp-calendar:first-child'), startDate, true)
+    @endCalendar = new Calendar(@, @$dateRangePicker.find('.drp-calendar:last-child'), endDate, false)
+    @draw()
+  endDate: ->
+    @endCalendar.date
+  startDate: ->
+    @startCalendar.date
+  draw: ->
+    @startCalendar.draw()
+    @endCalendar.draw()
+
+
+class Calendar
+  constructor: (@dateRangePicker, @$calendar, @date, @isStartCalendar) ->
+    self = @
+    @date.setHours(0,0,0,0)
+    @_visibleMonth = @month()
+    @_visibleYear = @year()
+    @$title = @$calendar.find('.drp-month-title')
+    @$dayHeaders = @$calendar.find('.drp-day-headers')
+    @$days = @$calendar.find('.drp-days')
+    @$dateDisplay = @$calendar.find('.drp-calendar-date')
+    $calendar.find('.drp-arrow').click (evt) ->
+      if $(@).hasClass('drp-arrow-right') then self.showNextMonth() else self.showPreviousMonth()
+      return false
+  showPreviousMonth: ->
+    if @_visibleMonth == 1
+      @_visibleMonth = 12
+      @_visibleYear -= 1
+    else
+      @_visibleMonth -= 1
+    @draw()
+  showNextMonth: ->
+    if @_visibleMonth == 12
+      @_visibleMonth = 1
+      @_visibleYear += 1
+    else
+      @_visibleMonth += 1
+    @draw()
+  setDay: (day) ->
+    @setDate(@visibleYear(), @visibleMonth(), day)
+    @dateRangePicker.showCustomDate()
+  setDate: (year, month, day) ->
+    @date = new Date(year, month - 1, day)
+    @dateRangePicker.draw()
+  draw: ->
+    @$dayHeaders.empty()
+    # set month name
+    @$title.text "#{@nameOfMonth(@visibleMonth())} #{@visibleYear()}"
+    # populate day headers
+    @$dayHeaders.append($("<li>#{day.substr(0,2)}</li>")) for day in DAYS
+    @drawDateDisplay()
+    @drawDays()
+  dateIsSelected: (date) ->
+    date.getTime() == @date.getTime()
+  dateIsInRange: (date) ->
+    date >= @dateRangePicker.startDate() && date <= @dateRangePicker.endDate()
+  dayClass: (day, firstDayOfMonth, lastDayOfMonth) ->
+    date = new Date(@visibleYear(), @visibleMonth()-1, day)
+    classes = ''
+    if @dateIsSelected(date)
+      classes = 'drp-day-selected'
+    else if @dateIsInRange(date)
+      classes = 'drp-day-in-range'
+      if date.getTime() == @dateRangePicker.endDate().getTime()
+        classes += ' drp-day-last-in-range'
+    else if @isStartCalendar
+      if date > @dateRangePicker.endDate()
+        classes += ' drp-day-disabled'
+    else if date < @dateRangePicker.startDate()
+      classes += ' drp-day-disabled'
+    if (day+firstDayOfMonth-1)%7 == 0 || day == lastDayOfMonth
+      classes += ' drp-day-last-in-row'
+
+    return classes
+  drawDays: ->
+    self = @
+    @$days.empty()
+    firstDayOfMonth = @firstDayOfMonth(@visibleMonth(), @visibleYear())
+    lastDayOfMonth = @daysInMonth(@visibleMonth(), @visibleYear())
+    @$days.append($("<li class='drp-day drp-day-empty'></li>")) for i in [1..firstDayOfMonth-1] by 1
+    @$days.append($("<li class='drp-day #{@dayClass(i,firstDayOfMonth,lastDayOfMonth)}'>#{i}</li>")) for i in [1..lastDayOfMonth] by 1
+    @$calendar.find('.drp-day').click (evt) ->
+      return false if $(@).hasClass('drp-day-disabled')
+      day = parseInt($(@).text(), 10)
+      return false if isNaN(day)
+      self.setDay(day)
+  drawDateDisplay: ->
+    @$dateDisplay.text [@month(), @day(), @year()].join('/')
+  month: ->
+    @date.getMonth() + 1
+  day: ->
+    @date.getDate()
+  dayOfWeek: ->
+    @date.getDay() + 1
+  year: ->
+    @date.getFullYear()
+  visibleMonth: ->
+    @_visibleMonth
+  visibleYear: ->
+    @_visibleYear
+  nameOfMonth: (month) ->
+    MONTHS[month-1]
+  firstDayOfMonth: (month, year) ->
+    new Date(year, month - 1, 1).getDay() + 1
+  daysInMonth: (month, year) ->
+    month ||= @visibleMonth()
+    year ||= @visibleYear()
+    new Date(year, month, 0).getDate()
+
+$.fn.dateRangePicker = ->
+  new DateRangePicker(@)
+
+$('.custom-date').dateRangePicker()

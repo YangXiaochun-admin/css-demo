@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery图片从下往上滚动效果</title>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.box .box1').mouseover(function(){
+		$(this).stop().animate({"top":"-514px"}, 200); 
+	})
+	$('.box .box1').mouseout(function(){
+		$(this).stop().animate({"top":"0"}, 200); 
+	})
+})
+</script>
+</head>
+<body>
+<div id="in_ct"> 
+    <!----------in_ct开始---------->
+    <div class="in_ct"> 
+        <!----------in_ct1 开始---------->
+        <div class="in_ct1">
+            <ul class="box">
+                <li>
+                    <div class="box1">
+                        <div class="toll_img"><img src="images/in_img1.jpg" width="272" height="514"/></div>
+                        <div class="toll_info"><a href="http://sc.chinaz.com/jiaoben/" target="_blank"><img src="images/in_img1_ho.jpg" height="514" width="272" /></a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box1">
+                        <div class="toll_img"><img src="images/in_img2.jpg" width="272" height="514"/></div>
+                        <div class="toll_info"><a href="http://sc.chinaz.com/jiaoben/" target="_blank"><img src="images/in_img2_ho.jpg" height="514" width="272" /></a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box1">
+                        <div class="toll_img"><img src="images/in_img3.jpg" width="272" height="514"/></div>
+                        <div class="toll_info"><a href="http://sc.chinaz.com/jiaoben/" target="_blank"><img src="images/in_img3_ho.jpg" height="514" width="272" /></a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box1">
+                        <div class="toll_img"><img src="images/in_img4.jpg" width="272" height="514"/></div>
+                        <div class="toll_info"><a href="http://sc.chinaz.com/jiaoben/" target="_blank"><img src="images/in_img4_ho.jpg" height="514" width="272" /></a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!----------in_ct1 结束----------> 
+    </div>
+    <!----------in_ct结束----------> 
+</div>
+</body>
+</html>

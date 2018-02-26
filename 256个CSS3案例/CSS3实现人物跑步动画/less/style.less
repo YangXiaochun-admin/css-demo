@@ -1,0 +1,214 @@
+@bgcolor: #1D1F20;
+@color: #fff;
+@side: 300;
+@height: unit( @side, px);
+@width: unit( @side, px);
+
+body, html {
+  background-color: @bgcolor;
+  color:@color;
+}
+
+.moon {
+  position:absolute;
+  top:0;
+  right:0;
+}
+.container {
+  height:@height;
+  width:@width;
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  margin:auto;
+}
+
+.person {
+  position:absolute;
+  height: unit(@side * 0.25, px);
+  width:0;
+  color: #fff;
+  left:unit(@side * 0.5, px);
+  top:unit(@side * 0.53, px);
+  transform-origin: 50% 50% 0px;
+  -webkit-animation: sprint 2s infinite ease-in;
+  .head:before {
+    content:"";
+    position:absolute;
+    top: unit( @side * 0, px);
+    left: unit( @side * -0.02, px);
+    height: unit(@side * 0.009, px);
+    width: unit(@side * 0.14, px);
+    border-radius:20%;
+    border:4px solid white;
+    background-color: #fff;
+    transform-origin: 50% 100% 0px;
+    z-index: 90;
+  }
+  .head {
+    position:absolute;
+    top: unit( @side * -.1, px);
+    left: unit( @side * -0.02, px);
+    height: unit(@side * 0.1, px);
+    width: unit(@side * 0.1, px);
+    border-radius:50%;
+    border:4px solid white;
+    transform-origin: 50% 100% 0px;
+    z-index: 90;
+    -webkit-animation: bob 2s infinite alternate;
+  }
+
+  .head:after {
+    content:"";
+    position:absolute;
+    top: unit( @side * -0.04, px);
+    left: unit( @side * .03, px);
+    height: unit(@side * 0.04, px);
+    width: unit(@side * 0.05, px);
+    border-radius:30%;
+    border:4px solid white;
+    background-color: #fff;
+    z-index: 90;
+  }
+
+.torso {
+    position:absolute;
+    height: unit(@side * 0.2, px);
+    width:0;
+    border-left:2px solid white;
+    left:unit(@side * 0, px);
+    top:unit(@side * 0.05, px);
+    z-index: 90;
+  }
+  
+  .part {
+    position: absolute;
+    left:0;
+    top:unit(@side * 0.25, px);
+    z-index: 90;
+    &.arm{
+      position:absolute;
+      border-left:3px solid white;
+      border-bottom:3px solid white;
+      height: unit(@side * 0.15, px);
+      width: unit(@side * 0.13, px);
+      top:unit(@side * 0.05, px);
+      right: unit(@side * 1, px);
+      transform-origin: 0% 0% 0px;
+      -webkit-animation: pump 1s infinite ease-in-out;
+
+      &.one{
+        transform: rotate3d(0, 0, 1, -90deg);
+      }
+      &.two{
+        transform: rotate3d(0, 0, 1, -90deg);
+        animation-delay: .5s;
+      }
+    }
+    
+    &.leg{    
+      height: unit(@side * 0.19, px);
+      width: unit(@side * 0.2, px);
+      border-right:3px solid white;
+      border-top:3px solid white;
+      -webkit-animation: run 1s infinite ease-in;
+      transform-origin: 0% 0% 0px;
+      
+
+      &.one{
+        transform: rotate3d(0, 0, 1, 90deg);
+      }
+    &.two{
+      transform: rotate3d(0, 0, 1, 80deg);
+      animation-delay: .5s;
+      }
+    }
+    .foot {
+      position:absolute;
+      top:90px;
+      left:0;
+      width: unit(@side * 0.01, px);
+      height: unit(@side * 0.01, px);
+      background-color:@color;
+      z-index:900;
+      border:3px solid red;
+
+    }
+    
+  }
+}
+
+
+@keyframes run {
+  0% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 150deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+}
+
+
+@keyframes bob {
+  0% {
+    transform: rotate3d(0, 0, 1, 5deg) ;
+  }
+  25% {
+    transform: rotate3d(0, 0, 1, -30deg) skew(15deg, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 5deg) ;
+  }
+  75% {
+    transform: rotate3d(0, 0, 1, -30deg) skew(15deg, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 20deg) skew(-15deg, 0deg);
+  }
+}
+
+@keyframes pump {
+  0% {
+    transform: rotate3d(0, 0, 1, 80deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, -70deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 80deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate3d(0, 0, 1, -180deg);
+  }
+  25% {
+    transform: rotate3d(0, 0, 1, -100deg);
+  }
+  
+  75% {
+    transform: rotate3d(0, 0, 1, 100deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+}
+
+@keyframes sprint {
+  0% {
+    transform-origin: 50% 50% 0px;
+  transform: translate(-500px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+    transform-origin: 50% 50% 0px;
+transform: translate(500px, 0px);}
+}
+

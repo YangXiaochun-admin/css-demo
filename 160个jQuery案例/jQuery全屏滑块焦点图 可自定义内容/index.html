@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery全屏图片滑动切换</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+<style type="text/css">
+/* ie6 png */
+.mypng img {
+azimuth: expression( this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none", this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')", this.src = "transparent.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("', '').replace('")', ''), this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')", this.runtimeStyle.backgroundImage = "none")), this.pngSet=true);
+}
+</style>
+<div id="focusBar"> <a href="javascript:void(0)" class="arrL" onclick="prePage()">&nbsp;</a> <a href="javascript:void(0)" class="arrR" onclick="nextPage()">&nbsp;</a>
+    <ul class="mypng">
+        <li id="focusIndex1" style="background:url(images/483a26db99919a40eee1f0dd652ad53b.gif) repeat-x;">
+            <div class="focusL"><a href="#"><img src="images/0240ddc5fa163156719b498c45d4ded2.png" width="1000" height="644" /></a></div>
+            <div class="focusR"><a href="#"><img src="images/2a18e9128aad06d0b6b8d908ecf7c2a1.png" width="1000" height="644" /></a></div>
+        </li>
+        <li id="focusIndex2">
+            <div class="focusL"><a href="#"><img src="images/2d20716b5ecc36c5c9e35a7dfc1834a4.png" width="1000" height="644" /></a></div>
+            <div class="focusR"><a href="#"><img src="images/2a18e9128aad06d0b6b8d908ecf7c2a1.png" width="1000" height="644" /></a></div>
+        </li>
+        <li id="focusIndex3" style="background:url(images/8bc531a341bac9421a25093ccf376e7d.gif) repeat-x;">
+            <div class="focusL"><a href="#"><img src="images/b249cfb8cebc4696d7a317181b823eb3.png" width="1000" height="644" /></a></div>
+            <div class="focusR"><a href="#"><img src="images/dc0e4583d9af6915d306cabb9ac6df64.png" width="1000" height="644" /></a></div>
+        </li>
+        <li id="focusIndex4" style="background:url(images/8bc531a341bac9421a25093ccf376e7d.gif) repeat-x;">
+            <div class="focusL"><a href="#"><img src="images/b249cfb8cebc4696d7a317181b823eb3.png" width="1000" height="644" /></a></div>
+            <div class="focusR"><a href="#"><img src="images/dc0e4583d9af6915d306cabb9ac6df64.png" width="1000" height="644" /></a></div>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

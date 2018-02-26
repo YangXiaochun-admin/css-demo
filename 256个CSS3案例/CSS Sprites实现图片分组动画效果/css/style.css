@@ -1,0 +1,131 @@
+pre#data {
+  display: none;
+}
+
+.label, .axis {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: smaller;
+  fill: #545454;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  display: none;
+}
+
+.tick line {
+  stroke: rgba(84, 84, 84, 0.2);
+  stroke-width: 1;
+}
+
+.grid .tick {
+  stroke: #545454;
+}
+
+.grid line {
+  stroke-width: .5;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+#bestfit {
+  stroke: #ddd;
+  stroke-width: 10px;
+}
+
+.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+.flag {
+  position: absolute;
+  /*transform*/
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.g-container {
+  margin: 20px auto;
+  position: relative;
+  width: 960px;
+  height: 548px;
+}
+
+.g-menu {
+  margin: 20px 300px;
+}
+
+.g-dados {
+  top: 600px;
+  height: 50px;
+  width: 960px;
+  background: #f7f7f7;
+  /*border-radius*/
+  border-radius: 5px;
+}
+
+.g-dados dl {
+  position: static;
+}
+
+.g-dados span {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #f0f0f0;
+}
+
+.g-dados span dt {
+  margin-left: 20px;
+  position: relative;
+  top: 15px;
+  font-size: 13px;
+  color: #545454;
+}
+
+.g-dados span dd {
+  position: relative;
+  margin-right: 20px;
+  top: 7px;
+  /*transform*/
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+}
+
+.g-dados dt, .g-dados dd {
+  position: relative;
+  top: 16px;
+  display: inline-block;
+  font-family: Helvetica;
+  font-size: 13px;
+}
+
+.g-dados dt {
+  margin-left: 45px;
+  font-size: 11px;
+  color: #b7b7b7;
+}
+
+.g-dados dt:first-of-type {
+  margin-left: 20px;
+}
+
+.g-dados dd {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #545454;
+}

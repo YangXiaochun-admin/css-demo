@@ -1,0 +1,98 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$red:   #E0645C;
+$dark:  #444444;
+$light: #999999;
+$blue:  #2DB6CF;
+$green: #46b98a;
+$white: #FFFFFF;
+
+$arial: Arial,sans-serif;
+$font-face: 'Open Sans', sans-serif;
+
+body {
+  background: #262626;
+  font-family: $arial;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-face;
+  font-size: 27px;
+  color: $dark;
+  font-weight: 700;
+  span {
+    font-weight: 400;
+  }
+}
+
+.container {
+  width: 735px;
+  margin: 50px auto;
+  background: whitesmoke;
+  padding: 25px;
+}
+
+.button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 16.795%; /* auto */
+  text-align: center; /* DELETE WHEN WIDTH AUTO */
+  &.red {
+    background: none repeat scroll 0 0 $red;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $light;
+      color: $white;
+    }
+  }
+  &.dark {
+    background: none repeat scroll 0 0 $dark;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $blue;
+      color: $white;
+    }
+  }
+  &.light {
+    background: none repeat scroll 0 0 $light;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+  &.green {
+    background: none repeat scroll 0 0 $green;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+  &.blue {
+    background: none repeat scroll 0 0 $blue;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Bootstrap响应式下拉菜单DEMO演示</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://code.jquery.com/jquery-2.1.1.min.js'></script> 
+<script type='text/javascript' src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<style>
+		h1 {font-size:40px;line-height:1.5;padding:0;margin:30px 0;}
+		.navbar-nav > li > a:hover {background:#555 !important;color:#fff !important;}
+		.navbar-nav > li:last-of-type > a {border:0;}
+		@media ( min-width: 768px) {
+			.navbar-nav > li > a {text-align:center;border-right:1px solid rgba(0,0,0,0.1)}
+		}
+    </style>
+<div class="container">
+    <h1>Twitter Bootstrap Equidistant Navbar</h1>
+    <nav class="navbar navbar-default equinav" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <span class="navbar-brand">Menu</span> </div>
+        <!-- /.navbar-header -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">How  It Works</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                    <ul class="dropdown-menu depth_0">
+                        <li><a href="#">Feature 1</a></li>
+                        <li><a href="#">Feature 1</a></li>
+                        <li><a href="#">Feature 1</a></li>
+                        <li><a href="#">Feature 1</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">What&#8217;s Included</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse --> 
+    </nav>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

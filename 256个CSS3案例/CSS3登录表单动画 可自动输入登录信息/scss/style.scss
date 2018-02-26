@@ -1,0 +1,379 @@
+@import "compass/css3";
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,300,100);
+
+// Mixins
+@mixin keyframes($animationName) {
+    @-webkit-keyframes $animationName {
+        @content;
+    }
+    @-moz-keyframes $animationName {
+        @content;
+    }
+    @keyframes $animationName {
+        @content;
+    }
+}
+@mixin animation($content) {
+	-webkit-animation: $content;
+	-moz-animation: $content;
+	animation: $content;
+}
+@mixin animation-delay($content) {
+    -webkit-animation-delay: $content;
+    -moz-animation-delay: $content;
+    animation-delay: $content;
+}
+@mixin animation-timing-function($content) {
+    -webkit-animation-timing-function: $content;
+    -moz-animation-timing-function: $content;
+    animation-timing-function: $content;
+}
+
+
+
+// Variables
+$global-radius: 3px;
+$global-transition-duration: .2s;
+
+$window-padding: 60px;
+$window-anim-dur: 1.5s;
+
+$global-overflow-timing-function: cubic-bezier(0.015, 0.695, 0.340, 1.365);
+
+$color-pink: #D85C89;
+
+
+// Basics
+html, body {
+	height: 100%;
+}
+body {
+	@include background-image(radial-gradient(ellipse closest-side, #FFFFFF, #D4E2AF));
+	@include perspective(1000px);
+	font-family: 'Open Sans';
+	font-weight: 300;
+}
+
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+// Animated window
+#window {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 350px;
+	width: 450px;
+	color: #FFF;
+	@include animation(#{$window-anim-dur} window ease-in-out backwards);
+	@include transform-style(preserve-3d);
+	@include transition-property(height width);
+
+	&, .page, .page-content {
+		@include transition-duration(1s);
+	}
+
+	&.flip {
+		height: 460px;
+		width: 350px;
+		
+		.page-front {
+			@include transform(rotateX(180deg));
+		}
+		.page-back {
+			@include transform(rotateX(360deg));
+
+			.page-content {
+				opacity: 1;
+			}
+
+			.avatar, .welcome, .perspective {
+				opacity: 1;
+				@include transform(none);
+				@include transition-duration($global-transition-duration*3);
+			}
+
+			.avatar {
+				@include transition-delay(.8s);
+			}
+			.welcome {
+				@include transition-delay(.8s);
+			}
+			.perspective {
+				@include transition-delay(.9s);
+			}
+		}
+	}
+
+	.page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+
+		@include transform-style(preserve-3d);
+		@include backface-visibility(hidden);
+		@include transform(translateZ(0)); // To enable backface-visibility
+
+		background: #444; // IE support
+		@include background-image(linear-gradient(bottom, #444, #333));
+		@include border-radius($global-radius*2);
+		padding: $window-padding;
+	}
+	.page-front {
+		
+	}
+	.page-back {
+		text-align: center;
+		@include transform(rotateX(180deg));
+
+		.page-content {
+			opacity: 0;
+		}
+
+		.avatar {
+			height: 150px;
+			width: 150px;
+			border: 5px solid #FFF;
+			margin: 30px auto 40px auto;
+			display: block;
+			opacity: 0;
+			@include transform(scale(.1));
+			@include border-radius(1000px);
+		}
+
+		.welcome {
+			font-size: 22px;
+			margin-bottom: 40px;
+		}
+
+		.welcome, .perspective {
+			opacity: 0;
+			@include transform(translateY(-30px));
+		}
+	}
+
+	.input-row {
+		margin: 0 0 30px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.perspective {
+		@include perspective(1000px);
+	}
+
+	.label {
+		font-family: sans-serif;
+		text-transform: uppercase;
+		font-size: 12px;
+		margin: 0 0 10px 0;
+		color: #FFF;
+		display: block;
+		cursor: pointer;
+	}
+
+	.input {
+		padding: 0 15px;
+		height: 40px;
+		line-height: 40px;
+		outline: none;
+		border: 0;
+		background: #FFF;
+		display: block;
+		width: 100%;
+		@include border-radius($global-radius);
+		@include transition-duration($global-transition-duration);
+
+		&:focus, &.fyll-focus {
+			@include box-shadow(0 0 0 3px $color-pink);
+		}
+	}
+
+	.button {
+		height: 50px;
+		line-height: 50px;
+		padding:  0 20px;
+		margin: 0;
+		text-align: center;
+		color: #FFF;
+		border: 0;
+		display: block;
+		width: 100%;
+		outline: none;
+		cursor: pointer;
+		overflow: hidden;
+		font-size: 17px;
+		background: #D85C89; // IE support
+		@include border-radius($global-radius);
+		@include background-image(linear-gradient(bottom, #D85C89, #E7779F));
+		@include box-shadow(inset 0 1px 0 0 rgba(255,255,255,.4), 0 0 4px rgba(0,0,0,.5));
+		@include transition-duration(.1s);
+		@include transform-style(preserve-3d);
+		@include transform-origin(bottom);
+		@include transform(translateZ(0));
+		@include backface-visibility(hidden);
+	
+		// Icon
+		i {
+			margin-right: 10px;
+		}
+
+		&:active, &.fyll-focus {
+			background: #D85C89; // IE support
+			@include background-image(linear-gradient(bottom, #D85C89, #D85C89));
+			@include transform(rotateX(20deg));
+		}
+
+		&.inline {
+			width: auto;
+			display: inline-block;
+		}
+
+		&.load-btn {
+			.default, .load-state {
+				@include transition-duration($global-transition-duration);
+			}
+			.load-state {
+				position: absolute;
+				top: -50px;
+				left: 0;
+				right: 0;
+				height: 100%;
+				text-align: center;
+				line-height: 50px;
+				pointer-events: none;
+
+				.ball {
+					height: 10px;
+					width: 10px;
+					margin-right: 10px;
+					background: #FFF;
+					display: inline-block;
+					@include border-radius(1000px);
+					@include animation(ballBounce .3s alternate infinite);
+					@include animation-timing-function(cubic-bezier(.2, .4, .3, 1));
+					@include transition-duration(.3s);
+	  
+					&:nth-child(2n) {
+						@include animation-delay(.05s);
+					}
+					&:nth-child(3n) {
+						@include animation-delay(.1s);
+					}
+
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+
+			&.done {
+				.ball {
+					opacity: 0;
+				}
+			}
+
+			&.loading {
+				.default {
+					@include transform(translateY(50px));
+					opacity: 0;
+				}
+				.load-state {
+					@include transform(translateY(50px));
+				}
+			}
+		}
+	}
+}
+
+.browser-warning {
+	background: rgba(0, 0, 0, 0.7);
+	padding: 15px 0;
+	color: #FFF;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 530px;
+	text-align: center;
+	@include border-radius($global-radius);
+	@include transition-duration(.5s);
+	@include transition-timing-function($global-overflow-timing-function);
+
+	&.hidden {
+		opacity: 0;
+		@include transform(scale(0.2));
+	}
+}
+
+
+
+.fadeIn {
+	@include animation(1s fadeIn $global-overflow-timing-function backwards);
+	@include animation-delay($window-anim-dur);
+}
+.delay1 {
+	@include animation-delay(($window-anim-dur + .1s));
+}
+.delay2 {
+	@include animation-delay(($window-anim-dur + .2s));
+}
+.delay3 {
+	@include animation-delay(($window-anim-dur + .3s));
+}
+.delay4 {
+	@include animation-delay(($window-anim-dur + .4s));
+}
+
+
+@include keyframes(window) {
+	0% {
+		@include transform(scale(0) rotateX(360deg));
+		height: 150px;
+		width: 150px;
+	}
+	50% {
+		@include transform(none);
+		height: 150px;
+	}
+	75% {
+		height: 350px;
+		width: 150px;
+	}
+	100% {
+		width: 450px;
+	}
+}
+
+@include keyframes(fadeIn) {
+	0% {
+		opacity: 0;
+		@include transform(translateY(30px));
+	}
+	100% {
+		opacity: 1;
+		@include transform(none);
+	}
+}
+@include keyframes(ballBounce) {
+  0% {
+    @include transform(translateY(25%));
+  }
+  100% {
+    @include transform(translateY(-75%));
+  }
+}

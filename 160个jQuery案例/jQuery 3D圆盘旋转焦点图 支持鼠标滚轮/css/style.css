@@ -1,0 +1,174 @@
+body
+{
+	background-color:#F1F1F1;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#999;
+	margin: 0px;
+}
+
+
+h2
+{
+	font-size:16px;
+	color:#666;
+	text-shadow:1px 1px 1px #fff;
+}
+
+
+#wide-wrapper
+{
+	background:url(bg.jpg) repeat-x;
+	height:520px;
+}
+
+
+#header
+{
+	width:280px;
+	margin:0px auto;
+	padding-top:75px;
+}
+
+
+#carousel
+{
+	width:870px;
+	height:450px;
+	margin:0px auto;
+	padding:0px;
+}
+
+/*
+arranges the images in a grid
+
+this style will be applied only before the 
+carousel is instantiated or if the user doesn't have
+javascript enabled;
+
+feel free to replace this style with your preferred one
+*/
+#carousel
+{
+	list-style:none;
+	padding:0px;
+}
+
+#carousel li
+{
+	float:left;
+}
+
+#carousel .tooltip, #carousel .bigImage, #carousel .title, #carousel .description
+{
+	position:absolute;
+	left:-9999px;
+}
+
+
+#text
+{
+	width:650px;
+	margin:0px auto;
+	margin-top:-20px;
+}
+
+
+#text p
+{	
+	padding: 5px 10px;
+}
+
+
+#text #selected-title
+{
+	width:80px;
+	background-color:#111;
+	font-style:italic;
+}
+
+
+#text #selected-description
+{
+	background-color:#111;
+}
+
+
+#controls
+{
+	width:234px;
+	margin:0px auto;
+}
+
+
+#controls a
+{
+	margin:0px 20px;
+	cursor:pointer;
+}
+
+
+#controls #left
+{
+	background:url(arrows.png);
+	width:38px;
+	height:38px;
+	float:left;
+}
+
+
+#controls #right
+{
+	background:url(arrows.png) -38px 0px;
+	width:38px;
+	height:38px;
+	float:left;
+}
+
+
+#controls #auto-scroll
+{
+	background:url(playpause.png);
+	width:38px;
+	height:38px;
+	float:left;
+}
+
+
+#example-description
+{
+	margin:0px;
+	padding:0px;
+	background-color:#DDD;
+	border-top:solid 1px #CCC;
+	border-bottom:solid 1px #CCC;
+}
+
+
+#example-description p
+{
+	color:#666;
+	font-style:italic;
+	width:750px;
+	margin:0px auto;
+	padding:10px 0px;
+}
+
+
+#example-description #navigation
+{
+	width:300px;
+	height:25px;
+	margin:10px auto 0px;
+}
+
+
+#example-description #navigation a
+{
+	background-color:#F1F1F1;
+	text-decoration:none;
+	color:#666;
+	padding:5px 10px;
+	margin:0px 5px;
+	border:#CCC solid 1px;
+}

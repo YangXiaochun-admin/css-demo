@@ -1,0 +1,49 @@
+/*整体居中，宽度1000*/
+.of_whole{width:1000px;margin:0 auto;}
+
+/*顶部*/
+#of_top{width:100%;height:28px;line-height:29px;background:url(images/ofcard_bg.png) repeat-x 0 0; overflow:hidden;}
+#of_topNav a{margin:0 5px; padding:2px;}
+/*登录区*/
+.of_login{display:block;width:360px;}
+.of_login li{float:left;margin-right:3px; height:28px; overflow:hidden;}
+.loginMenu{display:block;width:44px!important;height:14px!important;_height:12px!important;line-height:16px!important;border:1px solid #999!important;background:#fff!important;;margin:6px;color:#f90!important;_color:#f90 !important;}
+.registerMenu{width:63px!important;}
+.loginMenu:hover{border:1px solid #f90;}
+#login_div{width:220px;height:120px;padding:5px;border:1px solid #ccc;background:#f4f4f4;top:23px;left:6px;}
+#login_div p{height:24px;line-height:24px;}
+#login_close{width:50px;height:24px;line-height:24px;bottom:0;right:0;}
+#loginover{ padding:0; margin:0; height:30px; line-height:30px; overflow:hidden;}
+#loginover li{ font-weight:normal; margin-right:10px;}
+/*logo和搜索区*/
+#of_logo{width:320px;height:50px;background:url(images/ofcard_logo.png) no-repeat 0 0;margin:20px 0; overflow:hidden;}
+#of_logo div{ text-align:left; margin-left:180px; margin-top:10px; font-size:14px; font-weight:bold; color:#D25400;line-height:20px;}
+#of_logo span{ color:#FF3300; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:left;}
+#of_search{width:460px;height:35px; padding-top:5px; text-align:left;background:url(images/ofcard_bg.png) no-repeat 0 -50px;margin:25px; margin-right:0; overflow:hidden;}
+.lgh16{line-height:16px!important;}
+#of_s_keyword{ width:355px;height:26px; line-height:30px; color:#999999; float:left; }
+#of_s_keyword input{ border:0; background-color:transparent;width:300px;height:26px; line-height:26px; margin-left:40px;}
+#of_submit input{ border:0; background-color:transparent; width:95px; height:30px; float:left;cursor:pointer;}
+/*导航和站点栏*/
+#of_mainBody{height:680px;overflow:hidden;}
+/*导航和站点栏*/
+#of_NavSets{width:100%;height:32px; }
+.of_nav{z-index:-1;}
+.of_nav li{float:left;width:92px;height:32px;line-height:36px;background:url(images/ofcard_bg.png) no-repeat -100px -100px;margin:0 3px;}
+.of_nav li a{display:block;width:92px;height:32px;line-height:36px;text-align:center;}
+#of_homeNav{width:96px;background:url(images/ofcard_bg.png) no-repeat 0 -100px;}
+#of_homeNav a{width:96px;color:#fff;font-weight:bold;}
+.of_set{height:21px;margin-top:5px;}
+.of_set li{float:left;width:66px;height:21px;line-height:21px!important;background:url(images/ofcard_bg.png) no-repeat -300px -100px;margin-left:10px;}
+.of_set li a{color:#c64f00;_color:#c64f00 !important;height:21px; line-height:21px!important; line-height:23px\9!important;}
+.of_set li a:hover{color:#f00;_color:#f00 !important;height:21px; line-height:21px!important;line-height:23px\9!important;}
+.of_setMenu{width:80px !important;height:21px; line-height:21px!important; line-height:23px\9!important;background:url(images/ofcard_bg.png) no-repeat -400px -100px !important;padding-left:9px;cursor:pointer; text-align:left; z-index:1000;}
+.of_setMenu_click{width:80px!important;background:url(images/ofcard_bg.png) no-repeat -400px -400px !important;padding-left:9px;cursor:pointer; text-align:left;}
+of_setMenu li,.of_setMenu_click li{border:none;height:20px;line-height:20px;background:none;}
+#of_sideList{width:590px; height:110px;top:21px;right:0;background-image:url(images/ofcard_bg.png); background-position:0 -530px!important; margin:0; padding:0; right:0; padding-top:15px; overflow:hidden;}
+#of_sideList li{width:590px;padding-left:5px; text-align:left;  background-image:url(); height:26px; line-height:26px;}
+#of_sideList li a{ color:#484848!important; margin-right:30px;}
+#of_sideList li a:hover{ color:#ff0000!important;}
+#navLine{height:3px;border:1px solid #f90;border-left:none;border-right:none;background:#fc9;_margin-top:-5px;}
+.of_new {position:relative;}
+.of_new span {background:url("images/new.gif") no-repeat left top;display:inline-block;height:14px;position:absolute;right:-10px;top:0;width:26px;}

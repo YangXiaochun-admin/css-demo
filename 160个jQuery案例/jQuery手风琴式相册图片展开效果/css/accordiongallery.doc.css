@@ -1,0 +1,202 @@
+/*
+Accordion Gallery Documentation
+Ghinda - Cristian Colceriu
+www.ghinda.net
+
+v1.0 - 7:40 PM 11/8/2010
+*/
+
+html {
+	background-color: #5F2F00;
+	
+	font-family: Arial, Helvetica, sans-serif;	
+	color: #000;
+}
+
+body {
+	width: 920px;
+	padding: 0px 20px;
+	margin: 20px auto;
+	border: 1px solid #CFA174;	
+	background-color: #efefef;
+	
+	-moz-box-shadow: 0px 0px 10px #222; 
+	-webkit-box-shadow: 0px 0px 10px #222; 
+	box-shadow: 0px 0px 10px #222; 
+}
+
+a {
+	position: relative;
+	color: #19177F;
+}
+
+a:hover, a:focus {
+	color: #0300FF;
+	text-decoration: none;	
+}
+
+a:active {
+	top: 1px;
+}
+
+/* header */
+
+header {
+	padding: 0px 20px 20px 20px;
+	margin: 0px -20px 20px -20px;	
+	overflow: hidden;
+	border-bottom: 1px solid #596600;
+	background-color: #8e9c06;
+		
+	background-image: -moz-linear-gradient(top, #c7ca21, #8e9c06); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c7ca21),color-stop(1, #8e9c06)); 	
+}
+
+header .item-details {
+	padding: 5px 20px;
+	margin: 0px -20px 30px -20px;
+	border-bottom: 1px solid #663607;
+	background-color: #89490b;
+		
+	background-image: -moz-linear-gradient(top, #a35d18, #89490b); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a35d18),color-stop(1, #89490b)); 
+	
+	color: #fff;
+}
+
+header .item-details time {
+	float: right;
+}
+
+header .item-type {
+	font-weight: bold;
+}
+
+header .vcard {
+	float: right;
+	line-height: 16px;
+	
+	opacity: 0.5;
+}
+
+header .vcard:hover {
+	opacity: 1;
+}
+
+header .vcard span, header .vcard a {
+	display: block;
+	text-align: right;
+}
+
+header .vcard span {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+header h1 {		
+	margin-bottom: 5px;
+	
+	font-size: 38px;
+	letter-spacing: -2px;
+	text-shadow: 0px 1px 1px #c7ca21;
+}
+
+header .sub-title {
+	margin: 0px;
+}
+
+/* content */
+
+section {
+	overflow: hidden;
+}
+
+section nav {
+	float: right;
+	padding: 30px 0px 30px 20px;	
+	margin-left: 40px;
+	margin-right: 30px;
+	border-left: 1px solid #CFCFCF;
+	
+	font-size: 14px;
+	font-weight: bold;
+}
+
+section nav li {
+	line-height: 2.5em;
+}
+
+section h2 {
+	margin-top: 20px;
+
+	color: #333;
+	font-size: 24px;
+	letter-spacing: -1px;
+	text-shadow: 0px 1px 1px #aaa;
+}
+
+.step {
+	padding: 10px;
+	background-color: #ddd;
+	border-bottom: 1px solid #aaa;
+	border-top: 1px solid #aaa;
+	
+	font-size: 14px;
+	font-weight: bold;
+}
+
+pre {
+	padding: 10px;
+	overflow: auto;
+	background-color: #333;
+	
+	color: #fff;
+}
+
+/* options table */
+
+#options table {	
+}
+
+#options table th {
+	border: 1px solid #bbb;
+	background: #106F00;
+	color: #FFFFFF;
+	font-weight: normal;
+	padding: 5px 10px;
+	text-align:left;
+}
+
+#options table td {	
+	padding: 5px 10px;
+	border: 1px solid #bbb;
+}
+
+#options table tr.even {
+	background: #ddd;
+}
+
+#options table .small-column {
+	width: 90px;
+}
+
+/* footer */
+
+footer {
+	overflow: hidden;
+	padding: 20px 20px 20px 20px;
+	margin: 0px -20px 0px -20px;
+	overflow: hidden;
+	border-top: 1px solid #92571d;
+	background-color: #a56628;
+	
+	background-image: -moz-linear-gradient(top, #b57b42, #a56628); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #b57b42),color-stop(1, #a56628)); 	
+}
+
+footer .copy {
+	float: right;
+	
+	line-height: 1em;
+	text-align: right;	
+}

@@ -1,0 +1,97 @@
+/* Import */
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+/* Basic Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #dddfde;
+}
+
+/* Social Presentation */
+h2.title {
+	font-family: "Quicksand", sans-serif;
+	font-size: 24px;
+	font-weight: 200;
+	font-weight: 300;
+	color: #000000;
+	text-align: center;
+	padding: 100px 0 0 0;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.social .line {
+	position: absolute;
+	top: 0; left: 0px;
+	width: 100%; height: 5px;
+	background: #fced00;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	z-index: 0;
+}
+.social ul {
+	position: fixed;
+	left: 50%; margin-left: -216px;
+	list-style: none;
+	color: #000;
+}
+.social ul li {
+	float: left;
+}
+.social ul li a {
+	position: relative;
+	float: left;
+	background: #fff000;
+	width: 48px; height: 48px;
+	text-align: center;
+	color: #000;
+	padding: 0 0 30px 0;
+}
+.social ul li a:hover {
+	color: #fff;
+}
+.fa-facebook, .fa-twitter, .fa-youtube, .fa-instagram, .fa-pinterest, .fa-github, .fa-flickr, .fa-linkedin {
+	padding: 10px 0 0 0;
+}
+
+/* Pseudo Elements */
+.social ul li a:after {
+	content: "";
+	position: absolute;
+	bottom: 0px; left: 0;
+	width: 1px; height: 1px;
+	border: 24px solid transparent;
+	border-bottom: 24px solid #dddfde;
+	z-index: 0;
+}
+
+/* Hover */
+.social ul li.facebook a:hover {
+	background: #3b5998;
+}
+.social ul li.twitter a:hover {
+	background: #44ccf6;
+}
+.social ul li.codepen a:hover {
+	background: #cccccc;
+}
+.social ul li.youtube a:hover { 
+	background: #da2d2e; 
+}
+.social ul li.instagram a:hover { 
+	background: #66269e; 
+}
+.social ul li.pinterest a:hover {
+	background: #c3042b;
+}
+.social ul li.github a:hover {
+	background: #000000;
+}
+.social ul li.flickr a:hover {
+	background: #72858c;
+}
+.social ul li.linkedin a:hover {
+	background: #1c66c2; 
+}

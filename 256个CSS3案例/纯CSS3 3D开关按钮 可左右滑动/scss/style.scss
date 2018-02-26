@@ -1,0 +1,131 @@
+@import "compass/css3";
+
+body {
+  background-color: #efebe8; // Old browsers
+  @include filter-gradient(#efebe8, #e1d8ce, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #efebe8 0%,#e1d8ce 100%));
+}
+
+.switch { 
+  // Outer Ring
+  height: 83px;
+  width: 234px;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  margin-top: -51px;
+  margin-left: -117px;
+  
+  @include border-radius(40px);
+
+  background-color: #d1d1d1; // Old browsers
+  @include filter-gradient(#d1d1d1, #fefbf7, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #d1d1d1 0%,#fefbf7 100%));
+  
+  &:after {
+    // Inner Ring
+    height: 70px;
+    width: 220px;
+
+    position: absolute;
+    top: 7px;
+    left: 7px;
+
+    content: '';
+    z-index: 2;
+
+    @include border-radius(40px);
+
+    background-color: #a5a5a5; // Old browsers
+    @include filter-gradient(#a5a5a5, #e8d7be, vertical); // IE6-9
+    @include background-image(linear-gradient(top, #a5a5a5 0%,#e8d7be 100%));
+  } 
+  
+}
+
+.checkbox {
+  // Inner area, orange gradient
+  height: 60px;
+  width: 210px;
+  
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  
+  z-index: 10000;
+
+  @include border-radius(35px);
+  @include box-shadow(inset 0px 9px 15px rgba(0,0,0,0.53), inset 0 -8px 10px rgba(0,0,0,0.14));
+  
+  background-color: #f28a00; // Old browsers
+  @include filter-gradient(#f28a00, #d86517, vertical); // IE6-9
+  @include background-image(linear-gradient(top, #f28a00 0%,#e65300 67%,#d86517 100%));
+  
+  &:after {
+    // Inner area, green gradient
+    height: 60px;
+    width: 117px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: '';
+    z-index: 9999;
+    
+    @include border-radius(35px 0 0 35px);
+    @include box-shadow(inset 0px 9px 15px rgba(0,0,0,0.53), inset 0 -8px 10px rgba(0,0,0,0.14));
+
+    background-color: #b1dd00; // Old browsers
+    @include filter-gradient(#b1dd00, #84ad00, vertical); // IE6-9
+    @include background-image(linear-gradient(top, #b1dd00 0%,#7eaf00 67%,#84ad00 100%));
+  }
+}
+
+.control {
+  // The switch 
+  height: 73px;
+  width: 138px;
+  outline: 0;
+  
+  position: absolute;
+  top: 6px;
+  left: 6px;
+
+  z-index: 10001;
+  -webkit-appearance: none;
+
+  @include border-radius(36.5px);
+  @include box-shadow(0 0 5px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.55), inset 0 2px 0 #fafafa, inset 0 -2px 0 #ada39d);
+  
+  background-color: #efefef; // Old browsers
+  @include filter-gradient(#efefef, #bcb9b8, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  #efefef 32%,#bcb9b8 100%));
+
+  @include transition(all 0.2s ease-in-out);
+  
+  &:checked {
+    left: 91px; 
+  }
+  
+  &:after {
+    // Indention
+    height: 40px;
+    width: 40px;
+    
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    content: '';
+    z-index: 10001;
+    
+    @include border-radius(50%);
+
+    background-color: #c2c0be; // Old browsers
+    @include filter-gradient(#c2c0be, #d7d7d7, vertical); // IE6-9
+    @include background-image(linear-gradient(top,  #c2c0be 0%,#d7d7d7 72%));
+  }
+}

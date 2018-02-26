@@ -1,0 +1,88 @@
+* {margin:0;padding:0;}
+.hand{ cursor:pointer;}
+img{ border:0;}
+ol, ul {list-style: none;}
+a{text-decoration:none;}
+input{vertical-align:middle;}
+
+/*边框*/
+.border_gray{border:solid 1px #ddd;}
+.borderT_none{border-top:0 !important;}
+.borderB_none{border-bottom:0 !important;}
+.border_none{border:none;}
+
+/*文本对齐方式*/
+.text_c{text-align:center;}
+.text_r{text-align: right;}
+.text_l{text-align: left!important;}
+
+/*内外边距*/
+.push_all{margin:10px;}
+.push_t{margin-top:10px;}
+.push_r{margin-right:10px;}
+.push_b{margin-bottom:10px;}
+.push_l{margin-left:10px;}
+.push_t0{margin-top:-10px;}
+.fill_all{padding: 10px;}
+.fill_t{padding-top:10px;}
+.fill_r{padding-right:10px;}
+.fill_b{padding-bottom:10px;}
+.fill_l{padding-left:10px;}
+
+/*浮动和清除浮动*/
+.clear_both{clear:both;}
+.float_l{float:left;}
+.float_r{float:right;}
+
+/*定位*/
+.position_ab{position:absolute;}
+.position_re{position:relative;}
+
+/*显示隐藏*/
+.text_hide{text-indent:-9999px;}
+.tag_show{display:block!important;}
+.tag_hide{display:none!important;}
+.tag_c{margin:0 auto;}
+.tag_line{display:inline;}
+.over_hide{overflow:hidden;}
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+
+/*字体颜色*/
+.orange{color:#e37513;}
+.orange2{color:#f90;}
+.orange3{color:#e30;}
+.blue{color:#1292cd;}
+.gray{color:#6d6d6d;}
+.oatmeal{color:#ccc;}
+.red{color:#f00;}
+.green{color:#093;}
+.white{color:#fff;}
+/*字体大小*/
+.font_12{font-size:12px;}
+.font_14{font-size:14px;}
+.font_16{font-size:16px;}
+/*文字修饰*/
+.font_bold{font-weight: bold;}
+.font_lineThrough{ text-decoration:line-through;}
+.font_underline{ text-decoration:underline;}
+.lineH_20{line-height:20px;}
+.lineH_24{line-height:24px;}
+/*链接样式1-----------默认黑色，悬停红色，按下灰色---------*/
+.a_default{color:#000;}
+.a_default:hover{color:#f00;}
+.a_default:active{color:#ccc;}
+/*链接样式2-----------默认红色，悬停灰色---------*/
+.a_red{color:#f00;}
+.a_red:hover{color:#ccc;}
+/*链接样式3-----------默认蓝色，悬停红色---------*/
+.a_blue{color:#1292cd;}
+.a_blue:hover{color:#f00;}

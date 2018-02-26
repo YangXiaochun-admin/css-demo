@@ -1,0 +1,125 @@
+@import "compass/css3";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+$c-accent: #114BAF;
+$c-happy: #11AF19;
+
+body { 
+  padding: 20px;
+  background: #1a1a1a;
+  color: #DDD;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.progress-container, .progress {
+  border-radius: 5px;
+}
+.progress-container {
+  width: 82px;
+  height: 250px;
+  border: solid 1px #111;
+  background: #151515;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  
+  &.done {
+    box-shadow:
+       inset 0 1px 0   rgba(255, 255, 255, .05), 
+             0 0   2px darken($c-happy, 10%);
+    .progress { background: darken($c-happy, 5%); }
+    .progress-overlay {
+      display: none;
+    }
+  }
+}
+
+.progress, .progress-overlay {
+  position: absolute;  
+}
+
+.progress {
+  width: 80px;
+  background: $c-accent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+  z-index: 1;
+  bottom: 0;
+  text-align: center;
+  color: #151515;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+  font-weight: bold;
+  transition: background 250ms ease;
+}
+
+@keyframes uploadarrow {
+  0% {
+    bottom: 0%;
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }  
+  50% { border-bottom-color: rgba(255, 255, 255, .1); }
+  100% {
+    bottom: 100%;
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@-webkit-keyframes uploadarrow {
+  0% {
+    bottom: 0%;
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }
+  
+  50% {
+    border-bottom-color: rgba(255, 255, 255, .1);
+  }
+  
+  100% {
+    bottom: 100%;
+    border-bottom-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.progress-overlay {
+  z-index: 2;
+  width: 0;
+  height: 100%;
+  bottom: 0;
+  left: 15px;
+  border: solid 20px transparent;
+  border-width: 0 25px 20px 25px;
+  border-bottom-color: rgba(255, 255, 255, .25);
+  
+  -webkit-animation: uploadarrow 900ms infinite ease-out;
+     -moz-animation: uploadarrow 900ms infinite linear;
+       -o-animation: uploadarrow 900ms infinite linear;
+          animation: uploadarrow 900ms infinite linear;
+}
+

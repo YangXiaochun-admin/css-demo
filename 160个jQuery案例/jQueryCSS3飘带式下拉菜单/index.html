@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	<title>jQuery/CSS3飘带式下拉菜单DEMO演示</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link type="text/css" href="css/styles.css" rel="stylesheet" media="all" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/superfish.js" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(document).ready(function($){
+/***** JQUERY MENU SLIDE EFFECT *****/							    
+if (jQuery().superfish) {
+		jQuery('ul.menu').superfish({
+			delay: 230,
+			animation: {opacity:'show', height:'show'},
+			speed: 'fast',
+			autoArrows: false,
+			dropShadows: false
+		}); 
+	
+	}	
+	
+	});  
+/***** END JQUERY MENU SLIDE EFFECT *****/	
+	</script>
+	</head>
+	<body>
+    <div id="menu-holder">
+        <div>
+            <ul class="menu">
+                <li><a href="http://www.flashuser.net">Home</a></li>
+                <li><a href="#">Dropdown</a>
+                    <ul>
+                        <li><a href="http://www.flashuser.net/category/css">CSS</a></li>
+                        <li><a href="http://www.flashuser.net/category/tutorials">Tutorials</a></li>
+                        <li><a href="http://www.flashuser.net/category/photoshop">Photoshop</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Categories</a>
+                    <ul>
+                        <li><a href="http://www.flashuser.net/category/freebies">Freebies</a></li>
+                        <li><a href="http://www.flashuser.net/category/photography">Photography</a></li>
+                        <li><a href="http://www.flashuser.net/category/web-design">Web Design</a></li>
+                        <li><a href="http://www.flashuser.net/category/wordpress">Wordpress</a></li>
+                        <li><a href="http://www.flashuser.net/category/inspiration">Inspiration</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="corner-left">Corner left</div>
+        <div id="corner-right">Corner right</div>
+        <div class="content"> </div>
+    </div>
+    <!--end menu-holder-->
+    </body>
+</html>

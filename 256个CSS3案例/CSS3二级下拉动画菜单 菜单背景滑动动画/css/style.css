@@ -1,0 +1,87 @@
+* {
+  margin: 0px;
+}
+
+html {
+  background: url(http://imd.edumedia.ca/mars0277/code/grey.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  background: url("http://themes.mediacreed.com/html/synergy/assets/patterns/menu/menu_pattern_1.png");
+  border-right: 10px solid #d00355;
+}
+.sidebar ul {
+  margin-top: 30px;
+}
+.sidebar li {
+  list-style: none;
+  padding: 10px;
+  position: relative;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #555;
+  font: 14px Open Sans;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000;
+}
+.sidebar .hover {
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  background: #d00355;
+  z-index: 0;
+  opacity: 0;
+}
+.sidebar a:hover {
+  color: #FFF;
+}
+.sidebar .fa-angle-right {
+  position: absolute;
+  left: 150px;
+  top: 1px;
+}
+.sidebar .sub-menu {
+  position: absolute;
+  left: 210px;
+  top: -30px;
+  padding: 0px;
+  width: 220px;
+  display: none;
+  background: url("http://themes.mediacreed.com/html/synergy/assets/patterns/menu/menu_pattern_1.png");
+}
+.sidebar .sub-menu li a {
+  padding-left: 20px;
+  font-size: 13px;
+}
+.sidebar .sub-menu i {
+  left: 180px;
+}
+.sidebar ul li:hover ul {
+  display: block;
+}
+.sidebar .push {
+  margin-right: 10px;
+}
+
+h1 {
+  color: #FFF;
+  font: 16px Open Sans;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+.color {
+  color: #d00355;
+}

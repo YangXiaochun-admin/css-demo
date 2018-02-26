@@ -1,0 +1,110 @@
+.cycleslider-wrap{
+	box-shadow: 0 1px 5px rgba(0, 0, 0, .25); 
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .25);  
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .25);_border:1px solid #CCC
+}
+
+.slider-wrap .loader { 
+	width:990px;
+	margin: 0 auto;
+	height:19px;
+	background:url(../images/ajax-loader.gif) no-repeat 50% 0;
+	}
+
+.nivoSlider-wrap,
+.cycleslider-wrap { 
+	display:none;
+	padding: 10px; 
+	background: url(../images/slider-bg.png) repeat-x 0 100% #FFF;
+	} 
+
+/*Cycle Slider*/
+.cycleslider-wrap {
+	position: relative;
+	}
+
+/* Direction nav styles (e.g. Next & Prev) */
+#cycle-prev,
+#cycle-next {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+	width: 34px;
+	height: 57px;
+	text-indent: -999em;
+	margin-top: -10px;
+	background-image: url(../images/cycle-btn.png);
+	background-repeat: no-repeat;
+	}
+
+#cycle-prev {
+	left:-50px;
+	background-position: 0 0;
+	}
+
+#cycle-prev:hover {
+	background-position: 0 100%;
+	}
+
+#cycle-next {
+	right:-50px;
+	background-position: 100% 0;
+	}
+
+#cycle-next:hover {
+	background-position: 100% 100%;
+	}
+
+#cycle-nav {
+	position:absolute;
+	right: 30px;
+	bottom: -24px;
+	z-index:99;
+	}
+
+#cycle-nav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+	display:block;
+	float:left;
+	width:46px;
+	height:24px;
+	line-height:24px;
+	text-align: center;
+	font-size: 10px;
+	margin-left: 1px;
+	color: #999;
+	background: url(../images/cycle-num-btn.png) no-repeat 0 100%;
+	}
+
+#cycle-nav a.activeSlide {
+	color: #333;
+	background-position: 0 0;
+	}
+.cycle-slider-caption {
+	position: absolute;
+	left: 0px;
+	bottom: 80px;
+	z-index: 8;
+	background: url(../images/space.png);
+	padding: 15px 20px;
+	}
+
+.cycle-slider-caption h3 {
+	margin: 0;
+	font-weight: normal;
+	font-size: 18px;
+	color: #FFF;
+	margin-bottom: 5px; 
+	}
+
+.cycle-slider-caption .text {
+	color: #FFF;
+	}
+	/*
+本代码由97站长网收集并编辑整理;
+尊重他人劳动成果;
+转载请保留97站长网链接 - www.97zzw.com
+*/

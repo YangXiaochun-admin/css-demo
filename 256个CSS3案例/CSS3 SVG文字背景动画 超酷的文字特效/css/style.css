@@ -1,0 +1,50 @@
+
+BODY {
+  background: #000;
+}
+
+.l--wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 485px;
+  height: 540px;
+}
+
+svg {
+  width: 485px;
+  height: 540px;
+  /*   border: 1px solid red; */
+}
+
+text {
+  stroke-width: 10;
+  stroke-opacity: .5;
+  font-family: 'Francois One', sans-serif;
+  font-size: 12em;
+}
+
+.t--water {
+  fill: url(#pt--water);
+  stroke: #004384;
+}
+
+.t--fire {
+  fill: url(#pt--fire);
+  stroke: #4d0000;
+}
+
+.t--and {
+  fill: none;
+  stroke-width: 5;
+  stroke: #3a434d;
+  font-size: 7em;
+}
+
+rect {
+  fill: url(#pt--fire);
+  stroke: #4d0000;
+}

@@ -1,0 +1,76 @@
+body {
+ 	text-align: center;
+ 	background: url('../images/background.png'); color:#FFFFFF;
+ }	
+ 
+ #container {
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	margin-top: 5%;
+ 	display: block;
+ 	width: 600px;
+ 	height: 400px;
+	background:#fff url('../images/IPad.png') center center no-repeat;
+ 	position: relative;
+ 	overflow: hidden;
+ 	-webkit-border-radius: 5px;
+ }
+
+ .block1 {
+ 	background-image : -webkit-gradient(linear, 100% 0%, 0% 100%, from(#666666), to(#FFFFFF), color-stop(.35,#FFFFFF));
+ 	background-image: -moz-linear-gradient(100% 0% 225deg,#666666, #FFFFFF, #FFFFFF 50%);
+ 	opacity: .25;
+ 	width: 100px;
+ 	height: 100px;
+ 	float: left;
+ }
+ 
+ .block2 {
+ 	background-image : -webkit-gradient(linear, 100% 0%, 0% 80%, from(#666666), to(#FFFFFF), color-stop(.7,#FFFFFF));
+ 	background-image : -moz-linear-gradient(100% 0% 225deg,#666666, #FFFFFF, #FFFFFF 100%);
+ 	opacity: .25;
+ 	width: 100px;
+ 	height: 100px;
+ 	float: left;
+ }
+ 
+ .block3 {
+ 	background-image : -webkit-gradient(linear, 100% 0%, 50% 90%, from(#666666), to(#FFFFFF), color-stop(.7,#FFFFFF));
+ 	background-image: -moz-linear-gradient(100% 0% 225deg,#666666, #FFFFFF, #FFFFFF 86%);
+ 	opacity: .25;
+ 	width: 100px;
+ 	height: 100px;
+ 	float: left;
+ }
+ 
+ .block4 {
+ 	background-image : -webkit-gradient(linear, 10% 100%, 50% 0%, from(#666666), to(#FFFFFF), color-stop(.4,#FFFFFF));
+ 	background-image : -moz-linear-gradient(0% 100% 36deg,#666666, #FFFFFF, #FFFFFF 80%);
+ 	opacity: .25;
+ 	width: 100px;
+ 	height: 100px;
+ 	float: left;
+ }
+ 
+ .black {
+ 	background: #fff;
+ 	opacity: 1;
+ }
+	
+	.title {
+		color: #fff;
+		font-size: 25px;
+		font-weight: bold;
+		margin-top: 1em;
+		text-shadow: 0px 1px 0px #000;
+	}
+	
+	a, a:visited {
+		color: #fff;
+		text-decoration: none;
+		text-shadow: 0px 1px 0px #000;
+	}
+	
+	a:hover {
+		border-bottom: 1px dotted #fff;
+	}

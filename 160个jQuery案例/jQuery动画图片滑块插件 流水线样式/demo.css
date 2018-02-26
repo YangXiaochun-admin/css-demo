@@ -1,0 +1,88 @@
+
+
+* { 
+	margin:0; padding:0; 
+}
+			
+body { 
+	font-family: Raleway, Arial;
+	background: url('images/background.png');
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	margin-top: 3%;
+}
+
+h3 {
+	font-size: 50px;
+	margin-bottom: 1em;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+#content {
+	display: block;
+	width: 900px;
+	margin: 20px auto;
+	text-align: center;
+	position: relative;
+}
+
+	#binder {
+		display: block;
+		width: 700px;
+		vertical-align: top;
+		overflow: hidden;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+	.list {
+		display: inline-block;
+		list-style-type: none;
+		margin: 0;
+		width: 100000px;
+		text-align: left;
+		background: url('images/wood.png') bottom left no-repeat;
+	}
+		
+		.list li {
+			display: inline-block;
+			width: 78px;
+			margin: 2.2em 1.4em;
+			position: relative;
+			vertical-align: bottom;
+		}
+			
+	.next, .prev {
+		display: block;
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	
+	.next {
+		margin-top: -7.2em;
+		right: 5%;
+		background: url('images/next.png') center center no-repeat;
+	}
+	
+		.next:hover {
+			background: rgba(255,255,255,0.3) url('images/next.png') center center no-repeat;
+		}
+	
+	.prev {
+		margin-top: 3em;
+		left: 5%;
+		background: url('images/prev.png') center center no-repeat;
+	}
+	
+		.prev:hover {
+			background: rgba(255,255,255,0.3) url('images/prev.png') center center no-repeat;
+		}
+	
+	.footer {
+		color: #584b2b;
+		font-size: 14px;
+	}

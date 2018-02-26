@@ -1,0 +1,368 @@
+/* custom light solarize theme for public use  in .sass format
+ *
+ * Name:  Matthew
+ * Email:   imagineux@gmail.com
+ * 
+ */
+body {
+  background: #384047;
+}
+
+.pln {
+  color: #bd3613;
+}
+
+.str {
+  color: #269186;
+}
+
+.kwd {
+  color: #859900;
+}
+
+.com {
+  color: #586175;
+  font-style: italic;
+}
+
+.typ {
+  color: #b58900;
+}
+
+.lit {
+  color: #2aa198;
+}
+
+.pun {
+  color: #839496;
+}
+
+.opn {
+  color: #839496;
+}
+
+.clo {
+  color: #839496;
+}
+
+.tag {
+  color: #268bd2;
+}
+
+.atn {
+  color: #586175;
+}
+
+.atv {
+  color: #2aa198;
+}
+
+.dec {
+  color: #268bd2;
+}
+
+.var {
+  color: #268bd2;
+}
+
+.fun {
+  color: red;
+}
+
+/* Put a border around
+ * printed code snippets. */
+pre.prettyprint {
+  padding: 0.5rem 0.5rem;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  color: #4c666c;
+  overflow: hidden;
+}
+
+ol.linenums li {
+  line-height: 18px;
+  margin: 0 0 0.3125rem 0.75rem;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.linenums > li {
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid;
+  -webkit-animation: typing 3s steps(26, end), blink-caret 1s step-end 3s;
+  animation: typing 3s steps(26, end), blink-caret 1s step-end 3s;
+}
+.linenums > li:nth-child(2) {
+  -webkit-animation: typingMid 3s steps(23, end), blink-caret 1s step-end 3s;
+  animation: typingMid 3s steps(23, end), blink-caret 1s step-end 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(3) {
+  -webkit-animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(4) {
+  -webkit-animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 9s;
+  animation-delay: 9s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(5) {
+  -webkit-animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(26, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 12s;
+  animation-delay: 12s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(6) {
+  -webkit-animation: typingNone 0.1s steps(1, end), blink-caret 1s step-end 2s;
+  animation: typingNone 0.1s steps(1, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 15s;
+  animation-delay: 15s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(7) {
+  -webkit-animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 15.1s;
+  animation-delay: 15.1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(8) {
+  -webkit-animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 18.1s;
+  animation-delay: 18.1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(9) {
+  -webkit-animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 21.1s;
+  animation-delay: 21.1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(10) {
+  -webkit-animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  animation: typingMid 3s steps(22, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 24.1s;
+  animation-delay: 24.1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(11) {
+  -webkit-animation: typingNone 1s steps(3, end), blink-caret 1s step-end 2s;
+  animation: typingNone 1s steps(3, end), blink-caret 1s step-end 2s;
+  -webkit-animation-delay: 27.1s;
+  animation-delay: 27.1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.linenums > li:nth-child(12) {
+  -webkit-animation: typingLast 1s steps(3, end), blink-caret 1s step-end infinite;
+  animation: typingLast 1s steps(3, end), blink-caret 1s step-end infinite;
+  -webkit-animation-delay: 30.1s;
+  animation-delay: 30.1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes typingMid {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typingMid {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 320px;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 320px;
+  }
+}
+@-webkit-keyframes typingLast {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10px;
+  }
+}
+@keyframes typingLast {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10px;
+  }
+}
+@-webkit-keyframes typingNone {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10px;
+  }
+}
+@keyframes typingNone {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10px;
+  }
+}
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+.code-editor {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 34rem;
+  height: 20rem;
+  margin: 4rem auto;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+  background: white;
+}
+.code-editor::before {
+  content: "";
+  z-index: 20;
+  background: #ebf2f4;
+  padding-top: 6px;
+  position: absolute;
+  top: -1.875rem;
+  left: 0;
+  right: 0;
+  height: 1.875rem;
+  border-radius: 5px 5px 0 0;
+  content: "";
+  z-index: 2;
+}
+.code-editor::after {
+  content: "";
+  background: #f5f8fa;
+  padding-top: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1.875rem;
+  z-index: 1;
+}
+
+span.control::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  z-index: 30;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+span.control:nth-child(1):before {
+  margin-left: 15px;
+  background-color: #e93535;
+}
+span.control:nth-child(2):before {
+  margin-left: 35px;
+  background-color: #fff6bd;
+}
+span.control:nth-child(3):before {
+  margin-left: 55px;
+  background-color: #39c062;
+}
+
+pre.numbers {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  opacity: 0.65;
+}
+
+code.css {
+  display: flex-direction;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}

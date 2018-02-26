@@ -1,0 +1,123 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
+* { margin: 0; padding: 0; }
+
+html
+{
+	  background: #C7B7A7 url(http://www.jeplaa.site50.net/images/background1.png);
+	  height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1
+{
+	  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  	font-size: 24px;
+  	margin-top: 15px;
+	  text-align: center;
+}
+
+h1 a { color: #888; text-decoration: none; }
+
+.content
+{
+  	position: relative;
+	  top: 30px;
+	  width: 250px;
+	  margin: 0px auto;
+}
+
+#admin
+{
+    background: #F8F8F8;
+	  width: 240px;
+	  height: 40px;
+  	color: #888;
+  	border: none;
+	  border-radius: 3px;
+	  padding: 0 0 0 10px;
+  	font: bold 13px Helvetica, sans-serif;
+  	text-transform: uppercase;
+	  line-height: 40px;
+	  cursor: default;
+  	-webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  -o-user-select: none;
+	  user-select: none;
+  	margin-bottom: 7px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#settings
+{
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  padding: 10px 14px 0 0;
+  	border: none;
+  	outline: none;
+	  color: #888;
+	  font-size: 20px;
+	  cursor: pointer;
+}
+
+#settings:hover { color: #555; }
+
+#menu { display: none; }
+
+#menu a
+{
+	  display: block;
+	  background: #F8F8F8;
+	  width: 240px;
+  	height: 40px;
+	  padding: 0 0 0 10px;
+	  font: bold 13px Helvetica, sans-serif;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  color: rgba(0, 0, 0, 0.4);
+	  line-height: 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#menu a:nth-child(2)
+{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#menu a:last-child
+{
+  	border-bottom-left-radius: 3px;
+	  border-bottom-right-radius: 3px;
+}
+
+#menu a:hover { color: #555; }
+
+#menu a:hover > .fa { color: #555; }
+
+#firstIcon, #secondIcon, #thirdIcon, #fourthIcon
+{
+  	position: absolute;
+	  margin-top: 10px;
+	  right: 0;
+  	font-size: 20px;
+	  color: rgba(0, 0, 0, 0.4);
+	  opacity: 0.7;
+}
+
+#firstIcon { margin-right: 14px; }
+#secondIcon { margin-right: 11px; }
+#thirdIcon { margin-right: 11px; }
+#fourthIcon { margin-right: 13px; }
+
+#arrow
+{
+	  width: 0;
+	  height: 0;
+	  border-left: 7px solid transparent;
+	  border-right: 7px solid transparent;
+	  border-bottom: 9px solid #F8F8F8;
+  	margin-left: 15px;
+}

@@ -1,0 +1,622 @@
+@import "compass/css3";
+
+//準備用具和食材
+$fire: #C33;
+$carbon: #333;
+$iron: #999;
+$meat: #B45227;
+$sausage: #A00;
+$corn: #F2D204;
+$waterbamboo: #96C56F;
+$greenpepper: #299A0B;
+$shrimp: #EF6921;
+$bamboo: #F2E6CA;
+$offset: 16px;
+$ironOffset: $offset*2.3;
+$cornGranule: $offset/2;
+
+//初始化偽元素
+:before,
+:after {
+  content: '';
+}
+
+//開始烤了
+.BBQ {
+  @include border-radius(50% / 20% 70%);
+  @include box-shadow(
+    //木碳堆
+    $offset*2.5 $offset*3 0 $carbon,
+    $offset*-2 $offset*-3.1 0 $carbon,
+    $offset*-2.5 $offset*1.6 0 $carbon,
+    $offset*1.8 $offset*-2.3 0 $carbon,
+    $offset*0.5 $offset*5 $carbon,
+    $offset*-4 $offset*4.5 $carbon,
+    $offset*5.5 $offset*1.2 $carbon,
+    $offset*-6.5 $offset*1.6 $carbon,
+    $offset*-5.5 $offset*-1.6 $carbon,
+    $offset*-6 $offset*6.5 $carbon,
+    $offset*-2.5 $offset*8 $carbon,
+    $offset*1.5 $offset*8 $carbon,
+    $offset*5 $offset*6 $carbon,
+    //升火
+    $offset*-1 $offset*2.5 0 120px $fire,
+    //烤肉架邊框
+    $offset*-1 $offset*2.5 0 140px $carbon
+  );
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 220px auto;
+  background: $carbon;
+
+  //烤肉網
+  &:before,
+  &:after {
+    @include box-shadow(
+      $ironOffset*0.5 0 0 $iron,
+      $ironOffset*1 0 0 $iron,
+      $ironOffset*1.5 0 0 $iron,
+      $ironOffset*2 0 0 $iron,
+      $ironOffset*2.5 0 0 $iron,
+      $ironOffset*3 0 0 $iron,
+      $ironOffset*3.5 0 0 $iron,
+      $ironOffset*4 0 0 $iron,
+      $ironOffset*4.5 0 0 $iron,
+      $ironOffset*5 0 0 $iron,
+      $ironOffset*5.5 0 0 $iron,
+      $ironOffset*6 0 0 $iron,
+      $ironOffset*6.5 0 0 $iron,
+      $ironOffset*7 0 0 $iron
+    );
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: -130px;
+    width: 5px;
+    height: 300px;
+    background: $iron;
+  }
+
+  &:after {
+    @include transform(rotate(90deg));
+    top: -220px;
+    left: 0;
+  }
+
+  //肉片
+  .meat {
+    @include border-radius(50% / 30% 70% 25% 50%);
+    @include box-shadow(
+      0 0 0 6px rgba(255,255,255,.3) inset,
+      0 0 6px rgba(33,33,33,.3)
+    );
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    background: $meat;
+    z-index: 1;
+    
+    &:before,
+    &:after {
+      @include border-radius(45%);
+      @include box-shadow(
+        15px 0 0 0 rgba(33,33,33,.2),
+        30px 0 0 0 rgba(33,33,33,.2)
+      );
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 60%;
+      background: rgba(33,33,33,.2);
+    }
+    
+    &:before {
+      @include transform(rotate(30deg));
+      top: 9px;
+      left: 24px;
+    }
+    
+    &:after {
+      @include transform(rotate(-60deg));
+      top: 30px;
+      left: 30px;
+    }
+  }
+  
+  //香腸
+  .sausage {
+    @include border-radius(10px);
+    @include box-shadow(
+      -6px 0 8px 0 rgba(92,0,0,.8) inset,
+      2px 0 2px 0 rgba(33,33,33,.5),
+      0 0 5px rgba(33,33,33,.5)
+    );
+    position: absolute;
+    top: 60px;
+    left: -52px;
+    width: 25px;
+    height: 100px;
+    background: $sausage;
+    z-index: 1;
+    
+    //竹籤
+    &:before {
+      @include box-shadow(
+        -1px 2px 2px 0 rgba(33,33,33,.5) inset
+      );
+      position: relative;
+      top: 100%;
+      display: block;
+      margin: 0 auto;
+      width: 5px;
+      height: 30px;
+      background: $bamboo;
+    }
+    
+    //在上面劃三刀比較容易熟
+    &:after {
+      @include border-radius(0 25px 25px 0);
+      @include opacity(.3);
+      @include box-shadow(
+        1px -1px 0 1px rgba(33,0,0,.7),
+        0 22px 0 0 rgb(99,33,33),
+        1px 21px 0 1px rgba(33,0,0,.7),
+        0 44px 0 0 rgb(99,33,33),
+        1px 43px 0 1px rgba(33,0,0,.7)
+      );
+      position: absolute;
+      top: 22%;
+      left: 0;
+      display: block;
+      width: 55%;
+      height: 7px;
+      background: rgb(99,33,33);
+    }
+  }
+
+  //玉米
+  .corn {
+    @include border-radius(9px);
+    @include box-shadow(
+      4px -2px 4px rgba(99,33,99,.3) inset,
+      -10px -2px 10px rgba(99,33,99,.5) inset,
+      0 0 5px rgba(33,33,33,.3)
+    );
+    position: absolute;
+    top: 60px;
+    left: -12px;
+    width: 35px;
+    height: 100px;
+    background: $corn;
+    z-index: 1;
+    
+    //竹籤
+    &:before {
+      @include box-shadow(
+        -1px 2px 2px 0 rgba(33,33,33,.5) inset
+      );
+      position: relative;
+      top: 100%;
+      display: block;
+      margin: 0 auto;
+      width: 5px;
+      height: 30px;
+      background: $bamboo;
+    }
+    
+    //玉米粒..
+    &:after {
+      @include border-radius(2px);
+      @include opacity(.2);
+      @include box-shadow(
+        1px 1px 0 rgba(33,33,33,.3),
+        $cornGranule 0 0 $corn,
+        ($cornGranule+1px) 1px 0 rgba(33,33,33,.5),
+        $cornGranule*2 0 0 $corn,
+        ($cornGranule*2+1px) 1px 0 rgba(33,33,33,.5),
+        $cornGranule*3 0 0 $corn,
+        ($cornGranule*3+1px) 1px 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule 0 $corn,
+        1px ($cornGranule+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule 0 $corn,
+        ($cornGranule+1px) ($cornGranule+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*2 0 $corn,
+        1px ($cornGranule*2+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*2 0 $corn,
+        ($cornGranule+1px) ($cornGranule*2+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*2 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*2+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*2 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*2+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*3 0 $corn,
+        1px ($cornGranule*3+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*3 0 $corn,
+        ($cornGranule+1px) ($cornGranule*3+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*3 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*3+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*3 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*3+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*4 0 $corn,
+        1px ($cornGranule*4+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*4 0 $corn,
+        ($cornGranule+1px) ($cornGranule*4+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*4 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*4+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*4 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*4+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*5 0 $corn,
+        1px ($cornGranule*5+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*5 0 $corn,
+        ($cornGranule+1px) ($cornGranule*5+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*5 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*5+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*5 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*5+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*6 0 $corn,
+        1px ($cornGranule*6+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*6 0 $corn,
+        ($cornGranule+1px) ($cornGranule*6+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*6 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*6+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*6 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*6+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*7 0 $corn,
+        1px ($cornGranule*7+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*7 0 $corn,
+        ($cornGranule+1px) ($cornGranule*7+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*7 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*7+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*7 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*7+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*8 0 $corn,
+        1px ($cornGranule*8+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*8 0 $corn,
+        ($cornGranule+1px) ($cornGranule*8+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*8 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*8+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*8 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*8+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*9 0 $corn,
+        1px ($cornGranule*9+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*9 0 $corn,
+        ($cornGranule+1px) ($cornGranule*9+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*9 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*9+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*9 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*9+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*10 0 $corn,
+        1px ($cornGranule*10+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*10 0 $corn,
+        ($cornGranule+1px) ($cornGranule*10+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*10 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*10+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*10 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*10+1px) 0 rgba(33,33,33,.2),
+        
+        0 $cornGranule*11 0 $corn,
+        1px ($cornGranule*11+1px) 0 rgba(33,33,33,.3),
+        $cornGranule $cornGranule*11 0 $corn,
+        ($cornGranule+1px) ($cornGranule*11+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*2 $cornGranule*11 0 $corn,
+        ($cornGranule*2+1px) ($cornGranule*11+1px) 0 rgba(33,33,33,.5),
+        $cornGranule*3 $cornGranule*11 0 $corn,
+        ($cornGranule*3+1px) ($cornGranule*11+1px) 0 rgba(33,33,33,.2)
+      );
+      position: absolute;
+      top: 2px;
+      left: 0;
+      display: block;
+      width: 22%;
+      height: 6%;
+    }
+  }
+  
+  //筊白筍
+  .waterbamboo {
+    @include background-image(
+      linear-gradient(
+        to top,
+        #FFF 0,
+        $waterbamboo 30%
+      )
+    );
+    @include box-shadow(
+      -5px 0 5px rgba(33,33,33,.4) inset,
+      0 0 3px rgba(33,33,33,.3)
+    );
+    @include border-radius(70% / 60% 10% 0 0);
+    position: absolute;
+    top: 30px;
+    left: -95px;
+    display: block;
+    width: 25px;
+    height: 170px;
+    border-top: 0;
+    z-index: 1;
+    
+    &:before {
+      @include background-image(
+        linear-gradient(
+          to top,
+          transparent 0,
+          rgba(66,140,66,1) 50%
+        )
+      );
+      @include box-shadow(
+        -1px -1px 1px 0 rgba(33,66,33,.2)
+      );
+      @include border-radius(35% 15% 0 0 / 70% 30% 0 0);
+      position: absolute;
+      top: -5px;
+      right: 0;
+      display: block;
+      width: 16px;
+      height: 70%;
+    }
+  }
+  
+  //蝦蝦
+  .shrimp {
+    @include border-radius(60% / 30% 40% 10% 70%);
+    @include background-image(
+      radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #CC4A04 68%,
+        $shrimp 74%,
+        $shrimp 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      )
+    );
+    position: absolute;
+    top: -35px;
+    left: -10px;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+    
+    //蝦頭 & 前鬚
+    &:before {
+      @include transform(rotate(24deg));
+      @include border-radius(85% 85% 50% 50% / 120% 120% 50% 50%);
+      @include box-shadow(
+        1px -35px 0 -7px $shrimp,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px $shrimp,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+      );
+      position: absolute;
+      top: -24px;
+      left: 15px;
+      display: block;
+      width: 18px;
+      height: 45px;
+      background: $shrimp;
+    }
+    
+    //蝦尾 & 眼睛
+    &:after {
+      @include border-radius(50%);
+      @include background-image(
+        radial-gradient(
+          circle at top center,
+          $shrimp 35%,
+          transparent 36%
+        ),
+        radial-gradient(
+          circle at center left,
+          $shrimp 27%,
+          #CC4A04 37%,
+          transparent 38%
+        )
+      );
+      @include box-shadow(
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+      );
+      position: absolute;
+      top: 60px;
+      left: 25px;
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+  }
+  
+  //蛤蜊
+  .clams {
+    @include border-radius(10px 30px 10px 50px);
+    @include background-image(
+      //蛤蜊殼面花紋
+      radial-gradient(
+        circle at top right,
+        rgb(200,200,200) 22%,
+        #827909 30%,
+        rgb(33,33,33) 35%,
+        rgb(33,33,33) 50%,
+        #665A07 65%,
+        #827909 70%,
+        rgb(200,200,200) 72%,
+        #665A07 75%
+      )
+    );
+    @include box-shadow(
+      0 0 5px rgba(33,33,33,.3) inset,
+      -1px 1px 5px rgba(33,33,33,.3)
+    );
+    position: absolute;
+    top: -58px;
+    left: -80px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 1;
+    
+    //再來一顆
+    &:after {
+      @include border-radius(10px 30px 10px 50px);
+      @include background-image(
+        //蛤蜊殼面花紋
+        radial-gradient(
+          circle at top right,
+          rgb(200,200,200) 22%,
+          #827909 30%,
+          rgb(33,33,33) 35%,
+          rgb(33,33,33) 50%,
+          #665A07 65%,
+          #827909 70%,
+          rgb(200,200,200) 72%,
+          #665A07 75%
+        )
+      );
+      @include box-shadow(
+        0 0 5px rgba(33,33,33,.3) inset,
+        -1px 1px 5px rgba(33,33,33,.3)
+      );
+      display: block;
+      position: absolute;
+      top: 130%;
+      left: 40%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  //青椒
+  .greenpepper {
+    //竹籤
+    @include transform(rotate(180deg));
+    @include box-shadow(
+      -1px 1px 2px 0 rgba(33,33,33,.5) inset
+    );
+    position: absolute;
+    top: -60px;
+    left: 75px;
+    width: 5px;
+    height: 120px;
+    background: $bamboo;
+    z-index: 1;
+    
+    //青椒
+    &:before,
+    &:after {
+      @include border-radius(30% 40% / 10% 20%);
+      @include background-image(
+        //青椒的不規則表面
+        linear-gradient(
+          45deg,
+          transparent 20%,
+          rgba(33,99,33,.3) 50%,
+          transparent 75%
+        ),
+        linear-gradient(
+          120deg,
+          transparent 0,
+          rgba(33,120,33,.6) 40%,
+          transparent 65%,
+          rgba(33,99,33,.5) 100%
+        ),
+        linear-gradient(
+          45deg,
+          $greenpepper 45%,
+          rgba(33,99,33,.3) 55%,
+          $greenpepper 75%
+        ),
+        linear-gradient(
+          to top,
+          $greenpepper 0,
+          $greenpepper 100%
+        )
+      );
+      @include box-shadow(
+        2px 2px 1px rgba(33,33,33,.3) inset,
+        0 0 3px rgba(33,33,33,.3)
+      );
+      position: relative;
+      display: block;
+      left: -25px;
+      margin-top: 6px;
+      width: 50px;
+      height: 35px;
+    }
+  }
+  
+  //烤肉總會冒煙吧
+  .smoke {
+    @include border-radius(50%);
+    @include animation(roastSmoke 5s ease-in-out infinite);
+    @include background-image(
+      radial-gradient(
+        ellipse at center center,
+        rgba(33,33,33,.3) 0,
+        transparent 50%
+      )  
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 60px;
+    z-index: 2;
+    
+    &:before {
+      @include border-radius(50%);
+      @include transform(scale(1.6));
+      @include background-image(
+        radial-gradient(
+          ellipse at center center,
+          rgba(33,33,33,.3) 0,
+          transparent 50%
+        )  
+      );
+      position: absolute;
+      top: -90px;
+      left: 0;
+      display: block;
+      width: 100px;
+      height: 60px;
+    }
+  }
+}
+
+@keyframes roastSmoke {
+  0% {
+    @include transform(
+      scale(.2)
+      translateY(0)
+    );
+    @include opacity(0);
+  }
+  30% {
+    @include opacity(1);
+  }
+  100% {
+    @include transform(
+      scale(1)
+      translateY(-200px)
+    );
+    @include opacity(0);
+  }
+}
+

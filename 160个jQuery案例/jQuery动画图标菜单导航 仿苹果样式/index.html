@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>jQuery动画图标菜单导航DEMO演示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8"/>
+</head>
+<style>
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f0f0f0;
+    font-family: Arial;
+}
+.title {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -204px;
+    width: 409px;
+    height: 348px;
+    background: transparent url(title.png) no-repeat top left;
+}
+.info {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+.back {
+    display: block;
+    background: transparent url(back.png) no-repeat top left;
+    width: 281px;
+    height: 143px;
+}
+a.dry {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+</style>
+<body>
+<div class="navigation">
+    <ul class="menu" id="menu">
+        <li><span class="ipod"></span><a href="" class="first">Players</a></li>
+        <li><span class="video_camera"></span><a href="">Cameras</a></li>
+        <li><span class="television"></span><a href="">TVs</a></li>
+        <li><span class="monitor"></span><a href="">Screens</a></li>
+        <li><span class="toolbox"></span><a href="">Tools</a></li>
+        <li><span class="telephone"></span><a href="">Phones</a></li>
+        <li><span class="print"></span><a href="" class="last">Printers</a></li>
+    </ul>
+</div>
+<script type="text/javascript" src="jquery-1.3.2.js"></script> 
+<script type="text/javascript">
+            $(function() {
+                var d=1000;
+                $('#menu span').each(function(){
+                    $(this).stop().animate({
+                        'top':'-17px'
+                    },d+=250);
+                });
+
+                $('#menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).addClass('hover');
+                    $('span',$this).stop().animate({'top':'40px'},300).css({'zIndex':'10'});
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).removeClass('hover');
+                    $('span',$this).stop().animate({'top':'-17px'},800).css({'zIndex':'-1'});
+                }
+            );
+            });
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/*
+Air Theme
+for Accordion Gallery
+
+Ghinda - Cristian Colceriu
+www.ghinda.net
+
+v1.0 - 7:40 PM 11/8/2010
+*/
+
+/* General */
+.accordiongallery.air {
+	overflow: hidden;
+	padding: 5px;
+
+	font-family: Arial, Helvetica, 'Bitstream Vera Sans', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+/* Sections */
+.accordiongallery.air section h1 {
+	margin: 0 0 5px 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #afafb9;
+	
+	cursor: default;
+	font-size: 13px;	
+	line-height: 1em;
+}
+.accordiongallery.air section {
+	position: relative;
+	width: 150px;
+	padding: 10px;
+	border: 1px solid #fff;
+	margin-right: 5px;
+	background-color: #f1f3f2;	
+	background-image: -moz-linear-gradient(top, #f1f3f2, #d0d0da);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1f3f2),color-stop(1, #d0d0da));
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+	
+	-moz-box-shadow: 0px 0px 4px #0c3d4c; 
+	-webkit-box-shadow: 0px 0px 4px #0c3d4c;
+	box-shadow: 0px 0px 4px #0c3d4c; 
+}
+.accordiongallery.air section:hover {
+	-moz-box-shadow: 0px 0px 8px #000;
+	-webkit-box-shadow: 0px 0px 8px #000;
+	box-shadow: 0px 0px 8px #000;
+}
+/* Vertical Thumbs */
+.accordiongallery.air section .accordiongallery-thumbs a {
+	display: block;	
+	overflow: hidden;
+	padding: 5px;	
+	margin: 4px;
+	
+	color: #555;
+	text-align: center;
+	text-decoration: none;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+.accordiongallery.air section .accordiongallery-thumbs a:hover, .accordiongallery.air section .accordiongallery-thumbs a:focus {
+	background-color: #e7e7e7;
+	
+	-moz-box-shadow: 0px 0px 4px #b2b2b2;
+	-webkit-box-shadow: 0px 0px 4px #b2b2b2;
+	box-shadow: 0px 0px 4px #b2b2b2;
+}
+/* Vertical Scrollers */
+.accordiongallery.air .accordiongallery-scrollup, .accordiongallery.air .accordiongallery-scrolldown {
+	display: block;
+	height: 10px;
+	cursor: default;
+	text-indent: -9999px;
+	
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-image: url(air-arrow-vertical.png);
+	
+	opacity: 0.6;
+}
+.accordiongallery.air .accordiongallery-scrollup:hover, .accordiongallery.air .accordiongallery-scrolldown:hover {
+	opacity: 1;
+}
+.accordiongallery.air .accordiongallery-scrolldown {
+	background-position: bottom center;
+}
+.accordiongallery.air .active-section {
+	background-color: #d0d0da;
+}
+.accordiongallery.air .inactive-section a {
+	opacity: 0.5;	
+}
+/* Image View */
+.accordiongallery.air .accordiongallery-preview {	
+	position: relative;
+	opacity: 0;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+/* Loader */
+.accordiongallery.air .accordiongallery-loader {
+	position: absolute;
+	display: block;
+	top: 10px;
+	right: 10px;
+	width: 100px;
+	height: 12px;
+	z-index: 99;
+	text-indent: -999px;
+	
+	background-image: url(air-loader.gif);
+	background-repeat: no-repeat;	
+}
+.accordiongallery.air .accordiongallery-preview>img {	
+	margin-bottom: 10px;	
+}
+/* Horizontal Scroller */
+.accordiongallery.air .accordiongallery-scrollleft, .accordiongallery.air .accordiongallery-scrollright {		
+	width: 10px;
+	height: 65px;
+	opacity: 0.6;	
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-image: url(air-arrow-horizontal.png);
+	
+	text-indent: -9999px;
+}
+.accordiongallery.air .accordiongallery-scrollright {
+	float: right;
+	background-position: right center;
+}
+.accordiongallery.air .accordiongallery-scrollleft:hover, .accordiongallery.air .accordiongallery-scrollright:hover {	
+	opacity: 1;
+}
+/* Horizontal Thumbs */
+.accordiongallery.air .accordiongallery-preview-thumbs {
+	width: 455px;
+	padding: 10px;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #b2b2b2;	
+	background-color: #bfbfc9;
+	
+	-moz-box-shadow: 0px 2px 2px #fff;
+	-webkit-box-shadow: 0px 0px 4px #b2b2b2;
+	box-shadow: 0px 0px 4px #b2b2b2;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.accordiongallery.air .accordiongallery-preview-thumbs a {
+	margin-right: 10px;	
+	opacity: 0.7;
+}
+.accordiongallery.air .accordiongallery-preview-thumbs a img {
+	border: 0px;
+}
+.accordiongallery.air .accordiongallery-preview-thumbs a:hover, .accordiongallery.air .accordiongallery-preview-thumbs a:focus {
+	opacity: 1;
+}
+.accordiongallery.air .accordiongallery-preview-scroller a img {
+	width: 80px;
+	height: auto;
+}
+.accordiongallery.air .accordiongallery-preview-scroller a p {
+	display: none;
+}
+.accordiongallery.air .accordiongallery-preview .image-caption {
+	position: absolute;		
+	top: 270px;
+	left: 50px;
+	width: 380px;
+	padding: 5px;
+	border: 1px solid #fff;	
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.5);
+	
+	color: #000;
+	text-align: center;
+	text-shadow: 0px 1px 1px #fff;
+	cursor: default;
+	
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}

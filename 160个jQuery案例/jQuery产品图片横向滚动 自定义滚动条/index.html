@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery image player with scroll bar</title>
+<script type="text/javascript" src="js/jquery.1.4.2-min.js"></script>
+</head>
+<body>
+<!--演示内容开始-->
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;text-decoration:none;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:#E1E7E8;}
+/* imageFlow */
+#imageFlow{width:1050px;height:390px;overflow:hidden;position:relative;margin:30px auto 0 auto;}
+#imageFlow .diapo{position:absolute;left:-1000px;cursor:pointer;overflow:hidden;}
+#imageFlow .bank{visibility:hidden;overflow:hidden;}
+#imageFlow ul{height:20px;margin:0 auto;width:100%;text-align:center;}
+#imageFlow ul li{color:#333;font-size:12px;text-align:left;margin-left:30%;height:20px;line-height:20px;overflow:hidden;width:100%;vertical-align:bottom;}
+#imageFlow .text{position:absolute;left:0px;width:80px;bottom:1%;text-align:center;color:#333;font-family:verdana, arial, Helvetica, sans-serif;z-index:1000;}
+#imageFlow .title{font-size:0.9em;font-weight:bold;}
+#imageFlow .legend{font-size:0.8em;}
+#imageFlow .scrollbar{position:absolute;left:10%;top:0;width:80%;height:16px;z-index:1;}
+#imageFlow .scrollbar img{cursor:pointer;}
+#imageFlow .track{position:absolute;left:-55px;width:950px;height:16px;top:0px;}
+#imageFlow .arrow-left{position:absolute;left:-105px;z-index:1;}
+#imageFlow .arrow-right{position:absolute;right:-105px;z-index:1;}
+#imageFlow .bar{position:absolute;height:16px;left:25px;top:0px;cursor:pointer;}
+#imageFlow .ProTi{color:#ff6600;font-weight:bold;}
+#imageFlow .ProRmb{font-weight:bold;}
+#imageFlow .ProMo{color:#ff6600;cursor:pointer;}
+</style>
+
+<!--[if IE 6]>
+<script src="js/DDPngMin.js"></script>
+<script>DD_belatedPNG.fix('#imageFlow .diapo');</script>
+<![endif]--> 
+
+<script type="text/javascript" src="js/Flow.js"></script> 
+<script type="text/javascript">
+/* ==== create imageFlow ==== */
+if($.browser.msie&&($.browser.version == "6.0")&&!$.support.style){ 
+	imf.create("imageFlow", 0.78, 1, 5);
+	$(document).ready(function(){
+		$(".bar").attr("src","images/clear.gif");   
+		$(".bar").attr("style","filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='images/sc.png')");
+		$(".arrow-left").attr("src","images/clear.gif");   
+		$(".arrow-left").attr("style","filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='images/btn_Pro_show_left.png')");
+		$(".arrow-right").attr("src","images/clear.gif");   
+		$(".arrow-right").attr("style","filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src='images/btn_Pro_show_right.png')");
+	});
+} else { 
+	imf.create("imageFlow", 0.5, 1.5, 5);
+} 
+</script> 
+<script src="/adsense.js" type="text/javascript"></script>
+<div id="imageFlow">
+    <div class="bank"> <a rel='images/1090.png' href='#'>
+        <ul>
+            <li class="ProTi" >1090笔记本型光学无线鼠标 </li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>无线自由 </li>
+            <li>NANO接收器，即插即忘 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/1090jzb.png' href='#'>
+        <ul>
+            <li class="ProTi" >1090精致版笔记本型光学无线鼠标</li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>无线自由 </li>
+            <li>NANO接收器，即插即忘 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/1030.png' href='#'>
+        <ul>
+            <li class="ProTi" >1030无线光学鼠标</li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/1100X.png' href='#'>
+        <ul>
+            <li class="ProTi" >1100X光学无线鼠标</li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>舒适贴心 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/1200.png' href='#'>
+        <ul>
+            <li class="ProTi" >1200光学无线鼠标</li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>无线自由 </li>
+            <li>纤薄外观 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/3100.png' href='#'>
+        <ul>
+            <li class="ProTi" >3100光学无线鼠标</li>
+            <li>高精度蓝光寻迹引擎 </li>
+            <li>动感流线，时尚魅力 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/7100.png' href='#'>
+        <ul>
+            <li class="ProTi" >7100光学无线鼠标</li>
+            <li>高精度蓝光寻迹引擎 </li>
+            <li>精巧独到、舒适贴心 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/3000.png' href='#'>
+        <ul>
+            <li class="ProTi" >3000光学无线鼠标</li>
+            <li>高精度蓝光寻迹引擎 </li>
+            <li>精巧独到、舒适贴心 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/3710.png' href='#'>
+        <ul>
+            <li class="ProTi" >3710无线激光鼠标</li>
+            <li>更长电池使用寿命 </li>
+            <li>2.4G无线自由 </li>
+            <li>激光定位精准，移动灵敏 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/6310.png' href='#'>
+        <ul>
+            <li class="ProTi" >6310光学无线鼠标</li>
+            <li>高精度蓝光寻迹引擎 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/3180.png' href='#'>
+        <ul>
+            <li class="ProTi" >3180光学无线鼠标</li>
+            <li>高精度蓝光寻迹引擎 </li>
+            <li>舒适手感 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> <a rel='images/3090.png' href='#'>
+        <ul>
+            <li class="ProTi" >3090笔记本型无线光学鼠标</li>
+            <li>高精度光学寻迹引擎 </li>
+            <li>人体工学设计 </li>
+            <li>无线自由 </li>
+            <li class="ProMo">了解更多...</li>
+        </ul>
+        </a> </div>
+    <div class="scrollbar"> <img class="track" src="images/sb.png" alt="" /> <img class="arrow-left" src="images/btn_Pro_show_left.png" alt="" /> <img class="arrow-right" src="images/btn_Pro_show_right.png" alt="" /> <img class="bar" src="images/sc.png" alt=""/> </div>
+</div>
+<!--演示内容结束--> 
+<br>
+<br>
+<br>
+</body>
+</html>

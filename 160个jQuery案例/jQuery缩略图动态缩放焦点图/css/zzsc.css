@@ -1,0 +1,33 @@
+/* 公用代码可以和自己原来公用css合并 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+b{font-weight:normal;}
+button {cursor:pointer;}
+input, select, form img, button,label,textarea{font-size:12px;vertical-align:middle;font-family:Tahoma;color:#daac79;}
+a{color:#bf966a;text-decoration:none;}
+img{display:block;}
+.clearfix:after, .anlist:after{content:""; display:block; clear:both;}
+.clearfix, .anlist{zoom:1;}
+.clear{height:0;overflow:hidden;clear:both;}
+
+/* 焦点图代码 */
+.bnspic a{display:block;}
+.big_pic, .small_pic{float:left;}
+.big_pic, .big_pic a, .big_pic img{width:681px;height:362px;}
+.big_pic{overflow:hidden;position:relative;}
+.big_pic li{position:absolute;top:0;left:0;opacity:0;-webkit-transform:scale(0.9);transform:scale(0.4);z-index:-1;transition:all linear 0.2s;}
+.big_pic .on{opacity:1;-webkit-transform:scale(1);transform:scale(1);z-index:1;}
+.big_pic a{position:relative;}
+.big_pic .txt{width:681px;height:46px;line-height:46px;display:block;position:absolute;bottom:0;left:0;color:#BDBDBD;text-align:center;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');background:rgba(0,0,0,0.5);transition:all ease .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.big_pic a:hover .txt{color:#FFFFFF;}
+.small_pic{width:319px;position:relative;left:1px;}
+.small_pic a, .small_pic img{width:158px;height:120px;}
+.small_pic a{padding:1px;background:#121013;transition:all ease .2s;}
+.small_pic .on, .small_pic li:hover{position:relative;z-index:1;}
+.small_pic .on a{background:#FACC16;}
+.small_pic li{width:160px;height:122px;margin:-1px 0 0 -1px;float:left;}
+

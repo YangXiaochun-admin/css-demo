@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3实现自定义滑杆DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Dosis:700);
+body {
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
+    background: #ecf0f1;
+    color: #34495e;
+    padding-top: 40px;
+    text-shadow: white 1px 1px 1px;
+}
+.value {
+    border-bottom: 4px dashed #bdc3c7;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10em;
+    width: 300px;
+    height: 100px;
+    line-height: 60px;
+    margin: 40px auto;
+    letter-spacing: -0.07em;
+    text-shadow: white 2px 2px 2px;
+}
+input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #bdc3c7;
+    width: 300px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ background-color: #e74c3c;
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ border: 2px solid white;
+ cursor: pointer;
+ transition: 0.3s ease-in-out;
+}
+ input[type="range"]::-webkit-slider-thumb:hover {
+ background-color: white;
+ border: 2px solid #e74c3c;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+ transform: scale(1.6);
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+<div class="value">0</div>
+<input type="range" min="0" max="10" step="1" value="0">
+<script src="js/index.js"></script>
+</body>
+</html>

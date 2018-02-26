@@ -1,0 +1,88 @@
+@font-face {
+  font-family: quicksand;
+  src: url(http://hellafont.com/myftp/paperTemple/Quicksand-Regular.otf);
+}
+
+body {
+  background: black;
+}
+
+#paperLogo {
+  position: relative;
+  margin-top: 100px;
+  padding: 50px 0 80px;
+}
+
+#paperTempleText {
+  position: relative;
+  text-align: center;
+  font-size: 100px;
+  font-family: quicksand;
+  color: white;
+  display: none;
+}
+
+.paper {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  -webkit-transform-origin: 100% -100%;
+}
+
+.paper:not(#pt_paper1) {
+  margin: -350px auto;
+}
+
+#pt_ball {
+  margin: 0px auto;
+  position: relative;
+  top: -7px;
+  width: 300px;
+  height: 300px;
+  background: url(http://hellafont.com/myftp/paperTemple/papertemple-06.svg) no-repeat;
+  background-size: contain;
+  -webkit-animation: ballDrop 2s ease-in-out 2s;
+}
+#pt_paper1 {  
+  background: url(http://hellafont.com/myftp/paperTemple/papertemple_Artboard%202-03.svg) no-repeat;
+  background-size: contain;
+  -webkit-animation: sweepIn 3s ease-out;
+}
+#pt_paper2 {
+  background: url(http://hellafont.com/myftp/paperTemple/papertemple-04.svg) no-repeat;
+  background-size: contain;
+  -webkit-animation: sweepIn 3s ease-out .15s;
+}
+#pt_paper3 {
+  background: url(http://hellafont.com/myftp/paperTemple/papertemple-05.svg) no-repeat;
+  background-size: contain;
+  -webkit-animation: sweepIn 3s ease-out .3s;
+}
+
+
+
+/*
+---------
+KEYFRAMES
+---------
+*/
+
+@-webkit-keyframes sweepIn {
+  0% {
+    -webkit-transform: translate(-500px, 500px) rotate(360deg);
+    -webkit-transform-origin: 100% -100%;
+  };
+  100% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg);
+    -webkit-transform-origin: 300% 0%;
+  };
+}
+
+@-webkit-keyframes ballDrop {
+  0% {
+    -webkit-transform: translate(0px, -1000px);
+  };
+  100% {
+    -webkit-transform: translate(0px, 0px);
+  };
+}

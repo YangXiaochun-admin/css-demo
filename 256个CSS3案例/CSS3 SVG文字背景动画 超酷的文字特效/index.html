@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 SVG文字背景动画DEMO演示</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<div class="l--wrapper" style="margin-top:90px"> <svg>
+    <pattern id="pt--water" viewBox="0 0 256 256"
+         width="256" height="256" patternUnits="userSpaceOnUse">
+        <image xlink:href="0_835bb_35485e4a_XL.gif" width="256" height="256"/>
+    </pattern>
+    <pattern id="pt--fire" viewBox="30 100 186 200"
+         width="216" height="200" patternUnits="userSpaceOnUse"
+             x="-60" y="-100">
+        <image xlink:href="0_835bc_b77f8d28_orig.gif" width="256" height="300"/>
+    </pattern>
+    <text x="50%" y="155" class="t--water" text-anchor="middle">Water</text>
+    <text x="50%" y="280" class="t--and" text-anchor="middle">&</text>
+    <text x="50%" y="470" class="t--fire" text-anchor="middle">Fire</text>
+    
+    <!--     <rect width="400" height="400"></rect> --> 
+    </svg> </div>
+</body>
+</html>

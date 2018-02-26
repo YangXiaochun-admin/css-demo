@@ -1,0 +1,237 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	background-color:#eee;
+	background-position:center center;
+	background-repeat:none;
+	
+	background-image:-moz-radial-gradient(circle closest-corner, #eee 0%, #ccc 100%);
+	background-image:-o-radial-gradient(circle closest-corner, #eee 0%, #ccc 100%);
+	background-image:-webkit-radial-gradient(circle closest-corner, #eee 0%, #ccc 100%);
+	background-image:radial-gradient(circle closest-corner, #eee 0%, #ccc 100%);
+}
+
+body{
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	background-color:transparent;
+}
+
+a, a:visited {
+	outline:none;
+	color:#1c4f64;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+section, footer, header{
+	display: block;
+}
+
+#main{
+	width:575px;
+	text-align:center;
+	
+	position:absolute;
+	top:50px;
+	left:50%;
+	width:500px;
+	height:500px;
+	margin:0 0 0 -250px;
+}
+
+
+/*----------------------------
+	CSS3 Folder
+-----------------------------*/
+
+
+
+.folder {
+	/* This will enable the 3D effect. Decrease this value 
+	 * to make the perspective more pronounced: */
+	
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	perspective: 800px;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 0;
+	
+	width: 160px;
+	height: 120px;
+	margin: -100px 0 0 -60px;
+}
+
+.folder div{
+    width:150px;
+    height:115px;
+    
+    background-color:#93bad8;
+    
+    /* Enabling 3d space for the transforms */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    /* Enabling a smooth animated transition */
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    transition:0.5s;
+    
+    /* Disable text seleltion on the folder */
+    -webkit-user-select: none;
+  	-moz-user-select: none;
+  	user-select: none;
+    
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-75px;
+}
+
+.folder .front{
+    border-radius:5px 5px 0 0;
+    
+    -moz-transform:rotateX(-30deg);
+    -webkit-transform:rotateX(-30deg);
+    transform:rotateX(-30deg);
+    
+    -moz-transform-origin:50% 100%;
+    -webkit-transform-origin:50% 100%;
+    transform-origin:50% 100%;
+    
+    background-image: -moz-linear-gradient(top, #93bad8 0%, #6c9dc0 85%, #628faf 100%);
+    background-image: -webkit-linear-gradient(top, #93bad8 0%, #6c9dc0 85%, #628faf 100%);
+    background-image: linear-gradient(top, #93bad8 0%, #6c9dc0 85%, #628faf 100%);
+    
+    box-shadow:0 -2px 2px rgba(0,0,0,0.1), 0 1px rgba(255,255,255,0.35) inset;
+    
+    z-index:10;
+    
+    font: bold 26px sans-serif;
+	color: #5A88A9;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+	line-height: 115px;
+}
+
+.folder .back{
+    background-image: -webkit-linear-gradient(top, #93bad8 0%, #89afcc 10%, #5985a5 60%);
+    background-image: -moz-linear-gradient(top, #93bad8 0%, #89afcc 10%, #5985a5 60%);
+    background-image: linear-gradient(top, #93bad8 0%, #89afcc 10%, #5985a5 60%);
+    
+    border-radius:0 5px 0 0;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+.folder .back:before{
+    content:'';
+    width:60px;
+    height:10px;
+    border-radius:4px 4px 0 0;
+    background-color:#93bad8;
+    position:absolute;
+    top:-10px;
+    left:0px;
+    box-shadow:0 -1px 1px rgba(0,0,0,0.15);
+}
+
+.folder .back:after{
+    content:'';
+    width:100%;
+    height:4px;
+    border-radius:5px;
+    position:absolute;
+    bottom:5px;
+    left:0px;
+    box-shadow:0 4px 8px #333;
+}
+
+.folder.open .front{
+    -moz-transform:rotateX(-50deg);
+    -webkit-transform:rotateX(-50deg);
+    transform:rotateX(-50deg);
+}
+
+
+/*----------------------------
+	Draggable Icons
+-----------------------------*/
+
+#main img{
+	position:absolute;
+	cursor:move;
+}
+
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #111111;
+	bottom: 0;
+	box-shadow: 0 -1px 2px rgba(0,0,0,0.4);
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+}
+
+footer h2{
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+	left: 50%;
+	margin-left: -400px;
+	padding: 13px 0 0;
+	position: absolute;
+	width: 540px;
+	line-height: 1.4;
+	margin-top: 0;
+}
+
+footer h2 i{
+	font-style:normal;
+	color:#888;
+}
+
+footer a.tzine,a.tzine:visited{
+	color: #999999;
+	font-size: 12px;
+	left: 50%;
+	margin: 16px 0 0 110px;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+}
+
+footer a i{
+	color:#ccc;
+	font-style: normal;
+}
+
+footer a i b{
+	color:#c92020;
+	font-weight: normal;
+}

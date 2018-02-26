@@ -1,0 +1,117 @@
+@import "compass/css3";
+
+$sidebar-header-height: 50px;
+$sidebar-header-shadow-height: 10px;
+$sidebar-gutter: 20px;
+$sidebar-background: #eee;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,100,900);
+
+* {
+  @include box-sizing(content-box);
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background: darken($sidebar-background, 5%);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  max-width: 300px;
+  background: #eee;
+  
+  &:after {  
+    content: "";
+    position: absolute;    
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    height: 100%;
+    width: $sidebar-header-shadow-height;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.2)), to(rgba(0,0,0,0)));
+    -webkit-mask-box-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0,rgba(0,0,0,0)), color-stop(0.5,rgba(0,0,0,.8)), color-stop(1.0,rgba(0,0,0,0)));
+    border-left: 1px solid rgba(0,0,0,0.4);
+  }
+}
+
+.sidebar-header {  
+  position: relative; 
+  height: $sidebar-header-height;
+  line-height: $sidebar-header-height;
+  padding: $sidebar-gutter;
+  font-size: 20px;
+  
+  &:after {
+    
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: $sidebar-header-shadow-height;
+    width: 100%;
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.2)),to(rgba(0,0,0,0)));
+    -webkit-mask-box-image: -webkit-gradient(linear,left top,right top,color-stop(0.0,rgba(0,0,0,0)),color-stop(0.5,rgba(0,0,0,.8)),color-stop(1.0,rgba(0,0,0,0)));
+    border-top: 1px solid rgba(0,0,0,0.4);
+  }
+}
+
+.sidebar-title {
+  margin: 0;
+  color: #666;
+}
+
+.sidebar-content {
+  position: absolute;
+  top: $sidebar-header-height + $sidebar-gutter + $sidebar-header-shadow-height;
+  bottom: 0;
+  overflow: auto;
+  padding: $sidebar-gutter;
+  color: #444;
+}
+
+// The scrollbar style miss the hover and active state
+::-webkit-scrollbar {
+  height: 16px;
+  overflow: visible;
+  width: 16px;
+}
+
+::-webkit-input-placeholder element,
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2);
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+}
+
+::-webkit-slider-thumb element,
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
+
+::-webkit-search-cancel-button element,
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+}
+
+::-webkit-search-results-decoration element,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+.page {
+  margin-left: 300px;
+  padding: 5%;
+}

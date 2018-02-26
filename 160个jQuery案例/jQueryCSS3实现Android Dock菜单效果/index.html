@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery/CSS3实现Android Dock效果DEMO演示</title>
+<meta name="description" content="Tutorial : Creating Android Dock Using jQuery & CSS3">
+<meta name="author" content="Webstuffshare">
+<link rel="stylesheet" href="demo.css?v=2">
+</head>
+<body>
+<div id="container"> <span id="information" style="display:none">Your browser doesn't support CSS3 3D Transform</span> </div>
+<div id="dock-wrapper">
+    <div class="dock">
+        <div class="dock-front"> <img src="images/arrow-up.png" alt="Arrow Up" id="arrow-up" /> </div>
+        <div class="dock-top"> <img src="images/arrow-down.png" alt="Arrow Down" id="arrow-down" /> </div>
+    </div>
+    <div class="item"> <img src="images/launcher-pro.png" width="60" /> <img src="images/2do.png" width="60" /> <img src="images/antivirus.png" width="60" /> <img src="images/drive.png" width="60" /> <img src="images/plex.png" width="60" /> <img src="images/maps.png" width="60" /> </div>
+</div>
+<img src="images/arrow.png" alt="arrow" id="arrow" /> 
+<script>!window.jQuery && document.write(unescape('%3Cscript src="javascript/jquery-1.7.2.min.js"%3E%3C/script%3E'))</script> 
+<script src="javascript/demo.js"></script> 
+<script src="javascript/modernizr.custom.34807.js"></script> 
+<script> if(!Modernizr.csstransforms3d) document.getElementById('information').style.display = 'block'; </script> 
+<!-- GA --> 
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script> 
+<script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-2260508-2");
+      pageTracker._trackPageview();
+    } catch(err) {}</script> 
+<!-- GA -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3个人资料表单 分两步骤表单DEMO演示</title>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<section class='container'> 
+    <!-- / Form -->
+    <form>
+        <!-- / Header --> 
+        
+        <!-- / Fieldset Alpha -->
+        <fieldset class='alpha'>
+            <legend><b>1.</b> Your Info</legend>
+            <div class='frow'>
+                <input class='item' placeholder='Username' type='text'>
+            </div>
+            <div class='frow'>
+                <input class='item' placeholder='Email' type='email'>
+            </div>
+            <div class='frow'>
+                <input class='item' placeholder='Password' type='password'>
+            </div>
+            <div class='frow'> <a class='next-step' href='#'>Let's go!</a> </div>
+        </fieldset>
+        <!-- / Fieldset Beta -->
+        <fieldset class='beta'>
+            <legend><b>2.</b>Your Social Profiles</legend>
+            <div class='frow'>
+                <input class='item' placeholder='CodePen' required='required' type='url'>
+            </div>
+            <div class='frow'>
+                <input class='item' placeholder='Dribbble' required='required' type='url'>
+            </div>
+            <div class='frow'>
+                <input class='item' placeholder='Behance' required='required' type='url'>
+            </div>
+            <div class='frow'> <a class='prev-step' href='#'>Go back!</a> </div>
+            <div class='frow'>
+                <input class='submit' type='submit' value="I'm all done!">
+            </div>
+        </fieldset>
+        <!-- / Fieldset Charlie -->
+        <fieldset class='charlie'>
+            <legend><b>3.</b>Your All Done</legend>
+            <div class='frow'>
+                <p>Thanks</p>
+            </div>
+        </fieldset>
+    </form>
+</section>
+<script src='js/jquery.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

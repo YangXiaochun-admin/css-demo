@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>CSS3鼠标悬停中英文切换导航</title>
+</head>
+
+<body>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";padding:40px 0 0 0;}
+/* jianti */
+.jianti{width:100px;height:30px;position:relative;font-family:微软雅黑;font-size:12px;color:#fff;overflow:hidden;float:left;}
+.jianti div{width:100px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+
+.jianti .one{top:0;left:0;z-index:1;background:#63C;color:#FFF;}
+.jianti:hover .one{top:-30px;left:0;}
+.jianti .one a{background:#63C;color:#FFF;text-decoration:none;}
+
+.jianti .two{bottom:-30px;left:0;z-index:2;background:#f50;color:#FFF;}
+.jianti:hover .two{bottom:0px;left:0;}
+.jianti .two a{background:#f50;color:#FFF;text-decoration:none;}
+
+/* nav2 */
+.nav2{width:100px;height:30px;position:relative;font-family:微软雅黑;font-size:12px;color:#fff;overflow:hidden;float:left;}
+.nav2 div{width:100px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+
+.nav2 .one{top:-30px;left:0;z-index:1;background:#63C;color:#FFF;opacity:0;}
+.nav2:hover .one{top:0px;left:0;opacity:1;-webkit-transform:scale(1.3);-moz-transform:scale(1.3);-o-transform:scale(1.3);transform:scale(1.3);}
+.nav2 .one a{background:#63C;color:#FFF;text-decoration:none;}
+
+.nav2 .two{bottom:0px;left:0;z-index:2;background:#63C;color:#FFF;}
+.nav2:hover .two{bottom:-30px;left:0;}
+.nav2 .two a{background:#63C;color:#FFF;text-decoration:none;}
+</style>
+<div style="width:980px;height:30px;margin:0 auto 20px;">
+    <div class="jianti">
+        <div class="one"><a href="#">HOME</a></div>
+        <div class="two"><a href="#">首页</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">新品中心</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">潮流套装</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">限时特惠</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">Download</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">Download</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">Download</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+    <div class="jianti">
+        <div class="one"><a href="#">Download</a></div>
+        <div class="two"><a href="#">Download</a></div>
+    </div>
+</div>
+<div style="width:980px;height:30px;margin:0 auto 20px;">
+    <div class="nav2">
+        <div class="one"><a href="#">首页</a></div>
+        <div class="two"><a href="#">首页</a></div>
+    </div>
+    <div class="nav2">
+        <div class="one"><a href="#">新品中心</a></div>
+        <div class="two"><a href="#">新品中心</a></div>
+    </div>
+    <div class="nav2">
+        <div class="one"><a href="#">新品中心</a></div>
+        <div class="two"><a href="#">新品中心</a></div>
+    </div>
+    <div class="nav2">
+        <div class="one"><a href="#">限时特惠</a></div>
+        <div class="two"><a href="#">限时特惠</a></div>
+    </div>
+    <div class="nav2">
+        <div class="one"><a href="#">上装</a></div>
+        <div class="two"><a href="#">上装</a></div>
+    </div>
+    <div class="nav2">
+        <div class="one"><a href="#">连衣裙</a></div>
+        <div class="two"><a href="#">连衣裙</a></div>
+    </div>
+</div>
+</body>
+</html>

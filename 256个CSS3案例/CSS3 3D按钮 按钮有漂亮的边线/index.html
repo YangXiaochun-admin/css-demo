@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 3D按钮 按钮有漂亮的边线DEMO演示</title>
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic);
+* { box-sizing: border-box; }
+html { background: #e1e1e1; }
+body {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 1rem;
+    font-family: 'Cabin', sans-serif;
+}
+section {
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 27rem;
+    user-select: none;
+}
+button {
+    display: block;
+    float: left;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border: 0;
+    height: 5rem;
+    width: 25rem;
+    border-radius: 0.4rem;
+    position: relative;
+    background: transparent;
+    outline: none;
+}
+button .wrapper {
+    display: block;
+    float: left;
+    background: #fff;
+    border: 0;
+    height: 5rem;
+    width: 25rem;
+    border-radius: 0.4rem;
+    position: relative;
+    box-shadow: inset 0 -0.3rem 0 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0 0 rgba(0, 0, 0, 0.2);
+    transition: height 0.08s, margin 0.08s, box-shadow 0.08s, background 0.08s;
+    background: -moz-linear-gradient(0deg, #4d4d4d 0%, #4d4d4d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #4d4d4d 0%, #4d4d4d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #4d4d4d 0%, #4d4d4d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button .wrapper:hover {
+    background: -moz-linear-gradient(0deg, #333333 0%, #333333 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #333333 0%, #333333 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #333333 0%, #333333 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button .wrapper:active {
+    margin-top: 0.3rem;
+    height: 4.7rem;
+    box-shadow: none;
+}
+button.blue .wrapper {
+    background: -moz-linear-gradient(0deg, #7db2e8 0%, #7db2e8 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #7db2e8 0%, #7db2e8 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #7db2e8 0%, #7db2e8 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button.blue .wrapper:hover {
+    background: -moz-linear-gradient(0deg, #5299e0 0%, #5299e0 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #5299e0 0%, #5299e0 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #5299e0 0%, #5299e0 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button.green .wrapper {
+    background: -moz-linear-gradient(0deg, #c4e87d 0%, #c4e87d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #c4e87d 0%, #c4e87d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #c4e87d 0%, #c4e87d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button.green .wrapper:hover {
+    background: -moz-linear-gradient(0deg, #b1e052 0%, #b1e052 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #b1e052 0%, #b1e052 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #b1e052 0%, #b1e052 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button.red .wrapper {
+    background: -moz-linear-gradient(0deg, #e87d7d 0%, #e87d7d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #e87d7d 0%, #e87d7d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #e87d7d 0%, #e87d7d 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+button.red .wrapper:hover {
+    background: -moz-linear-gradient(0deg, #e05252 0%, #e05252 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(0deg, #e05252 0%, #e05252 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+    background: linear-gradient(90deg, #e05252 0%, #e05252 2%, #ffffff 2%, #ffffff 92%, #f5f5f5 92%, #f5f5f5 100%);
+}
+i.icon-chevron-right {
+    position: absolute;
+    right: 2%;
+    top: 1.75rem;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0.1rem 0 white;
+}
+button header {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0.7rem;
+    left: 5%;
+    width: 62%;
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+button:hover header {
+    text-overflow: clip;
+    text-align: right;
+    direction: rtl;
+}
+button .data {
+    position: absolute;
+    top: 2.7rem;
+    left: 5.2%;
+    width: 62%;
+    text-align: left;
+    color: #999999;
+}
+button div i, button div span {
+    color: #666666;
+    margin: 0 1%;
+}
+button div span { font-weight: bold; }
+button div em {
+    display: inline-block;
+    font-style: normal;
+    max-width: 6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+button p {
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 2.5rem;
+    top: 1.1rem;
+    font-size: 2rem;
+    color: #999999;
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<section>
+    <button class="blue">
+    <div class="wrapper">
+        <header>Teach me to fly like Superman and woo Lois Lane</header>
+        <div class="data"><em>Superpowers</em> <i class="icon-time"></i> exp: <span>Apr 18, 1938</span></div>
+        <p>&pound;80</p>
+        <i class="icon-chevron-right"></i> </div>
+    </button>
+    <button class="green">
+    <div class="wrapper">
+        <header>Teach me to play ukulele like Israel Kamakawiwo'ole</header>
+        <div class="data"><em>Music</em> <i class="icon-time"></i> exp: <span>May 20, 1959</span></div>
+        <p>&pound;35</p>
+        <i class="icon-chevron-right"></i> </div>
+    </button>
+    <button class="red">
+    <div class="wrapper">
+        <header>Teach me to be a javascript ninja like Mr Doob</header>
+        <div class="data"><em>Web Development</em> <i class="icon-time"></i> exp: <span>Apr 1, 2010</span></div>
+        <p>&pound;60</p>
+        <i class="icon-chevron-right"></i> </div>
+    </button>
+    <button>
+    <div class="wrapper">
+        <header>Teach me to cook like The Hairy Bikers</header>
+        <div class="data"><em>Cooking</em> <i class="icon-time"></i> exp: <span>Jul 07, 2013</span></div>
+        <p>&pound;100</p>
+        <i class="icon-chevron-right"></i> </div>
+    </button>
+</section>
+<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+</body>
+</html>

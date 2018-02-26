@@ -1,0 +1,58 @@
+@import "compass/css3";
+
+@include keyframes(loading) {
+  0%, 100% {
+    @include transform(scale(1) rotateZ(0deg));
+    opacity: 1;
+  }
+  26% {
+    @include transform(scale(1.1) rotateZ(12deg));
+    opacity: .2;
+  }
+  76% {
+    @include transform(scale(.8) rotateZ(-8deg));
+    opacity: .6;
+  }
+}
+
+.loader {
+  overflow: hidden;
+  font-size: 45px;
+  
+  span {
+    @include animation(loading 1s linear infinite -.8s);
+    float: left;
+  }
+  .span2 {
+    @include animation(loading 1s linear infinite -.2s);
+  }
+  .span3 {
+    @include animation(loading 1s linear infinite -.5s);
+  }
+  .span4 {
+    @include animation(loading 1s linear infinite -1.1s);
+  }
+  .span5 {
+    @include animation(loading 1s linear infinite -.36s);
+  }
+  .span6 {
+    @include animation(loading 1s linear infinite -.65s);
+  }
+  .span7 {
+    @include animation(loading 1s linear infinite -.93s);
+  }
+}
+
+.font1 {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+.font2 {
+  font-family: Impact;
+}
+.font3 {
+  font-family: "Webdings";
+}
+.font4 {
+  font-family: "Comic Sans MS", sans-serif;
+  font-weight: bold;
+}

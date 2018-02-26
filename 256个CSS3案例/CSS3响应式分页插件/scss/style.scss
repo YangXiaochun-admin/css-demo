@@ -1,0 +1,233 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+$main-color: #f0f0f0;
+$secondary-color: #1d1f20;
+
+ @mixin display-child($n) {
+    @for $i from 2 through $n {
+      &:nth-child(#{$i}) {
+        a {
+          display: inline-block;
+        }
+      }
+    }
+ }
+
+body {
+  background-color: $main-color;
+  font-family: "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  background: lighten($main-color, 5%);
+  padding: 1rem;
+  margin: 3rem auto;
+  border-radius: 0.2rem;
+  counter-reset: pagination;
+  text-align: center;
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  ul {
+    width: 100%;
+  }
+}
+
+.xlarge {
+  width: 65rem;
+}
+
+.large {
+  width: 45rem;
+}
+
+.middle {
+  width: 32rem;
+}
+
+.small {
+  width: 22rem;
+}
+
+.xsmall {
+  width: 14rem;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+  padding-left: 0px;
+}
+
+li {
+  counter-increment: pagination;
+  &:hover {
+    a {
+      color: lighten($main-color, 5%);
+      background-color: $secondary-color;
+      border: solid 1px $secondary-color;
+    }
+  }
+  &.active {
+    a {
+      color: lighten($main-color, 5%);
+      background-color: $secondary-color;
+      border: solid 1px $secondary-color;
+    }
+  }
+  &:first-child {
+    float: left;
+    a {
+      &:after {
+        content: "Previous";
+      }
+    }
+  }
+  &:nth-child(2) {
+    counter-reset: pagination;
+  }
+  &:last-child {
+    float: right;
+    a {
+      &:after {
+        content: "Next";
+      }
+    }
+  }
+  a {
+    border: solid 1px darken($main-color, 10%);
+    border-radius: 0.2rem;
+    color: darken($main-color, 45%);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem;
+  }
+  a:after {
+    content: " " counter(pagination) " ";
+  }
+}
+
+.large {
+  li {
+    a {
+      display: none;
+    }
+    &:first-child {
+      a {
+        display: inline-block;
+      }
+      a:after {
+        content: "Previous";
+      }
+    }
+    @include display-child(8);
+    &:last-child {
+      a {
+        display: inline-block;
+      }
+      a:after {
+        content: "Next";
+      }
+    }
+    &:nth-last-child(2) {
+      a {
+        display: inline-block;
+      }
+    }
+    &:nth-last-child(3) {
+      display: inline-block;
+      &:after {
+        padding: 0 1rem;
+        content: "...";
+      }
+    }
+  }
+}
+
+.middle {
+  li {
+    a {
+      display: none;
+    }
+    &:first-child {
+      a {
+        display: inline-block;
+      }
+      a:after {
+        content: "<";
+      }
+    }
+    &:last-child {
+      a {
+        display: inline-block;
+      }
+      a:after {
+        content: ">";
+      }
+    }
+    @include display-child(5);
+    &:nth-last-child(2) {
+      a {
+        display: inline-block;
+      }
+    }
+    &:nth-last-child(3) {
+      display: inline-block;
+      &:after {
+        padding: 0 1rem;
+        content: "...";
+      }
+    }
+  }
+}
+
+.small {
+  li {
+    display: none;
+    &:first-child {
+      width: 50%;
+      display: inline;
+      a:after {
+        content: "Previous Page";
+      }
+    }
+    &:last-child {
+      display: inline;
+      a:after {
+        content: "Next Page";
+      }
+    }
+  }
+}
+
+.xsmall {
+  li {
+    display: none;
+    &.active {
+      display: inline;
+    }
+    &:first-child {
+      display: inline;
+      a:after {
+        content: "Prev";
+       }
+    }
+    &:last-child {
+      display: inline;
+      a:after {
+        content: "Next";
+      }
+    }
+  }
+}

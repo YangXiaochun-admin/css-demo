@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>jQuery多级联动美化版Select下拉框DEMO演示</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="css/cui.css" />
+<style>
+body {
+    color: #555;
+    font-size: 14px;
+    font-family: "微软雅黑", "Microsoft Yahei";
+    background-color: #EEE;
+}
+a { color: #555; }
+a:hover { color: #f00; }
+input {
+    font-size: 14px;
+    font-family: "微软雅黑", "Microsoft Yahei";
+}
+.wrap {
+    width: 500px;
+    margin: 100px auto;
+}
+.h20 {
+    height: 20px;
+    overflow: hidden;
+    clear: both;
+}
+.nice-select {
+    width: 245px;
+    padding: 0 10px;
+    height: 38px;
+    border: 1px solid #999;
+    position: relative;
+    box-shadow: 0 0 5px #999;
+    background: #fff url(images/a2.jpg) no-repeat right center;
+    cursor: pointer;
+}
+.nice-select input {
+    display: block;
+    width: 100%;
+    height: 38px;
+    line-height: 38px \9;
+    border: 0;
+    outline: 0;
+    background: none;
+    cursor: pointer;
+}
+.nice-select ul {
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 38px;
+    overflow: hidden;
+    background-color: #fff;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #999;
+    border-top: 0;
+    box-shadow: 0 3px 5px #999;
+    z-index: 9999;
+}
+.nice-select ul li {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.nice-select ul li.on { background-color: #e0e0e0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="nice-select" name="nice-select">
+        <input type="text" value="==选择省份==" readonly>
+        <ul>
+            <li data-value="1">湖北省</li>
+            <li data-value="2">广东省</li>
+            <li data-value="3">湖南省</li>
+            <li data-value="4">四川省</li>
+        </ul>
+    </div>
+    <div class="h20"></div>
+    <div class="nice-select" name="nice-select">
+        <input type="text" value="==选择城市==" readonly>
+        <ul>
+            <li data-value="1">武汉市</li>
+            <li data-value="2">深圳市</li>
+            <li data-value="3">长沙市</li>
+            <li data-value="4">成都市</li>
+        </ul>
+    </div>
+    <div class="h20"></div>
+    <div class="nice-select" name="nice-select">
+        <input type="text" value="==选择区县==" readonly>
+        <ul>
+            <li data-value="1">蔡甸区</li>
+            <li data-value="2">南山区</li>
+            <li data-value="3">雨花区</li>
+            <li data-value="4">武侯区</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script>	
+$('[name="nice-select"]').click(function(e){
+	$('[name="nice-select"]').find('ul').hide();
+	$(this).find('ul').show();
+	e.stopPropagation();
+});
+$('[name="nice-select"] li').hover(function(e){
+	$(this).toggleClass('on');
+	e.stopPropagation();
+});
+$('[name="nice-select"] li').click(function(e){
+	var val = $(this).text();
+	var dataVal = $(this).attr("data-value");
+	$(this).parents('[name="nice-select"]').find('input').val(val);
+	$('[name="nice-select"] ul').hide();
+	e.stopPropagation();
+	alert("中文值是："+val);
+	alert("数字值是："+dataVal);
+	//alert($(this).parents('[name="nice-select"]').find('input').val());
+});
+$(document).click(function(){
+	$('[name="nice-select"] ul').hide();
+});
+</script>
+</body>
+</html>

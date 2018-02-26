@@ -1,0 +1,104 @@
+@import url("http://fonts.googleapis.com/css?family=Lato");
+
+* {  
+  font-smoothing: antialiased;
+}
+
+body {
+  background: #dddfde;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 65px auto 0;
+  background-color: #000;
+}
+.listc {
+  position: relative;
+  width: 570px;
+  margin: auto;
+}
+ul { 
+  list-style: none;
+  float: left;
+}
+ul li {
+  position: relative;
+  width: 100px; height: 100px;
+  float: left;
+  background: #474644;
+  border-radius: 15px;
+  border-bottom: 5px solid #33322f;
+  border-left: 3px solid #000000;
+  box-shadow: -3px 5px 10px 3px rgba(51, 50, 47, 0.5), 5px -5px 20px 10px rgba(51, 50, 47, 0.5) inset, 0px 2px 1px rgba(0, 0, 0, .7);
+  -webkit-transition: -webkit-box-shadow .15s ease-in-out;
+    
+}
+ul li a {
+  position: absolute;
+  width: 50px; height: 50px;
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  top: 31%;
+  left: 25%;
+}
+ul li i{
+  text-shadow:
+    0px 0px #504F4E,
+    0px 1px #424241,
+    -1px 2px #353534,
+    -2px 3px #282827,
+    0px 6px 5px rgba(51, 50, 47, 0.8);
+  color: #858482;
+}
+
+
+/* Colors */
+.facebook:hover i{
+  text-shadow: 
+    0px 0px #394C89, 0px 1px #32447A, -1px 2px #2C3B6A, -2px 3px #26335B, 0px 6px 5px rgba(51, 50, 47, 0.8),
+    0 0 1em #3f5598;
+  color: #3f5598;
+}
+.twitter:hover i{
+  text-shadow: 
+    0px 0px #34AEDF, 0px 1px #2E9AC6, -1px 2px #2987AE, -2px 3px #237495, 0px 6px 5px rgba(51, 50, 47, 0.8),
+    0 0 1em #3ac1f8;
+  color: #3ac1f8;
+}
+.youtube:hover i{
+  text-shadow: 
+    0px 0px #C42829, 0px 1px #AE2425, -1px 2px #991F20, -2px 3px #831B1C, 0px 6px 5px rgba(51, 50, 47, 0.8),
+    0 0 1em #da2d2e;
+  color: #da2d2e;
+}
+.instagram:hover i{
+  text-shadow: 
+    0px 0px #5C228E, 0px 1px #521E7E, -1px 2px #471B6F, -2px 3px #3D175F, 0px 6px 5px rgba(51, 50, 47, 0.8),
+    0 0 1em #66269e;
+  color: #66269e;
+}
+.linkedin:hover i{
+  text-shadow: 
+    0px 0px #195CAF, 0px 1px #16529B, -1px 2px #144788, -2px 3px #113D74, 0px 6px 5px rgba(51, 50, 47, 0.8),
+    0 0 1em #1c66c2;
+  color: #1c66c2;
+}
+
+
+ul li:hover i{
+  -webkit-transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+ul li:active{
+  border-bottom: 1px solid #33322f;
+  top: 5px;
+  border-left: 1px solid #000000;
+  margin-right: 2px;
+  box-shadow: -2px 4px 7px 1px rgba(51, 50, 47, 0.7), 5px -5px 20px 10px rgba(51, 50, 47, 0.5) inset, -1px 2px 1px rgba(0, 0, 0, .7);
+  z-index: -1;
+}
+

@@ -1,0 +1,150 @@
+body {
+  background: #ECF0F1;
+  font-family: "Open Sans Condensed", sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #8E44AD;
+}
+
+h2 {
+  color: #BDC3C7;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#platform {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  height: 7px;
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
+  width: 1000px;
+  z-index: 0;
+  -webkit-transform: skewX(45deg);
+  -moz-transform: skewX(45deg);
+  -ms-transform: skewX(45deg);
+  transform: skewX(45deg);
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  transition: background-color 1s;
+}
+#platform.active {
+  background: rgba(142, 68, 173, 0.3);
+}
+
+#track {
+  bottom: 0;
+  height: 100px;
+  margin: 0 auto;
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 70px;
+  width: 1000px;
+  z-index: 100;
+}
+#track #orb {
+  background: #8e44ad;
+  border-radius: 50%;
+  box-shadow: inset -5px -10px 1px #7f3d9b;
+  bottom: 30px;
+  height: 100px;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100px;
+  z-index: 200;
+  -webkit-transition: bottom 0.5s ease-in-out;
+  -moz-transition: bottom 0.5s ease-in-out;
+  -ms-transition: bottom 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
+}
+#track #orb:after {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  bottom: -22.5px;
+  content: "";
+  display: block;
+  height: 16.66667px;
+  margin: 0 auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 66.66667px;
+  -webkit-transition: height 0.5s ease-in-out, width 0.5s ease-in-out;
+  -moz-transition: height 0.5s ease-in-out, width 0.5s ease-in-out;
+  -ms-transition: height 0.5s ease-in-out, width 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out, width 0.5s ease-in-out;
+}
+#track #orb.hover {
+  bottom: 10px;
+}
+#track #orb.hover:after {
+  bottom: -20px;
+  height: 0;
+  width: 0;
+}
+
+.panel {
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  width: 1000px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.panel .button {
+  background: transparent;
+  color: #333;
+  font-weight: 300;
+  padding: 0.5em 0;
+  margin: 0.5em 0;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.panel .button:hover {
+  cursor: pointer;
+}
+.panel .button:hover > span {
+  background: #9B59B6;
+}
+.panel .button.active > span, .panel .button:active > span {
+  background: #8E44AD;
+}
+.panel .button span {
+  background: #BDC3C7;
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  margin: 0 auto;
+  width: 10px;
+}

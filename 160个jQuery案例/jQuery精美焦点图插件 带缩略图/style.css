@@ -1,0 +1,60 @@
+/*
+	Featured Content Slider
+	by: Chris Coyier
+*/
+*											{ margin: 0; padding: 0; }
+body 										{ font-family: Arial, Helvetica, sans-serif; font-size: 10px; }
+
+					  				  
+/*
+	UTILITY STYLES
+*/				  				  
+					  				  
+.floatLeft 									{ float: left; margin-right: 10px;}
+.floatRight									{ float: right; }
+.clear 										{ clear: both; }
+a											{ outline: none; }
+
+
+/*
+	PAGE STRUCTURE
+*/
+#page-wrap 									{ width: 500px; margin: 25px auto; position: relative; min-height: 500px;
+											  background: url(images/bg.png) top center; }
+
+
+/*
+	TYPOGRAPHY
+*/
+ul											{ list-style: square inside; }
+a, a:visited								{ color: #729dff; text-decoration: none; }
+a:hover, a:active							{ color: white; }
+blockquote									{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; font-size: 14px; 
+									  		  font-family: Georgia, serif; font-style: italic; margin-top: 10px;}
+
+/*
+	SLIDER
+*/
+.slider-wrap								{ width: 419px; position: absolute; top: 87px; left: 40px; }			
+.stripViewer .panelContainer 
+.panel ul									{ text-align: left; margin: 0 15px 0 30px; }
+.stripViewer								{ position: relative; overflow: hidden; width: 419px; height: 285px; }
+.stripViewer .panelContainer				{ position: relative; left: 0; top: 0; }
+.stripViewer .panelContainer .panel			{ float: left; height: 100%; position: relative; width: 419px; }
+.stripNavL, .stripNavR, .stripNav			{ display: none; }
+.nav-thumb 									{ border: 1px solid black; margin-right: 5px; }
+#movers-row									{ margin: -43px 0 0 62px; }
+#movers-row div								{ width: 20%; float: left; }
+#movers-row div a.cross-link 				{ float: right; }
+.photo-meta-data							{ background: url(images/transpBlack.png); padding: 10px; height: 30px; 
+											  margin-top: -50px; position: relative; z-index: 9999; color: white; }
+.photo-meta-data span 						{ font-size: 13px; }
+.cross-link									{ display: block; width: 62px; margin-top: -14px; 
+											  position: relative; padding-top: 15px; z-index: 9999; }
+.active-thumb 								{ background: transparent url(images/icon-uparrowsmallwhite.png) top center no-repeat; }
+
+
+
+
+
+

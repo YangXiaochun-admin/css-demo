@@ -1,0 +1,93 @@
+* { margin: 0; padding: 0; }
+body {
+  background: 
+    url(http://imgsrc.hubblesite.org/hu/db/images/hs-2007-16-a-xlarge_web.jpg);
+}
+.b-nav {
+  overflow: hidden;
+  position: relative;
+  margin: 3em auto 0;
+  width: 28em; height: 10em;
+}
+.b-menu {
+  width: 0; height: 0;
+  list-style: none;
+}
+.b-menu li {
+  overflow: hidden;
+  position: absolute;
+  width: 12em; height: 12em;
+}
+.b-menu li:nth-child(-n+3) {
+  top: 0.66em; left: -5.68em;
+  transform-origin: 100% 100%;
+}
+.b-menu li:nth-child(n+4) {
+  right: -5.69em; bottom: 0.66em;
+  transform-origin: 0 0;
+}
+.b-menu li:first-child {
+  transform: skewY(67.5deg);
+}
+.b-menu li:nth-child(2) {
+  transform: rotate(22.5deg) skewY(67.5deg);
+}
+.b-menu li:nth-child(3) {
+  transform: rotate(45deg) skewY(67.5deg);
+}
+.b-menu li:nth-child(4) {
+  transform: skewY(67.5deg);
+}
+.b-menu li:nth-child(5) {
+  transform: rotate(22.5deg) skewY(67.5deg);
+}
+.b-menu li:last-child {
+  transform: rotate(45deg) skewY(67.5deg);
+}
+.b-menu a, .b-menu li:after {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 .2em black, inset 0 0 .2em black;
+  transform: skewY(-67.5deg) rotate(-11.25deg);
+}
+.b-menu a {
+  width: 200%; height: 200%;
+  opacity: .7;
+  background: radial-gradient(transparent 57.3%, 
+    #c9c9c9 57.7%);
+  color: #7a8092;
+  font: 900 1em/2.5 sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: .5s;
+}
+.b-menu li:nth-child(n+4) a {
+  top: -100%; left: -100%;
+  line-height: 45.5;
+}
+.b-menu a:hover { opacity: 1; }
+.b-menu li:after {
+  top: 19%; left: 19%;
+  width: 162%; height: 162%;
+  content: '';
+}
+.b-menu li:nth-child(n+4):after {
+  top: auto; right: 19%; bottom: 19%; left: auto;
+}
+.b-menu:before, .b-menu:after {
+  position: absolute;
+  width: 1em; height: 2.1em;
+  opacity: .7;
+  background: #c9c9c9;
+  content: '';
+}
+.b-menu:before {
+  top: 1.75em; left: 1.21em;
+  border-radius: 100% 0 0 100%/ 50% 0 0 50%;
+  transform: rotate(-22.5deg);
+}
+.b-menu:after {
+  bottom: 1.75em; right: 1.21em;
+  border-radius: 0 100% 100% 0/ 0 50% 50% 0;
+  transform: rotate(-22.5deg);
+}

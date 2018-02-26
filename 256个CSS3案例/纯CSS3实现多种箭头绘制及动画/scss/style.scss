@@ -1,0 +1,267 @@
+@import "compass/css3";
+
+// * * *  VARIABLES * * * 
+// width of the arrow (icon)
+$w   : 40px;
+// height of the arrow (icon)
+$h   : $w;
+// color of the arrow (icon)
+$c   : #555;
+
+// * * * MIXINS * * *
+// body
+@mixin body( $width , $height , $top , $left ){
+  border: none;
+  background-color: $c;
+  height: $height;
+  width: $width;
+  top: $top;
+  left: $left;
+}
+@mixin clearBody{
+  border: none;
+  width: 0;
+  height: 0;
+}
+// arrow
+@mixin arrow( $width , $height , $top , $left, $way){
+  left: $left;
+  top: $top;
+  border-width:$height $width;
+  border-#{$way}-color:$c;
+}
+// bodyCurve
+@mixin bodyCurve( $width , $height, $top , $left, $border  ,$btop ,$bleft){
+  height: $height;
+  width: $width;
+  top: $top;
+  left: $left;
+  &:before{
+    @include border-radius(2000px);
+    border:$border solid $c;
+    height: $height*2 -$border*2;
+    width:  $width*2 -$border*2;
+    top: $btop;
+    left:$bleft;
+  }
+}
+
+// * * * GENERAL CSS * * *
+body{
+  padding:50px 100px;
+  background: #FEC;
+  color:#CB9;
+  font-family: Tahoma,Arial,sans-serif;
+}
+h1,h2{
+  font-weight: 300;
+}
+
+.arrow{
+  width: $w;
+  height: $h;
+  position: relative;
+  display: inline-block;
+  margin: $h/4 $w/4;
+  //border:1px solid #EDB;
+  
+  &:before,
+  &:after{
+    content:'';
+    border-color:transparent;
+    border-style:solid;
+    position: absolute;
+  }
+  .curve{
+    position: absolute;
+    overflow: hidden;
+    &:before{
+      content:'';
+      position:absolute;
+    }
+  }
+}
+
+// * * * ARROWS * * * 
+// arrow-up
+.arrow-up{
+  &:before{ @include body(30%,50%,50%,50% - 30%/2);  }
+  &:after { @include arrow($w/2,$h/2,-50%,0,bottom); }
+}
+
+// arrow-right
+.arrow-right{
+  &:before{ @include body(50%,30%,50% - 30%/2,0); }
+  &:after { @include arrow($w/2,$h/2,0,50%,left); }
+}
+// arrow-down
+.arrow-down{
+  &:before{ @include body(30%,50%,0,50% - 30%/2); }
+  &:after { @include arrow($w/2,$h/2,50%,0,top);  }
+}
+
+// arrow-left
+.arrow-left{
+  &:before{ @include body(50%,30%,50% - 30%/2,50%); }
+  &:after { @include arrow($w/2,$h/2,0,-50%,right); }
+}
+// * * * CURVE RIGHT ARROW * * *
+// arrow-up
+.arrow-up.curve-right{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.65, $h*.5, 
+    $h*.5, $w*.35, 
+    $w/3.33,
+    -$w*.5 , 0 );}
+}
+// arrow-right
+.arrow-right.curve-right{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.5, $h*.65, 
+    $h*.35, 0, 
+    $w/3.33,
+    0, 0 );}
+}
+// arrow-down
+.arrow-down.curve-right{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.65, $h*.5, 
+    0, 0, 
+    $w/3.33,
+    0 , -$w*.65);}
+}
+// arrow-left
+.arrow-left.curve-right{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.5, $h*.65, 
+    0, $w*.5, 
+    $w/3.33,
+    -$h*.65, -$w*.5);}
+}
+// * * * CURVE LEFT ARROW * * *
+// arrow-up
+.arrow-up.curve-left{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.65, $h*.5, 
+    $h*.5, 0, 
+    $w/3.33,
+    -$h*.5 , -$w*.65 );}
+}
+// arrow-right
+.arrow-right.curve-left{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.5, $h*.65, 
+    0, 0, 
+    $w/3.33,
+    -$h*.65, 0 );}
+}
+// arrow-down
+.arrow-down.curve-left{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.65, $h*.5, 
+    0, $w*.35, 
+    $w/3.33,
+    0 , 0);}
+}
+// arrow-left
+.arrow-left.curve-left{
+  &:before{@include clearBody;}
+  .curve{@include bodyCurve(
+    $w*.5, $h*.65, 
+    $h*.35, $w*.5, 
+    $w/3.33,
+    0, -$w*.5);}
+}
+
+// * * * ARROW ANIMATE * * * (Just for fun)
+.arrow-animate{
+  -webkit-animation: spin 2s infinite linear;
+  margin-left:$w/2;
+  
+  $h:$h*3+$h*1.25;
+  $w:$w*3+$w*1.25;
+  
+  height: $h;
+  width: $w;
+  /*
+    i{
+    @include border-radius(2000px);
+    position: absolute;
+    top: $h*.115;
+    left:$h*.115;
+    width: $w*.57;
+    height: $h*.57;
+    border:$h*.1 solid rgba(255,0,0,.5);
+    z-index: 1000;
+  }*/
+  
+  .arrow-item{
+    width: $w;
+    height: $h*.5;
+    position: absolute;
+    &:before{
+      content:'';
+      height: 0;
+      width: 0;
+      position: absolute;
+      border:$h*.18 solid transparent;
+    }
+
+    .curve{
+       height: $h*.42;
+       width: $w;
+        //background-color: rgba(255,0,0,.2);
+       &:before{
+         @include border-radius(2000px);
+         border:$w*.1 solid $c;
+         height:$h*.57;
+         width:$w*.57;
+         left:$w*.115;
+    
+       }
+    }
+    &:first-child{
+      top:0;
+      left:0;
+      &:before{
+        border-top-color:$c;
+        bottom: -$h*.18;
+      }
+      .curve{
+        top: 0;
+        left: 0;
+        &:before{
+          top: $h*.115;
+        }
+      }
+    }
+    &:last-child{
+       top:$h/2;
+       left:0;
+       &:before{
+        border-bottom-color:$c;
+        top: -$h*0.2;
+        right:0;
+      }
+      .curve{
+        bottom: 0;
+        left: 0;
+        &:before{
+          bottom: $h*.115;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {@include transform(rotate(0deg));}
+  100% {@include transform(rotate(-360deg));}
+}

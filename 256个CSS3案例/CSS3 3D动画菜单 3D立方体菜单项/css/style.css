@@ -1,0 +1,69 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: #2C2D2E url('PYiPY2JSkWSJ4knweWRg_IMG_6953.jpg') center top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+nav {
+  background: #fff;
+  margin: 15vh 2rem;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+}
+nav ul li a {
+  display: inline-block;
+  padding: 1rem;
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  -webkit-transform-origin: 50% 0px 0px;
+  -ms-transform-origin: 50% 0px 0px;
+  transform-origin: 50% 0px 0px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+nav ul li a.current {
+  color: #FF005B;
+}
+nav ul li a:hover {
+  background: #fff;
+  color: #000;
+  -webkit-transform: rotateX(90deg) translateY(-22px);
+  -ms-transform: rotateX(90deg) translateY(-22px);
+  transform: rotateX(90deg) translateY(-22px);
+}
+nav ul li a::before {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  padding: 4px 0px;
+  text-align: center;
+  line-height: 50px;
+  background: none repeat scroll 0% 0% #FF005B;
+  color: #FFF;
+  content: attr(data-hover);
+  -webkit-transition: #6363CE 0.3s ease 0s;
+  transition: #6363CE 0.3s ease 0s;
+  -webkit-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0px 0px;
+  -ms-transform-origin: 50% 0px 0px;
+  transform-origin: 50% 0px 0px;
+}

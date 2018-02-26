@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head>
+        <title>jquery UI元素滚动组合框</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="UI Elements: jQuery Combo Box Plugin" />
+        <meta name="keywords" content="jquery, plugin, combo box, select"/>
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.scrollablecombo.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#ui_element').scrollablecombo();
+            });
+        </script>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <style>
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #f0f0f0;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+h1 {
+    font-size: 180px;
+    line-height: 180px;
+    text-transform: uppercase;
+    color: #ddd;
+    position: absolute;
+    text-shadow: 0 1px 0 #fff;
+    top: -25px;
+    left: -20px;
+    white-space: nowrap;
+}
+span.reference {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    font-size: 11px;
+}
+span.reference a {
+    color: #666;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 #fff;
+}
+span.reference a:hover { color: #ccc; }
+.box {
+    border: 15px solid #fff;
+    margin: 180px auto 0 auto;
+    height: 240px;
+    width: 400px;
+    position: relative;
+    padding: 30px 10px 30px 50px;
+    -moz-box-shadow: 0px 0px 2px #ccc inset;
+    -webkit-box-shadow: 0px 0px 2px #ccc inset;
+    box-shadow: 0px 0px 2px #ccc inset;
+    background: #f6f6f6 url(click.png) no-repeat 220px 110px;
+}
+.box h2 {
+    text-transform: uppercase;
+    color: #ccc;
+    text-shadow: 0 1px 0 #fff;
+}
+</style>
+</head>
+<body>
+<div class="content">
+            <h1>UI Elements</h1>
+            <div class="box">
+        <h2>jQuery Combo Box Plugin</h2>
+        <select id="ui_element">
+                    <option value="A" selected>Option Item A</option>
+                    <option value="B">Option Item B</option>
+                    <option value="C">Option Item C</option>
+                    <option value="D">Option Item D</option>
+                    <option value="E">Option Item E</option>
+                    <option value="F">Option Item F</option>
+                    <option value="G">Option Item G</option>
+                    <option value="H">Option Item H</option>
+                    <option value="I">Option Item I</option>
+                    <option value="J">Option Item J</option>
+                </select>
+    </div>
+        </div>
+<div> </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<meta name="description" value="A carousel configurated and styled in such manner that is simulates an accordion like effect. Click on one of the truncated images to slide it in focus, making it fully visible." />
+<meta name="keywords" value="carousel, example, accordion, circular" />
+<title>jQuery??????????DEMO??</title>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#carousel').carouFredSel({
+            width: 900,
+            height: 525,
+            align: false,
+            padding: [0, 650, 0, 0],
+            items: {
+                width: 50,
+                height: 525,
+                visible: 5,
+                minimum: 1
+            },
+            scroll: {
+                items: 1,
+                duration: 750,
+                onBefore: function( data ) {
+                    data.items.old.add( data.items.visible ).find( 'span' ).stop().slideUp();
+                },
+                onAfter: function( data ) {
+                    data.items.visible.last().find( 'span' ).stop().slideDown();
+                }
+            },
+            auto: false,
+            onCreate: function() {
+                $(this).children().each(function() {
+                    $(this).append( '<span>' + $('img', this).attr( 'alt' ) + '</span>' );
+                    $(this).find( 'span' ).hide();
+                });
+            }
+        });
+        $('#carousel').children().click(function() {
+            $('#carousel').trigger( 'slideTo', [this, -4, 'prev'] );
+        });
+    });
+</script>
+<style type="text/css">
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body { min-height: 600px; }
+body * {
+    font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 22px;
+}
+#wrapper {
+    width: 900px;
+    height: 525px;
+    margin: -362px 0 0 -450px;
+    overflow: hidden;
+    position: absolute;
+    top: 480px;
+    left: 50%;
+}
+#carousel div {
+    cursor: pointer;
+    margin-right: -650px;
+    float: left;
+    position: relative;
+    box-shadow: 0 0 10px #000;
+}
+#carousel div:last-child { cursor: default; }
+#carousel div span {
+    background-color: #222;
+    background-color: rgba(0,0,0, 0.8);
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    width: 700px;
+    height: 25px;
+    padding: 20px 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#donate-spacer { height: 100%; }
+#donate {
+    border-top: 1px solid #999;
+    width: 750px;
+    padding: 50px 75px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#donate p, #donate form {
+    margin: 0;
+    float: left;
+}
+#donate p { width: 650px; }
+#donate form { width: 100px; }
+</style>
+		</head>
+		<body>
+<div id="wrapper">
+            <div id="carousel">
+        <div><img src="img/sp-colorado-is-not-enough.jpg" alt="Colorado Is Not Enough" width="700" height="525" /></div>
+        <div><img src="img/sp-die-hard.jpg" alt="Die Hard" width="700" height="525" /></div>
+        <div><img src="img/sp-fat-red-line.jpg" alt="Fat Red Line" width="700" height="525" /></div>
+        <div><img src="img/sp-resevoir-dogs.jpg" alt="Resevoir Dogs" width="700" height="525" /></div>
+        <div><img src="img/sp-fatrix.jpg" alt="The Fatrix" width="700" height="525" /></div>
+    </div>
+        </div>
+<div id="donate-spacer"></div>
+</body>
+</html>

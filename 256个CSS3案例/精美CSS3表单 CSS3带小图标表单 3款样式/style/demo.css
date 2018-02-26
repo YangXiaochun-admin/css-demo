@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans|Wellfleet);
+
+body {
+  margin-top: 20px;
+  background: url('../images/background.png');
+  font-family: "Pontano Sans", Arial;
+  text-align: center;
+  color: #4b5f5f;
+}
+
+a {
+  color: #4b5f5f;
+  font-family: Wellfleet;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h3 {
+  font-family: Wellfleet;
+  font-weight: normal;
+  margin: .3em 0;
+}
+
+h3 {
+  display: inline-block;
+  font-size: 15px;
+  text-transform: none;
+  padding: 5px;
+  margin: 1em;
+  cursor: pointer;
+}
+
+  h3:hover, h3.selected {
+    border-bottom: 2px solid #4b5f5f;
+    border-top: 2px solid #4b5f5f;
+  }
+
+#container {
+  margin: 0 auto;
+  width: 1200px;
+}
+  
+  ul.collection {
+    margin: 0;
+  }
+  
+  ul.collection li {
+    display: inline-block;
+    width: 230px;
+    margin: 1em;
+  }

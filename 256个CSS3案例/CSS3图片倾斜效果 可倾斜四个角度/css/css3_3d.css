@@ -1,0 +1,135 @@
+/* -------------------------------------------------------------------------------------------------------------------------
+A CSS3 presentation demonstrating how to take advantage of modern browsers while still allowing the content to be easily
+accessible in older, less capable browsers.
+Inspired by http://playground.deaxon.com/css/lightbox by http://twitter.com/deaxon 
+---------------------------------------------------------------------------------------------------------------------------- */
+
+h2.title { font-size: 68px; letter-spacing: -3px; font-weight: bold; text-align: center; margin-top: 35px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6); }
+h2.title span { font-size: 38px; line-height: 48px; display: block; letter-spacing: -2px; color: rgba(51, 51, 51, 0.5); }
+
+/* -------------------------------------------------------------------------------------------------------------------------
+Grid of images
+---------------------------------------------------------------------------------------------------------------------------- */
+#grid { margin: 35px 0; }
+/*
+Add the transition affect to the images in the grid. Any changes to the element will be transtioned from it's current state, for example on :hover */
+#grid li { float: left; list-style: none; margin: 0 25px 25px 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.25);
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.15s ease-in;
+	-moz-transition: all 0.15s ease-in;
+	-ms-transition: all 0.15s ease-in;
+	transition: all 0.15s ease-in;
+}
+#grid li.end { margin-right: 0; }
+#grid li:nth-child(3n) { margin-right: 0; }
+#grid li:hover { z-index: 2;
+	-webkit-transform: scale(1.2) translateY(-40px);	
+	-moz-transform: scale(1.2) translateY(-40px);	
+	-ms-transform: scale(1.2) translateY(-40px);	
+	transform: scale(1.2) translateY(-40px);	
+	-webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+/*
+Rotate left hand column to the left upon hover */
+#grid li:nth-child(3n-2):hover {
+	-webkit-transform: scale(1.2) translate3d(0, -30px, 0) rotate(-2.5deg);
+	-moz-transform: scale(1.2) translateY(-30px) rotate(-2.5deg);
+	-ms-transform: scale(1.2) translateY(-30px) rotate(-2.5deg);
+	transform: scale(1.2) translateY(-30px) rotate(-2.5deg);
+}
+/*
+Rotate every third li with :nth-child(3n) (right hand column in this demo) to the right upon hover */
+#grid li:nth-child(3n):hover {
+	-webkit-transform: scale(1.2) translate3d(0, -30px, 0) rotate(2.5deg);	
+	-moz-transform: scale(1.2) translateY(-30px) rotate(2.5deg);	
+	-ms-transform: scale(1.2) translateY(-30px) rotate(2.5deg);	
+	transform: scale(1.2) translateY(-30px) rotate(2.5deg);	
+}
+
+#grid img, li[id]:target div, #grid li, .backface {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#grid .details { position: absolute; bottom: 0; background: #fff; background: rgba(255, 255, 255, 0.87); border-top: 1px solid #fff; width: 270px; border-bottom: 1px solid rgba(0, 0, 0, 0.25); padding: 10px;
+	-webkit-border-radius:  0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+	-webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.35);
+	box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.35);
+}
+#grid .details h3 { margin-bottom: 0px; letter-spacing: -1px; }
+#grid .details a.more { position: absolute; right: 10px; top: 5px; font-size: 12px; padding: 6px 10px; background-color: rgba(0, 0, 0, 0.03);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 15px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.6);
+	-moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.6);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.6);
+	-webkit-transition: all 0.15s ease-in;
+}
+
+#grid .details a.more:hover { background-color: #0090e2; color: #fff; }
+
+
+#information { z-index: 20; }
+#information li div h3 { background-color: #0090E2; border-radius: 5px 5px 0 0; color: #fff; font-size: 20px; font-weight: bold; margin: -30px -30px 20px; padding: 15px 30px; text-shadow: rgba(0, 0, 0, 0.4492); text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45); letter-spacing: -2px; }
+
+/* -------------------------------------------------------------------------------------------------------------------------
+Using :target we can style the specific ID of the list item when clicked/tapped on eg: www.url.com/#info1
+---------------------------------------------------------------------------------------------------------------------------- */
+li[id]:target { width: 100%; height: 100%; opacity: 1; z-index: 10; position: fixed; overflow-x: hidden; /* overflow-y: scroll; */ margin-bottom: 25px; }
+li[id]:target::-webkit-scrollbar { width: 8px; background-color: rgba(0,0,0,0.6); position: relative; left: }
+li[id]:target::-webkit-scrollbar-thumb { -webkit-border-radius: 1ex; background-color: #6CF; }
+li[id]:target div { position: relative; margin: 0 auto; top: 15%; background: #fff; width: 600px; padding: 30px;
+	-webkit-box-shadow: 0 1px 8px #000;
+	-moz-box-shadow: 0 1px 8px #000;
+	box-shadow: 0 1px 8px #000;
+	-webkit-animation: lightbox 0.75s cubic-bezier(0,0,0,1);
+	-moz-animation: lightbox 0.5s cubic-bezier(0,0,0,1);
+}
+/* 
+Style list items with an ID */
+li[id] { overflow: hidden; position: absolute; width: 0; height: 0; left: 0; top: 0; opacity: 0; background: rgba(0,0,0,.8);
+	-webkit-transition: opacity 0.2s cubic-bezier(0,0,0,1);
+	-moz-transition: opacity 0.2s cubic-bezier(0,0,0,1);
+	transition: opacity 0.2s cubic-bezier(0,0,0,1);
+}
+/* 
+Lightbox close button */
+li[id] div a.close { background: #000; position: absolute; top: -10px; left: -10px; line-height: 0; color: #fff; text-align: center; font-weight: bold; border: 2px solid #fff; padding: 12px 9px 9px; border-radius: 30px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+	box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+}
+
+/* 
+Animation keyframes for the lightbox.
+First line is at 0% so we're setting it to be 5x the actual size and rotate it around the Y axis by -270 degrees
+100% resets it's actual size and resets the rotation back to flat. */
+@-webkit-keyframes lightbox {
+	0% { -webkit-transform: scale(5) rotateY(-270deg); }
+	100% { -webkit-transform: scale(1) rotateY(0deg); }
+}
+
+@-moz-keyframes lightbox {
+	0% { -moz-transform: scale(5) /* rotateY(-270deg) */; }
+	100% { -moz-transform: scale(1) /* rotateY(0deg) */; }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------
+Use Modernizer (http://www.modernizr.com) to display content for browsers that don't support CSS Transforms.
+It now defaults to linking to the ID ie: www.url.com/#info3 and moving to that position on the page.
+---------------------------------------------------------------------------------------------------------------------------- */
+.no-csstransforms #information li { overflow: visible; position: relative; margin: 0 auto; margin-bottom: 25px; background: #fff; width: 600px; padding: 30px; height: auto; list-style: none; }	
+.no-csstransforms #information li div a.close { position: relative; background: transparent; padding: 0; color: #0090e2; font-size: 12px; font-weight: normal; left: 0; top: 0; }	
+
+
+
+

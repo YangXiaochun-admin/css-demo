@@ -1,0 +1,124 @@
+@import "compass/css3"
+
+$b-borderColor: #d8d8d8
+$b-borderWidth: 2px
+$b-border: $b-borderWidth solid $b-borderColor
+$b-fontSize: 16px
+$b-fontSize-bp: 22px
+
+$b-lineHeight: 1.5
+
+$b-whitespace: 1.25rem // 20px @ 16px
+$b-whitespace-xs: $b-whitespace * 0.25
+$b-whitespace-s: $b-whitespace * 0.5
+$b-whitespace-l: $b-whitespace * 2
+
+$bp-fontSize: 700px
+
+$c-background: #fff
+$c-base: #222
+
+$f-base: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+
+=respond-to($val, $query: min-width, $media: screen)
+  @media #{$media} and ($query: $val)
+    @content
+
+.group
+  &::after
+    clear: both
+    content: ''
+    display: table
+      
+
+*, ::before, ::after
+  box-sizing: border-box
+
+body
+  color: $c-base
+  font-family: $f-base
+  line-height: $b-lineHeight
+  margin: 0 auto
+  max-width: 50rem
+  padding: $b-whitespace-l $b-whitespace
+  +respond-to($bp-fontSize)
+    font-size: percentage($b-fontSize-bp / $b-fontSize)
+  
+p, ol, ul
+  margin-bottom: $b-whitespace
+  margin-top: 0
+  
+ol, ul
+  padding: 0
+  margin-left: $b-whitespace
+  
+.unstyledList
+  list-style: none
+  margin: 0
+  padding: 0
+  
+
+$tabs-backgroundColor: $c-background
+$tabs-borderWidth: $b-borderWidth
+$tabs-transition: 0.1s ease-in-out
+    
+.tabBlock
+  margin: 0 0 $b-whitespace-l
+  
+.tabBlock-tabs
+  @extend .group
+  @extend .unstyledList
+
+.tabBlock-tab
+  background-color: $tabs-backgroundColor
+  border-color: $b-borderColor
+  border-left-style: solid
+  border-top: solid
+  border-width: $tabs-borderWidth
+  color: #b5a8c5
+  cursor: pointer
+  display: inline-block
+  font-weight: 600
+  float: left
+  padding: $b-whitespace-s $b-whitespace
+  position: relative
+  transition: $tabs-transition
+  &:last-of-type
+    border-right-style: solid
+  &::before, &::after
+    content: ''
+    display: block
+    height: $tabs-borderWidth * 2
+    position: absolute
+    transition: $tabs-transition
+  &::before
+    background-color: #b5a8c5
+    left: -$tabs-borderWidth
+    right: -$tabs-borderWidth
+    top: -$tabs-borderWidth
+  &::after
+    background-color: transparent
+    bottom: -$tabs-borderWidth
+    left: 0
+    right: 0
+  +respond-to($bp-fontSize)
+    padding-left: $b-whitespace-l
+    padding-right: $b-whitespace-l
+  &.is-active
+    position: relative
+    color: #975997
+    z-index: 1
+    &::before
+      background-color: #975997
+    &::after
+      background-color: $tabs-backgroundColor
+    
+.tabBlock-content
+  background-color: $tabs-backgroundColor
+  border: $b-border
+  padding: $b-whitespace
+  
+.tabBlock-pane
+  > :last-child
+    margin-bottom: 0
+      

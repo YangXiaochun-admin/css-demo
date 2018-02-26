@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS3实现的涂鸦风格边框在线演示</title>
+<style type="text/css">
+body {
+    background: #eee;
+    font-family: microsoft yahei, Arial, Helvetica, sans-serif;
+}
+.wrap {
+    padding: 35px 25px;
+    width: 450px;
+    margin: 40px auto;
+    background: #586786;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    color: #eee;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, .75)
+}
+.box {
+    position: relative;
+    background: #fff;
+    border: solid 5px #fff;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 10px;
+    color: #666;
+    box-shadow: 2px 3px 1px rgba(0, 0, 0, .75)
+}
+.box:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 60px;
+    border: 0;
+    border-right-width: 30px;
+    border-bottom-width: 20px;
+    border-style: solid;
+    border-color: transparent #fff;
+    display: block;
+    width: 0;
+}
+.box .box {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 180px;
+    height: 80px;
+    border-color: #593207;
+    box-shadow: none;
+}
+.box .box:before {
+    left: 45px;
+    border-color: transparent #593207;
+}
+a {
+    padding-top: 30px;
+    display: block;
+    text-align: center;
+    color: #eee;
+}
+a:hover { color: #F90 }
+</style>
+</head>
+
+<body>
+<script src="/adsense.js" type="text/javascript"></script>
+<div class="wrap">
+    <div class="box">
+        <div class="box">CSS3简单实现涂鸦风格边框 Welcome to js.itivy.com</div>
+    </div>
+</div>
+</body>
+</html>

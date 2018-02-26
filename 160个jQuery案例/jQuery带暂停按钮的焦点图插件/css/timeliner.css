@@ -1,0 +1,61 @@
+/*
+ * CSS for Timeliner 1.2
+ *
+ * This CSS is for the plugin functionality
+ * Use timeliner_styling.css for personal styling.
+ */
+
+.timeliner{
+	margin:0;
+	padding:0;
+	position:relative;
+	display:none;
+}
+.timeliner .slide{
+	margin:0;
+	padding:0;
+	list-style:none;
+	overflow:hidden;
+	position:absolute;
+	display:block;
+}
+.timeliner .timeline{
+	display:block;
+	position:absolute;
+	z-index:2;
+	list-style:none;
+}
+.timeliner .innertimeline{
+	position:absolute;
+	bottom:0;
+	z-index:3;
+	overflow:hidden;
+}
+.timeliner .timedisplay{
+	position:absolute;
+	text-align:right;
+	cursor:default;
+	white-space:nowrap;
+}
+.timeliner .node{
+	position:absolute;
+	z-index:4;
+	cursor:pointer;
+}
+.timeliner .tooltip{
+	position:absolute;
+	white-space:nowrap;
+	display:none;
+}
+.timeliner .pause, .timeliner .play, .timeliner .previous, .timeliner .next{
+	position:absolute;
+	list-style:none;
+	z-index:3;
+	cursor:pointer;
+}
+.timeliner .previous, .timeliner .next{
+	z-index:2;
+}
+.timeliner img{
+	vertical-align:bottom
+}

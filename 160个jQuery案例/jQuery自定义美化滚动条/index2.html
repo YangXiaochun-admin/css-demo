@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>基于jQuery的自定义滚动条在线演示2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.codrops2.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<!-- the mousewheel plugin -->
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="js/scroll-startstop.events.jquery.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1></h1>
+    <div class="wrapper">
+        <div class="content">
+            <p><strong>Example 2</strong> is the simplest case: it shows 
+                how to show/hide the scrollbar on hovering/leaving the 
+                content area. 
+        </div>
+        <div id="jp-container" class="jp-container"> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/16.jpg"/>
+            <div>
+                <h3>Responsive Image Gallery with Thumbnail Carousel</h3>
+                A tutorial on how to create a responsive image 
+                gallery with a thumbnail carousel using Elastislide. 
+                Inspired by Twitter&#39;s &quot;user gallery&quot; and upon a 
+                request to show an integration of Elastislide, we 
+                want to implement a responsive gallery that adapts 
+                to the view-port width. The gallery will have a view 
+                switch that allows to view it with the thumbnail 
+                carousel or without. We&#39;ll also add the possibility 
+                to navigate with the keyboard. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/15.jpg"/>
+            <div>
+                <h3>Elastislide - A Responsive jQuery Carousel 
+                    Plugin</h3>
+                With the responsive awakening in web design it 
+                becomes important to not only take care of the 
+                visual part of a website but also of the 
+                functionality. Elastislide is a responsive jQuery 
+                carousel that will adapt its size and its behavior 
+                in order to work on any screen size. Inserting the 
+                carousels structure into a container with a fluid 
+                width will also make the carousel fluid. </div>
+            </a> <a target="_blank" href="http://tympanus.net/codrops/2011/09/05/slicebox-3d-image-slider/"> <img src="images/thumbs/14.jpg"/>
+            <div>
+                <h3>Slicebox - A fresh 3D image slider with graceful 
+                    fallback</h3>
+                With the CSS3 3D transformations we can create some 
+                neat effects by transforming elements in 
+                three-dimensional space. Slicebox makes use of the 
+                3D transforms properties and allows different kind 
+                of effects. The main idea is to create 
+                three-dimensional image slices that will rotate and 
+                reveal the next image as another side of the 3d 
+                object. In case the browser does not support 3D 
+                transformations, a simple slider will be used as 
+                fallback. </div>
+            </a> <a target="_blank" href="http://tympanus.net/codrops/2011/08/30/automatic-image-montage/"> <img src="images/thumbs/13.jpg"/>
+            <div>
+                <h3>Automatic Image Montage with jQuery</h3>
+                Arranging images in a montage like fashion can be a 
+                challenging task when considering certain 
+                constraints, like the window size when using 
+                fullscreen, the right image number to fill all the 
+                available space or also the size of the images in 
+                use. With the following script you can automatically 
+                create a montage, either for a liquid container or a 
+                fixed size container (including fullscreen), with 
+                the option to fill all the gaps. </div>
+            </a> <a target="_blank" href="http://tympanus.net/codrops/2011/08/23/image-zoom-tour/"> <img src="images/thumbs/12.jpg"/>
+            <div>
+                <h3>Image Zoom Tour with jQuery</h3>
+                Today we want to share a little zoom tour script 
+                with you. Showing a main image initially, we want to 
+                be able to zoom into certain parts of the image by 
+                clicking on tags, using another image for the closer 
+                view. This next step can contain other tags that 
+                again allow to show more images. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/11.jpg"/>
+            <div>
+                <h3>Circular Content Carousel with jQuery</h3>
+                Today we want to share a simple circular content 
+                carousel with you. The idea is to have some content 
+                boxes that we can slide infinitely (circular). When 
+                clicking on the more link, the respective item moves 
+                to the left and a content area will slide out. Now 
+                we can navigate through the carousel where each step 
+                will reveal the next or previous content box with 
+                its expanded content. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/10.jpg"/>
+            <div>
+                <h3>Portfolio Image Navigation with jQuery</h3>
+                Today we want to create a portfolio image navigation 
+                template with jQuery. The idea is to show some 
+                portfolio items in a grouped fashion and navigate 
+                through them in all 2D ways (horizontal/vertical). 
+                Either the arrows or the little boxes below the 
+                current image can be used in order to navigate. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/9.jpg"/>
+            <div>
+                <h3>Expanding Fullscreen Grid Portfolio</h3>
+                Today we want to share a neat experimental portfolio 
+                template with you. The main idea is to have a grid 
+                layout that we create with jQuery Masonry. Clicking 
+                to view more, we expand the according item to 
+                fullscreen in order to show a longer description of 
+                the item and a representative fullscreen background 
+                image. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/8.jpg"/>
+            <div>
+                <h3>Content Rotator with jQuery</h3>
+                Today we want to share a fancy content rotator with 
+                you. It shows some image with a headline and 
+                sub-headline in each slide and allows navigating 
+                through the slides using the thumbnails that also 
+                contain a headline. Hiding the thumbnails will 
+                reveal a scrollable text container and the 
+                navigation arrows will move up so that one can 
+                navigate to the previous or next slides. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/7.jpg"/>
+            <div>
+                <h3>Vertical Sliding Accordion with jQuery</h3>
+                Today we want to share a slick and flexible vertical 
+                jQuery accordion with you. The main idea is to 
+                expand the accordion slices on click and show some 
+                more information. The other slices will become less 
+                opaque and squeezed. When navigating to the next 
+                slice using one navigation arrows, a new slice will 
+                slide in from the top or the bottom. Once a slice is 
+                open and we navigate, the subsequent slice will open 
+                on slide. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/6.jpg"/>
+            <div>
+                <h3>Animated Text and Icon Menu with jQuery</h3>
+                Today we want to show you how to create a slick menu 
+                with a nice animation feature on hover. The idea is 
+                to make some elements slide out, change and animate 
+                the background color of the item and then slide the 
+                elements back in with a different color. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/5.jpg"/>
+            <div>
+                <h3>Fullscreen Slideshow with HTML5 Audio and jQuery</h3>
+                In today&#39;s tutorial we&#39;ll create a fullscreen photo 
+                slideshow to illustrate a New York picture series. 
+                We will add sounds with the HTML5 audio element in 
+                order to give life to the gallery and try to 
+                recreate the ambient of this vibrant city. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/4.jpg"/>
+            <div>
+                <h3>Sliding Background Image Menu with jQuery</h3>
+                Today we want to share another jQuery menu with you. 
+                This menu will have several panels, each one 
+                corresponding to a different background image that 
+                will show on all panels when we hover over a panel 
+                label. Also, a submenu will slide out from the 
+                bottom. This menu comes with some configuration 
+                possibilities, such as the size of the image, the 
+                hover effect and custom default states. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/3.jpg"/>
+            <div>
+                <h3>Grid Navigation Effects with jQuery</h3>
+                Today we want to share some neat grid navigation 
+                effects using jQuery. In our examples we will show 
+                you ten ways how to navigate through a set of 
+                thumbnails. We&#39;ll take a look at some of the 
+                possibilities and how to apply the effect. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/2.jpg"/>
+            <div>
+                <h3>Image Wall with jQuery</h3>
+                Today we want to show you how to create a neat image 
+                wall with jQuery. The idea is to scatter some 
+                thumbnails with different sizes on the page and make 
+                a ribbon slide in when we click on the picture. The 
+                ribbon will show some description next to the 
+                picture and when clicking again on the thumbnail, 
+                the ribbon will close and open again with a large 
+                version of the image. </div>
+            </a> <a target="_blank" href="http://js.itivy.com/"> <img src="images/thumbs/1.jpg"/>
+            <div>
+                <h3>Sliding Letters with jQuery</h3>
+                Today we have a neat little effect for you. We want 
+                to bring some life to the standard hover effect by 
+                playing around with the letters in an anchor word. 
+                The aim is to slide in letter by letter when 
+                hovering over a link element. We can either have the 
+                same word or a different one and we can slide in the 
+                new letters all the same time or one after the 
+                other. </div>
+            </a> </div>
+        <div class="clr"></div>
+    </div>
+    <div class="more">
+        <ul id="sb-examples">
+            <li>More examples:</li>
+            <li><a href="index.html">Example 1</a></li>
+            <li class="selected"><a href="index2.html">Example 2</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+			$(function() {
+			
+				// the element we want to apply the jScrollPane
+				var $el					= $('#jp-container').jScrollPane({
+					verticalGutter 	: -16
+				}),
+						
+				// the extension functions and options 	
+					extensionPlugin 	= {
+						
+						extPluginOpts	: {
+							// speed for the fadeOut animation
+							mouseLeaveFadeSpeed	: 500,
+							// scrollbar fades out after hovertimeout_t milliseconds
+							hovertimeout_t		: 1000,
+							// if set to false, the scrollbar will be shown on mouseenter and hidden on mouseleave
+							// if set to true, the same will happen, but the scrollbar will be also hidden on mouseenter after "hovertimeout_t" ms
+							// also, it will be shown when we start to scroll and hidden when stopping
+							useTimeout			: false,
+							// the extension only applies for devices with width > deviceWidth
+							deviceWidth			: 980
+						},
+						hovertimeout	: null, // timeout to hide the scrollbar
+						isScrollbarHover: false,// true if the mouse is over the scrollbar
+						elementtimeout	: null,	// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar
+						isScrolling		: false,// true if scrolling
+						addHoverFunc	: function() {
+							
+							// run only if the window has a width bigger than deviceWidth
+							if( $(window).width() <= this.extPluginOpts.deviceWidth ) return false;
+							
+							var instance		= this;
+							
+							// functions to show / hide the scrollbar
+							$.fn.jspmouseenter 	= $.fn.show;
+							$.fn.jspmouseleave 	= $.fn.fadeOut;
+							
+							// hide the jScrollPane vertical bar
+							var $vBar			= this.getContentPane().siblings('.jspVerticalBar').hide();
+							
+							/*
+							 * mouseenter / mouseleave events on the main element
+							 * also scrollstart / scrollstop - @James Padolsey : http://james.padolsey.com/javascript/special-scroll-events-for-jquery/
+							 */
+							$el.bind('mouseenter.jsp',function() {
+								
+								// show the scrollbar
+								$vBar.stop( true, true ).jspmouseenter();
+								
+								if( !instance.extPluginOpts.useTimeout ) return false;
+								
+								// hide the scrollbar after hovertimeout_t ms
+								clearTimeout( instance.hovertimeout );
+								instance.hovertimeout 	= setTimeout(function() {
+									// if scrolling at the moment don't hide it
+									if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}, instance.extPluginOpts.hovertimeout_t );
+								
+								
+							}).bind('mouseleave.jsp',function() {
+								
+								// hide the scrollbar
+								if( !instance.extPluginOpts.useTimeout )
+									$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								else {
+								clearTimeout( instance.elementtimeout );
+								if( !instance.isScrolling )
+										$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+								}
+								
+							});
+							
+							if( this.extPluginOpts.useTimeout ) {
+								
+								$el.bind('scrollstart.jsp', function() {
+								
+									// when scrolling show the scrollbar
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= true;
+									$vBar.stop( true, true ).jspmouseenter();
+									
+								}).bind('scrollstop.jsp', function() {
+									
+									// when stop scrolling hide the scrollbar (if not hovering it at the moment)
+									clearTimeout( instance.hovertimeout );
+									instance.isScrolling	= false;
+									instance.hovertimeout 	= setTimeout(function() {
+										if( !instance.isScrollbarHover )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								// wrap the scrollbar
+								// we need this to be able to add the mouseenter / mouseleave events to the scrollbar
+								var $vBarWrapper	= $('<div/>').css({
+									position	: 'absolute',
+									left		: $vBar.css('left'),
+									top			: $vBar.css('top'),
+									right		: $vBar.css('right'),
+									bottom		: $vBar.css('bottom'),
+									width		: $vBar.width(),
+									height		: $vBar.height()
+								}).bind('mouseenter.jsp',function() {
+									
+									clearTimeout( instance.hovertimeout );
+									clearTimeout( instance.elementtimeout );
+									
+									instance.isScrollbarHover	= true;
+									
+									// show the scrollbar after 100 ms.
+									// avoids showing the scrollbar when moving from inside the element to outside, passing over the scrollbar								
+									instance.elementtimeout	= setTimeout(function() {
+										$vBar.stop( true, true ).jspmouseenter();
+									}, 100 );	
+									
+								}).bind('mouseleave.jsp',function() {
+									
+									// hide the scrollbar after hovertimeout_t
+									clearTimeout( instance.hovertimeout );
+									instance.isScrollbarHover	= false;
+									instance.hovertimeout = setTimeout(function() {
+										// if scrolling at the moment don't hide it
+										if( !instance.isScrolling )
+											$vBar.stop( true, true ).jspmouseleave( instance.extPluginOpts.mouseLeaveFadeSpeed || 0 );
+									}, instance.extPluginOpts.hovertimeout_t );
+									
+								});
+								
+								$vBar.wrap( $vBarWrapper );
+							
+							}
+						
+						}
+						
+					},
+					
+					// the jScrollPane instance
+					jspapi 			= $el.data('jsp');
+					
+				// extend the jScollPane by merging	
+				$.extend( true, jspapi, extensionPlugin );
+				jspapi.addHoverFunc();
+			
+			});
+		</script>
+</body>
+</html>

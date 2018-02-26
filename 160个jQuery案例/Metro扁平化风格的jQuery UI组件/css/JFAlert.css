@@ -1,0 +1,125 @@
+﻿.main_alert{
+	margin-top: 4%;
+}
+.grid_8{
+	margin-top: 2%;
+}
+/* alert common styles */
+    div.alert{
+	border: 0;
+	width: auto;
+	font-family: 'overpassregular';
+	display: block;
+	position: relative;
+	padding: 12px 38px 14px 18px;
+	color: #ffffff;
+	font-size: 1em;
+}
+.alert a.close:hover { 
+	color: #fff !important;  
+}
+.alert.bordered {
+    border-width: 1px;
+    border-style: solid;    
+}
+.alert.rounded { 
+} 
+.alert span{
+	display: inline-flex;
+	vertical-align: middle;
+}
+.alert span i{
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: middle;
+	background:url('../images/sprites.png') no-repeat;
+	margin-right: 20px;
+}
+.alert span i.icon_1{
+	background-position: -86px -126px;
+}
+.alert span i.icon_2{
+	background-position: -86px -164px;
+}
+.alert span i.icon_3{
+	background-position: -86px -126px;
+}
+	/* alert message common styles */  
+	.alert.message a.close:hover { 
+		background: #87B753;
+	}
+	.alert.message a.close       { 
+		background: #8FC357;
+	}
+    /* alert success common styles */ 
+    .alert.success a.close:hover {
+    	 background: #46B0D6	; 
+    }
+    .alert.success a.close       { 
+    	background: #3FB3DD; 
+    }
+    
+    /* alert error common styles */
+    .alert.error a.close:hover { 
+    	background: #E05A3A; 
+    }
+    .alert.error a.close       { 
+    	background: #ED6444;
+    } 
+        
+    /* alert info common styles */
+    .alert.info a.close:hover { background: #427AB4; }
+    .alert.info a.close       { color     : #32608f; }
+        
+    /* alert warning common styles */
+    .alert.warning a.close:hover { background: #d8d8a8; }
+    .alert.warning a.close       { color     : #cfd0a4; }  
+    
+    /* alert question common styles */
+    .alert.question a.close:hover { background: #8a64b5; }
+    .alert.question a.close       { color     : #784da6; }     
+    .alert.message {
+        background  : #A0D468;
+    }
+    .alert.success {
+        background  : #48C0EB;
+    }    
+    .alert.error {
+        background  : #FE6D4B;
+    }    
+    .alert.info {
+        border-color: #32608f;
+        background  : #4988c8;  
+        text-shadow : 0 -1px 0 rgba(0, 0, 0, 0.42);
+        color       : #fff;        
+    }   
+    .alert.warning {
+        border-color: #cfd0a4;
+        background  : #f0f1bb;  
+        text-shadow : 0 1px 0 rgba(255, 255, 255, 0.68);        
+    }   
+    .alert.question {
+        border-color: #784da6;
+        background  : #9a6fc9;  
+        text-shadow : 0 -1px 0 rgba(0, 0, 0, 0.42);
+        color       : #fff;        
+    }   
+.alert a.close { 
+	font-family: 'overpassregular';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	float: right;
+	padding: 16px 18px;
+	line-height: 20px;
+	text-shadow: none;
+	color: #fff;
+	font-size: 26px;
+	text-decoration: none;
+	font-weight: 100;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}

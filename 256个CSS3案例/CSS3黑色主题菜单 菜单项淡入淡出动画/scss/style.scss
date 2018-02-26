@@ -1,0 +1,110 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Source+Sans+Pro:200,300,400,600);
+
+$SMOOTH_BLACK:     #111111;
+$TEXT_COLOR: 	   #FAEBD7;
+$BACKGROUND_COLOR: #FFFAF0;
+$TEXT_SELECTION:   #FAEBD7;
+
+// Basics
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  
+  background-color: $BACKGROUND_COLOR;
+}
+
+// Text Selection
+::selection {
+  background-color: $TEXT_SELECTION;
+}
+
+// Global Typography
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: $SMOOTH_BLACK;
+  font-size: 8em;
+  margin: .2em;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.6em;
+}
+b {
+  font-weight: 600;
+}
+
+// Content Layout
+.table {
+  display: table;
+  margin: 0 auto;
+  height: 100%;
+    
+  width: 100%;
+  max-width: 500px;
+  
+  & .content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+}
+
+
+// Navbar Layout + Styling
+.navbar-container {
+  background-color: $SMOOTH_BLACK;
+  
+  box-shadow: 0 1px 1px rgba($SMOOTH_BLACK, .6);
+  border-radius: 5px;
+  
+  display: table;
+  width: 100%;
+    
+  & ul {    
+    display: flex;
+    justify-content: space-around;
+    
+    border: 2px solid $SMOOTH_BLACK;
+    border-radius: 5px;
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    & li {
+      &>a {
+        display: block;
+        padding: 10px 20px;
+        margin: 0 5px;
+        
+        
+        text-decoration: none;
+        border-radius: 3px;
+        font-weight: 300;
+        
+        color: $TEXT_COLOR;
+        text-shadow: 0 1px 0 black;
+        transition: all ease .25s;
+        
+        &:hover {
+          background-color: $TEXT_COLOR;
+          color: $SMOOTH_BLACK;
+          text-shadow: none;
+        } 
+      } &:first-child>a {
+          margin: 0 5px 0 0;
+      } &:last-child>a {
+          margin: 0 0 0 5px;
+      }
+    } & .h-sep {
+      display: block;
+      width: 1px;
+      background: rgba($TEXT_COLOR, .1);
+    }
+  }
+}

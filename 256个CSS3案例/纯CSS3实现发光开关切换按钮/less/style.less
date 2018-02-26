@@ -1,0 +1,167 @@
+@background: #1C1D1F;
+@button:     #1C1D1F;
+@light-on:   #93C913;
+@light-off:  #FF4847;
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box
+}
+
+body {
+  background-color: @background;
+}
+
+.button {
+  display: block;
+  width: 400px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color: darken(@button, 50%);
+  box-shadow: 0 -1px 0 fade(white, 20%) inset;
+  border-radius: 20px;
+  overflow: hidden; 
+  cursor: pointer;  
+  -webkit-tap-highlight-color: fade(black, 0%);
+  
+  span {
+    display: block;
+    position: absolute;
+    top: 6px;
+    width: 194px;
+    height: 108px;
+    background-color: @button;
+    transition:
+      transform 300ms ease,
+      box-shadow 300ms ease;
+    
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Open Sans";
+      font-weight: 800;
+      font-size: 48px;
+      transition:
+        text-shadow 800ms ease 100ms,
+        color 800ms ease 100ms;
+    }
+    
+    &:after {
+      content: "";
+      width: 4px;
+      height: 108px;
+      position: absolute;
+      top: 0;     
+      background: radial-gradient(ellipse at center, fade(white, 50%) 0%, transparent 50%);
+      transition: opacity 300ms ease;
+    }  
+    
+    &:first-of-type {
+      left: 6px;
+      border-top-left-radius: 18px;
+      border-bottom-left-radius: 18px;
+      transform-style: preserve3d;
+      transform-origin: right center;
+      transform:
+        perspective(2000px)
+        rotateY(40deg);
+      box-shadow:
+        -1px 0 1px fade(white, 10%) inset,
+        4px 0 8px fade(white, 10%) inset,
+        1px 0 0 fade(white, 10%) inset,
+        -10px 0 8px fade(lighten(@button, 5%), 90%),
+        -20px 0 8px fade(@button, 70%),
+        -30px 0 8px fade(@button, 40%);
+      
+      &:before {
+        content: "ON";
+        color: fade(black, 50%);
+        text-shadow:
+          1px 4px 6px @button,
+          0 0 0 black,
+          1px 4px 6px @button;
+      }
+      
+      &:after {
+        left: -1px;
+      }
+    }
+    
+    &:last-of-type {
+      right: 6px;
+      border-top-right-radius: 18px;
+      border-bottom-right-radius: 18px;
+      transform-origin: left center;
+      box-shadow:
+        -1px 1px 1px fade(white, 10%) inset,
+        2px 0 2px fade(white, 5%) inset;
+      
+      &:before {
+        content: "OFF";
+        color: @light-off;
+        text-shadow: 0 0 24px fade(@light-off, 60%);
+      }
+      
+      &:after {
+        right: -1px;
+        opacity: 0;
+      }
+    }
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked ~ span {
+
+      &:first-of-type {
+        transform: none;
+        box-shadow:
+          1px 1px 1px fade(white, 10%) inset,
+          -2px 0 2px fade(white, 5%) inset;
+              
+        &:before {
+          color: @light-on;
+          text-shadow: 0 0 24px fade(@light-on, 60%);
+        }
+        
+        &:after {
+          opacity: 0;
+        }     
+      }
+
+      &:last-of-type {
+        transform:
+          perspective(2000px)
+          rotateY(-40deg);
+        box-shadow:
+          1px 0 1px fade(white, 10%) inset,
+          -4px 0 8px fade(white, 10%) inset,
+          -1px 0 0 fade(white, 10%) inset,
+          10px 0 8px fade(lighten(@button, 5%), 90%),
+          20px 0 8px fade(@button, 70%),
+          30px 0 8px fade(@button, 40%);
+                
+        &:before {
+          color: fade(black, 50%);
+          text-shadow:
+            1px 4px 6px @button,
+            0 0 0 #000,
+            1px 4px 6px @button;
+        }
+          
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

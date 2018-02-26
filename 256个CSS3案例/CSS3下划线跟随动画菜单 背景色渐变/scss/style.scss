@@ -1,0 +1,67 @@
+@import "compass/css3";
+
+$c1: hsl( 70, 95, 45);
+$c2: hsl(140, 85, 45);
+$c3: hsl(190, 85, 45);
+$c4: hsl(210, 80, 55);
+$c5: hsl(230, 95, 65);
+$c6: hsl(260, 85, 65);
+$c7: hsl(290, 85, 55);
+$c8: hsl(320, 80, 50);
+$c9: hsl(359, 80, 45);
+body {
+  color: #FFF;
+  background: #000;
+  font-weight: 100;
+  font-family: "Segoe UI", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 0; padding: 0;
+  color: #FFF;
+  letter-spacing: 0.075em;
+  text-transform: capitalize;
+}
+nav {
+  position: relative;
+  top: 0.5em;
+  margin: 0 auto;
+  ul {
+    background: rgba(255,255,255,0.1);
+    margin: 0; padding: 0;
+    text-align: center;
+    font-size: 0;
+    li {
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 1.6em;
+      padding: 0 0.6em;
+      margin: 0 0;
+      display: inline-block;
+      list-style-type: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.5s ease-out;
+      box-sizing: border-box;
+      &:hover { color: #FFF; }
+    }
+    :nth-child(1) { color: $c1; &:hover { background-color: $c1; } }
+    :nth-child(2) { color: $c2; &:hover { background-color: $c2; } }
+    :nth-child(3) { color: $c3; &:hover { background-color: $c3; } }
+    :nth-child(4) { color: $c4; &:hover { background-color: $c4; } }
+    :nth-child(5) { color: $c5; &:hover { background-color: $c5; } }
+    :nth-child(6) { color: $c6; &:hover { background-color: $c6; } }
+    :nth-child(7) { color: $c7; &:hover { background-color: $c7; } }
+    :nth-child(8) { color: $c8; &:hover { background-color: $c8; } }
+    :nth-child(9) { color: $c9; &:hover { background-color: $c9; } }
+  }
+  .indicator {
+    pointer-events: none; // stop pestering the script, dude!
+    position: fixed;
+    transition: all 0.25s ease-in-out;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>纯CSS3垂直Tab菜单DEMO演示</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+<!-- Start Tab Area. Use the container for positioning and to increase the tab content width !-->
+<div id="container"> 
+    <!-- Start Tabs !-->
+    <div class="tab-container"> 
+        <!-- Use c + the tab number or any other identifier you'd like when creating a new tab, just keep them in order.  You can have an unlimited number of tabs !-->
+        <div id="c1"> <a href="#c1" title="First">First</a> <!-- This is your actual tab and the content is below it !-->
+            <div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+                <h3>This is the first tab</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. porttitor est et rhoncus.Nam ipsum leo, ornare ac volutpat suscipit, convallis eu metus ipsum nunc.</p>
+                <p>Suspendisse at aliquet turpis. Phasellus eu libero euismod leo imperdiet sagittis elementum ut erat. Nam euismod risus at sem consequat vestibulum. </p>
+            </div>
+        </div>
+        <div id="c2"> <a href="#c2" title="Second">Second</a> <!-- This is your actual tab and the content is below it !-->
+            <div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+                <h3>Add as many tabs as you like</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. porttitor est et rhoncus. Nam ipsum leo, ornare ac volutpat suscipit, convallis eu metus. ipsum nunc.</p>
+                <p>Suspendisse at aliquet turpis. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. porttitor est et rhoncus. Nam ipsum leo, ornare ac volutpat suscipit, convallis eu metus. ipsum nunc.</p>
+            </div>
+        </div>
+        <div id="c3"> <a href="#c3" title="Third">Third</a> <!-- This is your actual tab and the content is below it !-->
+            <div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+                <h3>5 Preset Styles &amp; Color Themes</h3>
+                <p>Consectetur adipiscing elit. porttitor est et rhoncus. Nam ipsum leo, ornare ac volutpat suscipit, convallis eu metus. ipsum nunc.</p>
+                <p>Suspendisse at aliquet turpis. Phasellus eu libero euismod leo imperdiet sagittis elementum ut erat. Nam euismod risus at sem consequat vestibulum. </p>
+            </div>
+        </div>
+        <div id="c4"> <a href="#c4" title="Fourth">Fourth</a> <!-- This is your actual tab and the content is below it !-->
+            <div class="tab-content"> <!-- tab-container > div > div in the CSS !-->
+                <h3>NO Javascript!  NO Images!</h3>
+                <article id="tabs-right" class="tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+                    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                        <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#tabs-right-1">First</a></li>
+                        <li class="ui-state-default ui-corner-top"><a href="#tabs-right-2">Second</a></li>
+                        <li class="ui-state-default ui-corner-top"><a href="#tabs-right-3">Third</a></li>
+                    </ul>
+                    <div id="tabs-right-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        <p>Tabs on the right.</p>
+                    </div>
+                    <div id="tabs-right-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"> </div>
+                    <div id="tabs-right-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                        <p>Pellentesque ac elit et nulla posuere convallis quis ut dolor. Pellentesque egestas
+                            pellentesque blandit. Morbi quis sapien nec lacus consectetur vestibulum.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="c5">
+            <div class="tab-content"> <!-- Having a hidden or opening tab is ideal when you don't want last tab to always show first when loading the page !-->
+                <h3>2 Tab Types - Regular and Newsreel</h3>
+                <p>If you have an opening tab like this, it should always be last in the list of tabs otherwise it won't show first when the page loads.</p>
+                <p>Text sometimes overlaps with hidden tabs in IE7 &amp; 8</p>
+            </div>
+        </div>
+    </div>
+    <!-- Tab Container !--> 
+</div>
+<!-- Container !--> 
+<!-- End Tab Area !--> 
+<script src='http://codepen.io/assets/libs/fullpage/none.js'></script>
+</body>
+</html>

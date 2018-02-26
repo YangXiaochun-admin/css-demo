@@ -1,0 +1,94 @@
+body {
+  background: #1a1a1a;
+  width: 20em;
+  margin:100px 0 0 300px;
+}
+
+ul {
+  list-style:none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background: #1a1a1a;
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #000000;
+  padding: 10px 4em 10px 15px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  position: relative;
+} 
+
+a:hover,
+a:focus {
+    background: #262626;
+    border-top: 1px solid #404040;
+    border-bottom: 1px solid #0d0d0d;
+}
+
+a:before,
+a:after {
+  content: '';
+  position: absolute;
+}
+
+a:after {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.5em;
+  content: "\00bb";
+  -webkit-transform: rotate(90deg) scaleX(1);
+  transform: rotate(90deg) scaleX(1);
+  top: 50%;
+  line-height: 0;
+  right: .6em;
+}
+.has-children > a.active {
+  border-top-color: #404040;
+  border-bottom-width: 0;
+}
+
+a.active:before {
+    width: 3em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #333;
+}
+
+a.active:after {
+  -webkit-transform: rotate(90deg) scaleX(-1);
+  transform: rotate(90deg) scaleX(-1);
+}
+
+.children {
+  display: none;
+  padding: 10px;
+  background: #333;
+}
+.active + .children {
+  display: block;
+}
+
+.children a {
+  background: #666766;
+  border-top-color: #787878;
+  border-bottom-color: #595959;
+  font-size: 13px;
+}
+
+.children a:before,
+.children a:after {
+  display: none;
+}
+
+.children a:active {
+  border-color: transparent;
+  background: #0E7FFF;
+  position: relative;
+}

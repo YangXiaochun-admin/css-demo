@@ -1,0 +1,166 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+@import url('http://cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css');
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900');
+body {
+  font-family: 'Roboto';
+  padding: 0;
+  margin: 0;
+  background: -webkit-linear-gradient(135deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+  background: linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+span.title {
+  color: #fff;
+  font-size: 1.5em;
+  float: left;
+}
+.fg-facebook {
+  color: #FFF;
+  background-color: #3b5998;
+  border-color: #0087bb !important;
+}
+.fg-facebook:hover {
+  color: #FFF;
+  background-color: #4c70ba;
+  border-color: #4264aa !important;
+}
+.fg-facebook:focus,
+.fg-facebook:active {
+  color: #FFF;
+  background-color: #2d4373;
+  border-color: #344e86 !important;
+}
+.fg-twitter {
+  color: #FFF;
+  background-color: #00acee;
+  border-color: #0087bb;
+}
+.fg-twitter:hover {
+  color: #FFF;
+  background-color: #22c2ff;
+  border-color: #09bbff !important;
+}
+.fg-twitter:focus,
+.fg-twitter:active {
+  color: #FFF;
+  background-color: #0087bb;
+  border-color: #009ad5 !important;
+}
+.fg-google-plus {
+  color: #FFF;
+  background-color: #d34836;
+  border-color: #b03626 !important;
+}
+.fg-google-plus:hover {
+  color: #FFF;
+  background-color: #dc6e60;
+  border-color: #d85b4b !important;
+}
+.fg-google-plus:focus,
+.fg-google-plus:active {
+  color: #FFF;
+  background-color: #b03626;
+  border-color: #c43d2b !important;
+}
+.social-selector {
+  position: relative;
+  margin-left: 10px;
+  font-size: 2em;
+  outline: none !important;
+  border: none;
+}
+.social-selector .arrow {
+  font-size: 1em;
+}
+.social-selector:hover ul.social-baloon,
+.social-selector.opened ul.social-baloon {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1) translate(100%, -50%);
+  -ms-transform: scale(1) translate(100%, -50%);
+  transform: scale(1) translate(100%, -50%);
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+}
+.social-selector ul.social-baloon {
+  position: absolute;
+  visibility: hidden;
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+  top: 50%;
+  right: -1em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(0) translate(100%, -50%);
+  -ms-transform: scale(0) translate(100%, -50%);
+  transform: scale(0) translate(100%, -50%);
+  -webkit-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+  opacity: 0;
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.social-selector ul.social-baloon li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  -webkit-transition: all 0.075s cubic-bezier(0, 1.8, 1, 1.8);
+  transition: all 0.075s cubic-bezier(0, 1.8, 1, 1.8);
+}
+.social-selector ul.social-baloon li:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.social-selector ul.social-baloon li:hover a {
+  border-radius: 2px !important;
+}
+.social-selector ul.social-baloon li:first-child a {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.social-selector ul.social-baloon li:first-child a:after {
+  left: -0.9em;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #3b5998;
+  border-width: 0.5em;
+  margin-top: -0.5em;
+}
+.social-selector ul.social-baloon li:first-child a:hover:after {
+  border-right-color: #4c70ba;
+}
+.social-selector ul.social-baloon li:first-child a:focus:after,
+.social-selector ul.social-baloon li:first-child a:active:after {
+  border-right-color: #2d4373 !important;
+}
+.social-selector ul.social-baloon li:last-child a {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.social-selector ul.social-baloon li a {
+  font-size: 1.5em;
+  display: block;
+  padding: 0.25em;
+  min-width: 2em;
+  min-height: 2em;
+  font-smoothing: antialiased;
+}

@@ -1,0 +1,12 @@
+#header { padding: 10px 20px; display: block; background: #fff; border-bottom: 5px solid #333; height: 40px; }
+#logo { width:160px; float: left; }
+#logo h1 { width:160px; }
+#logo a:hover{background:none;}
+#logo a{display:block;font-family:Arial;font-weight:700;height:40px;position:relative;text-transform:uppercase;width:160px;}
+#logo a:hover em,#logo a:hover span,#logo a:hover strong{color:#000;}
+#logo em{color:#cecece;font-size:53px;font-style:normal;font-weight:400;left:36px;line-height:100px;top:-28px;}
+#logo span{color:#aaa;font-size:20px;left:0;top:5px;}
+#logo span,#logo em,#logo strong{cursor:pointer;position:absolute;}
+#logo strong{color:#888;font-size:33px;left:50px;top:0;}
+.return { margin: 3px 0 0; float: right; background: #444; color: #ddd; -moz-border-radius: 25px; -webkit-border-radius: 25px; border-radius: 25px; padding: 8px 15px; display: block; font-family: Arial; font-size: 16px; font-weight: bold; }
+.return:hover { background: #000; color: #fff; }

@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* css 重置 */
+body,div,ul,li,dl,dt,dd,h2,p{padding:0;margin:0;font-family:"微软雅黑";}
+ul{list-style:none ;}
+img{border:none;}
+a{blr:expression(this.onFocus=this.blur());outline:none;}
+
+/* banner-box */
+.banner-box{min-width:1210px;height:360px;position:relative;overflow:hidden;}
+.banner-box .bd{ width:100% !important;}
+.banner-box .bd li .m-width {width:1210px;margin:0 auto;overflow:hidden;}
+.banner-box .bd li{width:100% !important;height:360px;}
+.banner-box .bd li a{display:block;background-size:auto;}
+
+.banner-btn{width:1210px;position:absolute;top:120px;left:50%;margin-left:-605px;}
+.banner-btn a{display:block;width:49px;height:104px;position:absolute;top:0;filter:alpha(opacity=40);-moz-opacity:0.4;-khtml-opacity:0.4;opacity:0.4;}
+.banner-btn a.prev{left:20px;background:url(../images/foot.png) no-repeat 0 0;} 
+.banner-btn a.next{right:20px;background:url(../images/foot.png) no-repeat -49px 0;}
+
+.banner-box .hd {position:absolute;top:210px;left:537px;}
+.banner-box .hd ul li{width:12px;height:12px;border-radius :50%;text-indent:-9999px;margin-right:20px;background:#ccc;float:left;cursor:pointer;}
+.banner-box .hd ul li.on{background:#DA324D;}

@@ -1,0 +1,195 @@
+@import "compass/css3";
+
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+body {
+	font-family: "Lato", Helvetica, Arial;
+	font-size: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+*, *:before, *:after {
+	-webkit-border-sizing: border-box;
+	-moz-border-sizing: border-box;
+	border-sizing: border-box;
+}
+
+.container {
+	width: 350px;
+	margin: 50px auto;
+  
+  & > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+}
+
+// =============================================================================
+//	Mixins and Variables
+// =============================================================================
+
+$blue: #2980B9;
+$gray: #EEE;
+
+@mixin ul-nostyle {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin double-shadow($color) {
+	@include box-shadow(0 1px 0 lighten($color, 10%) inset, 0 -1px 0 darken($color, 10%) inset);
+}
+
+@mixin hover-style($color) {
+	&:hover {
+		background: lighten($color, 3%);
+	}
+}
+
+@mixin animation($content) {
+  animation: $content;
+  -moz-animation: $content;
+  -webkit-animation: $content;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+  @-webkit-keyframes #{$name} { @content; }
+}
+
+// =============================================================================
+//	Classes
+// =============================================================================
+
+.title {
+  font-family: 'Pacifico';
+  font-weight: norma;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.4;
+  color: $blue;
+}
+
+.dropdown {
+	a {
+		text-decoration: none;
+	}
+
+	[data-toggle="dropdown"] {
+		position: relative;
+		display: block;
+		color: white;
+		background: $blue;
+		@include double-shadow($blue);
+		@include hover-style($blue);
+		@include text-shadow(0 -1px 0 rgba(0,0,0,0.3));
+		padding: 10px;
+
+	}
+	.icon-arrow {
+		position: absolute;
+		display: block;
+		font-size: 0.7em;
+		color: #fff;
+		top: 14px;
+		right: 10px;
+
+		&.open {
+			@include transform(rotate(-180deg));
+			@include transition(transform .6s);
+		}
+		&.close {
+			@include transform(rotate(0deg));
+			@include transition(transform .6s);
+		}
+
+		&:before {
+			content: '\25BC';
+		}
+	}
+
+	.dropdown-menu {
+		max-height: 0;
+		overflow: hidden;
+		@include ul-nostyle;
+
+		li {
+			padding: 0;
+
+			a {
+				display: block;
+				color: darken($gray, 50%);
+				background: $gray;
+				@include double-shadow($gray);
+				@include hover-style($gray);
+				@include text-shadow(0 -1px 0 rgba(255,255,255,0.3));
+				padding: 10px 10px;
+			}
+		}
+	}
+
+	.show, .hide {
+		@include transform-origin(50%, 0%);
+	}
+
+	.show {
+		display: block;
+		max-height: 9999px;
+		@include transform(scaleY(1));
+		@include animation(showAnimation .5s ease-in-out);
+		@include transition(max-height 1s ease-in-out);
+	}
+
+	.hide {
+		max-height: 0;
+		@include transform(scaleY(0));
+		@include animation(hideAnimation .4s ease-out);
+		@include transition(max-height .6s ease-out);
+	}
+}
+
+@include keyframes(showAnimation) {
+	0% {
+		@include transform(scaleY(0.1));
+	}
+	40% {
+		@include transform(scaleY(1.04));
+	}
+	60% {
+		@include transform(scaleY(0.98));
+	}
+	80% {
+		@include transform(scaleY(1.04));
+	}
+	100% {
+		@include transform(scaleY(0.98));
+	}				
+	80% {
+		@include transform(scaleY(1.02));
+	}
+	100% {
+		@include transform(scaleY(1));
+	}
+}
+
+@include keyframes(hideAnimation) {
+  0% {
+  	@include transform(scaleY(1));
+  }
+  60% {
+  	@include transform(scaleY(0.98));
+  }
+  80% {
+  	@include transform(scaleY(1.02));
+  }
+  100% {
+  	@include transform(scaleY(0));
+  }
+}

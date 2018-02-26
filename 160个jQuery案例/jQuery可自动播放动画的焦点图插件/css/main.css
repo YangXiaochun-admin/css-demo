@@ -1,0 +1,45 @@
+/* -------------------------------------------------- 
+Inspira CSS by Designesia
+
+Quick enable/disable css files.
+To enable css file simply remove mark '/*' and '* /' between line of css file
+
+/* -------------------------------------------------- */
+
+/* bootstrap framework */
+@import url("bootstrap.css");
+@import url("../rs-plugin/css/settings.css");
+@import url("rev-settings.css");
+
+
+
+/* -------------------------------------------------- 
+widescreen.css used to fit in wide screen monitor (>1200px)
+if you disable this, the container width would be maximum 960px
+/* -------------------------------------------------- 
+@import url("wide-screen.css"); */
+
+
+
+/* -------------------------------------------------- 
+to use boxed layout please enable code below and disable 'wide-screen.css' above
+/* -------------------------------------------------- */
+/* @import url("boxed.css"); */
+
+
+
+
+/* load  color css 
+------------------------------
+select one: 
+aqua.css
+blue.css
+green.css
+grey.css
+red.css
+orange.css
+pink.css
+purple.css
+yellow.css
+*/
+@import url("colors/orange.css");

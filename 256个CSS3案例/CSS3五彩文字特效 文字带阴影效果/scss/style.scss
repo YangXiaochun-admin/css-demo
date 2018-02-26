@@ -1,0 +1,19 @@
+@import "compass/css3";
+
+body{
+  background:#eee;
+
+  .box{
+    display:none; 
+  }
+  .render{
+    width:80%; 
+    display:block;
+    margin:10% auto;
+
+    span{
+      font-size:70px;
+      font-weight:300;
+    }
+  }
+}

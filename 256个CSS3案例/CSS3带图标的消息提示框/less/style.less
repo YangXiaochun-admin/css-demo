@@ -1,0 +1,171 @@
+.notification {
+    display: flex;
+    margin: 0 auto 10px auto;
+    width: 350px;
+    min-height: 70px;
+    
+    & .info {
+        flex: 1;
+        padding: 10px 10px 0 10px;
+        background: #ecf0f1;
+        border-radius: 3px 0 0 3px;
+        border-bottom: 3px solid darken(#ecf0f1, 15%);
+        
+        & h1 {
+            margin: 0;
+            padding: 0;
+            font-family: arial, sans-serif;
+            font-size: 16px;
+            color: #111;
+            
+            & a {
+                text-decoration: none;
+                color: #444;
+            }
+        }
+        
+        & p {
+            margin: 0;
+            padding: 5px 0;
+            font-family: arial, sans-serif;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        & .button {
+            display: inline-block;
+            margin: 3px 3px 5px 0;
+            padding: 3px 7px;
+            border-radius: 2px;
+            border-bottom: 1px solid;
+            font-family: arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ecf0f1;
+            
+            &.blue {
+                .button(#2980b9);   
+            }
+            &.red {
+                .button(#e74c3c);
+            }
+            &.orange {
+                .button(#f39c12);
+            }
+            &.purple {
+                .button(#9b59b6);
+            }
+            &.green {
+                .button(#27ae60);
+            }
+            &.gray {
+                .button(#95a5a6);
+            }
+        }
+    }
+    
+    & .icon {
+        padding: 15px 0 0 0;
+        width: 70px;
+        border-radius: 0 3px 3px 0;
+        text-align: center;
+        font-size: 32px;
+        color: #ecf0f1;
+        border-bottom: 3px solid;
+    }
+    
+    .color(#7f8c8d);
+    
+    &.blue {
+        .color(#2980b9);   
+    }
+    &.red {
+        .color(#e74c3c);
+    }
+    &.orange {
+        .color(#f39c12);
+    }
+    &.purple {
+        .color(#9b59b6);
+    }
+    &.green {
+        .color(#27ae60);
+    }
+    &.gray {
+        .color(#95a5a6);
+    }
+}
+
+.color(@color) {
+    & .icon {
+        background: @color;
+        border-bottom-color: darken(@color, 10%);
+    }
+    
+    & .info {
+        & .button {
+            background: @color;
+            border-bottom-color: darken(@color, 10%);
+        }
+    }
+}
+
+.button(@color) {
+    background: @color !important;
+    border-bottom-color: darken(@color, 10%) !important;
+}
+
+
+
+/*
+* The styles to setup this scene
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 100px;
+    background: #34495e;
+}
+
+#content {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#preview {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+    & #text {
+        text-align: center;
+        color: #fff;
+        font-family: arial, sans-serif;
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 400px) {
+    #content {
+        display: none;
+    }
+
+    #preview {
+        display: block;
+    }
+}

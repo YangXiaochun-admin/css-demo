@@ -1,0 +1,130 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700,400,300);
+@import url(https://raw.github.com/necolas/normalize.css/master/normalize.css);
+/**
+* Set up reusable colors
+*/
+/**
+* Colors from Flat UI
+* Source: http://flatuicolors.com
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  background-color: #e7e7e7;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 48px;
+}
+
+/**
+* Reusable single-direction margin declaration
+*/
+.margin, p, .flag {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.margin:last-child, p:last-child, .flag:last-child {
+  margin-bottom: 0;
+}
+
+/**
+* Flag Object
+* Original Source: http://csswizardry.com/2013/05/the-flag-object/
+*/
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.flag--top .flag__image, .flag--top
+.flag__body {
+  vertical-align: top;
+}
+.flag--bottom .flag__image, .flag--bottom
+.flag__body {
+  vertical-align: bottom;
+}
+
+.flag__image {
+  padding-right: 24px;
+}
+.flag__image > img {
+  display: block;
+  max-width: none;
+}
+.flag--rev .flag__image {
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.flag__body {
+  width: 100%;
+}
+
+/**
+* Notification Styles
+*/
+.note {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: #9b59b6;
+}
+
+.note--secondary {
+  background-color: #34495e;
+}
+
+.note--success {
+  background-color: #27ae60;
+}
+
+.note--warning {
+  background-color: #f39c12;
+}
+
+.note--error {
+  background-color: #e74c3c;
+}
+
+.note--info {
+  background-color: #3498db;
+}
+
+.note__icon,
+.note__text {
+  padding: 24px;
+}
+
+.note__icon {
+  min-width: 80px;
+  text-align: center;
+  font-size: 32px;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.note__text {
+  padding-right: 72px;
+}
+
+.note__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 24px;
+  color: white;
+}

@@ -1,0 +1,1 @@
+//Hover to make it pulse warning and reload animation

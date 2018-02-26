@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 3D小球旋转Loading动画演示地址</title>
+<style>
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+body { line-height: 1 }
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+</style>
+<style>
+#contain {
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    animation: fadeIn 1s 1;
+    animation-fill-mode: forwards;
+}
+.wrap {
+    animation: rotate 1000ms infinite ease-in-out alternate, zindex 2000ms infinite ease-in-out;
+    position: absolute;
+    z-index: 0;
+}
+.part {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.1));
+    background-color: #E3746B;
+    border-radius: 50%;
+    animation: scale 1000ms infinite ease-in-out alternate;
+    animation-delay: -500ms;
+    transform: scale(0.5);
+}
+.part:after {
+    content: '';
+    width: 100px;
+    height: 10px;
+    background: #eee;
+    position: absolute;
+    top: 130px;
+    border-radius: 50%;
+}
+#wrap2 { animation-delay: -1000ms; }
+#part2 {
+    background-color: #397BF9;
+    animation-delay: -1500ms;
+}
+#wrap3 { animation-delay: -1500ms; }
+#part3 {
+    background-color: #F4B400;
+    animation-delay: -2000ms;
+}
+#wrap4 { animation-delay: -2500ms; }
+#part4 {
+    background-color: #0F9D58;
+    animation-delay: -3000ms;
+}
+ @keyframes rotate {
+ 100% {
+ transform: translateX(200px);
+}
+}
+@keyframes scale {
+ 100% {
+ transform: scale(1);
+}
+}
+@keyframes zindex {
+ 25% {
+ z-index: 1;
+}
+ 75% {
+ z-index: -1;
+}
+}
+@keyframes fadeIn {
+ 100% {
+ opacity: 1;
+}
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+<div id="contain">
+    <div class='wrap' id='wrap1'>
+        <div class='part' id='part1'></div>
+    </div>
+    <div class='wrap' id='wrap2'>
+        <div class='part' id='part2'></div>
+    </div>
+    <div class='wrap' id='wrap3'>
+        <div class='part' id='part3'></div>
+    </div>
+    <div class='wrap' id='wrap4'>
+        <div class='part' id='part4'></div>
+    </div>
+</div>
+<script src='js/jquery.js'></script>
+</body>
+</html>

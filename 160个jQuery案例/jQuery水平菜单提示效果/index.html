@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+	<title>jQuery Tooltips Menu Tutorial</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function () {
+
+		//transitions
+		//for more transition, goto http://gsgd.co.uk/sandbox/jquery/easing/
+		var style = 'easeOutExpo';
+		var default_left = Math.round($('#menu li.selected').offset().left - $('#menu').offset().left);
+		var default_top = $('#menu li.selected').height();
+
+		//Set the default position and text for the tooltips
+		$('#box').css({left: default_left, top: default_top});
+		$('#box .head').html($('#menu li.selected').find('img').attr('alt'));				
+		
+		//if mouseover the menu item
+		$('#menu li').hover(function () {
+			
+			left = Math.round($(this).offset().left - $('#menu').offset().left);
+
+			//Set it to current item position and text
+			$('#box .head').html($(this).find('img').attr('alt'));
+			$('#box').stop(false, true).animate({left: left},{duration:500, easing: style});	
+
+		
+		//if user click on the menu
+		}).click(function () {
+			
+			//reset the selected item
+			$('#menu li').removeClass('selected');	
+			
+			//select the current item
+			$(this).addClass('selected');
+	
+		});
+		
+		//If the mouse leave the menu, reset the floating bar to the selected item
+		$('#menu').mouseleave(function () {
+
+			default_left = Math.round($('#menu li.selected').offset().left - $('#menu').offset().left);
+
+			//Set it back to default position and text
+			$('#box .head').html($('#menu li.selected').find('img').attr('alt'));				
+			$('#box').stop(false, true).animate({left: default_left},{duration:1500, easing: style});	
+			
+		});
+		
+	});
+
+	
+
+	</script>
+	<style type="text/css">
+body {
+    font-family: georgia;
+    font-size: 14px;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    outline: 0;
+}
+img {
+    outline: 0;
+    border: 0;
+}
+#menu {
+    /* you must set it to relative, so that you can use absolute position for children elements */
+    position: relative;
+    text-align: center;
+    width: 583px;
+    height: 40px;
+}
+#menu ul {
+    /* remove the list style and spaces*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline;
+    /* position absolute so that z-index can be defined */
+    position: absolute;
+    /* center the menu, depend on the width of you menu*/
+    left: 110px;
+    top: 0;
+}
+#menu ul li {
+    /* give some spaces between the list items */
+    margin: 0 5px;
+    /* display the list item in single row */
+    float: left;
+}
+#menu #box {
+    /* position absolute so that z-index can be defined and able to move this item using javascript */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    /* image of the right rounded corner */
+    background: url(tail.gif) no-repeat right center;
+    height: 35px;
+    /* add padding 8px so that the tail would appear */
+    padding-right: 8px;
+    /* set the box position manually */
+    margin-left: 5px;
+}
+#menu #box .head {
+    /* image of the left rounded corner */
+    background: url(head.gif) no-repeat 0 0;
+    height: 35px;
+    color: #eee;
+    /* force text display in one line */
+    white-space: nowrap;
+    /* set the text position manually */
+    padding-left: 8px;
+    padding-top: 12px;
+}
+</style>
+	</head>
+	<body>
+    <br/>
+    <br/>
+    <div id="menu">
+        <ul>
+            <li><a href="#"><img src="user.png" width="32" height="32" alt="My Profile" title=""/></a></li>
+            <li><a href="#"><img src="photo.png" width="32" height="32" alt="Photo Gallery" title=""/></a></li>
+            <li><a href="#"><img src="bookmark.png" width="32" height="32" alt="Social Bookmarking Tools" title=""/></a></li>
+            <li><a href="#"><img src="rss.png" width="32" height="32" alt="RSS" title=""/></a></li>
+            <li><a href="#"><img src="search.png" width="32" height="32" alt="Search" title=""/></a></li>
+            <li class="selected"><a href="#"><img src="setting.png" width="32" height="32" alt="Control Panel" title=""/></a></li>
+        </ul>
+        
+        <!-- If you want to make it even simpler, you can append these html using jquery -->
+        <div id="box">
+            <div class="head"></div>
+        </div>
+    </div>
+</body>
+</html>

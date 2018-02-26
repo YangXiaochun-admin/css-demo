@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d7d7d7 url('http://subtlepatterns.com/patterns/binding_light.png') repeat top center;
+}
+
+.track {
+  position: relative;
+  margin: 10em auto;
+  /* padding: .2em; */
+  background: #b7b7b7;
+  width: 10em;
+  height: 4em;
+  border: .1em solid #575757;
+  border-radius: 10em;
+  box-shadow: inset 0 .5em .5em #666,
+    inset 0 -.2em .5em #666;
+  cursor: pointer;
+}
+
+.track:after {
+  position: absolute;
+  content: "";
+  display: block;
+  margin-top: -4.5em;
+  margin-left: -.6em;
+  width: 11em;
+  height: 5em;
+  border: .1em solid #979797;
+  border-radius: 10em;
+  box-shadow: inset 0 1em 1em #979797, inset 0 -1em 1em #e7e7e7, 0 .1em .2em #fff;
+  z-index: -1;
+}
+
+.indicator {
+  position: relative;
+  background: #ddd;
+  height: 100%;
+  width: 40%;
+  border-radius: 50%;
+  border: .1em solid #666;
+  box-shadow: inset 0 .5em .5em #f7f7f7,
+    inset 0 -.3em .3em #666;
+}
+
+.indicator:after {
+  content: "";
+  display: block;
+  margin: 1.2em auto;
+  background: #ff3434;
+  width: 1em;
+  height: 1em;
+  box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  border-radius: 50%;
+}
+
+.indicator.switch-on {
+  -webkit-animation:           switch-on .3s;
+  -moz-animation:              switch-on .3s;
+  -o-animation:                switch-on .3s;
+  animation:                   switch-on .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode:    forwards;
+  -o-animation-fill-mode:      forwards;
+  animation-fill-mode:        forwards;
+}
+
+.indicator.switch-off {
+  -webkit-animation:           switch-off .3s;
+  -moz-animation:              switch-off .3s;
+  -o-animation:                switch-off .3s;
+  animation:                   switch-off .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode:    forwards;
+  -o-animation-fill-mode:      forwards;
+  -animation-fill-mode:        forwards;
+}
+
+@-webkit-keyframes switch-on {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 60%;
+  }
+}
+@-moz-keyframes switch-on {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 60%;
+  }
+}
+@-o-keyframes switch-on {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 60%;
+  }
+}
+@keyframes switch-on {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 60%;
+  }
+}
+
+@-webkit-keyframes switch-off {
+  0% {
+    margin-left: 60%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-moz-keyframes switch-off {
+  0% {
+    margin-left: 60%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-o-keyframes switch-off {
+  0% {
+    margin-left: 60%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes switch-off {
+  0% {
+    margin-left: 60%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+.indicator.switch-on:after {
+  -webkit-animation:           light-on .3s;
+  -moz-animation:              light-on .3s;
+  -o-animation:                light-on .3s;
+  animation:                   light-on .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode:    forwards;
+  -o-animation-fill-mode:      forwards;
+  -animation-fill-mode:        forwards;
+}
+
+.indicator.switch-off:after {
+  -webkit-animation:           light-off .3s;
+  -moz-animation:              light-off .3s;
+  -o-animation:                light-off .3s;
+  animation:                   light-off .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode:    forwards;
+  -o-animation-fill-mode:      forwards;
+  -animation-fill-mode:        forwards;
+}
+
+@-webkit-keyframes light-on {
+  0% {
+    background: #fa3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+  
+  100% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+}
+
+@-moz-keyframes light-on {
+  0% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+  
+  100% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+}
+
+@-o-keyframes light-on {
+  0% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+  
+  100% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+}
+
+@keyframes light-on {
+  0% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+  
+  100% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+}
+
+@-webkit-keyframes light-off {
+  0% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+  
+  100% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+}
+
+@-moz-keyframes light-off {
+  0% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+  
+  100% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+}
+
+@-o-keyframes light-off {
+  0% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+  
+  100% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+}
+
+@keyframes light-off {
+  0% {
+    background: #0f0;
+    box-shadow: inset 0 .15em #494,
+    0 .15em #afa;
+  }
+  
+  100% {
+    background: #ff3434;
+    box-shadow: inset 0 .15em #499,
+    0 .15em #faa;
+  }
+}

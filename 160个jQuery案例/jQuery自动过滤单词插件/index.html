@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8">
+<title>jQuery自动过滤单词插件DEMO演示</title>
+<meta name="description" content="Tutorial : Type and Spot with jQuery's :contains">
+<meta name="author" content="Webstuffshare">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="demo.css?v=2">
+</head>
+<body>
+<div id="content">
+    <h3>Enhance Type And Spot</h3>
+    <input type="text" name="" size="30" value="Try to type and delete... (case sensitive)" id="searchbox"/>
+    <ul class="list">
+        <li>RGraph</li>
+        <li>Pikachoose</li>
+        <li>Zoomooz.js</li>
+        <li>ScriptSrc</li>
+        <li>CSSDeck</li>
+        <li>mocha</li>
+        <li>jsPlumb</li>
+        <li>jFlickrFeed</li>
+        <li>Spritely</li>
+        <li>jFlip</li>
+        <li>Picbox</li>
+        <li>Chive</li>
+        <li>jQRTE</li>
+        <li>Krumo</li>
+        <li>TinyTips</li>
+        <li>EZ-CSS</li>
+        <li>designerGrid</li>
+        <li>Plupload</li>
+        <li>Quicksand</li>
+        <li>Teambox</li>
+        <li>Spree</li>
+        <li>Chartle</li>
+        <li>MathJax</li>
+        <li>ColorBox</li>
+        <li>Columnizr</li>
+        <li>OpenFaces</li>
+        <li>jsPDF</li>
+    </ul>
+    <br/>
+    <small>Works beautifully on Safari 5.0.6, Opera 11.10, Firefox 4.0.1 and Chrome 14.0</small> </div>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="jquery-1.4.4.min.js"%3E%3C/script%3E'))</script> 
+<script type="text/javascript">
+		
+		$(document).ready(function() {
+	
+			$('#searchbox').keyup(function() {
+				
+				keyword = $(this).val();
+				
+				$('.list li').stop().animate({'width': '120px',
+								 						'opacity': 1,
+								 						'padding': '10px',
+								 						'margin': '.5em .5em .5em 0'}, function() {
+								 							$(this).css('display', 'inline-block');
+								 						});
+								 	
+				$('.list li:not(:contains('+keyword+'))').stop()
+															  .animate({'width' : 0,
+																			 'opacity' : 0,
+																			 'padding': 0,
+																			 'margin': 0}, function() {
+								 												$(this).css('display', 'none');
+								 											});
+				
+			}).focus(function() {
+			
+				if($(this).val() == 'Try to type and delete... (case sensitive)') 
+					$(this).val('');
+			
+			}).blur(function() {
+				
+				if($(this).val() == '') 
+					$(this).val('Try to type and delete... (case sensitive)');
+			});
+			
+		});
+		
+	</script>
+</body>
+</html>

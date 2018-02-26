@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3华丽的Tab菜单 带小图标动画DEMO演示</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+</style>
+<style>
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    outline: 0;
+}
+html { font-size: 16px; }
+html, body {
+    min-height: 100%;
+    background-color: #adf1ff;
+}
+body {
+    font: 100%/1.375 AvenirNext-Regular, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+    color: #111;
+}
+.container {
+    max-width: 40em;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: #1942e6;
+}
+h2 a { color: #4768eb; }
+a, a:focus { outline: 0; }
+.main-navigation {
+    overflow: auto;
+    position: relative;
+    margin: 3em auto 0;
+}
+.main-navigation ul {
+    list-style: none;
+    overflow: auto;
+}
+.main-navigation li {
+    float: left;
+    position: relative;
+}
+.main-navigation li.active { z-index: 6; }
+.main-navigation li.active a {
+    padding-right: 10px;
+    color: #fff;
+}
+.main-navigation li.active span {
+    width: auto;
+    height: auto;
+    color: #fff;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+.main-navigation a {
+    display: block;
+    position: relative;
+    height: 30px;
+    text-transform: uppercase;
+    padding: 0 0 0 20px;
+    color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+.main-navigation a:hover {
+    padding-right: 10px;
+    color: #fff;
+}
+.main-navigation a:hover span {
+    width: auto;
+    height: auto;
+    color: #fff;
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+.main-navigation svg {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.main-navigation .tab-left {
+    width: 100%;
+    left: 0;
+}
+.main-navigation .tab-right {
+    width: 20px;
+    /* weird gap in Firefox */
+  /* right: -20px; */
+    right: 0;
+    transform: translateX(20px);
+}
+.main-navigation .icon {
+    top: 3px;
+    left: 20px;
+    width: 24px;
+    height: 23px;/* outline: 1px dotted salmon; */
+}
+.main-navigation .icon-contact {
+    top: 8px;
+    height: 16px;/* outline: 1px dotted red; */
+}
+.main-navigation span {
+    position: relative;
+    font-size: 0.8125em;
+    color: transparent;
+    z-index: 2;
+    display: inline-block;
+    padding-top: 8px;
+    padding-left: 30px;
+    /* background: rgba(0,0,0,.5); */
+    overflow: hidden;
+    vertical-align: top;
+    transition: all 0.5s;
+    letter-spacing: -10px;
+    transition: all .5s ease-in-out;
+}
+.main-navigation .active a { color: #fff; }
+.main-navigation .tab-1 { z-index: 4; }
+.main-navigation .tab-1 svg { fill: rgba(0, 149, 179, 0.5); }
+.main-navigation .tab-1 a:hover svg { fill: rgba(0, 149, 179, 0.75); }
+.main-navigation .tab-2 { z-index: 3; }
+.main-navigation .tab-2 svg { fill: rgba(23, 130, 207, 0.5); }
+.main-navigation .tab-2 a:hover svg { fill: rgba(23, 130, 207, 0.75); }
+.main-navigation .tab-3 { z-index: 2; }
+.main-navigation .tab-3 svg { fill: rgba(71, 104, 235, 0.5); }
+.main-navigation .tab-3 a:hover svg { fill: rgba(71, 104, 235, 0.75); }
+.main-navigation .tab-4 { z-index: 1; }
+.main-navigation .tab-4 svg { fill: rgba(130, 94, 237, 0.5); }
+.main-navigation .tab-4 a:hover svg { fill: rgba(130, 94, 237, 0.75); }
+.main-navigation .tab-1.active .tab-left, .main-navigation .tab-1.active .tab-right { fill: #0095b3; }
+.main-navigation .tab-2.active .tab-left, .main-navigation .tab-2.active .tab-right { fill: #1782cf; }
+.main-navigation .tab-3.active .tab-left, .main-navigation .tab-3.active .tab-right { fill: #4768eb; }
+.main-navigation .tab-4.active .tab-left, .main-navigation .tab-4.active .tab-right { fill: #825eed; }
+/* general styles */
+.main-content {
+    position: relative;
+    z-index: 10;
+    background-color: #0095b3;
+    padding-top: .25em;
+    margin-bottom: 3em;
+}
+.article {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2em 3em;
+}
+.article h2 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+.article h3 {
+    font-size: 1.35em;
+    margin-top: 0.25em;
+    margin-bottom: 0.125em;
+    color: #01697e;
+}
+h1, h2, h3, .main-navigation span { font-family: AvenirNextCondensed-DemiBold, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif; }
+p { padding: .5em 0; }
+footer ul {
+    list-style: square;
+    color: #97a9f3;
+}
+footer li {
+    text-indent: -.125em;
+    margin-left: .125em;
+}
+footer a {
+    display: block;
+    padding: .125em 0;
+}
+
+@media (max-width: 639px) {
+.article {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+}
+
+@media (max-width: 440px) {
+.main-navigation svg {
+    width: 0;
+    height: 0;
+    display: none;
+}
+.main-navigation li { width: 50%; }
+.main-navigation a {
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.85);
+}
+.main-navigation a span {
+    width: auto;
+    height: auto;
+    color: rgba(0, 0, 0, 0.85);
+    text-shadow: none;
+    letter-spacing: 0;
+}
+.tab-1 a { background-color: rgba(0, 149, 179, 0.5); }
+.tab-1 a:hover { background-color: rgba(0, 149, 179, 0.75); }
+.tab-2 a { background-color: rgba(23, 130, 207, 0.5); }
+.tab-2 a:hover { background-color: rgba(23, 130, 207, 0.75); }
+.tab-3 a { background-color: rgba(71, 104, 235, 0.5); }
+.tab-3 a:hover { background-color: rgba(71, 104, 235, 0.75); }
+.tab-4 a { background-color: rgba(130, 94, 237, 0.5); }
+.tab-4 a:hover { background-color: rgba(130, 94, 237, 0.75); }
+.tab-1.active a { background-color: #0095b3; }
+.tab-2.active a { background-color: #1782cf; }
+.tab-3.active a { background-color: #4768eb; }
+.tab-4.active a { background-color: #825eed; }
+.article {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+}
+
+@media (max-width: 350px) {
+.main-navigation li { width: 100%; }
+}
+</style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+<!-- TAB TEMPLATE --> 
+<svg id="tab-left" style="fill: transpartent; stroke: none; position: absolute; margin-left: -200%;" >
+<polygon id="tab-shape-left" class="tab-shape tab-shape-left" points="900,30 0,30 10,0 900,0" />
+<polygon id="tab-shape-right" class="tab-shape tab-shape-right" points="20,30 0,30 0,0" />
+<rect id="square" width="24" height="23" fill="rgba(255,255,255,.85)" stroke="none" stroke-width="0" />
+<g id="icon-contact">
+    <g id="bg">
+        <rect opacity="0.3" fill="#8E25EE" width="24" height="16"/>
+    </g>
+    <g id="outer">
+        <path opacity="0.85" fill="#FFFFFF" d="M0,0v16h24V0H0z M21,14H3V3.25L12,10l9-6.75V14z M5.333,2h13.333L12,7L5.333,2z"/>
+    </g>
+</g>
+<g id="icon-home" width="24" height="23">
+    <g id="inner">
+        <g>
+            <polyline opacity="0.6" fill="#0095B3" points="15,13 9,13 9,22 3,22 3,12 12,1 21,11.995 21,22 15,22 		"/>
+        </g>
+    </g>
+    <g id="outer">
+        <path opacity="0.95" fill="#FFFFFF" d="M12,0L0,14h2v9h8v-9h4v9h8v-9h2L12,0z M20,22h-4v-9H8v9H4V11.993L12,2l8,9.986V22z"/>
+    </g>
+</g>
+<g id="icon-about" width="24" height="23"> 
+    <!--	<rect x="-2" y="-1" display="inline" fill="#173EAD" width="28" height="26"/> -->
+    <g id="inner">
+        <polygon opacity="0.85" fill="#1782CF" points="1,22 6,19 9,17 6,9 8,3 12,1 16,3 18,9 14,17 16,19 20,20 23,22 	"/>
+    </g>
+    <g id="outer">
+        <path opacity="0.95" fill="#FFFFFF" d="M20.485,19.603c-1.067-0.444-2.335-0.817-3.741-1.083c-0.877-0.387-1.494-1.249-1.494-2.27 c0-0.436,0.125-0.837,0.322-1.192c1.54-1.464,2.536-3.751,2.536-6.33c0-4.419-2.911-8-6.5-8c-3.59,0-6.5,3.581-6.5,8 c0,2.609,1.02,4.921,2.592,6.381C7.881,15.453,8,15.834,8,16.25c0,1.21-0.859,2.218-2,2.449v0.04
+  c-0.908,0.215-1.748,0.476-2.485,0.782C1.343,20.427,0,21.619,0,23h24C24,21.619,22.656,20.508,20.485,19.603z M4.062,21H4 c0.042-0.625,1.317-0.796,4.007-1.395c2.402-1.048,2.618-4.022,1.001-5.564C7.854,13.088,7,11.443,7,9c0-4.188,2.542-7.041,5-7 c2.458,0.041,4,2.812,4,7c0,2.678-0.89,4.404-2.078,5.304c-1.63,2.196-0.61,4.23,2.006,5.313C18.665,20.239,20,20.625,20,21H4.062z "/>
+    </g>
+</g>
+<g id="icon-lab" width="24" height="23">
+    <g id="outer">
+        <polygon opacity="0.95" fill="#FFFFFF" points="21.999,22 2,22 8,10 2,1 10,1 10,3 7,3 11,10 6,20 18,20 13,10 17,3 14,3 14,1 22,1 16,10 	"/>
+    </g>
+    <g id="inner">
+        <polygon opacity="0.6" fill="#4768EB" points="6,20 11,10 7,3 10,3 10,1 14,1 14,3 17,3 13,10 18,20 	"/>
+    </g>
+</g>
+</svg>
+<div class="container">
+    <nav role="navigation" class="main-navigation">
+        <ul>
+            <li class="tab-1 active" data-bg-color="hsl(190, 100%, 35%)"> <a href="#home"> <span>Home</span> <svg class="tab-left">
+                <use xlink:href="#tab-shape-left"></use>
+                </svg> <svg class="icon icon-home">
+                <use xlink:href="#icon-home"></use>
+                </svg> <svg class="tab-right">
+                <use xlink:href="#tab-shape-right"></use>
+                </svg> </a> </li>
+            <li class="tab-2" data-bg-color="hsl(205, 80%, 45%)"> <a href="#about"> <span>About</span> <svg class="tab-left">
+                <use xlink:href="#tab-shape-left"></use>
+                </svg> <svg class="icon icon-about">
+                <use xlink:href="#icon-about"></use>
+                </svg> <svg class="tab-right">
+                <use xlink:href="#tab-shape-right"></use>
+                </svg> </a> </li>
+            <li class="tab-3" data-bg-color="hsl(228,80%,60%)"> <a href="#lab"> <span>Lab</span> <svg class="tab-left">
+                <use xlink:href="#tab-shape-left"></use>
+                </svg> <svg class="icon icon-lab">
+                <use xlink:href="#icon-lab"></use>
+                </svg> <svg class="tab-right">
+                <use xlink:href="#tab-shape-right"></use>
+                </svg> </a> </li>
+            <li class="tab-4" data-bg-color="hsl(255,80%,65%)"> <a href="#contact"> <span>Contact</span> <svg class="tab-left">
+                <use xlink:href="#tab-shape-left"></use>
+                </svg> <svg class="icon icon-contact">
+                <use xlink:href="#icon-contact"></use>
+                </svg> <svg class="tab-right">
+                <use xlink:href="#tab-shape-right"></use>
+                </svg> </a> </li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <article class="article">
+            <h2><a href="http://codepen.io/atelierbram/pen/gziKh/">Space-Saving Navtabs with Icons &#8211; in SVG </a></h2>
+            <p>These SVG navtabs combine the concept behind Douglas Bowman’s “Sliding doors”, and SVG template technique with SVG icons. The tabs require two SVG shapes: one very wide one for the left side, and one small one, just for the right corner. </p>
+            <footer>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="http://codepen.io/chriscoyier/pen/LixbE">Original demo created by Chris Coyier</a></li>
+                    <li><a href="http://css-tricks.com/svg-tabs-using-svg-shape-template/">SVG Tabs (Using an SVG Shape as Template) - article on CSS-Tricks by Chris Coyier</a></li>
+                    <li><a href="http://tympanus.net/codrops/2013/11/27/svg-icons-ftw/">SVG icons for the win - article on Codrops Oleg Solomka</a></li>
+                    <li><a href="http://alistapart.com/article/slidingdoors">Sliding Doors of CSS - article by Douglas Bowman</a></li>
+                </ul>
+            </footer>
+        </article>
+    </div>
+</div>
+<!-- /.container --> 
+
+<script src='js/jquery.js'></script> 
+<script src="js/index.js"></script>
+</body>
+</html>

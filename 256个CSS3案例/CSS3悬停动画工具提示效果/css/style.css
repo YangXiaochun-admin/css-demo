@@ -1,0 +1,89 @@
+.tt-wrapper{
+	padding: 0;
+	width: 435px;
+	height: 70px;
+	margin: 80px auto 30px auto;
+}
+.tt-wrapper li{
+	float: left;
+}
+.tt-wrapper li a{
+	display: block;
+	width: 68px;
+	height: 70px;
+	margin: 0 2px;
+	outline: none;
+	background: transparent url(../images/growcase_the_social_gunman_icons.png) no-repeat top left;
+	text-indent: -9000px;
+	position: relative;
+}
+.tt-wrapper li .tt-gplus{
+    background-position: 0px 0px;
+}
+.tt-wrapper li .tt-twitter{
+    background-position: -68px 0px;
+}
+.tt-wrapper li .tt-dribbble{
+    background-position: -136px 0px;
+}
+.tt-wrapper li .tt-facebook{
+    background-position: -204px 0px;
+}
+.tt-wrapper li .tt-linkedin{
+    background-position: -272px 0px;
+}
+.tt-wrapper li .tt-forrst{
+    background-position: -340px 0px;
+}
+.tt-wrapper li a span{
+	width: 100px;
+	height: auto;
+	line-height: 20px;
+	padding: 10px;
+	left: 50%;
+	margin-left: -64px;
+	font-family: 'Alegreya SC', Georgia, serif;
+	font-weight: 400;	
+	font-style: italic;
+	font-size: 14px;
+	color: #719DAB;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	border: 4px solid #fff;
+	background: rgba(255,255,255,0.3);
+	text-indent: 0px;
+	border-radius: 5px;
+	position: absolute;
+	pointer-events: none;
+	bottom: 100px;
+	opacity: 0;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.tt-wrapper li a span:before,
+.tt-wrapper li a span:after{
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	margin-left: -9px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid rgba(0,0,0,0.1);
+}
+.tt-wrapper li a span:after{
+	bottom: -14px;
+	margin-left: -10px;
+	border-top: 10px solid #fff;
+}
+.tt-wrapper li a:hover span{
+	opacity: 0.9;
+	bottom: 70px;
+}
+

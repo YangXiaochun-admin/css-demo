@@ -1,0 +1,32 @@
+﻿* {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+li{list-style:none}
+#faded {
+	MARGIN: 0px 0px 4px; OVERFLOW: hidden; HEIGHT: 384px
+}
+#faded UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#faded UL.pagination {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; Z-INDEX: 10; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 350px 0px 0px 25px; PADDING-TOP: 5px; LIST-STYLE-TYPE: none; POSITION: relative
+}
+#faded UL.pagination LI {
+	PADDING-RIGHT: 1px; FLOAT: left
+}
+#faded UL.pagination LI A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; BACKGROUND: #20130c; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 21px; TEXT-INDENT: 20px; PADDING-TOP: 0px; HEIGHT: 21px; TEXT-DECORATION: none
+}
+#faded UL.pagination LI.current A {
+	BACKGROUND: #ee8a00
+}
+#faded UL.pagination LI A:hover {
+	BACKGROUND: #ee8a00
+}
+#faded {
+	WIDTH: 713px
+}
+A {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; outline: 0
+}
+
