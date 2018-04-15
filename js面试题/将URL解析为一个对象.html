@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>将url解析为一个对象</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	var url = "http://www.test.com/index.php?key0=0&key1=1&key2=2"; 
+	function parseQueryString(url){
+		var str = url.split('?')[1];
+		var temp = str.split('&');
+		var obj = {};
+		for(let i = 0; i < temp.length; i++){
+			var temp2 = temp[i].split('=');
+			obj[temp2[0]] = temp2[1];
+		}
+		return obj;
+	}
+	console.log(parseQueryString(url));
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*var stringArray = ["This","is","Baidu","Campus"];
+	// console.log(stringArray.join(" "));
+
+	var foo = "get-element-by-id";
+	function toArr(str){
+		var arr = str.split("-");
+		for(let i = 0; i < arr.length; i++){
+			arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+		}
+		msg = arr.join("");
+		return msg;
+	}
+	// console.log(toArr(foo));
+
+	function outerFun(){
+		var a = 0;
+		function innerFun(){
+			a++;
+			console.log('这是---'+a);
+		}
+		return innerFun;
+	}
+	var obj = outerFun();
+	obj();
+	obj();
+
+	var obj2 = outerFun();
+	obj2();
+	obj2();
+
+	var fullname = 'May';
+	var obj = {
+		fullname:'Col',
+		prop:{
+			fullname:'Ros',
+			getFullname:function(){
+				return this.fullname;
+			}
+		}
+	}
+	console.log(obj.prop.getFullname());//Ros
+	var test = obj.prop.getFullname;
+	console.log(test); //May
+	var t = obj.prop.getFullname();
+	console.log(t); //Ros*/
+
+	/*var f = false;
+	if(f === true){
+		var a = 10;
+	}
+
+	function fn(){
+		var b = 20;
+		c = 30;
+	}
+
+	fn();
+	console.log(a); 
+	console.log(b);
+	console.log(c);
+
+	function fun1(){
+		console.log("fun1");
+	}
+	fun1();
+
+	function fun1(){
+		console.log("fun1fun1")
+	}
+	fun1();
+
+	function fun2(){
+		console.log("fun2");
+	}
+	fun2();
+
+	var fun2 = function(){
+		console.log("fun2fun2")
+	}
+	fun2();*/
+
+	function outerFun(){
+		var a = 0;
+		function innerFun(){
+			a++;
+			alert(a);
+		}
+		return innerFun;
+	}
+	var obj = outerFun();
+	obj();
+	obj();
+	var obj2 = outerFun();
+	obj2();
+	obj2();
+</script>

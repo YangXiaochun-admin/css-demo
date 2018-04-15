@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组练习</title>
+	<style>
+		.box1{
+			width: 30px;
+			height: 50px;
+		}
+		.box2{
+			width: 70px;
+			height: 50px;
+		}
+		.box3{
+			width: 130px;
+			height: 150px;
+		}
+		.box4{
+			width: 60px;
+			height: 40px;
+		}
+		.box5{
+			width: 310px;
+			height: 53px;
+		}
+		.box6{
+			width: 30px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+
+	Math.max(value1,[value2,value3,...]);
+	Math.max.call(Math,arr[0],arr[1]);
+	Math.max.apply(Math,arr);
+</body>
+</html>
+<script>
+	function traverse(){
+		var arr = []; //保存结果
+		var eles = [];//保存节点
+		if(document.all){
+			eles = document.all;
+		}else{
+			eles = document.getElementsByTagName("*");
+		}
+		for(let i = 0;i < eles.length;i++){
+			var ele = eles[i];
+			var W = parseFloat(ele.style.width) || ele.offsetWidth;
+			var H = parseFloat(ele.style.height) || ele.offsetHeight;
+			if(W > 50 && H > 50){
+				arr.push(eles[i].tagName);
+			}
+		}
+		return arr;
+	}
+	window.onload = function(){
+		console.log(traverse());
+	}
+</script>

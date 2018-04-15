@@ -1,0 +1,10 @@
+1.引用样式文件css/lrtk.css
+
+2.引用jquery的库文件js/jquery.js
+
+3.引用效果的具体js代码文件js/lrtk.js
+ 
+4.将id为waterfall的DIV的内容复制到您的html文件
+
+5.图片流动速度，停留时间等参数可在lrtk.js里修改
+

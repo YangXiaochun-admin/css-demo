@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	*@desc: fibonacci
+	*@param: count {Number}
+	*@return: result {Number} 第 count 个 fibonacci 值，计数从 0 开始
+	fibonacci 数列为：[1, 1, 2, 3, 5, 8, 13, 21, 34 „]
+	则 getNthFibonacci(0)返回值为 1
+	则 getNthFibonacci(4)返回值为 5
+	
+	function getNthFibonacci(count) {
+	}
+
+	0   1
+	1   1
+	2   2
+	3   3
+	4   5
+</body>
+</html>
+<script>
+	function getNthFibonacci(count){
+		if(count <= 1){
+			return 1;
+		}
+		return getNthFibonacci(count-1) + getNthFibonacci(count-2);
+	}
+	console.log(getNthFibonacci(0));
+</script>

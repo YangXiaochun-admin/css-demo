@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>等间距3行3列布局</title>
+</head>
+<body>
+<!-- 完美实现三行三列自适应布局 -->
+	<section class="container flex">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</section>
+	<style>
+		html *{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		html{
+			font-size: 100px!important;
+		}
+		.container{
+			width: 3.2rem;
+			height: 3.2rem;
+			background-color: pink;
+			margin: 0 auto;
+		}
+		.container>ul{
+			width: 100%;
+			height: 100%;
+		}
+		.flex>ul{
+			display: flex;
+			display: -webkit-flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: space-between;
+		}
+		.flex>ul>li{
+			width: 1rem;
+			height: 1rem;
+			background-color: blue;
+			border-radius: .1rem;
+			flex-shrink: 0;
+		}
+	</style>
+
+	<section class="container position">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</section>
+	<style>
+	.position>ul{
+		position: relative;
+	}
+	.position>ul>li{
+		position: absolute;
+	}
+	.position>ul>li:nth-child(1),.position>ul>li:nth-child(4),.position>ul>li:nth-child(7){
+		left: 0;
+	}
+	.position>ul>li:nth-child(1),.position>ul>li:nth-child(3),.position>ul>li:nth-child(2){
+		top: 0;
+	}
+	.position>ul>li:nth-child(4),.position>ul>li:nth-child(6),.position>ul>li:nth-child(5){
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.position>ul>li:nth-child(7),.position>ul>li:nth-child(9){
+		bottom: 0;
+	}
+	.position>ul>li:nth-child(3),.position>ul>li:nth-child(6),.position>ul>li:nth-child(9){
+		right: 0;
+	}
+	.position>ul>li:nth-child(2),.position>ul>li:nth-child(5),.position>ul>li:nth-child(8){
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	</style>
+</body>
+</html>

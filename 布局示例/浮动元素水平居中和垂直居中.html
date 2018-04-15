@@ -7,6 +7,7 @@
 		*{
 			margin: 0;
 			padding: 0;
+			list-style: none;
 			box-sizing: border-box;
 		}
 		.box{
@@ -28,19 +29,41 @@
 			width: 400px;
 			height: 300px;
 			border: 5px solid red;
-			display: table-cell;
-			text-align: center;
-			vertical-align: middle;
+			position: relative;
 		}
 		.son2{
-			display: inline-block;
 			float: right;
 			width: 100px;
 			height: 50px;
-			line-height: 50px;
 			background-color: skyblue;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -25px 0 0 -50px;
 		}
-		
+		ul{
+			/*width: 300px;
+			height: 200px;*/
+			border: 2px solid red;
+			margin: 10px auto;
+			zoom: 1;
+			overflow: hidden;
+		}
+		li{
+			flex-shrink: 1;
+			width: 70px;
+			height: 100px;
+			background-color: plum;
+			float: left;
+			margin: 0 5px;
+		}
+		.sanjiao{
+			width: 0;
+			height: 0;
+			border: 50px solid transparent;
+			border-bottom-color: red;
+			margin: 0 auto;
+		}
 	</style>
 </head>
 <body>
@@ -56,5 +79,13 @@
 	<div class="box2">
 		<div class="son2">float</div>
 	</div>
+
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<div class="sanjiao"></div>
 </body>
 </html>
